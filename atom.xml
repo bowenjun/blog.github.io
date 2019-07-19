@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>1742·小博文</title>
-    <updated>2019-07-19T10:11:37.801Z</updated>
+    <updated>2019-07-19T10:14:45.788Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -15,7 +15,7 @@
         <id>https://blog.ss1742.com/post/react-diff</id>
         <link href="https://blog.ss1742.com/post/react-diff">
         </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
+        <updated>2019-07-18T16:00:00.000Z</updated>
         <content type="html"><![CDATA[<p><code>React</code> 通过制定大胆的 <code>diff</code> 策略，将 <code>O(n3)</code> 复杂度的问题转换成 <code>O(n)</code> 复杂度的问题；<br>
 <code>React</code> 是如何将 <code>O(n3)</code> 复杂度的问题转换成 <code>O(n)</code> 的？</p>
 <ul>
@@ -27,7 +27,7 @@
 <code>React</code> 通过相同类生成相似树形结构，不同类生成不同树形结构的策略，对 <code>component diff</code> 进行算法优化。<br>
 <code>React</code> 通过设置唯一 <code>key</code> 的策略，对 <code>element diff</code> 进行算法优化；</p>
 <p>建议，在开发组件时，保持稳定的 <code>DOM</code> 结构会有助于性能的提升；<br>
-建议，在开发过程中，尽量减少类似将最后一个节点移动到列表首部的操作，当节点数量过大或更新操作过于频繁时，在一定程度上会影响React的渲染性能。</p>
+建议，在开发过程中，尽量减少类似将最后一个节点移动到列表首部的操作，当节点数量过大或更新操作过于频繁时，在一定程度上会影响 <code>React</code> 的渲染性能。</p>
 ]]></content>
     </entry>
 </feed>

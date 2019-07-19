@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    1742·小博文
+    js基础 | 1742·小博文
 </title>
 <link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563548797886">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -96,195 +96,12 @@
             <div id="main-content" class="post-container main-container">
                 <div id="content" class="main-container-left">
                     
+    <div class="i-card">
+        <b>标签：#
+        js基础</b>
+    </div>
+    
         
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-2">
-                        《深入浅出 React 和 Redux》[2]
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-18</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
-                            i-tag-other_1">
-            #读书
-        </a>
-                        
-                        <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
-                            i-tag-other_2">
-            #react
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            第2章 React 组件
-易于维护的设计要素
-
-高内聚 把逻辑紧密相关的内容放在一个组件内
-低耦合 每个组件尽量独立，依赖关系尽量弱化
-
-组件的数据
-对外用 props，对内用 state
-propTypes 检查
-Person.propTypes = {
-    name: PropTypes.string.isRequired,
-    age: PropTypes.number
-}
-
-// 添加默认
-Person.defaultProps = {
-    name: &#39;&#39;
-}
-
-因为检查会消耗 CPU 资源，所以可以在开发的时候加上来避免一些错误，在发布的时候可以通过 babel-react-optimize 来去掉
-生命周期
-本书中 react 版本 v15.4 太老，v16.+ 部分生命周期方法废除，这一块后面总结
-constructor
-
-初始化 state
-绑定成员函数的 this 环境
-
-tips
-
-this.foo = ::this.foo &amp;lt;==&amp;gt; this.foo = this.foo.bind(this)
-
-...
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-2">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-1">
-                        《深入浅出 React 和 Redux》[1]
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-18</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
-                            i-tag-error">
-            #读书
-        </a>
-                        
-                        <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
-                            i-tag-success">
-            #react
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            第1章
-简介
-
-react 不支持比 IE8 更低版本浏览器
-通过组件（独立可重用的代码）开发应用。基于组件的应用开发是广泛使用的软件开发模式，用 分而治之 的方法，把一个大的应用分解成若干小的组件，每个组件只关注于某个小范围的特定功能
-
-JSX
-
-JSX，是 JavaScript的语法扩展，让我们在 JavaScript 中可以编写像 HTML 一样的代码
-
-进步还是倒退问题
-
-JSX 中的 onClick 和 HTML 中的 onclick 对比
-
-
-
-HTML 中的 onclick
-
-处理函数是在全局环境下执行的，这污染全局环境，很容易产生意料不到的效果
-给很多 DOM 添加 onclick 事件，可能会影响网页的性能，需要处理的事件函数越多，性能就越低
-使用 onclick 的 DOM，如果要动态删掉，需要把对应的时间处理器注销，否则可能造成内存写漏并且不容易追踪到 bug
-
-
-
-JSX
-
-JSX 组件的 onClick，并没有直接使用 onclick 的 html，而是使用事件委托处理点击事件，最后都只在 DOM 树上添加了一个事件处理函数，挂在最顶层的 DOM 节点上
-react 中组件的生命周期，在 unmount 的时候自然能够清理所有相关的事件处理函数，内存泄露的问题得以解决
-
-
-
-eject
-
-npm run eject
-
-&amp;quot;弹射&amp;quot;（暴露并修改）webpack、package.json 等配置
-react 的工作方式
-react 的理念
-UI = render(data)
-Virtual DOM
-DOM 是结构化文本的抽象表达形式，特定于 Web 环境中
-Virtual DOM 是对 DOM 树的抽象，只是存在于 JavaScript 空间的树形结构
-Tips
-设计原则：做同一件事的代码应该有高耦合性。
-纯函数：没有任何副作用，输出完全依赖输入的函数。
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-1">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/react-diff">
-                        react diff 原理浅析
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-17</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-other_1">
-            #原理
-        </a>
-                        
-                        <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
-                            i-tag-success">
-            #react
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            React 通过制定大胆的 diff 策略，将 O(n3) 复杂度的问题转换成 O(n) 复杂度的问题；
-React 是如何将 O(n3) 复杂度的问题转换成 O(n) 的？
-
-只进行同级比较
-不同类的 React 组件会被当做完全不同的 DOM 结构而被完全替换
-key prop：开发人员可以通过给 Virtual DOM 一个唯一的 key 属性暗示 React 这是同一个 DOM 结构，反之若 key 值不同则会被当做完全不同的 DOM 结构。
-
-React 通过分层求异的策略，对 tree diff 进行算法优化；
-React 通过相同类生成相似树形结构，不同类生成不同树形结构的策略，对 component diff 进行算法优化。
-React 通过设置唯一 key 的策略，对 element diff 进行算法优化；
-建议，在开发组件时，保持稳定的 DOM 结构会有助于性能的提升；
-建议，在开发过程中，尽量减少类似将最后一个节点移动到列表首部的操作，当节点数量过大或更新操作过于频繁时，在一定程度上会影响 React 的渲染性能。
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/react-diff">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
             <article class="post i-card">
                 <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/promiseall-shi-xian-yuan-li">
@@ -295,7 +112,7 @@ React 通过设置唯一 key 的策略，对 element diff 进行算法优化；
                     <time class="post-time">2019-07-16</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-other_3">
+                            i-tag-other_4">
             #原理
         </a>
                         
@@ -350,12 +167,12 @@ React 通过设置唯一 key 的策略，对 element diff 进行算法优化；
                     <time class="post-time">2019-07-16</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-info">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-other_4">
             #js基础
         </a>
                         
@@ -391,12 +208,12 @@ React 通过设置唯一 key 的策略，对 element diff 进行算法优化；
                     <time class="post-time">2019-07-16</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-info">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-other_4">
             #js基础
         </a>
                         
@@ -438,12 +255,12 @@ React 通过设置唯一 key 的策略，对 element diff 进行算法优化；
                     <time class="post-time">2019-07-15</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-error">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-warning">
             #js基础
         </a>
                         
@@ -517,12 +334,12 @@ mp.then(res =&amp;gt; console.log(&#39;success&#39;, res));
                     <time class="post-time">2019-07-15</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-success">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-other_2">
             #js基础
         </a>
                         
@@ -564,7 +381,7 @@ Object.create() 方法创建一个新对象，使用现有的对象来提供新�
                     <time class="post-time">2019-07-14</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-warning">
             #js基础
         </a>
                         
@@ -592,80 +409,146 @@ async 一旦下载完，渲染引擎就会中断渲染，执行这个脚本以�
             
             <article class="post i-card">
                 <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/ru-he-rang-a-1-and-a-2-and-a-3-de-zhi-wei-true">
-                        如何让 (a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3) 的值为true
+                    <a href="https://blog.ss1742.com/post/5add3reduce2">
+                        (5).add(3).reduce(2)
                     </a>
                 </h2>
                 <div class="post-info">
-                    <time class="post-time">2019-07-14</time>
+                    <time class="post-time">2019-07-10</time>
                     
+                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
+                            i-tag-info">
+            #js基础
+        </a>
+                        
                 </div>
                 <div class="post-article">
                     
                             <div class="post-content">
                                 
                                         <div class="post-content-content">
-                                            Object 转换为原始类型
-
-
-如果部署了 [Symbol.toPrimitive] 接口，那么调用此接口，若返回的不是基本数据类型，抛出错误。
-
-
-如果没有部署 [Symbol.toPrimitive] 接口，那么根据要转换的类型，先调用 valueOf / toString
-
-非Date类型对象，hint 是 default 时，调用顺序为：valueOf &amp;gt;&amp;gt;&amp;gt; toString，即 valueOf 返回的不是基本数据类型，才会继续调用 valueOf，如果 toString 返回的还不是基本数据类型，那么抛出错误。
-如果 hint 是 string(Date对象的 hint 默认是 string) ，调用顺序为：toString &amp;gt;&amp;gt;&amp;gt; valueOf，即 toString 返回的不是基本数据类型，才会继续调用 valueOf，如果 valueOf 返回的还不是基本数据类型，那么抛出错误。
-如果 hint 是 number，调用顺序为： valueOf &amp;gt;&amp;gt;&amp;gt; toString
-
-
-
-题解
-
-隐式转换
-
-// 部署 [Symbol.toPrimitive] / valueOf / toString 均可
-let a = {
-    [Symbol.toPrimitive]: (function(hint) {
-        let i = 1;
-        return function() {
-            return i++;
-        }
-    })()
-}		
-
-
-数据劫持
-
-let a = new Proxy({}, {
-    i: 1,
-    get: function() {
-        return () =&amp;gt; this.i++;
+                                            Number.prototype.add = function(num) {
+    if (typeof num === &#39;number&#39;) {
+        return this + num;
     }
-})
+    return this;
+}
+Number.prototype.reduce = function(num) {
+    if (typeof num === &#39;number&#39;) {
+        return this - num;
+    }
+    return this;
+}
 
+console.log((5).add(3).reduce(2)); // 6
 
-数组的 toString 接口默认调用数组的 join 方法，重写 join 方法
+注意
+这里使用 Number 和 Object 均可。
 
-let a = [1, 2, 3];
-a.join = a.shift;
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/5add3reduce2">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/han-shu-ke-li-hua-add-han-shu">
+                        函数科里化( add 函数)
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-10</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
+                            i-tag-primary">
+            #js基础
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            function add() {
+    let args = [].slice.call(arguments);
+    let sum = function() {
+        let arg = [].slice.call(arguments);
+        return add.apply(null, [...args, ...arg]);
+    }
+    sum.toString = function() {
+        return args.reduce((a, b) =&amp;gt; a + b);
+    }
+    return sum;
+}
+
+console.log(add(2, 3)(4)(5)()(1)); // 15
 
 
                                         </div>
                                         
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/ru-he-rang-a-1-and-a-2-and-a-3-de-zhi-wei-true">Read More ~</a>
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/han-shu-ke-li-hua-add-han-shu">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/1-2-3mapparseint">
+                        [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;].map(parseInt)
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-10</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
+                            i-tag-error">
+            #js基础
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            parseInt
+parseInt() 函数解析一个字符串参数，并返回一个指定基数的整数 (数学系统的基础)。
+const intValue = parseInt(string[, radix]);
+
+注意
+在 radix 为 undefined，或者 radix 为 0 或者没有指定的情况下，JavaScript 作如下处理：
+
+如果字符串 string 以 &amp;quot;0x&amp;quot; 或者 &amp;quot;0X&amp;quot; 开头, 则基数是 16 (16进制).
+如果字符串 string 以 &amp;quot;0&amp;quot; 开头, 基数是 8（八进制）或者 10（十进制），那么具体是哪个基数由实现环境决定。ECMAScript 5 规定使用 10，但是并不是所有的浏览器都遵循这个规定。因此，永远都要明确给出 radix 参数的值。
+如果字符串 string 以其它任何值开头，则基数是 10 (十进制)。
+
+map
+map 回调函数接受三个参数
+arr.map(function callback(currentValue[,index[, array]]) {
+    // Return element for new_array
+ }[, thisArg])
+
+所以问题可以转化为
+parseInt(&#39;1&#39;, 0) // 1
+parseInt(&#39;2&#39;, 1) // NaN
+parseInt(&#39;3&#39;, 2) // NaN, 3 不是二进制
+
+答案
+// 1 NaN NaN
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/1-2-3mapparseint">Read More ~</a>
                             </div>
                 </div>
             </article>
             
                 <!-- 翻页 -->
                 
-    <div class="pagination-container">
-        
-                
-                    <a href="https://blog.ss1742.com/page/2/" class="page-btn btn">下一页</a>
-                    
-    </div>
-    
                 </div>
                 <!--  -->
                 <div class="main-container-middle"></div>

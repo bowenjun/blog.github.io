@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    函数科里化( add 函数) | 1742·小博文
+    css基础 | 1742·小博文
 </title>
 <link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563548797886">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -19,14 +19,6 @@
 <script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
-        
-            
-                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-                
-
-                    
-                            
 </head>
 
 <body>
@@ -101,62 +93,86 @@
     });
 </script>
 
-            <div id="main-content" class="post-detail main-container">
-                <!-- left -->
+            <div id="main-content" class="post-container main-container">
                 <div id="content" class="main-container-left">
-                    <article class="post i-card">
-                        <h2 class="post-title">
-                            函数科里化( add 函数)
-                        </h2>
-                        <div class="post-info">
-                            <time class="post-time">2019-07-10</time>
-                            
-                                <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_2">
-                            #js基础
-                        </a>
-                                
-                        </div>
+                    
+    <div class="i-card">
+        <b>标签：#
+        css基础</b>
+    </div>
+    
+        
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/chui-zhi-shui-ping-ju-zhong">
+                        垂直水平居中
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-10</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/922aBovKI" class="post-tag i-tag
+                            i-tag-other_3">
+            #css基础
+        </a>
                         
-                                <div class="post-content">
-                                    <pre><code class="language-js">function add() {
-    let args = [].slice.call(arguments);
-    let sum = function() {
-        let arg = [].slice.call(arguments);
-        return add.apply(null, [...args, ...arg]);
-    }
-    sum.toString = function() {
-        return args.reduce((a, b) =&gt; a + b);
-    }
-    return sum;
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            &amp;lt;div class=&amp;quot;parent&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;child&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+
+1
+.parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-console.log(add(2, 3)(4)(5)()(1)); // 15
-</code></pre>
+flex 教程
+2
+.parent {
+    display: grid;
+}
+.child {
+    justify-self: center;
+    align-self: center;
+}
 
-                                </div>
-                    </article>
-                    <!--  -->
-                    
-                        <div class="next-post">
-                            <div class="next">下一篇</div>
-                            <a href="https://blog.ss1742.com/post/chui-zhi-shui-ping-ju-zhong">
-                                <h3 class="post-title">
-                                    垂直水平居中
-                                </h3>
-                            </a>
-                        </div>
-                        
-                            <div id="disqus_thread"></div>
-                            <div id="gitalk-container"></div>
+grid 教程
+3
+.parent {
+    position: relative;
+}
+.child {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/chui-zhi-shui-ping-ju-zhong">Read More ~</a>
+                            </div>
                 </div>
-                <!-- middle -->
+            </article>
+            
+                <!-- 翻页 -->
+                
+                </div>
+                <!--  -->
                 <div class="main-container-middle"></div>
-                <!-- right -->
+                <!--  -->
                 <div id="sidebar" class="main-container-right">
+
+                    <!-- 个人信息 -->
                     
-                                <!-- id-card -->
-                                
     <div class="id_card i-card">
         <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1563548797886)">
         </div>
@@ -183,14 +199,13 @@ console.log(add(2, 3)(4)(5)()(1)); // 15
         </div>
     </div>
     
-                                    
+
+                        <!-- 公告栏 -->
+                        
 
                 </div>
-
-
-
-
             </div>
+
 
 
             <div class="site-footer">
@@ -202,7 +217,6 @@ console.log(add(2, 3)(4)(5)()(1)); // 15
   hljs.initHighlightingOnLoad()
 </script>
 
-
     </div>
     <script>
         $('#sidebar').stickySidebar({
@@ -210,27 +224,6 @@ console.log(add(2, 3)(4)(5)()(1)); // 15
             // bottomSpacing: 60
         });
     </script>
-    
-        
-            <script>
-    window.onload = function() {
-        var gitalk = new Gitalk({
-            clientID: 'c726c72729117e1a7598',
-            clientSecret: '427ee52e912b5a2a3753a568238fd6e802d1f492',
-            repo: 'bowenjun.github.io',
-            owner: 'bowenjun',
-            admin: ['bowenjun'],
-            id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
-            distractionFreeMode: false // Facebook-like distraction free mode
-        })
-
-        gitalk.render('gitalk-container')
-    }
-</script>
-                
-
-                    
-                                
 </body>
 
 </html>

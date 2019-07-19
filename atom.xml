@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>1742·小博文</title>
-    <updated>2019-07-19T10:09:04.483Z</updated>
+    <updated>2019-07-19T10:11:37.801Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -16,15 +16,17 @@
         <link href="https://blog.ss1742.com/post/react-diff">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
-        <content type="html"><![CDATA[<p>React 通过制定大胆的 diff 策略，将 O(n3) 复杂度的问题转换成 O(n) 复杂度的问题；<br>
-React 是如何将 O(n3) 复杂度的问题转换成 O(n) 的？</p>
-<p>只进行同级比较<br>
-不同类的 React 组件会被当做完全不同的 DOM 结构而被完全替换<br>
-key prop：开发人员可以通过给 Virtual DOM 一个唯一的 key 属性暗示 React 这是同一个 DOM 结构，反之若 key 值不同则会被当做完全不同的 DOM 结构。<br>
-React 通过分层求异的策略，对 tree diff 进行算法优化；<br>
-React 通过相同类生成相似树形结构，不同类生成不同树形结构的策略，对 component diff 进行算法优化。<br>
-React 通过设置唯一 key 的策略，对 element diff 进行算法优化；</p>
-<p>建议，在开发组件时，保持稳定的 DOM 结构会有助于性能的提升；<br>
+        <content type="html"><![CDATA[<p><code>React</code> 通过制定大胆的 <code>diff</code> 策略，将 <code>O(n3)</code> 复杂度的问题转换成 <code>O(n)</code> 复杂度的问题；<br>
+<code>React</code> 是如何将 <code>O(n3)</code> 复杂度的问题转换成 <code>O(n)</code> 的？</p>
+<ul>
+<li>只进行同级比较</li>
+<li>不同类的 <code>React</code> 组件会被当做完全不同的 <code>DOM</code> 结构而被完全替换</li>
+<li><code>key prop</code>：开发人员可以通过给 <code>Virtual DOM</code> 一个唯一的 <code>key</code> 属性暗示 <code>React</code> 这是同一个 <code>DOM</code> 结构，反之若 <code>key</code> 值不同则会被当做完全不同的 <code>DOM</code> 结构。</li>
+</ul>
+<p><code>React</code> 通过分层求异的策略，对 <code>tree diff</code> 进行算法优化；<br>
+<code>React</code> 通过相同类生成相似树形结构，不同类生成不同树形结构的策略，对 <code>component diff</code> 进行算法优化。<br>
+<code>React</code> 通过设置唯一 <code>key</code> 的策略，对 <code>element diff</code> 进行算法优化；</p>
+<p>建议，在开发组件时，保持稳定的 <code>DOM</code> 结构会有助于性能的提升；<br>
 建议，在开发过程中，尽量减少类似将最后一个节点移动到列表首部的操作，当节点数量过大或更新操作过于频繁时，在一定程度上会影响React的渲染性能。</p>
 ]]></content>
     </entry>

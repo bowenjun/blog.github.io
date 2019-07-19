@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>1742·小博文</title>
-    <updated>2019-07-19T10:07:12.597Z</updated>
+    <updated>2019-07-19T10:09:04.483Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2019, 1742·小博文</rights>
     <entry>
         <title type="html"><![CDATA[react diff 原理浅析]]></title>
-        <id>https://blog.ss1742.com/post/hello-gridea</id>
-        <link href="https://blog.ss1742.com/post/hello-gridea">
+        <id>https://blog.ss1742.com/post/react-diff</id>
+        <link href="https://blog.ss1742.com/post/react-diff">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <content type="html"><![CDATA[<p>React 通过制定大胆的 diff 策略，将 O(n3) 复杂度的问题转换成 O(n) 复杂度的问题；<br>

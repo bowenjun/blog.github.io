@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    react diff 原理浅析 | 1742·小博文
+    Promise.race 实现原理 | 1742·小博文
 </title>
 <link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563548483828">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -106,31 +106,28 @@
                 <div id="content" class="main-container-left">
                     <article class="post i-card">
                         <h2 class="post-title">
-                            react diff 原理浅析
+                            Promise.race 实现原理
                         </h2>
                         <div class="post-info">
-                            <time class="post-time">2019-07-17</time>
+                            <time class="post-time">2019-07-16</time>
                             
-                                <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
-                            i-tag-warning">
-                            #react
-                        </a>
-                                
                         </div>
                         
                                 <div class="post-content">
-                                    <p><code>React</code> 通过制定大胆的 <code>diff</code> 策略，将 <code>O(n3)</code> 复杂度的问题转换成 <code>O(n)</code> 复杂度的问题；<br>
-<code>React</code> 是如何将 <code>O(n3)</code> 复杂度的问题转换成 <code>O(n)</code> 的？</p>
-<ul>
-<li>只进行同级比较</li>
-<li>不同类的 <code>React</code> 组件会被当做完全不同的 <code>DOM</code> 结构而被完全替换</li>
-<li><code>key prop</code>：开发人员可以通过给 <code>Virtual DOM</code> 一个唯一的 <code>key</code> 属性暗示 <code>React</code> 这是同一个 <code>DOM</code> 结构，反之若 <code>key</code> 值不同则会被当做完全不同的 <code>DOM</code> 结构。</li>
-</ul>
-<p><code>React</code> 通过分层求异的策略，对 <code>tree diff</code> 进行算法优化；<br>
-<code>React</code> 通过相同类生成相似树形结构，不同类生成不同树形结构的策略，对 <code>component diff</code> 进行算法优化。<br>
-<code>React</code> 通过设置唯一 <code>key</code> 的策略，对 <code>element diff</code> 进行算法优化；</p>
-<p>建议，在开发组件时，保持稳定的 <code>DOM</code> 结构会有助于性能的提升；<br>
-建议，在开发过程中，尽量减少类似将最后一个节点移动到列表首部的操作，当节点数量过大或更新操作过于频繁时，在一定程度上会影响 <code>React</code> 的渲染性能。</p>
+                                    <pre><code class="language-js">Promise.prototype.race = function(promises) {
+    return new Promise((resolve, reject) =&gt; {
+        if (!isArray(promises)) {
+            return reject(new TypeError('Arguments not Array'));
+        }
+        for (let p of promises) {
+            Promise.resolve(p).then(
+                res =&gt; resolve(res), 
+                rej =&gt; reject(rej)
+            )
+        }
+    })
+}
+</code></pre>
 
                                 </div>
                     </article>
@@ -138,9 +135,9 @@
                     
                         <div class="next-post">
                             <div class="next">下一篇</div>
-                            <a href="https://blog.ss1742.com/post/promiseall-shi-xian-yuan-li">
+                            <a href="https://blog.ss1742.com/post/promise-shi-xian-yuan-li">
                                 <h3 class="post-title">
-                                    Promise.all 实现原理
+                                    Promise 实现原理
                                 </h3>
                             </a>
                         </div>

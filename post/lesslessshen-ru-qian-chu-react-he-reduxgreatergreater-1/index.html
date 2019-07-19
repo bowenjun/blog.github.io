@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    react diff 原理浅析 | 1742·小博文
+    《深入浅出 React 和 Redux》[1] | 1742·小博文
 </title>
 <link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563548483828">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -106,31 +106,69 @@
                 <div id="content" class="main-container-left">
                     <article class="post i-card">
                         <h2 class="post-title">
-                            react diff 原理浅析
+                            《深入浅出 React 和 Redux》[1]
                         </h2>
                         <div class="post-info">
-                            <time class="post-time">2019-07-17</time>
+                            <time class="post-time">2019-07-18</time>
                             
+                                <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
+                            i-tag-other_2">
+                            #读书
+                        </a>
+                                
                                 <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-success">
                             #react
                         </a>
                                 
                         </div>
                         
                                 <div class="post-content">
-                                    <p><code>React</code> 通过制定大胆的 <code>diff</code> 策略，将 <code>O(n3)</code> 复杂度的问题转换成 <code>O(n)</code> 复杂度的问题；<br>
-<code>React</code> 是如何将 <code>O(n3)</code> 复杂度的问题转换成 <code>O(n)</code> 的？</p>
+                                    <h2 id="第1章">第1章</h2>
+<h3 id="简介">简介</h3>
 <ul>
-<li>只进行同级比较</li>
-<li>不同类的 <code>React</code> 组件会被当做完全不同的 <code>DOM</code> 结构而被完全替换</li>
-<li><code>key prop</code>：开发人员可以通过给 <code>Virtual DOM</code> 一个唯一的 <code>key</code> 属性暗示 <code>React</code> 这是同一个 <code>DOM</code> 结构，反之若 <code>key</code> 值不同则会被当做完全不同的 <code>DOM</code> 结构。</li>
+<li><code>react</code> 不支持比 <code>IE8</code> 更低版本浏览器</li>
+<li>通过组件（独立可重用的代码）开发应用。基于组件的应用开发是广泛使用的软件开发模式，用 <code>分而治之</code> 的方法，把一个大的应用分解成若干小的组件，每个组件只关注于某个小范围的特定功能</li>
 </ul>
-<p><code>React</code> 通过分层求异的策略，对 <code>tree diff</code> 进行算法优化；<br>
-<code>React</code> 通过相同类生成相似树形结构，不同类生成不同树形结构的策略，对 <code>component diff</code> 进行算法优化。<br>
-<code>React</code> 通过设置唯一 <code>key</code> 的策略，对 <code>element diff</code> 进行算法优化；</p>
-<p>建议，在开发组件时，保持稳定的 <code>DOM</code> 结构会有助于性能的提升；<br>
-建议，在开发过程中，尽量减少类似将最后一个节点移动到列表首部的操作，当节点数量过大或更新操作过于频繁时，在一定程度上会影响 <code>React</code> 的渲染性能。</p>
+<h3 id="jsx">JSX</h3>
+<ul>
+<li><code>JSX</code>，是 <code>JavaScript</code>的语法扩展，让我们在 <code>JavaScript</code> 中可以编写像 <code>HTML</code> 一样的代码</li>
+</ul>
+<h4 id="进步还是倒退问题">进步还是倒退问题</h4>
+<blockquote>
+<p><code>JSX</code> 中的 <code>onClick</code> 和 <code>HTML</code> 中的 <code>onclick</code> 对比</p>
+</blockquote>
+<ul>
+<li>
+<p><code>HTML</code> 中的 <code>onclick</code></p>
+<ol>
+<li>处理函数是在全局环境下执行的，这污染全局环境，很容易产生意料不到的效果</li>
+<li>给很多 <code>DOM</code> 添加 <code>onclick</code> 事件，可能会影响网页的性能，需要处理的事件函数越多，性能就越低</li>
+<li>使用 <code>onclick</code> 的 <code>DOM</code>，如果要动态删掉，需要把对应的时间处理器注销，否则可能造成内存写漏并且不容易追踪到 <code>bug</code></li>
+</ol>
+</li>
+<li>
+<p><code>JSX</code></p>
+<ol>
+<li><code>JSX</code> 组件的 <code>onClick</code>，并没有直接使用 <code>onclick</code> 的 <code>html</code>，而是使用事件委托处理点击事件，最后都只在 <code>DOM</code> 树上添加了一个事件处理函数，挂在最顶层的 <code>DOM</code> 节点上</li>
+<li><code>react</code> 中组件的生命周期，在 <code>unmount</code> 的时候自然能够清理所有相关的事件处理函数，内存泄露的问题得以解决</li>
+</ol>
+</li>
+</ul>
+<h3 id="eject">eject</h3>
+<blockquote>
+<p>npm run eject</p>
+</blockquote>
+<p>&quot;弹射&quot;（暴露并修改）<code>webpack</code>、<code>package.json</code> 等配置</p>
+<h3 id="react-的工作方式">react 的工作方式</h3>
+<p><code>react</code> 的理念</p>
+<p><code>UI = render(data)</code></p>
+<h3 id="virtual-dom">Virtual DOM</h3>
+<p><code>DOM</code> 是结构化文本的抽象表达形式，特定于 <code>Web</code> 环境中</p>
+<p><code>Virtual DOM</code> 是对 <code>DOM</code> 树的抽象，只是存在于 <code>JavaScript</code> 空间的树形结构</p>
+<h3 id="tips">Tips</h3>
+<p>设计原则：做同一件事的代码应该有高耦合性。<br>
+纯函数：没有任何副作用，输出完全依赖输入的函数。</p>
 
                                 </div>
                     </article>
@@ -138,9 +176,9 @@
                     
                         <div class="next-post">
                             <div class="next">下一篇</div>
-                            <a href="https://blog.ss1742.com/post/promiseall-shi-xian-yuan-li">
+                            <a href="https://blog.ss1742.com/post/react-diff">
                                 <h3 class="post-title">
-                                    Promise.all 实现原理
+                                    react diff 原理浅析
                                 </h3>
                             </a>
                         </div>
@@ -153,35 +191,59 @@
                 <!-- right -->
                 <div id="sidebar" class="main-container-right">
                     
-                                <!-- id-card -->
-                                
-    <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1563548483828)">
-        </div>
-        <h1 class="id_card-title">
-            1742·小博文
-        </h1>
-        <h2 class="id_card-description">
-            这是我的真博客
-        </h2>
-        <!--  -->
-        <div class="id_card-sns">
-            <!-- github -->
-            
-                <a href="https://github.com/bowenjun" target="_blank" rel="noopener noreferrer"><i
-                class="fa fa-github"></i></a>
-                
-                    <!-- twitter -->
-                    
-                            <!-- weibo -->
-                            
-                                    <!-- facebook -->
-                                    
+                        <!-- toc -->
+                        
+    <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+        <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E7%AC%AC1%E7%AB%A0">第1章</a>
+<ul>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#jsx">JSX</a>
+<ul>
+<li><a href="#%E8%BF%9B%E6%AD%A5%E8%BF%98%E6%98%AF%E5%80%92%E9%80%80%E9%97%AE%E9%A2%98">进步还是倒退问题</a></li>
+</ul>
+</li>
+<li><a href="#eject">eject</a></li>
+<li><a href="#react-%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F">react 的工作方式</a></li>
+<li><a href="#virtual-dom">Virtual DOM</a></li>
+<li><a href="#tips">Tips</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
         </div>
+        <script>
+            function locateCatelogList() {
+                /*获取文章目录集合,可通过:header过滤器*/
+                var alis = $('.post-content :header');
+                /*获取侧边栏目录列表集合**/
+                var sidebar_alis = $('.markdownIt-TOC a');
+                /*获取滚动条到顶部的距离*/
+                var scroll_height = $(window).scrollTop();
+                for (var i = 0; i < alis.length; i++) {
+                    /*获取锚点集合中的元素分别到顶点的距离*/
+                    var a_height = $(alis[i]).offset().top;
+                    if (a_height < scroll_height) {
+                        /*高亮显示*/
+                        sidebar_alis.removeClass('on');
+                        $(sidebar_alis[i]).addClass('on');
+                    }
+                }
+            }
+            $(function() {
+                /*绑定滚动事件 */
+                $(window).bind('scroll', locateCatelogList);
+            });
+        </script>
     </div>
     
-                                    
+                            
 
                 </div>
 

@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563547097772">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563548483828">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1563547097772" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1563548483828" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,15 +99,158 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-2">
+                        《深入浅出 React 和 Redux》[2]
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-18</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
+                            i-tag-banana">
+            #读书
+        </a>
+                        
+                        <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
+                            i-tag-other_1">
+            #react
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            第2章 React 组件
+易于维护的设计要素
+
+高内聚 把逻辑紧密相关的内容放在一个组件内
+低耦合 每个组件尽量独立，依赖关系尽量弱化
+
+组件的数据
+对外用 props，对内用 state
+propTypes 检查
+Person.propTypes = {
+    name: PropTypes.string.isRequired,
+    age: PropTypes.number
+}
+
+// 添加默认
+Person.defaultProps = {
+    name: &#39;&#39;
+}
+
+因为检查会消耗 CPU 资源，所以可以在开发的时候加上来避免一些错误，在发布的时候可以通过 babel-react-optimize 来去掉
+生命周期
+本书中 react 版本 v15.4 太老，v16.+ 部分生命周期方法废除，这一块后面总结
+constructor
+
+初始化 state
+绑定成员函数的 this 环境
+
+tips
+
+this.foo = ::this.foo &amp;lt;==&amp;gt; this.foo = this.foo.bind(this)
+
+...
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-2">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-1">
+                        《深入浅出 React 和 Redux》[1]
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-18</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
+                            i-tag-other_1">
+            #读书
+        </a>
+                        
+                        <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
+                            i-tag-error">
+            #react
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            第1章
+简介
+
+react 不支持比 IE8 更低版本浏览器
+通过组件（独立可重用的代码）开发应用。基于组件的应用开发是广泛使用的软件开发模式，用 分而治之 的方法，把一个大的应用分解成若干小的组件，每个组件只关注于某个小范围的特定功能
+
+JSX
+
+JSX，是 JavaScript的语法扩展，让我们在 JavaScript 中可以编写像 HTML 一样的代码
+
+进步还是倒退问题
+
+JSX 中的 onClick 和 HTML 中的 onclick 对比
+
+
+
+HTML 中的 onclick
+
+处理函数是在全局环境下执行的，这污染全局环境，很容易产生意料不到的效果
+给很多 DOM 添加 onclick 事件，可能会影响网页的性能，需要处理的事件函数越多，性能就越低
+使用 onclick 的 DOM，如果要动态删掉，需要把对应的时间处理器注销，否则可能造成内存写漏并且不容易追踪到 bug
+
+
+
+JSX
+
+JSX 组件的 onClick，并没有直接使用 onclick 的 html，而是使用事件委托处理点击事件，最后都只在 DOM 树上添加了一个事件处理函数，挂在最顶层的 DOM 节点上
+react 中组件的生命周期，在 unmount 的时候自然能够清理所有相关的事件处理函数，内存泄露的问题得以解决
+
+
+
+eject
+
+npm run eject
+
+&amp;quot;弹射&amp;quot;（暴露并修改）webpack、package.json 等配置
+react 的工作方式
+react 的理念
+UI = render(data)
+Virtual DOM
+DOM 是结构化文本的抽象表达形式，特定于 Web 环境中
+Virtual DOM 是对 DOM 树的抽象，只是存在于 JavaScript 空间的树形结构
+Tips
+设计原则：做同一件事的代码应该有高耦合性。
+纯函数：没有任何副作用，输出完全依赖输入的函数。
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-1">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/react-diff">
                         react diff 原理浅析
                     </a>
                 </h2>
                 <div class="post-info">
-                    <time class="post-time">2019-07-19</time>
+                    <time class="post-time">2019-07-17</time>
                     
                         <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-banana">
             #react
         </a>
                         
@@ -137,8 +280,332 @@ React 通过设置唯一 key 的策略，对 element diff 进行算法优化；
                 </div>
             </article>
             
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/promiseall-shi-xian-yuan-li">
+                        Promise.all 实现原理
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-16</time>
+                    
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            Promise.prototype.all = function(promises) {
+    return new Promise((resolve, reject) =&amp;gt; {
+        if (!isArray(promises)) {
+            return reject(new TypeError(&#39;Arguments not Array&#39;));
+        }
+        let resolves = 0;
+        let len = promises.length;
+        let result = [];
+        for (let p of promises) {
+            Promise.resolve(p).then(res =&amp;gt; {
+                resolves++;
+                result.push(res);
+                if (resolves === len) {
+                    resolve(result);
+                }
+            }, rej =&amp;gt; {
+                return rekect(rej);
+            })
+        }
+    })
+}
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/promiseall-shi-xian-yuan-li">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/promisefinally-shi-xian-yuan-li">
+                        Promise.finally 实现原理
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-16</time>
+                    
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            Promise.prototype.finally = function(callback) {
+    let P = this.constructor;
+    return this.then(
+        value  =&amp;gt; P.resolve(callback()).then(() =&amp;gt; value),
+        reason =&amp;gt; P.resolve(callback()).then(() =&amp;gt; { throw reason })
+    );
+};
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/promisefinally-shi-xian-yuan-li">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/promiserace-shi-xian-yuan-li">
+                        Promise.race 实现原理
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-16</time>
+                    
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            Promise.prototype.race = function(promises) {
+    return new Promise((resolve, reject) =&amp;gt; {
+        if (!isArray(promises)) {
+            return reject(new TypeError(&#39;Arguments not Array&#39;));
+        }
+        for (let p of promises) {
+            Promise.resolve(p).then(
+                res =&amp;gt; resolve(res), 
+                rej =&amp;gt; reject(rej)
+            )
+        }
+    })
+}
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/promiserace-shi-xian-yuan-li">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/promise-shi-xian-yuan-li">
+                        Promise 实现原理
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-15</time>
+                    
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            function myPromise(exe) {
+    let self = this;
+    self.status = &#39;pending&#39;;
+    self.value = null;
+    self.reason = null;
+    self.onResolveCbk = [];
+    self.onRejectCbk = [];
+    function resolve(value) {
+        if (self.status === &#39;pending&#39;) {
+            self.value = value;
+            self.status = &#39;resolved&#39;;
+            self.onResolveCbk.map(fn =&amp;gt; fn());
+        }
+    }
+    function reject(reason) {
+        if (self.status === &#39;pending&#39;) {
+            self.reason = reason;
+            self.status = &#39;rejected&#39;;
+            self.onResolveCbk.map(fn =&amp;gt; fn());
+        }
+    }
+    exe(resolve, reject);
+}
+
+myPromise.prototype.then = function(onFulfilled, onRejected) {
+    let self = this;
+    if (self.status === &#39;pending&#39;) {
+        self.onResolveCbk.push(() =&amp;gt; onFulfilled(self.value));
+        self.onRejectCbk.push(() =&amp;gt; onRejected(self.reason));
+    }
+    if (self.status === &#39;resolved&#39;) {
+        onFulfilled(self.value);
+    }
+    if (self.status === &#39;rejected&#39;) {
+        onRejected(self.reason);
+    }
+}
+
+let mp = new myPromise((resolve, reject) =&amp;gt; {
+    setTimeout(() =&amp;gt; {
+        resolve(2);
+    }, 200);
+});
+
+mp.then(res =&amp;gt; console.log(&#39;success&#39;, res));
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/promise-shi-xian-yuan-li">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/new-de-shi-xian-yuan-li">
+                        new 实现原理
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-15</time>
+                    
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            原理
+
+创建一个空对象，构造函数中的 this 指向这个空对象
+这个新对象被执行 [[原型]] 连接
+执行构造函数方法，属性和方法被添加到 this 引用的对象中
+如果构造函数中没有返回其它对象，那么返回 this，即创建的这个的新对象，否则，返回构造函数中返回的对象
+
+function _new(fn, ...arg) {
+    let obj = Object.create(fn.prototype);
+    let ret = fn.apply(obj, arg);
+    return ret instanceof Object ? ret : obj;
+}
+
+Object.create() 方法创建一个新对象，使用现有的对象来提供新创建的对象的 __proto__
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/new-de-shi-xian-yuan-li">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben-de-fang-shi-you-na-xie">
+                        异步加载JS脚本的方式有哪些
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-14</time>
+                    
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            
+&amp;lt;script&amp;gt; 标签中增加 async(html5) 或者 defer(html4) 属性,脚本就会异步加载。
+
+defer 和 async 的区别在于：
+defer 要等到整个页面在内存中正常渲染结束（DOM 结构完全生成，以及其他脚本执行完成），在 window.onload 之前执行；
+async 一旦下载完，渲染引擎就会中断渲染，执行这个脚本以后，再继续渲染。
+如果有多个 defer 脚本，会按照它们在页面出现的顺序加载
+多个 async 脚本不能保证加载顺序
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben-de-fang-shi-you-na-xie">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/ru-he-rang-a-1-and-a-2-and-a-3-de-zhi-wei-true">
+                        如何让 (a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3) 的值为true
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-14</time>
+                    
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            Object 转换为原始类型
+
+
+如果部署了 [Symbol.toPrimitive] 接口，那么调用此接口，若返回的不是基本数据类型，抛出错误。
+
+
+如果没有部署 [Symbol.toPrimitive] 接口，那么根据要转换的类型，先调用 valueOf / toString
+
+非Date类型对象，hint 是 default 时，调用顺序为：valueOf &amp;gt;&amp;gt;&amp;gt; toString，即 valueOf 返回的不是基本数据类型，才会继续调用 valueOf，如果 toString 返回的还不是基本数据类型，那么抛出错误。
+如果 hint 是 string(Date对象的 hint 默认是 string) ，调用顺序为：toString &amp;gt;&amp;gt;&amp;gt; valueOf，即 toString 返回的不是基本数据类型，才会继续调用 valueOf，如果 valueOf 返回的还不是基本数据类型，那么抛出错误。
+如果 hint 是 number，调用顺序为： valueOf &amp;gt;&amp;gt;&amp;gt; toString
+
+
+
+题解
+
+隐式转换
+
+// 部署 [Symbol.toPrimitive] / valueOf / toString 均可
+let a = {
+    [Symbol.toPrimitive]: (function(hint) {
+        let i = 1;
+        return function() {
+            return i++;
+        }
+    })()
+}		
+
+
+数据劫持
+
+let a = new Proxy({}, {
+    i: 1,
+    get: function() {
+        return () =&amp;gt; this.i++;
+    }
+})
+
+
+数组的 toString 接口默认调用数组的 join 方法，重写 join 方法
+
+let a = [1, 2, 3];
+a.join = a.shift;
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/ru-he-rang-a-1-and-a-2-and-a-3-de-zhi-wei-true">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
                 <!-- 翻页 -->
                 
+    <div class="pagination-container">
+        
+                
+                    <a href="https://blog.ss1742.com/page/2/" class="page-btn btn">下一页</a>
+                    
+    </div>
+    
                 </div>
                 <!--  -->
                 <div class="main-container-middle"></div>
@@ -148,7 +615,7 @@ React 通过设置唯一 key 的策略，对 element diff 进行算法优化；
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1563547097772)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1563548483828)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

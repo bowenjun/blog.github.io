@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    《深入浅出 React 和 Redux》[2] | 1742·小博文
+    git 提交 types | 1742·小博文
 </title>
 <link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563552177569">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -106,56 +106,27 @@
                 <div id="content" class="main-container-left">
                     <article class="post i-card">
                         <h2 class="post-title">
-                            《深入浅出 React 和 Redux》[2]
+                            git 提交 types
                         </h2>
                         <div class="post-info">
-                            <time class="post-time">2019-07-18</time>
+                            <time class="post-time">2019-07-19</time>
                             
-                                <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
-                            i-tag-other_1">
-                            #读书
-                        </a>
-                                
-                                <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
-                            i-tag-primary">
-                            #react
+                                <a href="https://blog.ss1742.com/tag/5muLpDBeO" class="post-tag i-tag
+                            i-tag-error">
+                            #git
                         </a>
                                 
                         </div>
                         
                                 <div class="post-content">
-                                    <h2 id="第2章-react-组件">第2章 React 组件</h2>
-<h3 id="易于维护的设计要素">易于维护的设计要素</h3>
-<blockquote>
-<p>高内聚 把逻辑紧密相关的内容放在一个组件内<br>
-低耦合 每个组件尽量独立，依赖关系尽量弱化</p>
-</blockquote>
-<h3 id="组件的数据">组件的数据</h3>
-<p>对外用 <code>props</code>，对内用 <code>state</code></p>
-<h4 id="proptypes-检查">propTypes 检查</h4>
-<pre><code class="language-js">Person.propTypes = {
-    name: PropTypes.string.isRequired,
-    age: PropTypes.number
-}
-
-// 添加默认
-Person.defaultProps = {
-    name: ''
-}
+                                    <pre><code>feat: 新功能(feature)
+fix: 修补(bug)
+docs: 文档(documentation)
+style: 格式(不影响代码运行的变动)
+refactor: 重构(即不是新增功能，也不是修改bug的代码变动)
+test: 增加测试
+chore: 构建过程或辅助工具的变动
 </code></pre>
-<p>因为检查会消耗 <code>CPU</code> 资源，所以可以在开发的时候加上来避免一些错误，在发布的时候可以通过 <code>babel-react-optimize</code> 来去掉</p>
-<h3 id="生命周期">生命周期</h3>
-<p>本书中 <code>react</code> 版本 <code>v15.4</code> 太老，<code>v16.+</code> 部分生命周期方法废除，这一块后面总结</p>
-<h4 id="constructor">constructor</h4>
-<ol>
-<li>初始化 <code>state</code></li>
-<li>绑定成员函数的 <code>this</code> 环境</li>
-</ol>
-<p>tips</p>
-<blockquote>
-<p>this.foo = ::this.foo &lt;==&gt; this.foo = this.foo.bind(this)</p>
-</blockquote>
-<p>...</p>
 
                                 </div>
                     </article>
@@ -163,9 +134,9 @@ Person.defaultProps = {
                     
                         <div class="next-post">
                             <div class="next">下一篇</div>
-                            <a href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-1">
+                            <a href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-2">
                                 <h3 class="post-title">
-                                    《深入浅出 React 和 Redux》[1]
+                                    《深入浅出 React 和 Redux》[2]
                                 </h3>
                             </a>
                         </div>
@@ -178,60 +149,35 @@ Person.defaultProps = {
                 <!-- right -->
                 <div id="sidebar" class="main-container-right">
                     
-                        <!-- toc -->
-                        
-    <div class="toc-card i-card ">
-        <div class="toc-title i-card-title">目录</div>
-        <div class="toc-content">
-            <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E7%AC%AC2%E7%AB%A0-react-%E7%BB%84%E4%BB%B6">第2章 React 组件</a>
-<ul>
-<li><a href="#%E6%98%93%E4%BA%8E%E7%BB%B4%E6%8A%A4%E7%9A%84%E8%AE%BE%E8%AE%A1%E8%A6%81%E7%B4%A0">易于维护的设计要素</a></li>
-<li><a href="#%E7%BB%84%E4%BB%B6%E7%9A%84%E6%95%B0%E6%8D%AE">组件的数据</a>
-<ul>
-<li><a href="#proptypes-%E6%A3%80%E6%9F%A5">propTypes 检查</a></li>
-</ul>
-</li>
-<li><a href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">生命周期</a>
-<ul>
-<li><a href="#constructor">constructor</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+                                <!-- id-card -->
+                                
+    <div class="id_card i-card">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1563552177569)">
+        </div>
+        <h1 class="id_card-title">
+            1742·小博文
+        </h1>
+        <h2 class="id_card-description">
+            这是我的真博客
+        </h2>
+        <!--  -->
+        <div class="id_card-sns">
+            <!-- github -->
+            
+                <a href="https://github.com/bowenjun" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-github"></i></a>
+                
+                    <!-- twitter -->
+                    
+                            <!-- weibo -->
+                            
+                                    <!-- facebook -->
+                                    
 
         </div>
-        <script>
-            function locateCatelogList() {
-                /*获取文章目录集合,可通过:header过滤器*/
-                var alis = $('.post-content :header');
-                /*获取侧边栏目录列表集合**/
-                var sidebar_alis = $('.markdownIt-TOC a');
-                /*获取滚动条到顶部的距离*/
-                var scroll_height = $(window).scrollTop();
-                for (var i = 0; i < alis.length; i++) {
-                    /*获取锚点集合中的元素分别到顶点的距离*/
-                    var a_height = $(alis[i]).offset().top;
-                    if (a_height < scroll_height) {
-                        /*高亮显示*/
-                        sidebar_alis.removeClass('on');
-                        $(sidebar_alis[i]).addClass('on');
-                    }
-                }
-            }
-            $(function() {
-                /*绑定滚动事件 */
-                $(window).bind('scroll', locateCatelogList);
-            });
-        </script>
     </div>
     
-                            
+                                    
 
                 </div>
 

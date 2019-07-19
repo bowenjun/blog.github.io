@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563549166440">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563552177569">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1563549166440" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1563552177569" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,109 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben-de-fang-shi-you-na-xie">
+                        异步加载JS脚本的方式有哪些
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-14</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
+                            i-tag-other_4">
+            #js基础
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            
+&amp;lt;script&amp;gt; 标签中增加 async(html5) 或者 defer(html4) 属性,脚本就会异步加载。
+
+defer 和 async 的区别在于：
+defer 要等到整个页面在内存中正常渲染结束（DOM 结构完全生成，以及其他脚本执行完成），在 window.onload 之前执行；
+async 一旦下载完，渲染引擎就会中断渲染，执行这个脚本以后，再继续渲染。
+如果有多个 defer 脚本，会按照它们在页面出现的顺序加载
+多个 async 脚本不能保证加载顺序
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben-de-fang-shi-you-na-xie">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/ru-he-rang-a-1-and-a-2-and-a-3-de-zhi-wei-true">
+                        如何让 (a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3) 的值为true
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-14</time>
+                    
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            Object 转换为原始类型
+
+
+如果部署了 [Symbol.toPrimitive] 接口，那么调用此接口，若返回的不是基本数据类型，抛出错误。
+
+
+如果没有部署 [Symbol.toPrimitive] 接口，那么根据要转换的类型，先调用 valueOf / toString
+
+非Date类型对象，hint 是 default 时，调用顺序为：valueOf &amp;gt;&amp;gt;&amp;gt; toString，即 valueOf 返回的不是基本数据类型，才会继续调用 valueOf，如果 toString 返回的还不是基本数据类型，那么抛出错误。
+如果 hint 是 string(Date对象的 hint 默认是 string) ，调用顺序为：toString &amp;gt;&amp;gt;&amp;gt; valueOf，即 toString 返回的不是基本数据类型，才会继续调用 valueOf，如果 valueOf 返回的还不是基本数据类型，那么抛出错误。
+如果 hint 是 number，调用顺序为： valueOf &amp;gt;&amp;gt;&amp;gt; toString
+
+
+
+题解
+
+隐式转换
+
+// 部署 [Symbol.toPrimitive] / valueOf / toString 均可
+let a = {
+    [Symbol.toPrimitive]: (function(hint) {
+        let i = 1;
+        return function() {
+            return i++;
+        }
+    })()
+}		
+
+
+数据劫持
+
+let a = new Proxy({}, {
+    i: 1,
+    get: function() {
+        return () =&amp;gt; this.i++;
+    }
+})
+
+
+数组的 toString 接口默认调用数组的 join 方法，重写 join 方法
+
+let a = [1, 2, 3];
+a.join = a.shift;
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/ru-he-rang-a-1-and-a-2-and-a-3-de-zhi-wei-true">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/304-zhuang-tai-ma">
                         304 状态码
                     </a>
@@ -107,12 +210,12 @@
                     <time class="post-time">2019-07-13</time>
                     
                         <a href="https://blog.ss1742.com/tag/5CynFjhOR" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-primary">
             #状态码
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-error">
             #http
         </a>
                         
@@ -141,12 +244,12 @@
                     <time class="post-time">2019-07-13</time>
                     
                         <a href="https://blog.ss1742.com/tag/5CynFjhOR" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-other_3">
             #状态码
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-other_3">
             #http
         </a>
                         
@@ -178,7 +281,7 @@
                     <time class="post-time">2019-07-12</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-warning">
             #算法
         </a>
                         
@@ -216,7 +319,7 @@
                     <time class="post-time">2019-07-12</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-other_4">
             #算法
         </a>
                         
@@ -246,7 +349,7 @@
                     <time class="post-time">2019-07-11</time>
                     
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-other_1">
+                            i-tag-other_2">
             #http
         </a>
                         
@@ -283,7 +386,7 @@ HTTP/2的多路复用就是为了解决上述的两个性能问题。
                     <time class="post-time">2019-07-11</time>
                     
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-other_1">
             #http
         </a>
                         
@@ -324,7 +427,7 @@ HTTP/2的多路复用就是为了解决上述的两个性能问题。
                     <time class="post-time">2019-07-11</time>
                     
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-success">
+                            i-tag-warning">
             #http
         </a>
                         
@@ -359,7 +462,7 @@ HTTP/2的多路复用就是为了解决上述的两个性能问题。
                     <time class="post-time">2019-07-11</time>
                     
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-other_2">
             #http
         </a>
                         
@@ -386,88 +489,6 @@ HTTP/2的多路复用就是为了解决上述的两个性能问题。
                 </div>
             </article>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/https-wo-shou-guo-cheng-zhong-ke-hu-duan-ru-he-yan-zheng-zheng-shu-de-he-fa-xing">
-                        HTTPS 握手过程中，客户端如何验证证书的合法性
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-11</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-info">
-            #http
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            
-（1）首先浏览器读取证书中的证书所有者、有效期等信息进行校验，校验证书的网站域名是否与证书颁发的域名一致，校验证书是否在有效期内
-（2）浏览器开始查找操作系统中已内置的受信任的证书发布机构CA，与服务器发来的证书中的颁发者CA比对，用于校验证书是否为合法机构颁发
-（3）如果找不到，浏览器就会报错，说明服务器发来的证书是不可信任的。
-（4）如果找到，那么浏览器就会从操作系统中取出颁发者CA 的公钥(多数浏览器开发商发布
-版本时，会事先在内部植入常用认证机关的公开密钥)，然后对服务器发来的证书里面的签名进行解密
-（5）浏览器使用相同的hash算法计算出服务器发来的证书的hash值，将这个计算的hash值与证书中签名做对比
-（6）对比结果一致，则证明服务器发来的证书合法，没有被冒充
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/https-wo-shou-guo-cheng-zhong-ke-hu-duan-ru-he-yan-zheng-zheng-shu-de-he-fa-xing">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/5add3reduce2">
-                        (5).add(3).reduce(2)
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-10</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-success">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            Number.prototype.add = function(num) {
-    if (typeof num === &#39;number&#39;) {
-        return this + num;
-    }
-    return this;
-}
-Number.prototype.reduce = function(num) {
-    if (typeof num === &#39;number&#39;) {
-        return this - num;
-    }
-    return this;
-}
-
-console.log((5).add(3).reduce(2)); // 6
-
-注意
-这里使用 Number 和 Object 均可。
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/5add3reduce2">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
                 <!-- 翻页 -->
                 
     <div class="pagination-container">
@@ -488,7 +509,7 @@ console.log((5).add(3).reduce(2)); // 6
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1563549166440)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1563552177569)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

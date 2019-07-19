@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563549166440">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563552177569">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1563549166440" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1563552177569" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,88 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/https-wo-shou-guo-cheng-zhong-ke-hu-duan-ru-he-yan-zheng-zheng-shu-de-he-fa-xing">
+                        HTTPS 握手过程中，客户端如何验证证书的合法性
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-11</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
+                            i-tag-warning">
+            #http
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            
+（1）首先浏览器读取证书中的证书所有者、有效期等信息进行校验，校验证书的网站域名是否与证书颁发的域名一致，校验证书是否在有效期内
+（2）浏览器开始查找操作系统中已内置的受信任的证书发布机构CA，与服务器发来的证书中的颁发者CA比对，用于校验证书是否为合法机构颁发
+（3）如果找不到，浏览器就会报错，说明服务器发来的证书是不可信任的。
+（4）如果找到，那么浏览器就会从操作系统中取出颁发者CA 的公钥(多数浏览器开发商发布
+版本时，会事先在内部植入常用认证机关的公开密钥)，然后对服务器发来的证书里面的签名进行解密
+（5）浏览器使用相同的hash算法计算出服务器发来的证书的hash值，将这个计算的hash值与证书中签名做对比
+（6）对比结果一致，则证明服务器发来的证书合法，没有被冒充
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/https-wo-shou-guo-cheng-zhong-ke-hu-duan-ru-he-yan-zheng-zheng-shu-de-he-fa-xing">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/5add3reduce2">
+                        (5).add(3).reduce(2)
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-10</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
+                            i-tag-info">
+            #js基础
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            Number.prototype.add = function(num) {
+    if (typeof num === &#39;number&#39;) {
+        return this + num;
+    }
+    return this;
+}
+Number.prototype.reduce = function(num) {
+    if (typeof num === &#39;number&#39;) {
+        return this - num;
+    }
+    return this;
+}
+
+console.log((5).add(3).reduce(2)); // 6
+
+注意
+这里使用 Number 和 Object 均可。
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/5add3reduce2">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/han-shu-ke-li-hua-add-han-shu">
                         函数科里化( add 函数)
                     </a>
@@ -107,7 +189,7 @@
                     <time class="post-time">2019-07-10</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-banana">
+                            i-tag-error">
             #js基础
         </a>
                         
@@ -210,7 +292,7 @@ grid 教程
                     <time class="post-time">2019-07-10</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-info">
             #js基础
         </a>
                         
@@ -273,7 +355,7 @@ parseInt(&#39;3&#39;, 2) // NaN, 3 不是二进制
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1563549166440)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1563552177569)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

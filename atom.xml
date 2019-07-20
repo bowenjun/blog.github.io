@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>1742·小博文</title>
-    <updated>2019-07-19T16:03:21.901Z</updated>
+    <updated>2019-07-20T14:15:14.048Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -10,6 +10,50 @@
     <logo>https://blog.ss1742.com/images/avatar.png</logo>
     <icon>https://blog.ss1742.com/favicon.ico</icon>
     <rights>All rights reserved 2019, 1742·小博文</rights>
+    <entry>
+        <title type="html"><![CDATA[this 指向]]></title>
+        <id>https://blog.ss1742.com/post/this-zhi-xiang</id>
+        <link href="https://blog.ss1742.com/post/this-zhi-xiang">
+        </link>
+        <updated>2019-07-20T14:11:11.000Z</updated>
+        <content type="html"><![CDATA[<ul>
+<li><code>this</code>，谁调用指谁</li>
+<li>构造函数的优先级(访问权限) &gt; 原型链</li>
+<li><code>new</code> 的时候，<code>this</code> 就会指向 <code>new</code> 出来的对象</li>
+<li>箭头函数</li>
+</ul>
+<ul>
+<li>箭头函数相当于 <code>bind，会改变</code>this` 的指向</li>
+<li>箭头函数的 <code>this</code> 是他父级的 <code>this</code></li>
+<li>箭头函数把 <code>this</code> 固定到他父级的同级作用</li>
+</ul>
+<h4 id="能改变-this-指向的关键词">能改变 <code>this</code> 指向的关键词</h4>
+<ul>
+<li>
+<p>bind</p>
+</li>
+<li>
+<p>apply</p>
+</li>
+<li>
+<p>call</p>
+</li>
+<li>
+<p>一般函数 <code>this</code> 指向在执行的时候绑定</p>
+</li>
+<li>
+<p>箭头函数中的 <code>this</code> 是在定义函数的时候绑定</p>
+</li>
+<li>
+<p>严格模式</p>
+</li>
+</ul>
+<ul>
+<li>非严格模式下默认指向 <code>window</code></li>
+<li>严格模式下传 <code>null</code> 指向 <code>null</code>，不传或者传 <code>undefined</code> 都指向 <code>undefined</code>，即在严格模式下，没有写执行主体，<code>this</code> 指向是 <code>undefined</code></li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[git rebase 和 git merge 的区别]]></title>
         <id>https://blog.ss1742.com/post/git-rebase-he-git-merge-de-qu-bie</id>
@@ -290,28 +334,6 @@ let mp = new myPromise((resolve, reject) =&gt; {
 
 mp.then(res =&gt; console.log('success', res));
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[new 实现原理]]></title>
-        <id>https://blog.ss1742.com/post/new-de-shi-xian-yuan-li</id>
-        <link href="https://blog.ss1742.com/post/new-de-shi-xian-yuan-li">
-        </link>
-        <updated>2019-07-15T12:44:11.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="原理">原理</h3>
-<ol>
-<li>创建一个空对象，构造函数中的 <code>this</code> 指向这个空对象</li>
-<li>这个新对象被执行 <code>[[原型]]</code> 连接</li>
-<li>执行构造函数方法，属性和方法被添加到 <code>this</code> 引用的对象中</li>
-<li>如果构造函数中没有返回其它对象，那么返回 <code>this</code>，即创建的这个的新对象，否则，返回构造函数中返回的对象</li>
-</ol>
-<pre><code class="language-js">function _new(fn, ...arg) {
-    let obj = Object.create(fn.prototype);
-    let ret = fn.apply(obj, arg);
-    return ret instanceof Object ? ret : obj;
-}
-</code></pre>
-<p><code>Object.create()</code> 方法创建一个新对象，使用现有的对象来提供新创建的对象的 <code>__proto__</code></p>
 ]]></content>
     </entry>
 </feed>

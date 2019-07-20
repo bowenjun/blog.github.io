@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    《深入浅出 React 和 Redux》[1] | 1742·小博文
+    this 指向 | 1742·小博文
 </title>
 <link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563632111145">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -106,69 +106,50 @@
                 <div id="content" class="main-container-left">
                     <article class="post i-card">
                         <h2 class="post-title">
-                            《深入浅出 React 和 Redux》[1]
+                            this 指向
                         </h2>
                         <div class="post-info">
-                            <time class="post-time">2019-07-18</time>
+                            <time class="post-time">2019-07-20</time>
                             
-                                <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
-                            i-tag-other_3">
-                            #读书
-                        </a>
-                                
-                                <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
-                            i-tag-other_3">
-                            #react
-                        </a>
-                                
                         </div>
                         
                                 <div class="post-content">
-                                    <h2 id="第1章">第1章</h2>
-<h3 id="简介">简介</h3>
-<ul>
-<li><code>react</code> 不支持比 <code>IE8</code> 更低版本浏览器</li>
-<li>通过组件（独立可重用的代码）开发应用。基于组件的应用开发是广泛使用的软件开发模式，用 <code>分而治之</code> 的方法，把一个大的应用分解成若干小的组件，每个组件只关注于某个小范围的特定功能</li>
+                                    <ul>
+<li><code>this</code>，谁调用指谁</li>
+<li>构造函数的优先级(访问权限) &gt; 原型链</li>
+<li><code>new</code> 的时候，<code>this</code> 就会指向 <code>new</code> 出来的对象</li>
+<li>箭头函数</li>
 </ul>
-<h3 id="jsx">JSX</h3>
 <ul>
-<li><code>JSX</code>，是 <code>JavaScript</code>的语法扩展，让我们在 <code>JavaScript</code> 中可以编写像 <code>HTML</code> 一样的代码</li>
+<li>箭头函数相当于 <code>bind，会改变</code>this` 的指向</li>
+<li>箭头函数的 <code>this</code> 是他父级的 <code>this</code></li>
+<li>箭头函数把 <code>this</code> 固定到他父级的同级作用</li>
 </ul>
-<h4 id="进步还是倒退问题">进步还是倒退问题</h4>
-<blockquote>
-<p><code>JSX</code> 中的 <code>onClick</code> 和 <code>HTML</code> 中的 <code>onclick</code> 对比</p>
-</blockquote>
+<h4 id="能改变-this-指向的关键词">能改变 <code>this</code> 指向的关键词</h4>
 <ul>
 <li>
-<p><code>HTML</code> 中的 <code>onclick</code></p>
-<ol>
-<li>处理函数是在全局环境下执行的，这污染全局环境，很容易产生意料不到的效果</li>
-<li>给很多 <code>DOM</code> 添加 <code>onclick</code> 事件，可能会影响网页的性能，需要处理的事件函数越多，性能就越低</li>
-<li>使用 <code>onclick</code> 的 <code>DOM</code>，如果要动态删掉，需要把对应的时间处理器注销，否则可能造成内存写漏并且不容易追踪到 <code>bug</code></li>
-</ol>
+<p>bind</p>
 </li>
 <li>
-<p><code>JSX</code></p>
-<ol>
-<li><code>JSX</code> 组件的 <code>onClick</code>，并没有直接使用 <code>onclick</code> 的 <code>html</code>，而是使用事件委托处理点击事件，最后都只在 <code>DOM</code> 树上添加了一个事件处理函数，挂在最顶层的 <code>DOM</code> 节点上</li>
-<li><code>react</code> 中组件的生命周期，在 <code>unmount</code> 的时候自然能够清理所有相关的事件处理函数，内存泄露的问题得以解决</li>
-</ol>
+<p>apply</p>
+</li>
+<li>
+<p>call</p>
+</li>
+<li>
+<p>一般函数 <code>this</code> 指向在执行的时候绑定</p>
+</li>
+<li>
+<p>箭头函数中的 <code>this</code> 是在定义函数的时候绑定</p>
+</li>
+<li>
+<p>严格模式</p>
 </li>
 </ul>
-<h3 id="eject">eject</h3>
-<blockquote>
-<p>npm run eject</p>
-</blockquote>
-<p>&quot;弹射&quot;（暴露并修改）<code>webpack</code>、<code>package.json</code> 等配置</p>
-<h3 id="react-的工作方式">react 的工作方式</h3>
-<p><code>react</code> 的理念</p>
-<p><code>UI = render(data)</code></p>
-<h3 id="virtual-dom">Virtual DOM</h3>
-<p><code>DOM</code> 是结构化文本的抽象表达形式，特定于 <code>Web</code> 环境中</p>
-<p><code>Virtual DOM</code> 是对 <code>DOM</code> 树的抽象，只是存在于 <code>JavaScript</code> 空间的树形结构</p>
-<h3 id="tips">Tips</h3>
-<p>设计原则：做同一件事的代码应该有高耦合性。<br>
-纯函数：没有任何副作用，输出完全依赖输入的函数。</p>
+<ul>
+<li>非严格模式下默认指向 <code>window</code></li>
+<li>严格模式下传 <code>null</code> 指向 <code>null</code>，不传或者传 <code>undefined</code> 都指向 <code>undefined</code>，即在严格模式下，没有写执行主体，<code>this</code> 指向是 <code>undefined</code></li>
+</ul>
 
                                 </div>
                     </article>
@@ -176,9 +157,9 @@
                     
                         <div class="next-post">
                             <div class="next">下一篇</div>
-                            <a href="https://blog.ss1742.com/post/react-diff">
+                            <a href="https://blog.ss1742.com/post/git-rebase-he-git-merge-de-qu-bie">
                                 <h3 class="post-title">
-                                    react diff 原理浅析
+                                    git rebase 和 git merge 的区别
                                 </h3>
                             </a>
                         </div>
@@ -199,18 +180,13 @@
             <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E7%AC%AC1%E7%AB%A0">第1章</a>
+<li>
 <ul>
-<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
-<li><a href="#jsx">JSX</a>
+<li>
 <ul>
-<li><a href="#%E8%BF%9B%E6%AD%A5%E8%BF%98%E6%98%AF%E5%80%92%E9%80%80%E9%97%AE%E9%A2%98">进步还是倒退问题</a></li>
+<li><a href="#%E8%83%BD%E6%94%B9%E5%8F%98-this-%E6%8C%87%E5%90%91%E7%9A%84%E5%85%B3%E9%94%AE%E8%AF%8D">能改变 <code>this</code> 指向的关键词</a></li>
 </ul>
 </li>
-<li><a href="#eject">eject</a></li>
-<li><a href="#react-%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F">react 的工作方式</a></li>
-<li><a href="#virtual-dom">Virtual DOM</a></li>
-<li><a href="#tips">Tips</a></li>
 </ul>
 </li>
 </ul>

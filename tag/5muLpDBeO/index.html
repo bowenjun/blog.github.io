@@ -7,7 +7,7 @@
 <title>
     git | 1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563552177569">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563632111145">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1563552177569" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1563632111145" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -104,6 +104,57 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/git-rebase-he-git-merge-de-qu-bie">
+                        git rebase 和 git merge 的区别
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-19</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/5muLpDBeO" class="post-tag i-tag
+                            i-tag-other_4">
+            #git
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            
+git rebase 和 git merge 一样都是用于从一个分支获取并且合并到当前分支
+
+git merge
+
+将分支切换到 master 上去：git checkout master
+将分支 feature 合并到当前分支（即 master 分支）上：git merge feature
+
+特点
+
+只处理一次冲突
+引入了一次合并的历史记录，合并后的所有 commit 会按照提交时间从旧到新排列
+所有的过程信息更多，可能会提高之后查找问题的难度
+
+git rebase
+
+改变当前分支从 master 上拉出分支的位置
+没有多余的合并历史的记录，且合并后的 commit 顺序不一定按照 commit 的提交时间排列
+可能会多次解决同一个地方的冲突（有 squash 来解决）
+更清爽一些，master 分支上每个 commit 点都是相对独立完整的功能单元
+
+总结
+当需要保留详细的合并信息的时候建议使用 git merge，特别是需要将分支合并进入 master 分支时；当发现自己修改某个功能时，频繁进行了 git commit 提交时，发现其实过多的提交信息没有必要时，可以尝试 git rebase。
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/git-rebase-he-git-merge-de-qu-bie">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/git-ti-jiao-types">
                         git 提交 types
                     </a>
@@ -112,7 +163,7 @@
                     <time class="post-time">2019-07-19</time>
                     
                         <a href="https://blog.ss1742.com/tag/5muLpDBeO" class="post-tag i-tag
-                            i-tag-other_1">
+                            i-tag-primary">
             #git
         </a>
                         
@@ -149,7 +200,7 @@ chore: 构建过程或辅助工具的变动
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1563552177569)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1563632111145)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

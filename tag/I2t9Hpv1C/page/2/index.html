@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    css基础 | 1742·小博文
+    js基础 | 1742·小博文
 </title>
 <link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563633044341">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -98,22 +98,22 @@
                     
     <div class="i-card">
         <b>标签：#
-        css基础</b>
+        js基础</b>
     </div>
     
         
             <article class="post i-card">
                 <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/chui-zhi-shui-ping-ju-zhong">
-                        垂直水平居中
+                    <a href="https://blog.ss1742.com/post/1-2-3mapparseint">
+                        [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;].map(parseInt)
                     </a>
                 </h2>
                 <div class="post-info">
                     <time class="post-time">2019-07-10</time>
                     
-                        <a href="https://blog.ss1742.com/tag/922aBovKI" class="post-tag i-tag
-                            i-tag-info">
-            #css基础
+                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
+                            i-tag-warning">
+            #js基础
         </a>
                         
                 </div>
@@ -122,49 +122,50 @@
                             <div class="post-content">
                                 
                                         <div class="post-content-content">
-                                            &amp;lt;div class=&amp;quot;parent&amp;quot;&amp;gt;
-  &amp;lt;div class=&amp;quot;child&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
+                                            parseInt
+parseInt() 函数解析一个字符串参数，并返回一个指定基数的整数 (数学系统的基础)。
+const intValue = parseInt(string[, radix]);
 
-1
-.parent {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+注意
+在 radix 为 undefined，或者 radix 为 0 或者没有指定的情况下，JavaScript 作如下处理：
 
-flex 教程
-2
-.parent {
-    display: grid;
-}
-.child {
-    justify-self: center;
-    align-self: center;
-}
+如果字符串 string 以 &amp;quot;0x&amp;quot; 或者 &amp;quot;0X&amp;quot; 开头, 则基数是 16 (16进制).
+如果字符串 string 以 &amp;quot;0&amp;quot; 开头, 基数是 8（八进制）或者 10（十进制），那么具体是哪个基数由实现环境决定。ECMAScript 5 规定使用 10，但是并不是所有的浏览器都遵循这个规定。因此，永远都要明确给出 radix 参数的值。
+如果字符串 string 以其它任何值开头，则基数是 10 (十进制)。
 
-grid 教程
-3
-.parent {
-    position: relative;
-}
-.child {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
+map
+map 回调函数接受三个参数
+arr.map(function callback(currentValue[,index[, array]]) {
+    // Return element for new_array
+ }[, thisArg])
+
+所以问题可以转化为
+
+```js
+parseInt(&#39;1&#39;, 0) // 1
+parseInt(&#39;2&#39;, 1) // NaN
+parseInt(&#39;3&#39;, 2) // NaN, 3 不是二进制
+
+答案
+// 1 NaN NaN
 
 
                                         </div>
                                         
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/chui-zhi-shui-ping-ju-zhong">Read More ~</a>
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/1-2-3mapparseint">Read More ~</a>
                             </div>
                 </div>
             </article>
             
                 <!-- 翻页 -->
                 
+    <div class="pagination-container">
+        
+            <a href="https://blog.ss1742.com/tag/I2t9Hpv1C/" class="page-btn btn">上一页</a>
+            
+                
+    </div>
+    
                 </div>
                 <!--  -->
                 <div class="main-container-middle"></div>

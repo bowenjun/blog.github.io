@@ -7,7 +7,7 @@
 <title>
     js基础 | 1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563725875584">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563814553550">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1563725875584" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1563814553550" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -104,6 +104,76 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/shen-qian-kao-bei">
+                        深浅拷贝
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-23</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
+                            i-tag-success">
+            #js基础
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            深拷贝和浅拷贝是针对复杂数据类型来说的，浅拷贝只拷贝一层，而深拷贝是层层拷贝
+浅拷贝
+浅拷贝是会将对象的每个属性进行依次复制，但是当对象的属性值是引用类型时，实质复制的是其引用，当引用指向的值改变时也会跟着变化
+深拷贝
+深拷贝复制变量值，对于非基本类型的变量，则递归至基本类型变量后，再复制。 深拷贝后的对象与原来的对象是完全隔离的，互不影响，对一个对象的修改并不会影响另一个对象
+实现
+
+JSON.parse(JSON.stringify(obj))
+
+
+对象的属性值是函数时，无法拷贝。
+原型链上的属性无法拷贝
+不能正确的处理 Date 类型的数据
+不能处理 RegExp
+会忽略 symbol
+会忽略 undefined
+
+
+代码实现
+
+
+如果是基本数据类型，直接返回
+如果是 RegExp 或者 Date 类型，返回对应类型
+如果是复杂数据类型，递归
+考虑循环引用的问题
+
+function deepClone(obj, hash = new WeakMap()) {
+	if (obj instanceof RegExp) return new RegExp(obj);
+	if (obj instanceof Date) return new Date(obj);
+	if (obj === null || typeof obj !== &#39;object&#39;) return obj;
+	if (hash.has(obj)) {
+		return hash.get(obj);
+	}
+	let t = new obj.constructor();
+	hash.set(obj, t);
+	for (let key in obj) {
+		if (obj.hashOwnProperty(key)) {
+			t[key] = deepClone(obj[key], hash);
+		}
+	}
+}
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/shen-qian-kao-bei">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/jin-zhi-liu-lan-qi-shi-jian">
                         禁止浏览器事件
                     </a>
@@ -148,7 +218,7 @@ event.preventDefault()
                     <time class="post-time">2019-07-20</time>
                     
                         <a href="https://blog.ss1742.com/tag/1POfnEFWE" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-other_4">
             #jsonp
         </a>
                         
@@ -207,12 +277,12 @@ function jsonp({ url, params, callback }) {
                     <time class="post-time">2019-07-20</time>
                     
                         <a href="https://blog.ss1742.com/tag/ijEjqIkoA" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-warning">
             #this
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_3">
+                            i-tag-other_4">
             #js基础
         </a>
                         
@@ -284,12 +354,12 @@ call
                     <time class="post-time">2019-07-16</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-other_3">
+                            i-tag-other_2">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-other_3">
             #js基础
         </a>
                         
@@ -339,7 +409,7 @@ call
                     <time class="post-time">2019-07-16</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-banana">
             #原理
         </a>
                         
@@ -380,12 +450,12 @@ call
                     <time class="post-time">2019-07-16</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-other_4">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-other_2">
             #js基础
         </a>
                         
@@ -427,7 +497,7 @@ call
                     <time class="post-time">2019-07-15</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-">
             #原理
         </a>
                         
@@ -506,12 +576,12 @@ mp.then(res =&amp;gt; console.log(&#39;success&#39;, res));
                     <time class="post-time">2019-07-15</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-warning">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-success">
             #js基础
         </a>
                         
@@ -553,7 +623,7 @@ Object.create() 方法创建一个新对象，使用现有的对象来提供新�
                     <time class="post-time">2019-07-14</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-success">
+                            i-tag-other_1">
             #js基础
         </a>
                         
@@ -579,51 +649,6 @@ async 一旦下载完，渲染引擎就会中断渲染，执行这个脚本以�
                 </div>
             </article>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/5add3reduce2">
-                        (5).add(3).reduce(2)
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-10</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-info">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            Number.prototype.add = function(num) {
-    if (typeof num === &#39;number&#39;) {
-        return this + num;
-    }
-    return this;
-}
-Number.prototype.reduce = function(num) {
-    if (typeof num === &#39;number&#39;) {
-        return this - num;
-    }
-    return this;
-}
-
-console.log((5).add(3).reduce(2)); // 6
-
-注意
-这里使用 Number 和 Object 均可。
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/5add3reduce2">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
                 <!-- 翻页 -->
                 
     <div class="pagination-container">
@@ -642,7 +667,7 @@ console.log((5).add(3).reduce(2)); // 6
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1563725875584)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1563814553550)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

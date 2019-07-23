@@ -7,7 +7,7 @@
 <title>
     深浅拷贝 | 1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563894489011">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563895925972">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -35,7 +35,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1563894489011" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1563895925972" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -145,21 +145,29 @@
 <li>如果是复杂数据类型，递归</li>
 <li>考虑循环引用的问题</li>
 </ul>
-<pre><code>function deepClone(obj, hash = new WeakMap()) {
-	if (obj instanceof RegExp) return new RegExp(obj);
-	if (obj instanceof Date) return new Date(obj);
-	if (obj === null || typeof obj !== 'object') return obj;
-	if (hash.has(obj)) {
-		return hash.get(obj);
-	}
-	let t = new obj.constructor();
-	hash.set(obj, t);
-	for (let key in obj) {
-		if (obj.hashOwnProperty(key)) {
-			t[key] = deepClone(obj[key], hash);
+<pre><code>function copy(obj, hash = new WeakMap()) {
+		if (obj instanceof RegExp) return new RegExp(obj);
+		if (obj instanceof Date) return new Date(date);
+		if (obj === null || typeof obj !== 'object') return obj;
+
+		// 循环引用
+		if (hash.has(obj)) {
+			return hash.get(obj);
 		}
+
+		// 获取到 {} || []
+		let t = new obj.constructor();
+		hash.set(obj, t);
+		
+		// 遍历递归
+		for (let key in obj) {
+			if (obj.hasOwnProperty(key)) {
+				t[key] = copy(obj[key], hash);
+			}
+		}
+		
+		return t;
 	}
-}
 </code></pre>
 
                                 </div>

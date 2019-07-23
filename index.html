@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563894489011">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563895925972">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1563894489011" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1563895925972" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -107,7 +107,7 @@
                     <time class="post-time">2019-07-23</time>
                     
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-banana">
             #http
         </a>
                         
@@ -170,7 +170,7 @@ text/xml
                     <time class="post-time">2019-07-23</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_1">
+                            i-tag-error">
             #js基础
         </a>
                         
@@ -206,21 +206,29 @@ JSON.parse(JSON.stringify(obj))
 如果是复杂数据类型，递归
 考虑循环引用的问题
 
-function deepClone(obj, hash = new WeakMap()) {
-	if (obj instanceof RegExp) return new RegExp(obj);
-	if (obj instanceof Date) return new Date(obj);
-	if (obj === null || typeof obj !== &#39;object&#39;) return obj;
-	if (hash.has(obj)) {
-		return hash.get(obj);
-	}
-	let t = new obj.constructor();
-	hash.set(obj, t);
-	for (let key in obj) {
-		if (obj.hashOwnProperty(key)) {
-			t[key] = deepClone(obj[key], hash);
+function copy(obj, hash = new WeakMap()) {
+		if (obj instanceof RegExp) return new RegExp(obj);
+		if (obj instanceof Date) return new Date(date);
+		if (obj === null || typeof obj !== &#39;object&#39;) return obj;
+
+		// 循环引用
+		if (hash.has(obj)) {
+			return hash.get(obj);
 		}
+
+		// 获取到 {} || []
+		let t = new obj.constructor();
+		hash.set(obj, t);
+		
+		// 遍历递归
+		for (let key in obj) {
+			if (obj.hasOwnProperty(key)) {
+				t[key] = copy(obj[key], hash);
+			}
+		}
+		
+		return t;
 	}
-}
 
 
                                         </div>
@@ -240,7 +248,7 @@ function deepClone(obj, hash = new WeakMap()) {
                     <time class="post-time">2019-07-22</time>
                     
                         <a href="https://blog.ss1742.com/tag/922aBovKI" class="post-tag i-tag
-                            i-tag-banana">
+                            i-tag-info">
             #css基础
         </a>
                         
@@ -274,7 +282,7 @@ a:active
                     <time class="post-time">2019-07-22</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-other_3">
             #js基础
         </a>
                         
@@ -310,12 +318,12 @@ event.preventDefault()
                     <time class="post-time">2019-07-20</time>
                     
                         <a href="https://blog.ss1742.com/tag/1POfnEFWE" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-">
             #jsonp
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_3">
+                            i-tag-other_1">
             #js基础
         </a>
                         
@@ -369,12 +377,12 @@ function jsonp({ url, params, callback }) {
                     <time class="post-time">2019-07-20</time>
                     
                         <a href="https://blog.ss1742.com/tag/ijEjqIkoA" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-other_1">
             #this
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-other_4">
             #js基础
         </a>
                         
@@ -446,7 +454,7 @@ call
                     <time class="post-time">2019-07-19</time>
                     
                         <a href="https://blog.ss1742.com/tag/5muLpDBeO" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-other_4">
             #git
         </a>
                         
@@ -497,7 +505,7 @@ git rebase
                     <time class="post-time">2019-07-19</time>
                     
                         <a href="https://blog.ss1742.com/tag/5muLpDBeO" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-other_1">
             #git
         </a>
                         
@@ -533,12 +541,12 @@ chore: 构建过程或辅助工具的变动
                     <time class="post-time">2019-07-18</time>
                     
                         <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
-                            i-tag-other_3">
+                            i-tag-primary">
             #读书
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-warning">
             #react
         </a>
                         
@@ -598,12 +606,12 @@ this.foo = ::this.foo &amp;lt;==&amp;gt; this.foo = this.foo.bind(this)
                     <time class="post-time">2019-07-18</time>
                     
                         <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
-                            i-tag-other_1">
+                            i-tag-other_3">
             #读书
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-success">
             #react
         </a>
                         
@@ -684,7 +692,7 @@ Tips
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1563894489011)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1563895925972)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

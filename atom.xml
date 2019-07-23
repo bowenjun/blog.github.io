@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>1742·小博文</title>
-    <updated>2019-07-23T15:08:12.112Z</updated>
+    <updated>2019-07-23T15:57:35.596Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -85,21 +85,29 @@ Content-Type: text/plain
 <li>如果是复杂数据类型，递归</li>
 <li>考虑循环引用的问题</li>
 </ul>
-<pre><code>function deepClone(obj, hash = new WeakMap()) {
-	if (obj instanceof RegExp) return new RegExp(obj);
-	if (obj instanceof Date) return new Date(obj);
-	if (obj === null || typeof obj !== 'object') return obj;
-	if (hash.has(obj)) {
-		return hash.get(obj);
-	}
-	let t = new obj.constructor();
-	hash.set(obj, t);
-	for (let key in obj) {
-		if (obj.hashOwnProperty(key)) {
-			t[key] = deepClone(obj[key], hash);
+<pre><code>function copy(obj, hash = new WeakMap()) {
+		if (obj instanceof RegExp) return new RegExp(obj);
+		if (obj instanceof Date) return new Date(date);
+		if (obj === null || typeof obj !== 'object') return obj;
+
+		// 循环引用
+		if (hash.has(obj)) {
+			return hash.get(obj);
 		}
+
+		// 获取到 {} || []
+		let t = new obj.constructor();
+		hash.set(obj, t);
+		
+		// 遍历递归
+		for (let key in obj) {
+			if (obj.hasOwnProperty(key)) {
+				t[key] = copy(obj[key], hash);
+			}
+		}
+		
+		return t;
 	}
-}
 </code></pre>
 ]]></content>
     </entry>

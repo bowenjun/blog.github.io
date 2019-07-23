@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>1742·小博文</title>
-    <updated>2019-07-22T16:56:24.394Z</updated>
+    <updated>2019-07-23T15:07:40.456Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -10,6 +10,49 @@
     <logo>https://blog.ss1742.com/images/avatar.png</logo>
     <icon>https://blog.ss1742.com/favicon.ico</icon>
     <rights>All rights reserved 2019, 1742·小博文</rights>
+    <entry>
+        <title type="html"><![CDATA[http content-type]]></title>
+        <id>https://blog.ss1742.com/post/http-content-type</id>
+        <link href="https://blog.ss1742.com/post/http-content-type">
+        </link>
+        <updated>2019-07-23T14:44:06.000Z</updated>
+        <content type="html"><![CDATA[<p><code>content-type</code> 是 <code>http</code> 实体首部字段，用来说明请求或返回的消息主体是用何种方式编码，在 <code>request header</code> 和 <code>response header</code> 中都存在</p>
+<h3 id="类型">类型</h3>
+<h4 id="applicationx-www-form-urlencoded">application/x-www-form-urlencoded</h4>
+<p>浏览器原生 <code>form</code> 表单<br>
+提交数据按照 key1=val1&amp;key2=val2的方式进行编码，<code>key</code> 和 <code>value</code> 都进行了 <code>url</code> 转码</p>
+<pre><code>POST [http://www.example.com](http://www.example.com) HTTP/1.1 
+Content-Type: application/x-[www-form-urlencoded](http://www-form-urlencoded);charset=utf-8 
+
+title=test&amp;sub%5B%5D=1&amp;sub%5B%5D=2&amp;sub%5B%5D=3 
+</code></pre>
+<h4 id="multipartform-data">multipart/form-data</h4>
+<p>常见的 <code>post</code> 数据提交方式，上传文件必须设置 <code>enctype=&quot;multipart/form-data&quot;</code></p>
+<pre><code>POST /foo HTTP/1.1
+Content-Length: 68137
+Content-Type: multipart/form-data; boundary=---------------------------974767299852498929531610575
+
+---------------------------974767299852498929531610575
+Content-Disposition: form-data; name=&quot;description&quot;
+
+some text
+---------------------------974767299852498929531610575
+Content-Disposition: form-data; name=&quot;myFile&quot;; filename=&quot;foo.txt&quot;
+Content-Type: text/plain
+
+(content of the uploaded file foo.txt)
+---------------------------974767299852498929531610575--
+</code></pre>
+<ol>
+<li>首先生成 <code>boundary</code> 分割不同字段，避免与正文重复</li>
+<li>消息主体按照字段分成多个部分，每个部分以 <code>--boundary</code> 开始，消息主体再以 <code>--boundary--</code> 结束</li>
+</ol>
+<h4 id="applicationjson">application/json</h4>
+<p>消息主体是序列化的 <code>JSON</code> 字符串</p>
+<h4 id="textxml">text/xml</h4>
+<p>使用 <code>HTTP</code> 作为传输协议，<code>XML</code> 作为编码方式</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[深浅拷贝]]></title>
         <id>https://blog.ss1742.com/post/shen-qian-kao-bei</id>
@@ -314,26 +357,6 @@ Person.defaultProps = {
 <h3 id="tips">Tips</h3>
 <p>设计原则：做同一件事的代码应该有高耦合性。<br>
 纯函数：没有任何副作用，输出完全依赖输入的函数。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[react diff 原理浅析]]></title>
-        <id>https://blog.ss1742.com/post/react-diff</id>
-        <link href="https://blog.ss1742.com/post/react-diff">
-        </link>
-        <updated>2019-07-16T16:00:00.000Z</updated>
-        <content type="html"><![CDATA[<p><code>React</code> 通过制定大胆的 <code>diff</code> 策略，将 <code>O(n3)</code> 复杂度的问题转换成 <code>O(n)</code> 复杂度的问题；<br>
-<code>React</code> 是如何将 <code>O(n3)</code> 复杂度的问题转换成 <code>O(n)</code> 的？</p>
-<ul>
-<li>只进行同级比较</li>
-<li>不同类的 <code>React</code> 组件会被当做完全不同的 <code>DOM</code> 结构而被完全替换</li>
-<li><code>key prop</code>：开发人员可以通过给 <code>Virtual DOM</code> 一个唯一的 <code>key</code> 属性暗示 <code>React</code> 这是同一个 <code>DOM</code> 结构，反之若 <code>key</code> 值不同则会被当做完全不同的 <code>DOM</code> 结构。</li>
-</ul>
-<p><code>React</code> 通过分层求异的策略，对 <code>tree diff</code> 进行算法优化；<br>
-<code>React</code> 通过相同类生成相似树形结构，不同类生成不同树形结构的策略，对 <code>component diff</code> 进行算法优化。<br>
-<code>React</code> 通过设置唯一 <code>key</code> 的策略，对 <code>element diff</code> 进行算法优化；</p>
-<p>建议，在开发组件时，保持稳定的 <code>DOM</code> 结构会有助于性能的提升；<br>
-建议，在开发过程中，尽量减少类似将最后一个节点移动到列表首部的操作，当节点数量过大或更新操作过于频繁时，在一定程度上会影响 <code>React</code> 的渲染性能。</p>
 ]]></content>
     </entry>
 </feed>

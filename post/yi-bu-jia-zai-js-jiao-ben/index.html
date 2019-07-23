@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    函数科里化( add 函数) | 1742·小博文
+    异步加载 js 脚本 | 1742·小博文
 </title>
 <link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563898176957">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -106,33 +106,31 @@
                 <div id="content" class="main-container-left">
                     <article class="post i-card">
                         <h2 class="post-title">
-                            函数科里化( add 函数)
+                            异步加载 js 脚本
                         </h2>
                         <div class="post-info">
-                            <time class="post-time">2019-07-10</time>
+                            <time class="post-time">2019-07-24</time>
                             
                                 <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-success">
+                            i-tag-warning">
                             #js基础
                         </a>
                                 
                         </div>
                         
                                 <div class="post-content">
-                                    <pre><code class="language-js">function add() {
-    let args = [].slice.call(arguments);
-    let sum = function() {
-        let arg = [].slice.call(arguments);
-        return add.apply(null, [...args, ...arg]);
-    }
-    sum.toString = function() {
-        return args.reduce((a, b) =&gt; a + b);
-    }
-    return sum;
-}
-
-console.log(add(2, 3)(4)(5)()(1)); // 15
-</code></pre>
+                                    <p><code>script</code> 中加入 <code>async(html5)</code> 或者 <code>defer(html4)</code> 属性，脚本会异步加载。</p>
+<h3 id="区别">区别</h3>
+<h4 id="defer">defer</h4>
+<ol>
+<li><code>defer</code> 要等到页面在内存中正常渲染结束，在 <code>window.onload</code> 之前执行</li>
+<li>如果有多个 <code>defer</code>，会按照在页面的出现顺序加载</li>
+</ol>
+<h4 id="async">async</h4>
+<ol>
+<li><code>async</code> 一旦下载完，渲染引擎就会中断渲染，执行这个脚本，再继续渲染</li>
+<li>多个 <code>async</code> 不能保证顺序</li>
+</ol>
 
                                 </div>
                     </article>
@@ -140,9 +138,9 @@ console.log(add(2, 3)(4)(5)()(1)); // 15
                     
                         <div class="next-post">
                             <div class="next">下一篇</div>
-                            <a href="https://blog.ss1742.com/post/chui-zhi-shui-ping-ju-zhong">
+                            <a href="https://blog.ss1742.com/post/http-content-type">
                                 <h3 class="post-title">
-                                    垂直水平居中
+                                    http content-type
                                 </h3>
                             </a>
                         </div>
@@ -155,35 +153,55 @@ console.log(add(2, 3)(4)(5)()(1)); // 15
                 <!-- right -->
                 <div id="sidebar" class="main-container-right">
                     
-                                <!-- id-card -->
-                                
-    <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1563898176957)">
-        </div>
-        <h1 class="id_card-title">
-            1742·小博文
-        </h1>
-        <h2 class="id_card-description">
-            这是我的真博客
-        </h2>
-        <!--  -->
-        <div class="id_card-sns">
-            <!-- github -->
-            
-                <a href="https://github.com/bowenjun" target="_blank" rel="noopener noreferrer"><i
-                class="fa fa-github"></i></a>
-                
-                    <!-- twitter -->
-                    
-                            <!-- weibo -->
-                            
-                                    <!-- facebook -->
-                                    
+                        <!-- toc -->
+                        
+    <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+        <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E5%8C%BA%E5%88%AB">区别</a>
+<ul>
+<li><a href="#defer">defer</a></li>
+<li><a href="#async">async</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
         </div>
+        <script>
+            function locateCatelogList() {
+                /*获取文章目录集合,可通过:header过滤器*/
+                var alis = $('.post-content :header');
+                /*获取侧边栏目录列表集合**/
+                var sidebar_alis = $('.markdownIt-TOC a');
+                /*获取滚动条到顶部的距离*/
+                var scroll_height = $(window).scrollTop();
+                for (var i = 0; i < alis.length; i++) {
+                    /*获取锚点集合中的元素分别到顶点的距离*/
+                    var a_height = $(alis[i]).offset().top;
+                    if (a_height < scroll_height) {
+                        /*高亮显示*/
+                        sidebar_alis.removeClass('on');
+                        $(sidebar_alis[i]).addClass('on');
+                    }
+                }
+            }
+            $(function() {
+                /*绑定滚动事件 */
+                $(window).bind('scroll', locateCatelogList);
+            });
+        </script>
     </div>
     
-                                    
+                            
 
                 </div>
 

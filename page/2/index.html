@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563895925972">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1563898176957">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1563895925972" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1563898176957" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,84 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-1">
+                        《深入浅出 React 和 Redux》[1]
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-18</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
+                            i-tag-other_2">
+            #读书
+        </a>
+                        
+                        <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
+                            i-tag-other_3">
+            #react
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            第1章
+简介
+
+react 不支持比 IE8 更低版本浏览器
+通过组件（独立可重用的代码）开发应用。基于组件的应用开发是广泛使用的软件开发模式，用 分而治之 的方法，把一个大的应用分解成若干小的组件，每个组件只关注于某个小范围的特定功能
+
+JSX
+
+JSX，是 JavaScript的语法扩展，让我们在 JavaScript 中可以编写像 HTML 一样的代码
+
+进步还是倒退问题
+
+JSX 中的 onClick 和 HTML 中的 onclick 对比
+
+
+
+HTML 中的 onclick
+
+处理函数是在全局环境下执行的，这污染全局环境，很容易产生意料不到的效果
+给很多 DOM 添加 onclick 事件，可能会影响网页的性能，需要处理的事件函数越多，性能就越低
+使用 onclick 的 DOM，如果要动态删掉，需要把对应的时间处理器注销，否则可能造成内存写漏并且不容易追踪到 bug
+
+
+
+JSX
+
+JSX 组件的 onClick，并没有直接使用 onclick 的 html，而是使用事件委托处理点击事件，最后都只在 DOM 树上添加了一个事件处理函数，挂在最顶层的 DOM 节点上
+react 中组件的生命周期，在 unmount 的时候自然能够清理所有相关的事件处理函数，内存泄露的问题得以解决
+
+
+
+eject
+
+npm run eject
+
+&amp;quot;弹射&amp;quot;（暴露并修改）webpack、package.json 等配置
+react 的工作方式
+react 的理念
+UI = render(data)
+Virtual DOM
+DOM 是结构化文本的抽象表达形式，特定于 Web 环境中
+Virtual DOM 是对 DOM 树的抽象，只是存在于 JavaScript 空间的树形结构
+Tips
+设计原则：做同一件事的代码应该有高耦合性。
+纯函数：没有任何副作用，输出完全依赖输入的函数。
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-1">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/react-diff">
                         react diff 原理浅析
                     </a>
@@ -107,12 +185,12 @@
                     <time class="post-time">2019-07-17</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-other_1">
+                            i-tag-">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-other_3">
             #react
         </a>
                         
@@ -152,12 +230,12 @@ React 通过设置唯一 key 的策略，对 element diff 进行算法优化；
                     <time class="post-time">2019-07-16</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-other_2">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-success">
+                            i-tag-">
             #js基础
         </a>
                         
@@ -207,12 +285,12 @@ React 通过设置唯一 key 的策略，对 element diff 进行算法优化；
                     <time class="post-time">2019-07-16</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-other_3">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-other_3">
             #js基础
         </a>
                         
@@ -248,12 +326,12 @@ React 通过设置唯一 key 的策略，对 element diff 进行算法优化；
                     <time class="post-time">2019-07-16</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-success">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-success">
+                            i-tag-other_2">
             #js基础
         </a>
                         
@@ -295,12 +373,12 @@ React 通过设置唯一 key 的策略，对 element diff 进行算法优化；
                     <time class="post-time">2019-07-15</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-other_1">
+                            i-tag-warning">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-success">
+                            i-tag-warning">
             #js基础
         </a>
                         
@@ -374,7 +452,7 @@ mp.then(res =&amp;gt; console.log(&#39;success&#39;, res));
                     <time class="post-time">2019-07-15</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-success">
+                            i-tag-other_2">
             #原理
         </a>
                         
@@ -421,7 +499,7 @@ Object.create() 方法创建一个新对象，使用现有的对象来提供新�
                     <time class="post-time">2019-07-14</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-info">
             #js基础
         </a>
                         
@@ -524,7 +602,7 @@ a.join = a.shift;
                     <time class="post-time">2019-07-13</time>
                     
                         <a href="https://blog.ss1742.com/tag/5CynFjhOR" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-primary">
             #状态码
         </a>
                         
@@ -544,43 +622,6 @@ a.join = a.shift;
                                         </div>
                                         
                                             <a class="btn btn-text" href="https://blog.ss1742.com/post/304-zhuang-tai-ma">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/302-zen-me-shi-xian-de">
-                        302 怎么实现的
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-13</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/5CynFjhOR" class="post-tag i-tag
-                            i-tag-info">
-            #状态码
-        </a>
-                        
-                        <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-info">
-            #http
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            301，302 都是 HTTP 状态的编码，都代表着某个 URL 发生了转移，不同之处在于：
-　　301 redirect: 301 代表永久性转移(Permanently Moved)。
-　　302 redirect: 302 代表暂时性转移(Temporarily Moved )。
-其实 301、302 的重定向都是通过对 http协议 的 location 的修改来实现的
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/302-zen-me-shi-xian-de">Read More ~</a>
                             </div>
                 </div>
             </article>
@@ -605,7 +646,7 @@ a.join = a.shift;
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1563895925972)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1563898176957)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

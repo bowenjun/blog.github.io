@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>1742·小博文</title>
-    <updated>2019-07-24T02:33:08.771Z</updated>
+    <updated>2019-07-24T14:21:41.436Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -10,6 +10,22 @@
     <logo>https://blog.ss1742.com/images/avatar.png</logo>
     <icon>https://blog.ss1742.com/favicon.ico</icon>
     <rights>All rights reserved 2019, 1742·小博文</rights>
+    <entry>
+        <title type="html"><![CDATA[前端管理]]></title>
+        <id>https://blog.ss1742.com/post/qian-duan-guan-li</id>
+        <link href="https://blog.ss1742.com/post/qian-duan-guan-li">
+        </link>
+        <updated>2019-07-24T14:00:55.000Z</updated>
+        <content type="html"><![CDATA[<p>管理上你强调什么就会得到什么</p>
+<ol>
+<li>员工对业务的熟悉度，员工常处于救火队员状态在不同业务中流转，对提测质量是无益的，此处需要团队和业务的对接保持相对的固定</li>
+<li>员工的能力和态度对产出质量有直接影响，此处对应的可采取提测 bug 数、reopen 数作为绩效参考指标之一，不同团队内部定期的进行 codereview 并进一步共识最佳实践，产出业务对应的自测 checklist，这部分有能力的可以结合自动化测试进行去人肉回归</li>
+<li>认知模型的植入，提升员工对自测的重视并规范到日常行为</li>
+<li>正面标杆的树立，质量存在明显问题的员工一对一研究和辅导</li>
+<li>（非常规方式）必要的人员优化</li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[浏览器内核]]></title>
         <id>https://blog.ss1742.com/post/liu-lan-qi-nei-he</id>
@@ -293,37 +309,6 @@ a:active</p>
 <li>非严格模式下默认指向 <code>window</code></li>
 <li>严格模式下传 <code>null</code> 指向 <code>null</code>，不传或者传 <code>undefined</code> 都指向 <code>undefined</code>，即在严格模式下，没有写执行主体，<code>this</code> 指向是 <code>undefined</code></li>
 </ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[git rebase 和 git merge 的区别]]></title>
-        <id>https://blog.ss1742.com/post/git-rebase-he-git-merge-de-qu-bie</id>
-        <link href="https://blog.ss1742.com/post/git-rebase-he-git-merge-de-qu-bie">
-        </link>
-        <updated>2019-07-19T15:26:10.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p><code>git rebase</code> 和 <code>git merge</code> 一样都是用于从一个分支获取并且合并到当前分支</p>
-</blockquote>
-<h3 id="git-merge">git merge</h3>
-<ul>
-<li>将分支切换到 <code>master</code> 上去：<code>git checkout master</code></li>
-<li>将分支 <code>feature</code> 合并到当前分支（即 <code>master</code> 分支）上：<code>git merge feature</code></li>
-</ul>
-<p>特点</p>
-<ul>
-<li>只处理一次冲突</li>
-<li>引入了一次合并的历史记录，合并后的所有 <code>commit</code> 会按照提交时间从旧到新排列</li>
-<li>所有的过程信息更多，可能会提高之后查找问题的难度</li>
-</ul>
-<h3 id="git-rebase">git rebase</h3>
-<ul>
-<li>改变当前分支从 <code>master</code> 上拉出分支的位置</li>
-<li>没有多余的合并历史的记录，且合并后的 <code>commit</code> 顺序不一定按照 <code>commit</code> 的提交时间排列</li>
-<li>可能会多次解决同一个地方的冲突（有 <code>squash</code> 来解决）</li>
-<li>更清爽一些，<code>master</code> 分支上每个 <code>commit</code> 点都是相对独立完整的功能单元</li>
-</ul>
-<h3 id="总结">总结</h3>
-<p>当需要保留详细的合并信息的时候建议使用 <code>git merge</code>，特别是需要将分支合并进入 <code>master</code> 分支时；当发现自己修改某个功能时，频繁进行了 <code>git commit</code> 提交时，发现其实过多的提交信息没有必要时，可以尝试 <code>git rebase</code>。</p>
 ]]></content>
     </entry>
 </feed>

@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564021162880">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564074563365">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564021162880" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564074563365" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -97,6 +97,89 @@
                 <div id="content" class="main-container-left">
                     
         
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/new-de-shi-xian-yuan-li">
+                        new 实现原理
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-15</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
+                            i-tag-info">
+            #原理
+        </a>
+                        
+                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
+                            i-tag-other_3">
+            #js基础
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            原理
+
+创建一个空对象，构造函数中的 this 指向这个空对象
+这个新对象被执行 [[原型]] 连接
+执行构造函数方法，属性和方法被添加到 this 引用的对象中
+如果构造函数中没有返回其它对象，那么返回 this，即创建的这个的新对象，否则，返回构造函数中返回的对象
+
+function _new(fn, ...arg) {
+    let obj = Object.create(fn.prototype);
+    let ret = fn.apply(obj, arg);
+    return ret instanceof Object ? ret : obj;
+}
+
+Object.create() 方法创建一个新对象，使用现有的对象来提供新创建的对象的 __proto__
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/new-de-shi-xian-yuan-li">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben-de-fang-shi-you-na-xie">
+                        异步加载JS脚本的方式有哪些
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-14</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
+                            i-tag-warning">
+            #js基础
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            
+&amp;lt;script&amp;gt; 标签中增加 async(html5) 或者 defer(html4) 属性,脚本就会异步加载。
+
+defer 和 async 的区别在于：
+defer 要等到整个页面在内存中正常渲染结束（DOM 结构完全生成，以及其他脚本执行完成），在 window.onload 之前执行；
+async 一旦下载完，渲染引擎就会中断渲染，执行这个脚本以后，再继续渲染。
+如果有多个 defer 脚本，会按照它们在页面出现的顺序加载
+多个 async 脚本不能保证加载顺序
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben-de-fang-shi-you-na-xie">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
             <article class="post i-card">
                 <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/ru-he-rang-a-1-and-a-2-and-a-3-de-zhi-wei-true">
@@ -174,7 +257,7 @@ a.join = a.shift;
                     <time class="post-time">2019-07-13</time>
                     
                         <a href="https://blog.ss1742.com/tag/5CynFjhOR" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-banana">
             #状态码
         </a>
                         
@@ -213,7 +296,7 @@ a.join = a.shift;
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-error">
             #http
         </a>
                         
@@ -245,7 +328,7 @@ a.join = a.shift;
                     <time class="post-time">2019-07-12</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-banana">
+                            i-tag-other_2">
             #算法
         </a>
                         
@@ -283,7 +366,7 @@ a.join = a.shift;
                     <time class="post-time">2019-07-12</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-other_3">
             #算法
         </a>
                         
@@ -313,7 +396,7 @@ a.join = a.shift;
                     <time class="post-time">2019-07-11</time>
                     
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-other_1">
             #http
         </a>
                         
@@ -350,7 +433,7 @@ HTTP/2的多路复用就是为了解决上述的两个性能问题。
                     <time class="post-time">2019-07-11</time>
                     
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-other_3">
             #http
         </a>
                         
@@ -391,7 +474,7 @@ HTTP/2的多路复用就是为了解决上述的两个性能问题。
                     <time class="post-time">2019-07-11</time>
                     
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-primary">
             #http
         </a>
                         
@@ -416,80 +499,6 @@ HTTP/2的多路复用就是为了解决上述的两个性能问题。
                 </div>
             </article>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/tcp-san-ci-wo-shou-si-ci-hui-shou">
-                        TCP三次握手四次挥手
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-11</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-warning">
-            #http
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            三次握手
-
-1、客户端发送 syn 包到服务器，等待服务器确认接收。
-2、服务器确认接收 syn 包并确认客户的 syn ，并发送回来一个 syn+ack 的包给客户端。
-3、客户端确认接收服务器的 syn+ack 包，并向服务器发送确认包 ack ，二者相互建立联系后，完成 tcp 三次握手。
-
-四次挥手
-四次握手就是三次握手中间多了一层 等待服务器再一次响应回复相关数据 的过程。
-由于 TCP 连接是全双工的，因此每个方向都必须单独进行关闭，所以即使没有最后一个包，也需要先回复断开连接的请求，然后再发送关闭请求。
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/tcp-san-ci-wo-shou-si-ci-hui-shou">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/https-wo-shou-guo-cheng-zhong-ke-hu-duan-ru-he-yan-zheng-zheng-shu-de-he-fa-xing">
-                        HTTPS 握手过程中，客户端如何验证证书的合法性
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-11</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-other_3">
-            #http
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            
-（1）首先浏览器读取证书中的证书所有者、有效期等信息进行校验，校验证书的网站域名是否与证书颁发的域名一致，校验证书是否在有效期内
-（2）浏览器开始查找操作系统中已内置的受信任的证书发布机构CA，与服务器发来的证书中的颁发者CA比对，用于校验证书是否为合法机构颁发
-（3）如果找不到，浏览器就会报错，说明服务器发来的证书是不可信任的。
-（4）如果找到，那么浏览器就会从操作系统中取出颁发者CA 的公钥(多数浏览器开发商发布
-版本时，会事先在内部植入常用认证机关的公开密钥)，然后对服务器发来的证书里面的签名进行解密
-（5）浏览器使用相同的hash算法计算出服务器发来的证书的hash值，将这个计算的hash值与证书中签名做对比
-（6）对比结果一致，则证明服务器发来的证书合法，没有被冒充
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/https-wo-shou-guo-cheng-zhong-ke-hu-duan-ru-he-yan-zheng-zheng-shu-de-he-fa-xing">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
                 <!-- 翻页 -->
                 
     <div class="pagination-container">
@@ -510,7 +519,7 @@ HTTP/2的多路复用就是为了解决上述的两个性能问题。
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564021162880)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564074563365)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

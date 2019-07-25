@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>1742·小博文</title>
-    <updated>2019-07-24T14:21:41.436Z</updated>
+    <updated>2019-07-25T02:19:24.858Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -18,10 +18,10 @@
         <updated>2019-07-24T14:00:55.000Z</updated>
         <content type="html"><![CDATA[<p>管理上你强调什么就会得到什么</p>
 <ol>
-<li>员工对业务的熟悉度，员工常处于救火队员状态在不同业务中流转，对提测质量是无益的，此处需要团队和业务的对接保持相对的固定</li>
-<li>员工的能力和态度对产出质量有直接影响，此处对应的可采取提测 bug 数、reopen 数作为绩效参考指标之一，不同团队内部定期的进行 codereview 并进一步共识最佳实践，产出业务对应的自测 checklist，这部分有能力的可以结合自动化测试进行去人肉回归</li>
-<li>认知模型的植入，提升员工对自测的重视并规范到日常行为</li>
-<li>正面标杆的树立，质量存在明显问题的员工一对一研究和辅导</li>
+<li>因成员存在对业务的熟悉度，常处于救火队员状态在不同业务中流转，对提测质量是无益的，此处需要团队和业务的对接保持相对的固定</li>
+<li>成员的能力和态度对产出质量有直接影响，此处对应的可采取提测 bug 数、reopen 数作为绩效参考指标之一，不同团队内部定期的进行 codereview 并进一步共识最佳实践，产出业务对应的自测 checklist，这部分有能力的可以结合自动化测试进行去人肉回归</li>
+<li>认知模型的植入，提升成员对自测的重视并规范到日常行为</li>
+<li>正面标杆的树立，质量存在明显问题的成员一对一研究和辅导</li>
 <li>（非常规方式）必要的人员优化</li>
 </ol>
 ]]></content>

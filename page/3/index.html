@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564074563365">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564159343611">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564074563365" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564159343611" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,173 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/promisefinally-shi-xian-yuan-li">
+                        Promise.finally 实现原理
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-16</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
+                            i-tag-other_3">
+            #原理
+        </a>
+                        
+                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
+                            i-tag-banana">
+            #js基础
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            Promise.prototype.finally = function(callback) {
+    let P = this.constructor;
+    return this.then(
+        value  =&amp;gt; P.resolve(callback()).then(() =&amp;gt; value),
+        reason =&amp;gt; P.resolve(callback()).then(() =&amp;gt; { throw reason })
+    );
+};
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/promisefinally-shi-xian-yuan-li">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/promiserace-shi-xian-yuan-li">
+                        Promise.race 实现原理
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-16</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
+                            i-tag-banana">
+            #原理
+        </a>
+                        
+                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
+                            i-tag-other_2">
+            #js基础
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            Promise.prototype.race = function(promises) {
+    return new Promise((resolve, reject) =&amp;gt; {
+        if (!isArray(promises)) {
+            return reject(new TypeError(&#39;Arguments not Array&#39;));
+        }
+        for (let p of promises) {
+            Promise.resolve(p).then(
+                res =&amp;gt; resolve(res), 
+                rej =&amp;gt; reject(rej)
+            )
+        }
+    })
+}
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/promiserace-shi-xian-yuan-li">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/promise-shi-xian-yuan-li">
+                        Promise 实现原理
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-15</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
+                            i-tag-primary">
+            #原理
+        </a>
+                        
+                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
+                            i-tag-other_1">
+            #js基础
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            function myPromise(exe) {
+    let self = this;
+    self.status = &#39;pending&#39;;
+    self.value = null;
+    self.reason = null;
+    self.onResolveCbk = [];
+    self.onRejectCbk = [];
+    function resolve(value) {
+        if (self.status === &#39;pending&#39;) {
+            self.value = value;
+            self.status = &#39;resolved&#39;;
+            self.onResolveCbk.map(fn =&amp;gt; fn());
+        }
+    }
+    function reject(reason) {
+        if (self.status === &#39;pending&#39;) {
+            self.reason = reason;
+            self.status = &#39;rejected&#39;;
+            self.onResolveCbk.map(fn =&amp;gt; fn());
+        }
+    }
+    exe(resolve, reject);
+}
+
+myPromise.prototype.then = function(onFulfilled, onRejected) {
+    let self = this;
+    if (self.status === &#39;pending&#39;) {
+        self.onResolveCbk.push(() =&amp;gt; onFulfilled(self.value));
+        self.onRejectCbk.push(() =&amp;gt; onRejected(self.reason));
+    }
+    if (self.status === &#39;resolved&#39;) {
+        onFulfilled(self.value);
+    }
+    if (self.status === &#39;rejected&#39;) {
+        onRejected(self.reason);
+    }
+}
+
+let mp = new myPromise((resolve, reject) =&amp;gt; {
+    setTimeout(() =&amp;gt; {
+        resolve(2);
+    }, 200);
+});
+
+mp.then(res =&amp;gt; console.log(&#39;success&#39;, res));
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/promise-shi-xian-yuan-li">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/new-de-shi-xian-yuan-li">
                         new 实现原理
                     </a>
@@ -107,12 +274,12 @@
                     <time class="post-time">2019-07-15</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-success">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_3">
+                            i-tag-other_1">
             #js基础
         </a>
                         
@@ -154,7 +321,7 @@ Object.create() 方法创建一个新对象，使用现有的对象来提供新�
                     <time class="post-time">2019-07-14</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-success">
             #js基础
         </a>
                         
@@ -257,12 +424,12 @@ a.join = a.shift;
                     <time class="post-time">2019-07-13</time>
                     
                         <a href="https://blog.ss1742.com/tag/5CynFjhOR" class="post-tag i-tag
-                            i-tag-banana">
+                            i-tag-other_3">
             #状态码
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-info">
             #http
         </a>
                         
@@ -291,12 +458,12 @@ a.join = a.shift;
                     <time class="post-time">2019-07-13</time>
                     
                         <a href="https://blog.ss1742.com/tag/5CynFjhOR" class="post-tag i-tag
-                            i-tag-success">
+                            i-tag-primary">
             #状态码
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-warning">
             #http
         </a>
                         
@@ -328,7 +495,7 @@ a.join = a.shift;
                     <time class="post-time">2019-07-12</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-success">
             #算法
         </a>
                         
@@ -366,7 +533,7 @@ a.join = a.shift;
                     <time class="post-time">2019-07-12</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-other_3">
+                            i-tag-other_1">
             #算法
         </a>
                         
@@ -382,119 +549,6 @@ a.join = a.shift;
                                         </div>
                                         
                                             <a class="btn btn-text" href="https://blog.ss1742.com/post/da-yin-chu-1-10000-zhi-jian-de-suo-you-dui-cheng-shu">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/http2-de-duo-lu-fu-yong">
-                        http2的多路复用
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-11</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-other_1">
-            #http
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            在 HTTP/1 中，每次请求都会建立一次HTTP连接，也就是我们常说的3次握手4次挥手，这个过程在一次请求过程中占用了相当长的时间，即使开启了 Keep-Alive ，解决了多次连接的问题，但是依然有两个效率上的问题：
-
-第一个：串行的文件传输。当请求a文件时，b文件只能等待，等待a连接到服务器、服务器处理文件、服务器返回文件，这三个步骤。我们假设这三步用时都是1秒，那么a文件用时为3秒，b文件传输完成用时为6秒，依此类推。（注：此项计算有一个前提条件，就是浏览器和服务器是单通道传输）
-第二个：连接数过多。我们假设Apache设置了最大并发数为300，因为浏览器限制，浏览器发起的最大请求数为6，也就是服务器能承载的最高并发为50，当第51个人访问时，就需要等待前面某个请求处理完成。
-
-HTTP/2的多路复用就是为了解决上述的两个性能问题。
-在 HTTP/2 中，有两个非常重要的概念，分别是帧（frame）和流（stream）。
-帧代表着最小的数据单位，每个帧会标识出该帧属于哪个流，流也就是多个帧组成的数据流。
-多路复用，就是在一个 TCP 连接中可以存在多条流。换句话说，也就是可以发送多个请求，对端可以通过帧中的标识知道属于哪个请求。通过这个技术，可以避免 HTTP 旧版本中的队头阻塞问题，极大的提高传输性能。
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/http2-de-duo-lu-fu-yong">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/https-zhong-jian-ren-gong-ji">
-                        HTTPS 中间人攻击
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-11</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-other_3">
-            #http
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            中间人攻击过程如下：
-
-服务器向客户端发送公钥。
-攻击者截获公钥，保留在自己手上。
-然后攻击者自己生成一个【伪造的】公钥，发给客户端。
-客户端收到伪造的公钥后，生成加密hash值发给服务器。
-攻击者获得加密hash值，用自己的私钥解密获得真秘钥。
-同时生成假的加密hash值，发给服务器。
-服务器用私钥解密获得假秘钥。
-服务器用加秘钥加密传输信息
-
-防范方法：
-服务端在发送浏览器的公钥中加入CA证书，浏览器可以验证CA证书的有效性
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/https-zhong-jian-ren-gong-ji">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/https-wo-shou-guo-cheng">
-                        HTTPS 握手过程
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-11</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-primary">
-            #http
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            
-第一步，客户端给出协议版本号、一个客户端生成的随机数（Client random），以及客户端支持的加密方法。
-第二步，服务端确认双方使用的加密方法，并给出数字证书、以及一个服务器生成的随机数（Server random）。
-第三步，客户端确认数字证书有效，然后生成一个新的随机数（Premaster secret），并使用数字证书中的公钥，加密这个随机数，发给服务端。
-第四步，服务端使用自己的私钥，获取客户端发来的随机数（即Premaster secret）。
-第五步，客户端和服务端根据约定的加密方法，使用前面的三个随机数，生成&amp;quot;对话密钥&amp;quot;（session key），用来加密接下来的整个对话过程。
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/https-wo-shou-guo-cheng">Read More ~</a>
                             </div>
                 </div>
             </article>
@@ -519,7 +573,7 @@ HTTP/2的多路复用就是为了解决上述的两个性能问题。
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564074563365)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564159343611)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

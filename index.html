@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564074563365">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564159343611">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564074563365" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564159343611" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,120 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/fan-zhuan-zi-fu-chuan-li-de-dan-ci">
+                        翻转字符串里的单词
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-27</time>
+                    
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            给定一个字符串，逐个翻转字符串中的每个单词。
+function reverseWords(s) {
+			return s.trim().replace(/(\s)+/g, &#39;$1&#39;).split(&#39; &#39;).reverse().join(&#39; &#39;);
+}
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/fan-zhuan-zi-fu-chuan-li-de-dan-ci">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/zui-chang-gong-gong-qian-zhui">
+                        最长公共前缀
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-26</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
+                            i-tag-primary">
+            #算法
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            编写一个函数来查找字符串数组中的最长公共前缀
+function longestCommonPrefix(s) {
+			if (s.length === 0) return &#39;&#39;;
+			let common = s[0];
+			for (let i = 0, len = s.length; i &amp;lt; len; i++) {
+				while (s[i].indexOf(common) !== 0) {
+					common = common.substring(0, common.length - 1);
+					if (!common) return &#39;&#39;;
+				}
+			}
+			return common;
+}
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/zui-chang-gong-gong-qian-zhui">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/wu-chong-fu-zi-fu-de-zui-chang-zi-chuan">
+                        无重复字符的最长子串
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-26</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
+                            i-tag-error">
+            #算法
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度
+function lengthOfLongestSubstring(s) {
+			if (s.length &amp;lt; 2) return s.length;
+			let res = [];
+			let temp = s[0];
+			for (let i = 1, len = s.length; i &amp;lt; len; i++) {
+				if (temp.includes(s[i])) {
+					res.push(temp);
+					temp = `${temp.substring(temp.indexOf(s[i]) + 1)}${s[i]}`;
+				} else {
+					temp = `${temp}${s[i]}`;
+				}
+			}
+			res.push(temp);
+			return res.reduce((a, b) =&amp;gt; Math.max(a, b.length), 0);
+}
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/wu-chong-fu-zi-fu-de-zui-chang-zi-chuan">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/bfc">
                         bfc
                     </a>
@@ -107,7 +221,7 @@
                     <time class="post-time">2019-07-26</time>
                     
                         <a href="https://blog.ss1742.com/tag/9sclIJ6sZ" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-info">
             #css
         </a>
                         
@@ -199,7 +313,7 @@ BFC 的应用
                     <time class="post-time">2019-07-24</time>
                     
                         <a href="https://blog.ss1742.com/tag/922aBovKI" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-other_1">
             #css基础
         </a>
                         
@@ -242,7 +356,7 @@ Opera
                     <time class="post-time">2019-07-24</time>
                     
                         <a href="https://blog.ss1742.com/tag/HAXwMUY-c" class="post-tag i-tag
-                            i-tag-banana">
+                            i-tag-warning">
             #日记随想
         </a>
                         
@@ -287,7 +401,7 @@ Opera
                     <time class="post-time">2019-07-24</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-error">
             #js基础
         </a>
                         
@@ -327,7 +441,7 @@ async 一旦下载完，渲染引擎就会中断渲染，执行这个脚本，�
                     <time class="post-time">2019-07-23</time>
                     
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-other_1">
             #http
         </a>
                         
@@ -390,7 +504,7 @@ text/xml
                     <time class="post-time">2019-07-23</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-error">
             #js基础
         </a>
                         
@@ -458,135 +572,6 @@ function copy(obj, hash = new WeakMap()) {
                 </div>
             </article>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/a-biao-qian-zhong-active-hover-link-visited-she-zhi-shun-xu">
-                        a标签中 active hover link visited 设置顺序
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-22</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/922aBovKI" class="post-tag i-tag
-                            i-tag-success">
-            #css基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            
-a:link
-a:visited
-a:hover
-a:active
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/a-biao-qian-zhong-active-hover-link-visited-she-zhi-shun-xu">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/jin-zhi-liu-lan-qi-shi-jian">
-                        禁止浏览器事件
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-22</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_3">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            禁用事件冒泡
-
-event.stopPropagation()
-
-禁止默认事件
-
-event.preventDefault()
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/jin-zhi-liu-lan-qi-shi-jian">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/jsonp-yuan-li">
-                        jsonp 原理
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-20</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/1POfnEFWE" class="post-tag i-tag
-                            i-tag-success">
-            #jsonp
-        </a>
-                        
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-primary">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            尽管浏览器有同源策略，但是 &amp;lt;script&amp;gt; 标签的 src 属性不会被同源策略所约束，可以获取任意服务器上的脚本并执行。jsonp 通过插入 script 标签的方式来实现跨域，参数只能通过 url 传入，仅能支持 get 请求。
-原理
-
-创建 callback 方法
-插入 script 标签
-后台接受到请求，解析前端传过去的 callback 方法，返回该方法的调用，并且数据作为参数传入该方法
-前端执行服务器返回的方法调用
-
-实现
-function jsonp({ url, params, callback }) {
-	return new Promise((resolve, reject) =&amp;gt; {
-		let script = document.createElement(&#39;script&#39;);
-		window[callback] = function(data) {
-			resolve(data);
-			document.body.removeChild(script);
-		}
-		params = { ...params, callback };
-		let arrs = [];
-		for (let key in params) {
-			arrs.push(`${key}=${params[key]}`);
-		}
-		script.src = `${url}?${arrs.join(&#39;&amp;amp;&#39;)}`;
-		document.body.appendChild(script);
-	})
-}
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/jsonp-yuan-li">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
                 <!-- 翻页 -->
                 
     <div class="pagination-container">
@@ -605,7 +590,7 @@ function jsonp({ url, params, callback }) {
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564074563365)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564159343611)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

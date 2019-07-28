@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>1742·小博文</title>
-    <updated>2019-07-26T16:42:27.447Z</updated>
+    <updated>2019-07-28T16:04:34.768Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -10,6 +10,16 @@
     <logo>https://blog.ss1742.com/images/avatar.png</logo>
     <icon>https://blog.ss1742.com/favicon.ico</icon>
     <rights>All rights reserved 2019, 1742·小博文</rights>
+    <entry>
+        <title type="html"><![CDATA[加班停更两天]]></title>
+        <id>https://blog.ss1742.com/post/jia-ban-ting-geng-liang-tian</id>
+        <link href="https://blog.ss1742.com/post/jia-ban-ting-geng-liang-tian">
+        </link>
+        <updated>2019-07-28T16:02:13.000Z</updated>
+        <content type="html"><![CDATA[<p>看书，不只是限制于技术类，同时需要对社会学、经济学的书籍多看一点。</p>
+<p>不追求马上获得什么，一点点来。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[翻转字符串里的单词]]></title>
         <id>https://blog.ss1742.com/post/fan-zhuan-zi-fu-chuan-li-de-dan-ci</id>
@@ -230,64 +240,6 @@ Content-Type: text/plain
 <p>消息主体是序列化的 <code>JSON</code> 字符串</p>
 <h4 id="textxml">text/xml</h4>
 <p>使用 <code>HTTP</code> 作为传输协议，<code>XML</code> 作为编码方式</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[深浅拷贝]]></title>
-        <id>https://blog.ss1742.com/post/shen-qian-kao-bei</id>
-        <link href="https://blog.ss1742.com/post/shen-qian-kao-bei">
-        </link>
-        <updated>2019-07-22T16:44:51.000Z</updated>
-        <content type="html"><![CDATA[<p>深拷贝和浅拷贝是针对复杂数据类型来说的，浅拷贝只拷贝一层，而深拷贝是层层拷贝</p>
-<h3 id="浅拷贝">浅拷贝</h3>
-<p>浅拷贝是会将对象的每个属性进行依次复制，但是当对象的属性值是引用类型时，实质复制的是其引用，当引用指向的值改变时也会跟着变化</p>
-<h3 id="深拷贝">深拷贝</h3>
-<p>深拷贝复制变量值，对于非基本类型的变量，则递归至基本类型变量后，再复制。 深拷贝后的对象与原来的对象是完全隔离的，互不影响，对一个对象的修改并不会影响另一个对象</p>
-<h4 id="实现">实现</h4>
-<ol>
-<li><code>JSON.parse(JSON.stringify(obj))</code></li>
-</ol>
-<ul>
-<li>对象的属性值是函数时，无法拷贝。</li>
-<li>原型链上的属性无法拷贝</li>
-<li>不能正确的处理 <code>Date</code> 类型的数据</li>
-<li>不能处理 <code>RegExp</code></li>
-<li>会忽略 <code>symbol</code></li>
-<li>会忽略 <code>undefined</code></li>
-</ul>
-<ol start="2">
-<li>代码实现</li>
-</ol>
-<ul>
-<li>如果是基本数据类型，直接返回</li>
-<li>如果是 <code>RegExp</code> 或者 <code>Date</code> 类型，返回对应类型</li>
-<li>如果是复杂数据类型，递归</li>
-<li>考虑循环引用的问题</li>
-</ul>
-<pre><code>function copy(obj, hash = new WeakMap()) {
-		if (obj instanceof RegExp) return new RegExp(obj);
-		if (obj instanceof Date) return new Date(date);
-		if (obj === null || typeof obj !== 'object') return obj;
-
-		// 循环引用
-		if (hash.has(obj)) {
-			return hash.get(obj);
-		}
-
-		// 获取到 {} || []
-		let t = new obj.constructor();
-		hash.set(obj, t);
-		
-		// 遍历递归
-		for (let key in obj) {
-			if (obj.hasOwnProperty(key)) {
-				t[key] = copy(obj[key], hash);
-			}
-		}
-		
-		return t;
-	}
-</code></pre>
 ]]></content>
     </entry>
 </feed>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>1742·小博文</title>
-    <updated>2019-07-28T16:11:54.098Z</updated>
+    <updated>2019-07-29T15:12:23.971Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -10,6 +10,223 @@
     <logo>https://blog.ss1742.com/images/avatar.png</logo>
     <icon>https://blog.ss1742.com/favicon.ico</icon>
     <rights>All rights reserved 2019, 1742·小博文</rights>
+    <entry>
+        <title type="html"><![CDATA[买卖股票的最佳时机 II]]></title>
+        <id>https://blog.ss1742.com/post/mai-mai-gu-piao-de-zui-jia-shi-ji-ii</id>
+        <link href="https://blog.ss1742.com/post/mai-mai-gu-piao-de-zui-jia-shi-ji-ii">
+        </link>
+        <updated>2019-07-29T15:05:28.000Z</updated>
+        <content type="html"><![CDATA[<p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</p>
+<p>设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。</p>
+<p>注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</p>
+<p>示例 1:</p>
+<pre><code>输入: [7,1,5,3,6,4]
+输出: 7
+解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。
+     随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。
+</code></pre>
+<p>示例 2:</p>
+<pre><code>输入: [1,2,3,4,5]
+输出: 4
+解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。
+     注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。
+     因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。
+</code></pre>
+<p>示例 3:</p>
+<pre><code>输入: [7,6,4,3,1]
+输出: 0
+解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
+</code></pre>
+<pre><code class="language-js">function maxProfit(prices) {
+	let buy = Number.MAX_SAFE_INTEGER;
+	let profit = 0;
+	for (let i = 0, len = prices.length; i &lt; len; i++) {
+		if (prices[i] &lt; buy) {
+			buy = prices[i];
+		} else {
+			profit += prices[i] - buy;
+			buy = prices[i];
+		}
+	}
+	return profit;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[买卖股票的最佳时机]]></title>
+        <id>https://blog.ss1742.com/post/mai-mai-gu-piao-de-zui-jia-shi-ji</id>
+        <link href="https://blog.ss1742.com/post/mai-mai-gu-piao-de-zui-jia-shi-ji">
+        </link>
+        <updated>2019-07-29T15:00:21.000Z</updated>
+        <content type="html"><![CDATA[<p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</p>
+<p>如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。</p>
+<p>注意你不能在买入股票前卖出股票。</p>
+<p>示例 1:</p>
+<pre><code>输入: [7,1,5,3,6,4]
+输出: 5
+解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
+     注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。
+</code></pre>
+<p>示例 2:</p>
+<pre><code>输入: [7,6,4,3,1]
+输出: 0
+解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
+</code></pre>
+<pre><code class="language-js">function maxProfit(prices) {
+	let min = Number.MAX_SAFE_INTEGET;
+	let profit = 0;
+	for (let i = 0, len = prices.length; i &lt; len; i++) {
+		if (prices[i] &lt; min) {
+			min = prices[i];
+		} else if (prices[i] - min &gt; profit) {
+			profit = prices[i] - min;
+		}
+	}
+	return profit;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[反转链表]]></title>
+        <id>https://blog.ss1742.com/post/fan-zhuan-lian-biao</id>
+        <link href="https://blog.ss1742.com/post/fan-zhuan-lian-biao">
+        </link>
+        <updated>2019-07-29T14:51:26.000Z</updated>
+        <content type="html"><![CDATA[<p>反转一个单链表。</p>
+<p>示例:</p>
+<pre><code>输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL
+输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL
+</code></pre>
+<pre><code class="language-js">/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+// 常规
+function reverseList1(head) {
+	if (head === null || head.next === null) return head;
+	let p = head.next;
+	head.next = null;
+	let temp = null;
+	while (p !== null) {
+		temp = p.next;
+		p.next = head;
+		head = p;
+		p = temp;
+	}
+	return head;
+}
+// 递归
+function reverseList2(head) {
+	if (head === null || head.next === null) return head;
+	let new_head = reverseList2(head.next);
+	head.next.next = head;
+	head.next = null;
+	return new_head;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[合并区间]]></title>
+        <id>https://blog.ss1742.com/post/he-bing-qu-jian</id>
+        <link href="https://blog.ss1742.com/post/he-bing-qu-jian">
+        </link>
+        <updated>2019-07-29T14:46:54.000Z</updated>
+        <content type="html"><![CDATA[<p>给出一个区间的集合，请合并所有重叠的区间。</p>
+<p>示例 1:</p>
+<pre><code>输入: [[1,3],[2,6],[8,10],[15,18]]
+输出: [[1,6],[8,10],[15,18]]
+解释: 区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6].
+</code></pre>
+<p>示例 2:</p>
+<pre><code>输入: [[1,4],[4,5]]
+输出: [[1,5]]
+解释: 区间 [1,4] 和 [4,5] 可被视为重叠区间。
+</code></pre>
+<pre><code class="language-js">function merge(intervals) {
+	if (intervals.length &lt; 2) return intervals;
+	intervals = intervals.sort((a, b) =&gt; a[0] - b[0]);
+	return intervals.reduce((a, b) =&gt; {
+		let temp = a[a.length - 1];
+		if (temp[1] &lt; b[0]) {
+			return [...a, b];
+		} else {
+			temp[1] = Math.max(temp[1], b[1]);
+		}
+		return a;
+	}, [intervals[0]]);
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[数组中的第K个最大元素]]></title>
+        <id>https://blog.ss1742.com/post/shu-zu-zhong-de-di-k-ge-zui-da-yuan-su</id>
+        <link href="https://blog.ss1742.com/post/shu-zu-zhong-de-di-k-ge-zui-da-yuan-su">
+        </link>
+        <updated>2019-07-29T14:41:52.000Z</updated>
+        <content type="html"><![CDATA[<p>在未排序的数组中找到第 k 个最大的元素。</p>
+<p>示例 :</p>
+<pre><code>输入: [3,2,1,5,6,4] 和 k = 2
+输出: 5
+</code></pre>
+<pre><code class="language-js">function findKthLargest(nums, k) {
+	let temp = qSort(nums);
+	return k &lt;= temp.length ? temp[k - 1] : null;
+}
+function qSort(nums) {
+	if (nums.length &lt; 2) return nums;
+	let left = [], right = [], temp = nums[0];
+	for (let i = 0, len = nums.length; i &lt; len; i++) {
+		if (nums[i] &lt; temp) {
+			right.push(nums[i]);
+		} else {
+			left.push(nums[i]);
+		}
+	}
+	return [...qSort(left), temp, ...qSort(right)];
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[简化路径]]></title>
+        <id>https://blog.ss1742.com/post/jian-hua-lu-jing</id>
+        <link href="https://blog.ss1742.com/post/jian-hua-lu-jing">
+        </link>
+        <updated>2019-07-29T14:36:37.000Z</updated>
+        <content type="html"><![CDATA[<p>以 Unix 风格给出一个文件的绝对路径，你需要简化它。或者换句话说，将其转换为规范路径。</p>
+<p>在 Unix 风格的文件系统中，一个点（.）表示当前目录本身；此外，两个点 （..） 表示将目录切换到上一级（指向父目录）；两者都可以是复杂相对路径的组成部分。更多信息请参阅：Linux / Unix中的绝对路径 vs 相对路径</p>
+<p>请注意，返回的规范路径必须始终以斜杠 / 开头，并且两个目录名之间必须只有一个斜杠 /。最后一个目录名（如果存在）不能以 / 结尾。此外，规范路径必须是表示绝对路径的最短字符串。</p>
+<p>示例</p>
+<pre><code>输入：&quot;/a/./b/../../c/&quot;
+输出：&quot;/c&quot;
+解释：注意，最后一个目录名后面没有斜杠。
+</code></pre>
+<pre><code class="language-js">function simplifyPath(path) {
+	let res = [];
+	let paths = path.split('/');
+	for (let i = 0, len = paths.length; i &lt; len; i++) {
+		if (paths[i] === '..') {
+			res.pop();
+		} else if (paths[i] &amp;&amp; paths[i] !== '.') {
+			res.push(paths[i]);
+		}
+	}
+	return res.length &gt; 0 ? ('/' + res.join('/')) : '/';
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[愈发觉得看书真的很重要]]></title>
         <id>https://blog.ss1742.com/post/kan-shu</id>
@@ -77,169 +294,6 @@
 			return res.reduce((a, b) =&gt; Math.max(a, b.length), 0);
 }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[bfc]]></title>
-        <id>https://blog.ss1742.com/post/bfc</id>
-        <link href="https://blog.ss1742.com/post/bfc">
-        </link>
-        <updated>2019-07-25T17:03:35.000Z</updated>
-        <content type="html"><![CDATA[<p><code>Box</code> 是 <code>CSS</code> 布局的对象和基本单位，页面是由若干个 <code>Box</code> 组成的。<br>
-元素的类型 和 <code>display</code> 属性，决定了这个 <code>Box</code> 的类型。不同类型的 <code>Box</code> 会参与不同的 <code>Formatting Context</code>。</p>
-<h3 id="formatting-context">Formatting Context</h3>
-<p><code>Formatting Context</code> 是页面的一块渲染区域，并且有一套渲染规则，决定了其子元素将如何定位，以及和其它元素的关系和相互作用。<br>
-<code>Formatting Context</code> 有 <code>BFC (Block formatting context)</code>，<code>IFC (Inline formatting context)</code>，<code>FFC (Flex formatting context)</code> 和 <code>GFC (Grid formatting context)</code>。<code>FFC</code> 和 <code>GFC</code> 为 <code>CC3</code> 中新增。</p>
-<h3 id="bfc-布局规则">BFC 布局规则</h3>
-<ul>
-<li><code>BFC</code> 内，盒子依次垂直排列。</li>
-<li><code>BFC</code> 内，两个盒子的垂直距离由 <code>margin</code> 属性决定。属于同一个 <code>BFC</code> 的两个相邻 <code>Box</code> 的 <code>margin</code> 会发生重叠【符合合并原则的 <code>margin</code> 合并后是使用大的 <code>margin</code>】</li>
-<li><code>BFC</code> 内，每个盒子的左外边缘接触内部盒子的左边缘（对于从右到左的格式，- 右边缘接触）。即使在存在浮动的情况下也是如此。除非创建新的 <code>BFC</code>。</li>
-<li><code>BFC</code> 的区域不会与 <code>float box</code> 重叠。</li>
-<li><code>BFC</code> 就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
-<li>计算 <code>BFC</code> 的高度时，浮动元素也参与计算。</li>
-</ul>
-<h3 id="如何创建-bfc">如何创建 BFC</h3>
-<ul>
-<li>根元素</li>
-<li>浮动元素（<code>float</code> 属性不为 <code>none</code>）</li>
-<li><code>position</code> 为 <code>absolute</code> 或 <code>fixed</code></li>
-<li><code>overflow</code> 不为 <code>visible</code> 的块元素</li>
-<li><code>display</code> 为 <code>inline-block</code>, <code>table-cell</code>, <code>table-caption</code></li>
-</ul>
-<h3 id="bfc-的应用">BFC 的应用</h3>
-<ul>
-<li>防止 <code>margin</code>  重叠 (同一个 <code>BFC</code> 内的两个两个相邻 <code>Box</code> 的 <code>margin</code> 会发生重叠，触发生成两个 <code>BFC</code>，即不会重叠)</li>
-<li>清除内部浮动 (创建一个新的 <code>BFC</code>，因为根据 <code>BFC</code> 的规则，计算 <code>BFC</code> 的高度时，浮动元素也参与计算)</li>
-<li>自适应多栏布局 (<code>BFC</code> 的区域不会与 <code>float box</code> 重叠。因此，可以触发生成一个新的 <code>BFC</code>)</li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[前端管理]]></title>
-        <id>https://blog.ss1742.com/post/qian-duan-guan-li</id>
-        <link href="https://blog.ss1742.com/post/qian-duan-guan-li">
-        </link>
-        <updated>2019-07-24T14:00:55.000Z</updated>
-        <content type="html"><![CDATA[<p>管理上你强调什么就会得到什么</p>
-<ol>
-<li>因成员存在对业务的熟悉度，常处于救火队员状态在不同业务中流转，对提测质量是无益的，此处需要团队和业务的对接保持相对的固定</li>
-<li>成员的能力和态度对产出质量有直接影响，此处对应的可采取提测 bug 数、reopen 数作为绩效参考指标之一，不同团队内部定期的进行 codereview 并进一步共识最佳实践，产出业务对应的自测 checklist，这部分有能力的可以结合自动化测试进行去人肉回归</li>
-<li>认知模型的植入，提升成员对自测的重视并规范到日常行为</li>
-<li>正面标杆的树立，质量存在明显问题的成员一对一研究和辅导</li>
-<li>（非常规方式）必要的人员优化</li>
-</ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[浏览器内核]]></title>
-        <id>https://blog.ss1742.com/post/liu-lan-qi-nei-he</id>
-        <link href="https://blog.ss1742.com/post/liu-lan-qi-nei-he">
-        </link>
-        <updated>2019-07-24T02:19:58.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="ie">IE</h3>
-<p>内核 <code>trident</code></p>
-<p>识别码 <code>-ms-</code></p>
-<h3 id="chrome">Chrome</h3>
-<p>内核 <code>blink</code></p>
-<p>识别码 <code>-webkit</code></p>
-<h3 id="safari">Safari</h3>
-<p>内核 <code>webkit</code></p>
-<p>识别码 <code>-webkit</code></p>
-<h3 id="firefox">Firefox</h3>
-<p>内核 <code>gecko</code></p>
-<p>识别码 <code>-moz-</code></p>
-<h3 id="opera">Opera</h3>
-<p>内核 <code>Presto</code> -&gt; <code>blink</code></p>
-<p>识别码 <code>-o-</code></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[7.23有感]]></title>
-        <id>https://blog.ss1742.com/post/723-you-gan</id>
-        <link href="https://blog.ss1742.com/post/723-you-gan">
-        </link>
-        <updated>2019-07-23T16:14:15.000Z</updated>
-        <content type="html"><![CDATA[<p>发现问题是好事。</p>
-<h3 id="表达能力很糟糕">表达能力很糟糕</h3>
-<ol>
-<li>读书少，平时阅读的文章也没有仔细品味遣词用字</li>
-<li>极度缺乏自信</li>
-<li>缺乏独立思考，思维固化</li>
-</ol>
-<h3 id="专业能力很糟糕">专业能力很糟糕</h3>
-<ol>
-<li>目前应该用几年积累发光发热了，却一无所长</li>
-<li>太浮躁，并不是感觉技术无用，而是不知道从何处下手</li>
-</ol>
-<h2 id="目标与计划">目标与计划</h2>
-<ol>
-<li>一定要坚持每日博客，技术慢慢的提高深度</li>
-<li>看书，看书看书，看书看书看书，无论什么书都看</li>
-</ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[异步加载 js 脚本]]></title>
-        <id>https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben</id>
-        <link href="https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben">
-        </link>
-        <updated>2019-07-23T16:04:39.000Z</updated>
-        <content type="html"><![CDATA[<p><code>script</code> 中加入 <code>async(html5)</code> 或者 <code>defer(html4)</code> 属性，脚本会异步加载。</p>
-<h3 id="区别">区别</h3>
-<h4 id="defer">defer</h4>
-<ol>
-<li><code>defer</code> 要等到页面在内存中正常渲染结束，在 <code>window.onload</code> 之前执行</li>
-<li>如果有多个 <code>defer</code>，会按照在页面的出现顺序加载</li>
-</ol>
-<h4 id="async">async</h4>
-<ol>
-<li><code>async</code> 一旦下载完，渲染引擎就会中断渲染，执行这个脚本，再继续渲染</li>
-<li>多个 <code>async</code> 不能保证顺序</li>
-</ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[http content-type]]></title>
-        <id>https://blog.ss1742.com/post/http-content-type</id>
-        <link href="https://blog.ss1742.com/post/http-content-type">
-        </link>
-        <updated>2019-07-23T14:44:06.000Z</updated>
-        <content type="html"><![CDATA[<p><code>content-type</code> 是 <code>http</code> 实体首部字段，用来说明请求或返回的消息主体是用何种方式编码，在 <code>request header</code> 和 <code>response header</code> 中都存在</p>
-<h3 id="类型">类型</h3>
-<h4 id="applicationx-www-form-urlencoded">application/x-www-form-urlencoded</h4>
-<p>浏览器原生 <code>form</code> 表单<br>
-提交数据按照 key1=val1&amp;key2=val2的方式进行编码，<code>key</code> 和 <code>value</code> 都进行了 <code>url</code> 转码</p>
-<pre><code>POST [http://www.example.com](http://www.example.com) HTTP/1.1 
-Content-Type: application/x-[www-form-urlencoded](http://www-form-urlencoded);charset=utf-8 
-
-title=test&amp;sub%5B%5D=1&amp;sub%5B%5D=2&amp;sub%5B%5D=3 
-</code></pre>
-<h4 id="multipartform-data">multipart/form-data</h4>
-<p>常见的 <code>post</code> 数据提交方式，上传文件必须设置 <code>enctype=&quot;multipart/form-data&quot;</code></p>
-<pre><code>POST /foo HTTP/1.1
-Content-Length: 68137
-Content-Type: multipart/form-data; boundary=---------------------------974767299852498929531610575
-
----------------------------974767299852498929531610575
-Content-Disposition: form-data; name=&quot;description&quot;
-
-some text
----------------------------974767299852498929531610575
-Content-Disposition: form-data; name=&quot;myFile&quot;; filename=&quot;foo.txt&quot;
-Content-Type: text/plain
-
-(content of the uploaded file foo.txt)
----------------------------974767299852498929531610575--
-</code></pre>
-<ol>
-<li>首先生成 <code>boundary</code> 分割不同字段，避免与正文重复</li>
-<li>消息主体按照字段分成多个部分，每个部分以 <code>--boundary</code> 开始，消息主体再以 <code>--boundary--</code> 结束</li>
-</ol>
-<h4 id="applicationjson">application/json</h4>
-<p>消息主体是序列化的 <code>JSON</code> 字符串</p>
-<h4 id="textxml">text/xml</h4>
-<p>使用 <code>HTTP</code> 作为传输协议，<code>XML</code> 作为编码方式</p>
 ]]></content>
     </entry>
 </feed>

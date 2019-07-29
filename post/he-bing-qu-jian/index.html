@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    禁止浏览器事件 | 1742·小博文
+    合并区间 | 1742·小博文
 </title>
 <link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564413140061">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -106,27 +106,44 @@
                 <div id="content" class="main-container-left">
                     <article class="post i-card">
                         <h2 class="post-title">
-                            禁止浏览器事件
+                            合并区间
                         </h2>
                         <div class="post-info">
-                            <time class="post-time">2019-07-22</time>
+                            <time class="post-time">2019-07-29</time>
                             
-                                <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-warning">
-                            #js基础
+                                <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
+                            i-tag-other_2">
+                            #算法
                         </a>
                                 
                         </div>
                         
                                 <div class="post-content">
-                                    <h4 id="禁用事件冒泡">禁用事件冒泡</h4>
-<blockquote>
-<p>event.stopPropagation()</p>
-</blockquote>
-<h4 id="禁止默认事件">禁止默认事件</h4>
-<blockquote>
-<p>event.preventDefault()</p>
-</blockquote>
+                                    <p>给出一个区间的集合，请合并所有重叠的区间。</p>
+<p>示例 1:</p>
+<pre><code>输入: [[1,3],[2,6],[8,10],[15,18]]
+输出: [[1,6],[8,10],[15,18]]
+解释: 区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6].
+</code></pre>
+<p>示例 2:</p>
+<pre><code>输入: [[1,4],[4,5]]
+输出: [[1,5]]
+解释: 区间 [1,4] 和 [4,5] 可被视为重叠区间。
+</code></pre>
+<pre><code class="language-js">function merge(intervals) {
+	if (intervals.length &lt; 2) return intervals;
+	intervals = intervals.sort((a, b) =&gt; a[0] - b[0]);
+	return intervals.reduce((a, b) =&gt; {
+		let temp = a[a.length - 1];
+		if (temp[1] &lt; b[0]) {
+			return [...a, b];
+		} else {
+			temp[1] = Math.max(temp[1], b[1]);
+		}
+		return a;
+	}, [intervals[0]]);
+}
+</code></pre>
 
                                 </div>
                     </article>
@@ -134,9 +151,9 @@
                     
                         <div class="next-post">
                             <div class="next">下一篇</div>
-                            <a href="https://blog.ss1742.com/post/jsonp-yuan-li">
+                            <a href="https://blog.ss1742.com/post/shu-zu-zhong-de-di-k-ge-zui-da-yuan-su">
                                 <h3 class="post-title">
-                                    jsonp 原理
+                                    数组中的第K个最大元素
                                 </h3>
                             </a>
                         </div>
@@ -149,55 +166,35 @@
                 <!-- right -->
                 <div id="sidebar" class="main-container-right">
                     
-                        <!-- toc -->
-                        
-    <div class="toc-card i-card ">
-        <div class="toc-title i-card-title">目录</div>
-        <div class="toc-content">
-            <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#%E7%A6%81%E7%94%A8%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1">禁用事件冒泡</a></li>
-<li><a href="#%E7%A6%81%E6%AD%A2%E9%BB%98%E8%AE%A4%E4%BA%8B%E4%BB%B6">禁止默认事件</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+                                <!-- id-card -->
+                                
+    <div class="id_card i-card">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564413140061)">
+        </div>
+        <h1 class="id_card-title">
+            1742·小博文
+        </h1>
+        <h2 class="id_card-description">
+            这是我的真博客
+        </h2>
+        <!--  -->
+        <div class="id_card-sns">
+            <!-- github -->
+            
+                <a href="https://github.com/bowenjun" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-github"></i></a>
+                
+                    <!-- twitter -->
+                    
+                            <!-- weibo -->
+                            
+                                    <!-- facebook -->
+                                    
 
         </div>
-        <script>
-            function locateCatelogList() {
-                /*获取文章目录集合,可通过:header过滤器*/
-                var alis = $('.post-content :header');
-                /*获取侧边栏目录列表集合**/
-                var sidebar_alis = $('.markdownIt-TOC a');
-                /*获取滚动条到顶部的距离*/
-                var scroll_height = $(window).scrollTop();
-                for (var i = 0; i < alis.length; i++) {
-                    /*获取锚点集合中的元素分别到顶点的距离*/
-                    var a_height = $(alis[i]).offset().top;
-                    if (a_height < scroll_height) {
-                        /*高亮显示*/
-                        sidebar_alis.removeClass('on');
-                        $(sidebar_alis[i]).addClass('on');
-                    }
-                }
-            }
-            $(function() {
-                /*绑定滚动事件 */
-                $(window).bind('scroll', locateCatelogList);
-            });
-        </script>
     </div>
     
-                            
+                                    
 
                 </div>
 

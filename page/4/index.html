@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564330311432">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564413140061">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564330311432" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564413140061" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,265 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/new-de-shi-xian-yuan-li">
+                        new 实现原理
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-15</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
+                            i-tag-banana">
+            #原理
+        </a>
+                        
+                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
+                            i-tag-other_2">
+            #js基础
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            原理
+
+创建一个空对象，构造函数中的 this 指向这个空对象
+这个新对象被执行 [[原型]] 连接
+执行构造函数方法，属性和方法被添加到 this 引用的对象中
+如果构造函数中没有返回其它对象，那么返回 this，即创建的这个的新对象，否则，返回构造函数中返回的对象
+
+function _new(fn, ...arg) {
+    let obj = Object.create(fn.prototype);
+    let ret = fn.apply(obj, arg);
+    return ret instanceof Object ? ret : obj;
+}
+
+Object.create() 方法创建一个新对象，使用现有的对象来提供新创建的对象的 __proto__
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/new-de-shi-xian-yuan-li">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben-de-fang-shi-you-na-xie">
+                        异步加载JS脚本的方式有哪些
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-14</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
+                            i-tag-error">
+            #js基础
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            
+&amp;lt;script&amp;gt; 标签中增加 async(html5) 或者 defer(html4) 属性,脚本就会异步加载。
+
+defer 和 async 的区别在于：
+defer 要等到整个页面在内存中正常渲染结束（DOM 结构完全生成，以及其他脚本执行完成），在 window.onload 之前执行；
+async 一旦下载完，渲染引擎就会中断渲染，执行这个脚本以后，再继续渲染。
+如果有多个 defer 脚本，会按照它们在页面出现的顺序加载
+多个 async 脚本不能保证加载顺序
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben-de-fang-shi-you-na-xie">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/ru-he-rang-a-1-and-a-2-and-a-3-de-zhi-wei-true">
+                        如何让 (a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3) 的值为true
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-14</time>
+                    
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            Object 转换为原始类型
+
+
+如果部署了 [Symbol.toPrimitive] 接口，那么调用此接口，若返回的不是基本数据类型，抛出错误。
+
+
+如果没有部署 [Symbol.toPrimitive] 接口，那么根据要转换的类型，先调用 valueOf / toString
+
+非Date类型对象，hint 是 default 时，调用顺序为：valueOf &amp;gt;&amp;gt;&amp;gt; toString，即 valueOf 返回的不是基本数据类型，才会继续调用 valueOf，如果 toString 返回的还不是基本数据类型，那么抛出错误。
+如果 hint 是 string(Date对象的 hint 默认是 string) ，调用顺序为：toString &amp;gt;&amp;gt;&amp;gt; valueOf，即 toString 返回的不是基本数据类型，才会继续调用 valueOf，如果 valueOf 返回的还不是基本数据类型，那么抛出错误。
+如果 hint 是 number，调用顺序为： valueOf &amp;gt;&amp;gt;&amp;gt; toString
+
+
+
+题解
+
+隐式转换
+
+// 部署 [Symbol.toPrimitive] / valueOf / toString 均可
+let a = {
+    [Symbol.toPrimitive]: (function(hint) {
+        let i = 1;
+        return function() {
+            return i++;
+        }
+    })()
+}		
+
+
+数据劫持
+
+let a = new Proxy({}, {
+    i: 1,
+    get: function() {
+        return () =&amp;gt; this.i++;
+    }
+})
+
+
+数组的 toString 接口默认调用数组的 join 方法，重写 join 方法
+
+let a = [1, 2, 3];
+a.join = a.shift;
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/ru-he-rang-a-1-and-a-2-and-a-3-de-zhi-wei-true">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/304-zhuang-tai-ma">
+                        304 状态码
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-13</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/5CynFjhOR" class="post-tag i-tag
+                            i-tag-">
+            #状态码
+        </a>
+                        
+                        <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
+                            i-tag-other_3">
+            #http
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            soon
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/304-zhuang-tai-ma">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/302-zen-me-shi-xian-de">
+                        302 怎么实现的
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-13</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/5CynFjhOR" class="post-tag i-tag
+                            i-tag-primary">
+            #状态码
+        </a>
+                        
+                        <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
+                            i-tag-">
+            #http
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            301，302 都是 HTTP 状态的编码，都代表着某个 URL 发生了转移，不同之处在于：
+　　301 redirect: 301 代表永久性转移(Permanently Moved)。
+　　302 redirect: 302 代表暂时性转移(Temporarily Moved )。
+其实 301、302 的重定向都是通过对 http协议 的 location 的修改来实现的
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/302-zen-me-shi-xian-de">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/shi-yong-sort-dui-shu-zu-3-15-8-29-102-22-jin-xing-pai-xu">
+                        使用 sort() 对数组 [3, 15, 8, 29, 102, 22] 进行排序
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-12</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
+                            i-tag-other_3">
+            #算法
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            结果
+[3, 15, 8, 29, 102, 22].sort() 
+// [102, 15, 22, 29, 3, 8]
+
+根据 MDN 上对 Array.sort() 的解释，默认的排序方法会将数组元素转换为字符串，然后比较字符串中字符的 UTF-16 编码顺序来进行排序。所以 &#39;102&#39; 会排在  &#39;15&#39; 前面。
+[3, 15, 8, 29, 102, 22].sort((a, b) =&amp;gt; a - b) 
+// [3, 8, 15, 22, 29, 102]
+[3, 15, 8, 29, 102, 22].sort((a, b) =&amp;gt; a - b) 
+// [102, 29, 22, 15, 8, 3]
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/shi-yong-sort-dui-shu-zu-3-15-8-29-102-22-jin-xing-pai-xu">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/da-yin-chu-1-10000-zhi-jian-de-suo-you-dui-cheng-shu">
                         打印出 1 - 10000 之间的所有对称数
                     </a>
@@ -107,7 +366,7 @@
                     <time class="post-time">2019-07-12</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-other_2">
             #算法
         </a>
                         
@@ -174,7 +433,7 @@ HTTP/2的多路复用就是为了解决上述的两个性能问题。
                     <time class="post-time">2019-07-11</time>
                     
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-other_3">
             #http
         </a>
                         
@@ -215,7 +474,7 @@ HTTP/2的多路复用就是为了解决上述的两个性能问题。
                     <time class="post-time">2019-07-11</time>
                     
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-error">
             #http
         </a>
                         
@@ -240,283 +499,6 @@ HTTP/2的多路复用就是为了解决上述的两个性能问题。
                 </div>
             </article>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/tcp-san-ci-wo-shou-si-ci-hui-shou">
-                        TCP三次握手四次挥手
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-11</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-warning">
-            #http
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            三次握手
-
-1、客户端发送 syn 包到服务器，等待服务器确认接收。
-2、服务器确认接收 syn 包并确认客户的 syn ，并发送回来一个 syn+ack 的包给客户端。
-3、客户端确认接收服务器的 syn+ack 包，并向服务器发送确认包 ack ，二者相互建立联系后，完成 tcp 三次握手。
-
-四次挥手
-四次握手就是三次握手中间多了一层 等待服务器再一次响应回复相关数据 的过程。
-由于 TCP 连接是全双工的，因此每个方向都必须单独进行关闭，所以即使没有最后一个包，也需要先回复断开连接的请求，然后再发送关闭请求。
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/tcp-san-ci-wo-shou-si-ci-hui-shou">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/https-wo-shou-guo-cheng-zhong-ke-hu-duan-ru-he-yan-zheng-zheng-shu-de-he-fa-xing">
-                        HTTPS 握手过程中，客户端如何验证证书的合法性
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-11</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-other_3">
-            #http
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            
-（1）首先浏览器读取证书中的证书所有者、有效期等信息进行校验，校验证书的网站域名是否与证书颁发的域名一致，校验证书是否在有效期内
-（2）浏览器开始查找操作系统中已内置的受信任的证书发布机构CA，与服务器发来的证书中的颁发者CA比对，用于校验证书是否为合法机构颁发
-（3）如果找不到，浏览器就会报错，说明服务器发来的证书是不可信任的。
-（4）如果找到，那么浏览器就会从操作系统中取出颁发者CA 的公钥(多数浏览器开发商发布
-版本时，会事先在内部植入常用认证机关的公开密钥)，然后对服务器发来的证书里面的签名进行解密
-（5）浏览器使用相同的hash算法计算出服务器发来的证书的hash值，将这个计算的hash值与证书中签名做对比
-（6）对比结果一致，则证明服务器发来的证书合法，没有被冒充
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/https-wo-shou-guo-cheng-zhong-ke-hu-duan-ru-he-yan-zheng-zheng-shu-de-he-fa-xing">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/5add3reduce2">
-                        (5).add(3).reduce(2)
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-10</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-warning">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            Number.prototype.add = function(num) {
-    if (typeof num === &#39;number&#39;) {
-        return this + num;
-    }
-    return this;
-}
-Number.prototype.reduce = function(num) {
-    if (typeof num === &#39;number&#39;) {
-        return this - num;
-    }
-    return this;
-}
-
-console.log((5).add(3).reduce(2)); // 6
-
-注意
-这里使用 Number 和 Object 均可。
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/5add3reduce2">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/han-shu-ke-li-hua-add-han-shu">
-                        函数科里化( add 函数)
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-10</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_1">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            function add() {
-    let args = [].slice.call(arguments);
-    let sum = function() {
-        let arg = [].slice.call(arguments);
-        return add.apply(null, [...args, ...arg]);
-    }
-    sum.toString = function() {
-        return args.reduce((a, b) =&amp;gt; a + b);
-    }
-    return sum;
-}
-
-console.log(add(2, 3)(4)(5)()(1)); // 15
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/han-shu-ke-li-hua-add-han-shu">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/chui-zhi-shui-ping-ju-zhong">
-                        垂直水平居中
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-10</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/922aBovKI" class="post-tag i-tag
-                            i-tag-other_1">
-            #css基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            &amp;lt;div class=&amp;quot;parent&amp;quot;&amp;gt;
-  &amp;lt;div class=&amp;quot;child&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
-
-1
-.parent {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-flex 教程
-2
-.parent {
-    display: grid;
-}
-.child {
-    justify-self: center;
-    align-self: center;
-}
-
-grid 教程
-3
-.parent {
-    position: relative;
-}
-.child {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/chui-zhi-shui-ping-ju-zhong">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/1-2-3mapparseint">
-                        [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;].map(parseInt)
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-10</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-banana">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            parseInt
-parseInt() 函数解析一个字符串参数，并返回一个指定基数的整数 (数学系统的基础)。
-const intValue = parseInt(string[, radix]);
-
-注意
-在 radix 为 undefined，或者 radix 为 0 或者没有指定的情况下，JavaScript 作如下处理：
-
-如果字符串 string 以 &amp;quot;0x&amp;quot; 或者 &amp;quot;0X&amp;quot; 开头, 则基数是 16 (16进制).
-如果字符串 string 以 &amp;quot;0&amp;quot; 开头, 基数是 8（八进制）或者 10（十进制），那么具体是哪个基数由实现环境决定。ECMAScript 5 规定使用 10，但是并不是所有的浏览器都遵循这个规定。因此，永远都要明确给出 radix 参数的值。
-如果字符串 string 以其它任何值开头，则基数是 10 (十进制)。
-
-map
-map 回调函数接受三个参数
-arr.map(function callback(currentValue[,index[, array]]) {
-    // Return element for new_array
- }[, thisArg])
-
-所以问题可以转化为
-
-```js
-parseInt(&#39;1&#39;, 0) // 1
-parseInt(&#39;2&#39;, 1) // NaN
-parseInt(&#39;3&#39;, 2) // NaN, 3 不是二进制
-
-答案
-// 1 NaN NaN
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/1-2-3mapparseint">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
                 <!-- 翻页 -->
                 
     <div class="pagination-container">
@@ -524,6 +506,8 @@ parseInt(&#39;3&#39;, 2) // NaN, 3 不是二进制
             <a href="https://blog.ss1742.com/page/3/" class="page-btn btn">上一页</a>
             
                 
+                    <a href="https://blog.ss1742.com/page/5/" class="page-btn btn">下一页</a>
+                    
     </div>
     
                 </div>
@@ -535,7 +519,7 @@ parseInt(&#39;3&#39;, 2) // NaN, 3 不是二进制
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564330311432)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564413140061)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

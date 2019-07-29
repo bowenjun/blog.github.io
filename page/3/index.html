@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564330311432">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564413140061">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564330311432" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564413140061" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,358 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/this-zhi-xiang">
+                        this 指向
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-20</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/ijEjqIkoA" class="post-tag i-tag
+                            i-tag-warning">
+            #this
+        </a>
+                        
+                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
+                            i-tag-other_1">
+            #js基础
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            
+
+this，谁调用指谁
+
+
+构造函数的优先级(访问权限) &amp;gt; 原型链
+
+
+new 的时候，this 就会指向 new 出来的对象
+
+
+箭头函数
+
+
+
+箭头函数相当于 bind，会改变this` 的指向
+箭头函数的 this 是他父级的 this
+箭头函数把 this 固定到他父级的同级作用
+
+能改变 this 指向的关键词
+
+
+bind
+
+
+apply
+
+
+call
+
+
+一般函数 this 指向在执行的时候绑定
+
+
+箭头函数中的 this 是在定义函数的时候绑定
+
+
+严格模式
+
+
+
+非严格模式下默认指向 window
+严格模式下传 null 指向 null，不传或者传 undefined 都指向 undefined，即在严格模式下，没有写执行主体，this 指向是 undefined
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/this-zhi-xiang">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/git-rebase-he-git-merge-de-qu-bie">
+                        git rebase 和 git merge 的区别
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-19</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/5muLpDBeO" class="post-tag i-tag
+                            i-tag-other_2">
+            #git
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            
+git rebase 和 git merge 一样都是用于从一个分支获取并且合并到当前分支
+
+git merge
+
+将分支切换到 master 上去：git checkout master
+将分支 feature 合并到当前分支（即 master 分支）上：git merge feature
+
+特点
+
+只处理一次冲突
+引入了一次合并的历史记录，合并后的所有 commit 会按照提交时间从旧到新排列
+所有的过程信息更多，可能会提高之后查找问题的难度
+
+git rebase
+
+改变当前分支从 master 上拉出分支的位置
+没有多余的合并历史的记录，且合并后的 commit 顺序不一定按照 commit 的提交时间排列
+可能会多次解决同一个地方的冲突（有 squash 来解决）
+更清爽一些，master 分支上每个 commit 点都是相对独立完整的功能单元
+
+总结
+当需要保留详细的合并信息的时候建议使用 git merge，特别是需要将分支合并进入 master 分支时；当发现自己修改某个功能时，频繁进行了 git commit 提交时，发现其实过多的提交信息没有必要时，可以尝试 git rebase。
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/git-rebase-he-git-merge-de-qu-bie">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/git-ti-jiao-types">
+                        git 提交 types
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-19</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/5muLpDBeO" class="post-tag i-tag
+                            i-tag-other_3">
+            #git
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            feat: 新功能(feature)
+fix: 修补(bug)
+docs: 文档(documentation)
+style: 格式(不影响代码运行的变动)
+refactor: 重构(即不是新增功能，也不是修改bug的代码变动)
+test: 增加测试
+chore: 构建过程或辅助工具的变动
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/git-ti-jiao-types">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-2">
+                        《深入浅出 React 和 Redux》[2]
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-18</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
+                            i-tag-">
+            #读书
+        </a>
+                        
+                        <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
+                            i-tag-error">
+            #react
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            第2章 React 组件
+易于维护的设计要素
+
+高内聚 把逻辑紧密相关的内容放在一个组件内
+低耦合 每个组件尽量独立，依赖关系尽量弱化
+
+组件的数据
+对外用 props，对内用 state
+propTypes 检查
+Person.propTypes = {
+    name: PropTypes.string.isRequired,
+    age: PropTypes.number
+}
+
+// 添加默认
+Person.defaultProps = {
+    name: &#39;&#39;
+}
+
+因为检查会消耗 CPU 资源，所以可以在开发的时候加上来避免一些错误，在发布的时候可以通过 babel-react-optimize 来去掉
+生命周期
+本书中 react 版本 v15.4 太老，v16.+ 部分生命周期方法废除，这一块后面总结
+constructor
+
+初始化 state
+绑定成员函数的 this 环境
+
+tips
+
+this.foo = ::this.foo &amp;lt;==&amp;gt; this.foo = this.foo.bind(this)
+
+...
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-2">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-1">
+                        《深入浅出 React 和 Redux》[1]
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-18</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
+                            i-tag-other_4">
+            #读书
+        </a>
+                        
+                        <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
+                            i-tag-banana">
+            #react
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            第1章
+简介
+
+react 不支持比 IE8 更低版本浏览器
+通过组件（独立可重用的代码）开发应用。基于组件的应用开发是广泛使用的软件开发模式，用 分而治之 的方法，把一个大的应用分解成若干小的组件，每个组件只关注于某个小范围的特定功能
+
+JSX
+
+JSX，是 JavaScript的语法扩展，让我们在 JavaScript 中可以编写像 HTML 一样的代码
+
+进步还是倒退问题
+
+JSX 中的 onClick 和 HTML 中的 onclick 对比
+
+
+
+HTML 中的 onclick
+
+处理函数是在全局环境下执行的，这污染全局环境，很容易产生意料不到的效果
+给很多 DOM 添加 onclick 事件，可能会影响网页的性能，需要处理的事件函数越多，性能就越低
+使用 onclick 的 DOM，如果要动态删掉，需要把对应的时间处理器注销，否则可能造成内存写漏并且不容易追踪到 bug
+
+
+
+JSX
+
+JSX 组件的 onClick，并没有直接使用 onclick 的 html，而是使用事件委托处理点击事件，最后都只在 DOM 树上添加了一个事件处理函数，挂在最顶层的 DOM 节点上
+react 中组件的生命周期，在 unmount 的时候自然能够清理所有相关的事件处理函数，内存泄露的问题得以解决
+
+
+
+eject
+
+npm run eject
+
+&amp;quot;弹射&amp;quot;（暴露并修改）webpack、package.json 等配置
+react 的工作方式
+react 的理念
+UI = render(data)
+Virtual DOM
+DOM 是结构化文本的抽象表达形式，特定于 Web 环境中
+Virtual DOM 是对 DOM 树的抽象，只是存在于 JavaScript 空间的树形结构
+Tips
+设计原则：做同一件事的代码应该有高耦合性。
+纯函数：没有任何副作用，输出完全依赖输入的函数。
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-1">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/react-diff">
+                        react diff 原理浅析
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-17</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
+                            i-tag-">
+            #原理
+        </a>
+                        
+                        <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
+                            i-tag-warning">
+            #react
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            React 通过制定大胆的 diff 策略，将 O(n3) 复杂度的问题转换成 O(n) 复杂度的问题；
+React 是如何将 O(n3) 复杂度的问题转换成 O(n) 的？
+
+只进行同级比较
+不同类的 React 组件会被当做完全不同的 DOM 结构而被完全替换
+key prop：开发人员可以通过给 Virtual DOM 一个唯一的 key 属性暗示 React 这是同一个 DOM 结构，反之若 key 值不同则会被当做完全不同的 DOM 结构。
+
+React 通过分层求异的策略，对 tree diff 进行算法优化；
+React 通过相同类生成相似树形结构，不同类生成不同树形结构的策略，对 component diff 进行算法优化。
+React 通过设置唯一 key 的策略，对 element diff 进行算法优化；
+建议，在开发组件时，保持稳定的 DOM 结构会有助于性能的提升；
+建议，在开发过程中，尽量减少类似将最后一个节点移动到列表首部的操作，当节点数量过大或更新操作过于频繁时，在一定程度上会影响 React 的渲染性能。
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/react-diff">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/promiseall-shi-xian-yuan-li">
                         Promise.all 实现原理
                     </a>
@@ -107,12 +459,12 @@
                     <time class="post-time">2019-07-16</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-other_4">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-warning">
             #js基础
         </a>
                         
@@ -162,12 +514,12 @@
                     <time class="post-time">2019-07-16</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-other_1">
+                            i-tag-banana">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-other_1">
             #js基础
         </a>
                         
@@ -203,12 +555,12 @@
                     <time class="post-time">2019-07-16</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-banana">
+                            i-tag-other_2">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_1">
+                            i-tag-other_4">
             #js基础
         </a>
                         
@@ -250,12 +602,12 @@
                     <time class="post-time">2019-07-15</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-info">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-other_2">
             #js基础
         </a>
                         
@@ -319,265 +671,6 @@ mp.then(res =&amp;gt; console.log(&#39;success&#39;, res));
                 </div>
             </article>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/new-de-shi-xian-yuan-li">
-                        new 实现原理
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-15</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-info">
-            #原理
-        </a>
-                        
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-error">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            原理
-
-创建一个空对象，构造函数中的 this 指向这个空对象
-这个新对象被执行 [[原型]] 连接
-执行构造函数方法，属性和方法被添加到 this 引用的对象中
-如果构造函数中没有返回其它对象，那么返回 this，即创建的这个的新对象，否则，返回构造函数中返回的对象
-
-function _new(fn, ...arg) {
-    let obj = Object.create(fn.prototype);
-    let ret = fn.apply(obj, arg);
-    return ret instanceof Object ? ret : obj;
-}
-
-Object.create() 方法创建一个新对象，使用现有的对象来提供新创建的对象的 __proto__
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/new-de-shi-xian-yuan-li">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben-de-fang-shi-you-na-xie">
-                        异步加载JS脚本的方式有哪些
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-14</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_3">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            
-&amp;lt;script&amp;gt; 标签中增加 async(html5) 或者 defer(html4) 属性,脚本就会异步加载。
-
-defer 和 async 的区别在于：
-defer 要等到整个页面在内存中正常渲染结束（DOM 结构完全生成，以及其他脚本执行完成），在 window.onload 之前执行；
-async 一旦下载完，渲染引擎就会中断渲染，执行这个脚本以后，再继续渲染。
-如果有多个 defer 脚本，会按照它们在页面出现的顺序加载
-多个 async 脚本不能保证加载顺序
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben-de-fang-shi-you-na-xie">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/ru-he-rang-a-1-and-a-2-and-a-3-de-zhi-wei-true">
-                        如何让 (a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3) 的值为true
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-14</time>
-                    
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            Object 转换为原始类型
-
-
-如果部署了 [Symbol.toPrimitive] 接口，那么调用此接口，若返回的不是基本数据类型，抛出错误。
-
-
-如果没有部署 [Symbol.toPrimitive] 接口，那么根据要转换的类型，先调用 valueOf / toString
-
-非Date类型对象，hint 是 default 时，调用顺序为：valueOf &amp;gt;&amp;gt;&amp;gt; toString，即 valueOf 返回的不是基本数据类型，才会继续调用 valueOf，如果 toString 返回的还不是基本数据类型，那么抛出错误。
-如果 hint 是 string(Date对象的 hint 默认是 string) ，调用顺序为：toString &amp;gt;&amp;gt;&amp;gt; valueOf，即 toString 返回的不是基本数据类型，才会继续调用 valueOf，如果 valueOf 返回的还不是基本数据类型，那么抛出错误。
-如果 hint 是 number，调用顺序为： valueOf &amp;gt;&amp;gt;&amp;gt; toString
-
-
-
-题解
-
-隐式转换
-
-// 部署 [Symbol.toPrimitive] / valueOf / toString 均可
-let a = {
-    [Symbol.toPrimitive]: (function(hint) {
-        let i = 1;
-        return function() {
-            return i++;
-        }
-    })()
-}		
-
-
-数据劫持
-
-let a = new Proxy({}, {
-    i: 1,
-    get: function() {
-        return () =&amp;gt; this.i++;
-    }
-})
-
-
-数组的 toString 接口默认调用数组的 join 方法，重写 join 方法
-
-let a = [1, 2, 3];
-a.join = a.shift;
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/ru-he-rang-a-1-and-a-2-and-a-3-de-zhi-wei-true">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/304-zhuang-tai-ma">
-                        304 状态码
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-13</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/5CynFjhOR" class="post-tag i-tag
-                            i-tag-warning">
-            #状态码
-        </a>
-                        
-                        <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-other_3">
-            #http
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            soon
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/304-zhuang-tai-ma">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/302-zen-me-shi-xian-de">
-                        302 怎么实现的
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-13</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/5CynFjhOR" class="post-tag i-tag
-                            i-tag-banana">
-            #状态码
-        </a>
-                        
-                        <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-warning">
-            #http
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            301，302 都是 HTTP 状态的编码，都代表着某个 URL 发生了转移，不同之处在于：
-　　301 redirect: 301 代表永久性转移(Permanently Moved)。
-　　302 redirect: 302 代表暂时性转移(Temporarily Moved )。
-其实 301、302 的重定向都是通过对 http协议 的 location 的修改来实现的
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/302-zen-me-shi-xian-de">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/shi-yong-sort-dui-shu-zu-3-15-8-29-102-22-jin-xing-pai-xu">
-                        使用 sort() 对数组 [3, 15, 8, 29, 102, 22] 进行排序
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-12</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-">
-            #算法
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            结果
-[3, 15, 8, 29, 102, 22].sort() 
-// [102, 15, 22, 29, 3, 8]
-
-根据 MDN 上对 Array.sort() 的解释，默认的排序方法会将数组元素转换为字符串，然后比较字符串中字符的 UTF-16 编码顺序来进行排序。所以 &#39;102&#39; 会排在  &#39;15&#39; 前面。
-[3, 15, 8, 29, 102, 22].sort((a, b) =&amp;gt; a - b) 
-// [3, 8, 15, 22, 29, 102]
-[3, 15, 8, 29, 102, 22].sort((a, b) =&amp;gt; a - b) 
-// [102, 29, 22, 15, 8, 3]
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/shi-yong-sort-dui-shu-zu-3-15-8-29-102-22-jin-xing-pai-xu">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
                 <!-- 翻页 -->
                 
     <div class="pagination-container">
@@ -598,7 +691,7 @@ a.join = a.shift;
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564330311432)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564413140061)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564413140061">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564503188334">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564413140061" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564503188334" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,82 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/https-zhong-jian-ren-gong-ji">
+                        HTTPS 中间人攻击
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-11</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
+                            i-tag-info">
+            #http
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            中间人攻击过程如下：
+
+服务器向客户端发送公钥。
+攻击者截获公钥，保留在自己手上。
+然后攻击者自己生成一个【伪造的】公钥，发给客户端。
+客户端收到伪造的公钥后，生成加密hash值发给服务器。
+攻击者获得加密hash值，用自己的私钥解密获得真秘钥。
+同时生成假的加密hash值，发给服务器。
+服务器用私钥解密获得假秘钥。
+服务器用加秘钥加密传输信息
+
+防范方法：
+服务端在发送浏览器的公钥中加入CA证书，浏览器可以验证CA证书的有效性
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/https-zhong-jian-ren-gong-ji">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/https-wo-shou-guo-cheng">
+                        HTTPS 握手过程
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-11</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
+                            i-tag-error">
+            #http
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            
+第一步，客户端给出协议版本号、一个客户端生成的随机数（Client random），以及客户端支持的加密方法。
+第二步，服务端确认双方使用的加密方法，并给出数字证书、以及一个服务器生成的随机数（Server random）。
+第三步，客户端确认数字证书有效，然后生成一个新的随机数（Premaster secret），并使用数字证书中的公钥，加密这个随机数，发给服务端。
+第四步，服务端使用自己的私钥，获取客户端发来的随机数（即Premaster secret）。
+第五步，客户端和服务端根据约定的加密方法，使用前面的三个随机数，生成&amp;quot;对话密钥&amp;quot;（session key），用来加密接下来的整个对话过程。
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/https-wo-shou-guo-cheng">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/tcp-san-ci-wo-shou-si-ci-hui-shou">
                         TCP三次握手四次挥手
                     </a>
@@ -107,7 +183,7 @@
                     <time class="post-time">2019-07-11</time>
                     
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-error">
             #http
         </a>
                         
@@ -144,7 +220,7 @@
                     <time class="post-time">2019-07-11</time>
                     
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-success">
+                            i-tag-">
             #http
         </a>
                         
@@ -181,7 +257,7 @@
                     <time class="post-time">2019-07-10</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-error">
             #js基础
         </a>
                         
@@ -226,7 +302,7 @@ console.log((5).add(3).reduce(2)); // 6
                     <time class="post-time">2019-07-10</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_3">
+                            i-tag-primary">
             #js基础
         </a>
                         
@@ -268,7 +344,7 @@ console.log(add(2, 3)(4)(5)()(1)); // 15
                     <time class="post-time">2019-07-10</time>
                     
                         <a href="https://blog.ss1742.com/tag/922aBovKI" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-other_2">
             #css基础
         </a>
                         
@@ -329,7 +405,7 @@ grid 教程
                     <time class="post-time">2019-07-10</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-other_3">
             #js基础
         </a>
                         
@@ -392,7 +468,7 @@ parseInt(&#39;3&#39;, 2) // NaN, 3 不是二进制
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564413140061)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564503188334)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>1742·小博文</title>
-    <updated>2019-07-29T15:12:23.971Z</updated>
+    <updated>2019-07-30T16:14:00.686Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -10,6 +10,146 @@
     <logo>https://blog.ss1742.com/images/avatar.png</logo>
     <icon>https://blog.ss1742.com/favicon.ico</icon>
     <rights>All rights reserved 2019, 1742·小博文</rights>
+    <entry>
+        <title type="html"><![CDATA[axios上传进度]]></title>
+        <id>https://blog.ss1742.com/post/axios-shang-chuan-jin-du</id>
+        <link href="https://blog.ss1742.com/post/axios-shang-chuan-jin-du">
+        </link>
+        <updated>2019-07-30T16:11:28.000Z</updated>
+        <content type="html"><![CDATA[<pre><code class="language-js">const config = {
+    onUploadProgress: progressEvent =&gt; console.log(progressEvent.loaded / progressEvent.total)
+}
+axios.put('/upload/server', data, config);
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[前端性能优化]]></title>
+        <id>https://blog.ss1742.com/post/qian-duan-xing-neng-you-hua</id>
+        <link href="https://blog.ss1742.com/post/qian-duan-xing-neng-you-hua">
+        </link>
+        <updated>2019-07-30T09:36:36.000Z</updated>
+        <content type="html"><![CDATA[<p>前端性能优化：减少请求数量、减小资源大小、优化网络连接、优化资源加载、减少重绘回流、使用更好性能的api和构建优化。</p>
+<p>参考链接: <a href="https://www.cnblogs.com/xiaohuochai/p/9178390.html#anchor1">前端性能优化的七大手段</a></p>
+<h3 id="减少请求数量">减少请求数量</h3>
+<h4 id="合并">合并</h4>
+<p>如果不合并影响</p>
+<ul>
+<li>文件之间插入的上行请求，增加了 n - 1 个网络延迟</li>
+<li>受丢包问题影响更严重</li>
+<li>经过代理服务器时可能会被断开</li>
+</ul>
+<p>合并带来的问题</p>
+<ul>
+<li>首屏渲染</li>
+<li>缓存失效</li>
+</ul>
+<p>建议</p>
+<ul>
+<li>公共库合并</li>
+<li>不同页面单独合并</li>
+</ul>
+<h4 id="图片处理">图片处理</h4>
+<ol>
+<li>雪碧图<br>
+减少了请求数量，但如果图片过大一次加载过慢。现在因字体图片和 svg 图片流行渐渐使用少了<br>
+2. base64<br>
+base64 格式嵌入到 html 中，减少了请求数量，但是编码用8位字符表示信息中的6个位，编码后大小比原始值扩大了 33%<br>
+3. 使用字体图标来替代图片</li>
+</ol>
+<h4 id="减少重定向">减少重定向</h4>
+<p>如果使用重定向，要使用 301 永久重定向</p>
+<h4 id="使用缓存">使用缓存</h4>
+<p>Cache-Control 和 Expires</p>
+<h4 id="不使用-import">不使用 @import</h4>
+<h4 id="避免使用空-src-和-href">避免使用空 src 和 href</h4>
+<h3 id="减小资源大小">减小资源大小</h3>
+<h4 id="压缩">压缩</h4>
+<ul>
+<li>html 压缩</li>
+<li>css 压缩</li>
+<li>js 压缩与混淆</li>
+<li>图片压缩（tinypng）</li>
+</ul>
+<h4 id="gzip">gzip</h4>
+<h3 id="优化网络连接">优化网络连接</h3>
+<h4 id="cdncontent-delivery-network">cdn(Content Delivery Network)</h4>
+<h4 id="dns-预解析">dns 预解析</h4>
+<pre><code class="language-html">&lt;link rel=&quot;dns-prefecth&quot; href=&quot;https://xxx.com&quot; /&gt;
+</code></pre>
+<h4 id="并行连接">并行连接</h4>
+<p>域名发散，使用多个域名增加并发数</p>
+<h4 id="持久连接">持久连接</h4>
+<p>keep-alive</p>
+<h4 id="管道化连接">管道化连接</h4>
+<p>http2协议，单条连接多路复用</p>
+<h3 id="优化资源下载">优化资源下载</h3>
+<h4 id="资源加载位置">资源加载位置</h4>
+<p>css 头部，js 尾部，布局 js 放在 head 中</p>
+<h4 id="资源加载时机">资源加载时机</h4>
+<ol>
+<li>异步 script 标签<br>
+defer: html 加载完后执行<br>
+async: 下载完成立即执行<br>
+2. 模块按需加载<br>
+webpack 1. import() 2.require.ensure<br>
+3. 懒加载</li>
+</ol>
+<h3 id="减少重绘回流">减少重绘回流</h3>
+<h4 id="样式">样式</h4>
+<ol>
+<li>避免使用层级较深的选择器</li>
+<li>避免使用 css 表达式</li>
+<li>避免使用 table 布局</li>
+<li>能用 css 尽量不要用 js</li>
+</ol>
+<h4 id="渲染层">渲染层</h4>
+<ol>
+<li>将需要多次重绘的元素独立，如设置 absolute，可以减少重绘范围</li>
+<li>动画使用硬件渲染</li>
+</ol>
+<h4 id="dom-优化">dom 优化</h4>
+<ol>
+<li>缓存 dom</li>
+<li>减少 dom 深度和数量</li>
+<li>批量操作 dom</li>
+<li>
+<ul>
+<li>事件代理</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>防抖节流</li>
+</ul>
+</li>
+<li>及时清理环境</li>
+</ol>
+<h3 id="使用更好的api">使用更好的api</h3>
+<h4 id="用对-css-选择器">用对 css 选择器</h4>
+<h4 id="使用-requestanimationframe-替代计时器">使用 requestAnimationFrame 替代计时器</h4>
+<h4 id="使用-intersectionobserver-实现图片可视区域懒加载">使用 IntersectionObserver 实现图片可视区域懒加载</h4>
+<h4 id="使用-webworker">使用 webworker</h4>
+<h3 id="构建优化">构建优化</h3>
+<p>webpack</p>
+<h4 id="打包公共代码">打包公共代码</h4>
+<h4 id="动态导入-按需加载">动态导入 按需加载</h4>
+<h4 id="剔除无用代码">剔除无用代码</h4>
+<p>tree shaking</p>
+<p>js - uglifyjs</p>
+<p>css - purify css</p>
+<h4 id="长缓存优化">长缓存优化</h4>
+<ol>
+<li>
+<p>hash 替换为 chunkhash</p>
+</li>
+<li>
+<p>使用 name 而不是 id</p>
+</li>
+</ol>
+<h4 id="公用代码内联">公用代码内联</h4>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[买卖股票的最佳时机 II]]></title>
         <id>https://blog.ss1742.com/post/mai-mai-gu-piao-de-zui-jia-shi-ji-ii</id>
@@ -246,52 +386,6 @@ function qSort(nums) {
         <content type="html"><![CDATA[<p>给定一个字符串，逐个翻转字符串中的每个单词。</p>
 <pre><code class="language-js">function reverseWords(s) {
 			return s.trim().replace(/(\s)+/g, '$1').split(' ').reverse().join(' ');
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[最长公共前缀]]></title>
-        <id>https://blog.ss1742.com/post/zui-chang-gong-gong-qian-zhui</id>
-        <link href="https://blog.ss1742.com/post/zui-chang-gong-gong-qian-zhui">
-        </link>
-        <updated>2019-07-26T14:38:56.000Z</updated>
-        <content type="html"><![CDATA[<p>编写一个函数来查找字符串数组中的最长公共前缀</p>
-<pre><code class="language-js">function longestCommonPrefix(s) {
-			if (s.length === 0) return '';
-			let common = s[0];
-			for (let i = 0, len = s.length; i &lt; len; i++) {
-				while (s[i].indexOf(common) !== 0) {
-					common = common.substring(0, common.length - 1);
-					if (!common) return '';
-				}
-			}
-			return common;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[无重复字符的最长子串]]></title>
-        <id>https://blog.ss1742.com/post/wu-chong-fu-zi-fu-de-zui-chang-zi-chuan</id>
-        <link href="https://blog.ss1742.com/post/wu-chong-fu-zi-fu-de-zui-chang-zi-chuan">
-        </link>
-        <updated>2019-07-26T13:29:05.000Z</updated>
-        <content type="html"><![CDATA[<p>给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度</p>
-<pre><code class="language-js">function lengthOfLongestSubstring(s) {
-			if (s.length &lt; 2) return s.length;
-			let res = [];
-			let temp = s[0];
-			for (let i = 1, len = s.length; i &lt; len; i++) {
-				if (temp.includes(s[i])) {
-					res.push(temp);
-					temp = `${temp.substring(temp.indexOf(s[i]) + 1)}${s[i]}`;
-				} else {
-					temp = `${temp}${s[i]}`;
-				}
-			}
-			res.push(temp);
-			return res.reduce((a, b) =&gt; Math.max(a, b.length), 0);
 }
 </code></pre>
 ]]></content>

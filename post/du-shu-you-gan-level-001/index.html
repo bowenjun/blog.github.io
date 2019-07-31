@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    Promise.race 实现原理 | 1742·小博文
+    读书有感——level-0.0.1 | 1742·小博文
 </title>
 <link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564589658243">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -106,38 +106,22 @@
                 <div id="content" class="main-container-left">
                     <article class="post i-card">
                         <h2 class="post-title">
-                            Promise.race 实现原理
+                            读书有感——level-0.0.1
                         </h2>
                         <div class="post-info">
-                            <time class="post-time">2019-07-16</time>
+                            <time class="post-time">2019-08-01</time>
                             
-                                <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-warning">
-                            #原理
-                        </a>
-                                
-                                <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-banana">
-                            #js基础
+                                <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
+                            i-tag-other_3">
+                            #读书
                         </a>
                                 
                         </div>
                         
                                 <div class="post-content">
-                                    <pre><code class="language-js">Promise.prototype.race = function(promises) {
-    return new Promise((resolve, reject) =&gt; {
-        if (!isArray(promises)) {
-            return reject(new TypeError('Arguments not Array'));
-        }
-        for (let p of promises) {
-            Promise.resolve(p).then(
-                res =&gt; resolve(res), 
-                rej =&gt; reject(rej)
-            )
-        }
-    })
-}
-</code></pre>
+                                    <p>利用晚上11点以后的时间，正在看《曾国藩的正面与侧面》—— 张宏杰，开始坚持记账(来自曾国藩老师)</p>
+<p>利用地铁，2天已读《邓小平传》—— 理查德伊文思 前七章</p>
+<p>实践来了，什么书都读。其实是才开始阅读，并不是说马上就变成了和两位伟人一样有同样的思想报复和才干，写出来的句子也就只有这可怜巴巴的两句。但是我觉得坚持完8月，可能有意想不到的收获。</p>
 
                                 </div>
                     </article>
@@ -145,9 +129,9 @@
                     
                         <div class="next-post">
                             <div class="next">下一篇</div>
-                            <a href="https://blog.ss1742.com/post/promise-shi-xian-yuan-li">
+                            <a href="https://blog.ss1742.com/post/fu-yuan-ip-di-zhi">
                                 <h3 class="post-title">
-                                    Promise 实现原理
+                                    复原IP地址
                                 </h3>
                             </a>
                         </div>

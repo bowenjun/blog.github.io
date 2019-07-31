@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>1742·小博文</title>
-    <updated>2019-07-31T16:01:57.046Z</updated>
+    <updated>2019-07-31T16:14:23.251Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://blog.ss1742.com/images/avatar.png</logo>
     <icon>https://blog.ss1742.com/favicon.ico</icon>
     <rights>All rights reserved 2019, 1742·小博文</rights>
+    <entry>
+        <title type="html"><![CDATA[读书有感——level-0.0.1]]></title>
+        <id>https://blog.ss1742.com/post/du-shu-you-gan-level-001</id>
+        <link href="https://blog.ss1742.com/post/du-shu-you-gan-level-001">
+        </link>
+        <updated>2019-07-31T16:11:58.000Z</updated>
+        <content type="html"><![CDATA[<p>利用晚上11点以后的时间，正在看《曾国藩的正面与侧面》—— 张宏杰，开始坚持记账(来自曾国藩老师)</p>
+<p>利用地铁，2天已读《邓小平传》—— 理查德伊文思 前七章</p>
+<p>实践来了，什么书都读。其实是才开始阅读，并不是说马上就变成了和两位伟人一样有同样的思想报复和才干，写出来的句子也就只有这可怜巴巴的两句。但是我觉得坚持完8月，可能有意想不到的收获。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[复原IP地址]]></title>
         <id>https://blog.ss1742.com/post/fu-yuan-ip-di-zhi</id>
@@ -409,16 +420,6 @@ function qSort(nums) {
 	return res.length &gt; 0 ? ('/' + res.join('/')) : '/';
 }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[愈发觉得看书真的很重要]]></title>
-        <id>https://blog.ss1742.com/post/kan-shu</id>
-        <link href="https://blog.ss1742.com/post/kan-shu">
-        </link>
-        <updated>2019-07-28T16:02:13.000Z</updated>
-        <content type="html"><![CDATA[<p>看书，不只是限制于技术类，同时需要对社会学、经济学的书籍多看一点。</p>
-<p>不追求马上获得什么，一点点来。</p>
 ]]></content>
     </entry>
 </feed>

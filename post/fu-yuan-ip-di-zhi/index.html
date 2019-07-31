@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    关于 | 1742·小博文
+    复原IP地址 | 1742·小博文
 </title>
 <link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564588914399">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -106,20 +106,69 @@
                 <div id="content" class="main-container-left">
                     <article class="post i-card">
                         <h2 class="post-title">
-                            关于
+                            复原IP地址
                         </h2>
                         <div class="post-info">
-                            <time class="post-time">2019-01-25</time>
+                            <time class="post-time">2019-08-01</time>
                             
+                                <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
+                            i-tag-banana">
+                            #算法
+                        </a>
+                                
                         </div>
                         
                                 <div class="post-content">
-                                    <p>gridea 真好用</p>
+                                    <p>给定一个只包含数字的字符串，复原它并返回所有可能的 IP 地址格式。</p>
+<p>示例:</p>
+<pre><code>输入: &quot;25525511135&quot;
+输出: [&quot;255.255.11.135&quot;, &quot;255.255.111.35&quot;]
+</code></pre>
+<pre><code class="language-js">var restoreIpAddresses = function(s) {
+    let fun = getObj();
+    fun.findOut(s, []);
+    return fun.res;
+};
+
+var getObj = function() {
+    let res = [];
+    function findOut(str, arr) {
+        if (!str.length &amp;&amp; arr.length === 4) return res.push(arr.join('.'));
+        if (arr.length === 4) return;
+        let temp = '', tempArr = str.split('');
+        for (let i = 0; i &lt; 3; i++) {
+            temp = tempArr.pop() + temp;
+            if (isValid(temp)) {
+                let a = [...arr];
+                a.unshift(temp);
+                findOut(tempArr.join(''), a);
+            }
+        }
+    }
+    return {
+        findOut,
+        res
+    }
+}
+
+var isValid = function(s) {
+    return Number(s) &lt; 256 &amp;&amp; Number(s).toString() === s;
+}
+</code></pre>
 
                                 </div>
                     </article>
                     <!--  -->
                     
+                        <div class="next-post">
+                            <div class="next">下一篇</div>
+                            <a href="https://blog.ss1742.com/post/axios-shang-chuan-jin-du">
+                                <h3 class="post-title">
+                                    axios上传进度
+                                </h3>
+                            </a>
+                        </div>
+                        
                             <div id="disqus_thread"></div>
                             <div id="gitalk-container"></div>
                 </div>

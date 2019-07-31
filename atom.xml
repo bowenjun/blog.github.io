@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>1742·小博文</title>
-    <updated>2019-07-30T16:14:00.686Z</updated>
+    <updated>2019-07-31T16:01:57.046Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -10,6 +10,50 @@
     <logo>https://blog.ss1742.com/images/avatar.png</logo>
     <icon>https://blog.ss1742.com/favicon.ico</icon>
     <rights>All rights reserved 2019, 1742·小博文</rights>
+    <entry>
+        <title type="html"><![CDATA[复原IP地址]]></title>
+        <id>https://blog.ss1742.com/post/fu-yuan-ip-di-zhi</id>
+        <link href="https://blog.ss1742.com/post/fu-yuan-ip-di-zhi">
+        </link>
+        <updated>2019-07-31T16:00:24.000Z</updated>
+        <content type="html"><![CDATA[<p>给定一个只包含数字的字符串，复原它并返回所有可能的 IP 地址格式。</p>
+<p>示例:</p>
+<pre><code>输入: &quot;25525511135&quot;
+输出: [&quot;255.255.11.135&quot;, &quot;255.255.111.35&quot;]
+</code></pre>
+<pre><code class="language-js">var restoreIpAddresses = function(s) {
+    let fun = getObj();
+    fun.findOut(s, []);
+    return fun.res;
+};
+
+var getObj = function() {
+    let res = [];
+    function findOut(str, arr) {
+        if (!str.length &amp;&amp; arr.length === 4) return res.push(arr.join('.'));
+        if (arr.length === 4) return;
+        let temp = '', tempArr = str.split('');
+        for (let i = 0; i &lt; 3; i++) {
+            temp = tempArr.pop() + temp;
+            if (isValid(temp)) {
+                let a = [...arr];
+                a.unshift(temp);
+                findOut(tempArr.join(''), a);
+            }
+        }
+    }
+    return {
+        findOut,
+        res
+    }
+}
+
+var isValid = function(s) {
+    return Number(s) &lt; 256 &amp;&amp; Number(s).toString() === s;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[axios上传进度]]></title>
         <id>https://blog.ss1742.com/post/axios-shang-chuan-jin-du</id>
@@ -375,19 +419,6 @@ function qSort(nums) {
         <updated>2019-07-28T16:02:13.000Z</updated>
         <content type="html"><![CDATA[<p>看书，不只是限制于技术类，同时需要对社会学、经济学的书籍多看一点。</p>
 <p>不追求马上获得什么，一点点来。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[翻转字符串里的单词]]></title>
-        <id>https://blog.ss1742.com/post/fan-zhuan-zi-fu-chuan-li-de-dan-ci</id>
-        <link href="https://blog.ss1742.com/post/fan-zhuan-zi-fu-chuan-li-de-dan-ci">
-        </link>
-        <updated>2019-07-26T16:40:11.000Z</updated>
-        <content type="html"><![CDATA[<p>给定一个字符串，逐个翻转字符串中的每个单词。</p>
-<pre><code class="language-js">function reverseWords(s) {
-			return s.trim().replace(/(\s)+/g, '$1').split(' ').reverse().join(' ');
-}
-</code></pre>
 ]]></content>
     </entry>
 </feed>

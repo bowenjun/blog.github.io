@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564589716533">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564644400986">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564589716533" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564644400986" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,194 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-2">
+                        《深入浅出 React 和 Redux》[2]
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-18</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
+                            i-tag-success">
+            #读书
+        </a>
+                        
+                        <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
+                            i-tag-primary">
+            #react
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            第2章 React 组件
+易于维护的设计要素
+
+高内聚 把逻辑紧密相关的内容放在一个组件内
+低耦合 每个组件尽量独立，依赖关系尽量弱化
+
+组件的数据
+对外用 props，对内用 state
+propTypes 检查
+Person.propTypes = {
+    name: PropTypes.string.isRequired,
+    age: PropTypes.number
+}
+
+// 添加默认
+Person.defaultProps = {
+    name: &#39;&#39;
+}
+
+因为检查会消耗 CPU 资源，所以可以在开发的时候加上来避免一些错误，在发布的时候可以通过 babel-react-optimize 来去掉
+生命周期
+本书中 react 版本 v15.4 太老，v16.+ 部分生命周期方法废除，这一块后面总结
+constructor
+
+初始化 state
+绑定成员函数的 this 环境
+
+tips
+
+this.foo = ::this.foo &amp;lt;==&amp;gt; this.foo = this.foo.bind(this)
+
+...
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-2">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-1">
+                        《深入浅出 React 和 Redux》[1]
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-18</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
+                            i-tag-primary">
+            #读书
+        </a>
+                        
+                        <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
+                            i-tag-primary">
+            #react
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            第1章
+简介
+
+react 不支持比 IE8 更低版本浏览器
+通过组件（独立可重用的代码）开发应用。基于组件的应用开发是广泛使用的软件开发模式，用 分而治之 的方法，把一个大的应用分解成若干小的组件，每个组件只关注于某个小范围的特定功能
+
+JSX
+
+JSX，是 JavaScript的语法扩展，让我们在 JavaScript 中可以编写像 HTML 一样的代码
+
+进步还是倒退问题
+
+JSX 中的 onClick 和 HTML 中的 onclick 对比
+
+
+
+HTML 中的 onclick
+
+处理函数是在全局环境下执行的，这污染全局环境，很容易产生意料不到的效果
+给很多 DOM 添加 onclick 事件，可能会影响网页的性能，需要处理的事件函数越多，性能就越低
+使用 onclick 的 DOM，如果要动态删掉，需要把对应的时间处理器注销，否则可能造成内存写漏并且不容易追踪到 bug
+
+
+
+JSX
+
+JSX 组件的 onClick，并没有直接使用 onclick 的 html，而是使用事件委托处理点击事件，最后都只在 DOM 树上添加了一个事件处理函数，挂在最顶层的 DOM 节点上
+react 中组件的生命周期，在 unmount 的时候自然能够清理所有相关的事件处理函数，内存泄露的问题得以解决
+
+
+
+eject
+
+npm run eject
+
+&amp;quot;弹射&amp;quot;（暴露并修改）webpack、package.json 等配置
+react 的工作方式
+react 的理念
+UI = render(data)
+Virtual DOM
+DOM 是结构化文本的抽象表达形式，特定于 Web 环境中
+Virtual DOM 是对 DOM 树的抽象，只是存在于 JavaScript 空间的树形结构
+Tips
+设计原则：做同一件事的代码应该有高耦合性。
+纯函数：没有任何副作用，输出完全依赖输入的函数。
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-1">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/react-diff">
+                        react diff 原理浅析
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-17</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
+                            i-tag-warning">
+            #原理
+        </a>
+                        
+                        <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
+                            i-tag-banana">
+            #react
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            React 通过制定大胆的 diff 策略，将 O(n3) 复杂度的问题转换成 O(n) 复杂度的问题；
+React 是如何将 O(n3) 复杂度的问题转换成 O(n) 的？
+
+只进行同级比较
+不同类的 React 组件会被当做完全不同的 DOM 结构而被完全替换
+key prop：开发人员可以通过给 Virtual DOM 一个唯一的 key 属性暗示 React 这是同一个 DOM 结构，反之若 key 值不同则会被当做完全不同的 DOM 结构。
+
+React 通过分层求异的策略，对 tree diff 进行算法优化；
+React 通过相同类生成相似树形结构，不同类生成不同树形结构的策略，对 component diff 进行算法优化。
+React 通过设置唯一 key 的策略，对 element diff 进行算法优化；
+建议，在开发组件时，保持稳定的 DOM 结构会有助于性能的提升；
+建议，在开发过程中，尽量减少类似将最后一个节点移动到列表首部的操作，当节点数量过大或更新操作过于频繁时，在一定程度上会影响 React 的渲染性能。
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/react-diff">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/promiseall-shi-xian-yuan-li">
                         Promise.all 实现原理
                     </a>
@@ -107,12 +295,12 @@
                     <time class="post-time">2019-07-16</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-other_3">
+                            i-tag-success">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-other_3">
             #js基础
         </a>
                         
@@ -162,12 +350,12 @@
                     <time class="post-time">2019-07-16</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-other_2">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-primary">
             #js基础
         </a>
                         
@@ -203,12 +391,12 @@
                     <time class="post-time">2019-07-16</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-other_1">
+                            i-tag-banana">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-primary">
             #js基础
         </a>
                         
@@ -250,12 +438,12 @@
                     <time class="post-time">2019-07-15</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-info">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-">
             #js基础
         </a>
                         
@@ -329,12 +517,12 @@ mp.then(res =&amp;gt; console.log(&#39;success&#39;, res));
                     <time class="post-time">2019-07-15</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-banana">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-other_3">
             #js基础
         </a>
                         
@@ -362,42 +550,6 @@ Object.create() 方法创建一个新对象，使用现有的对象来提供新�
                                         </div>
                                         
                                             <a class="btn btn-text" href="https://blog.ss1742.com/post/new-de-shi-xian-yuan-li">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben-de-fang-shi-you-na-xie">
-                        异步加载JS脚本的方式有哪些
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-14</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-warning">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            
-&amp;lt;script&amp;gt; 标签中增加 async(html5) 或者 defer(html4) 属性,脚本就会异步加载。
-
-defer 和 async 的区别在于：
-defer 要等到整个页面在内存中正常渲染结束（DOM 结构完全生成，以及其他脚本执行完成），在 window.onload 之前执行；
-async 一旦下载完，渲染引擎就会中断渲染，执行这个脚本以后，再继续渲染。
-如果有多个 defer 脚本，会按照它们在页面出现的顺序加载
-多个 async 脚本不能保证加载顺序
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben-de-fang-shi-you-na-xie">Read More ~</a>
                             </div>
                 </div>
             </article>
@@ -484,7 +636,7 @@ a.join = a.shift;
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-error">
             #http
         </a>
                         
@@ -499,81 +651,6 @@ a.join = a.shift;
                                         </div>
                                         
                                             <a class="btn btn-text" href="https://blog.ss1742.com/post/304-zhuang-tai-ma">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/302-zen-me-shi-xian-de">
-                        302 怎么实现的
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-13</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/5CynFjhOR" class="post-tag i-tag
-                            i-tag-banana">
-            #状态码
-        </a>
-                        
-                        <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-other_3">
-            #http
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            301，302 都是 HTTP 状态的编码，都代表着某个 URL 发生了转移，不同之处在于：
-　　301 redirect: 301 代表永久性转移(Permanently Moved)。
-　　302 redirect: 302 代表暂时性转移(Temporarily Moved )。
-其实 301、302 的重定向都是通过对 http协议 的 location 的修改来实现的
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/302-zen-me-shi-xian-de">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/shi-yong-sort-dui-shu-zu-3-15-8-29-102-22-jin-xing-pai-xu">
-                        使用 sort() 对数组 [3, 15, 8, 29, 102, 22] 进行排序
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-12</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-info">
-            #算法
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            结果
-[3, 15, 8, 29, 102, 22].sort() 
-// [102, 15, 22, 29, 3, 8]
-
-根据 MDN 上对 Array.sort() 的解释，默认的排序方法会将数组元素转换为字符串，然后比较字符串中字符的 UTF-16 编码顺序来进行排序。所以 &#39;102&#39; 会排在  &#39;15&#39; 前面。
-[3, 15, 8, 29, 102, 22].sort((a, b) =&amp;gt; a - b) 
-// [3, 8, 15, 22, 29, 102]
-[3, 15, 8, 29, 102, 22].sort((a, b) =&amp;gt; a - b) 
-// [102, 29, 22, 15, 8, 3]
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/shi-yong-sort-dui-shu-zu-3-15-8-29-102-22-jin-xing-pai-xu">Read More ~</a>
                             </div>
                 </div>
             </article>
@@ -598,7 +675,7 @@ a.join = a.shift;
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564589716533)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564644400986)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564589716533">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564644400986">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564589716533" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564644400986" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,154 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/723-you-gan">
+                        7.23有感
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-24</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/kHKSvnCCb" class="post-tag i-tag
+                            i-tag-other_3">
+            #感想
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            发现问题是好事。
+表达能力很糟糕
+
+读书少，平时阅读的文章也没有仔细品味遣词用字
+极度缺乏自信
+缺乏独立思考，思维固化
+
+专业能力很糟糕
+
+目前应该用几年积累发光发热了，却一无所长
+太浮躁，并不是感觉技术无用，而是不知道从何处下手
+
+目标与计划
+
+一定要坚持每日博客，技术慢慢的提高深度
+看书，看书看书，看书看书看书，无论什么书都看
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/723-you-gan">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben">
+                        异步加载 js 脚本
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-24</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
+                            i-tag-other_4">
+            #js基础
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            script 中加入 async(html5) 或者 defer(html4) 属性，脚本会异步加载。
+区别
+defer
+
+defer 要等到页面在内存中正常渲染结束，在 window.onload 之前执行
+如果有多个 defer，会按照在页面的出现顺序加载
+
+async
+
+async 一旦下载完，渲染引擎就会中断渲染，执行这个脚本，再继续渲染
+多个 async 不能保证顺序
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/http-content-type">
+                        http content-type
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-23</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
+                            i-tag-warning">
+            #http
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            content-type 是 http 实体首部字段，用来说明请求或返回的消息主体是用何种方式编码，在 request header 和 response header 中都存在
+类型
+application/x-www-form-urlencoded
+浏览器原生 form 表单
+提交数据按照 key1=val1&amp;amp;key2=val2的方式进行编码，key 和 value 都进行了 url 转码
+POST [http://www.example.com](http://www.example.com) HTTP/1.1 
+Content-Type: application/x-[www-form-urlencoded](http://www-form-urlencoded);charset=utf-8 
+
+title=test&amp;amp;sub%5B%5D=1&amp;amp;sub%5B%5D=2&amp;amp;sub%5B%5D=3 
+
+multipart/form-data
+常见的 post 数据提交方式，上传文件必须设置 enctype=&amp;quot;multipart/form-data&amp;quot;
+POST /foo HTTP/1.1
+Content-Length: 68137
+Content-Type: multipart/form-data; boundary=---------------------------974767299852498929531610575
+
+---------------------------974767299852498929531610575
+Content-Disposition: form-data; name=&amp;quot;description&amp;quot;
+
+some text
+---------------------------974767299852498929531610575
+Content-Disposition: form-data; name=&amp;quot;myFile&amp;quot;; filename=&amp;quot;foo.txt&amp;quot;
+Content-Type: text/plain
+
+(content of the uploaded file foo.txt)
+---------------------------974767299852498929531610575--
+
+
+首先生成 boundary 分割不同字段，避免与正文重复
+消息主体按照字段分成多个部分，每个部分以 --boundary 开始，消息主体再以 --boundary-- 结束
+
+application/json
+消息主体是序列化的 JSON 字符串
+text/xml
+使用 HTTP 作为传输协议，XML 作为编码方式
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/http-content-type">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/shen-qian-kao-bei">
                         深浅拷贝
                     </a>
@@ -107,7 +255,7 @@
                     <time class="post-time">2019-07-23</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-banana">
+                            i-tag-other_2">
             #js基础
         </a>
                         
@@ -185,7 +333,7 @@ function copy(obj, hash = new WeakMap()) {
                     <time class="post-time">2019-07-22</time>
                     
                         <a href="https://blog.ss1742.com/tag/922aBovKI" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-primary">
             #css基础
         </a>
                         
@@ -255,12 +403,12 @@ event.preventDefault()
                     <time class="post-time">2019-07-20</time>
                     
                         <a href="https://blog.ss1742.com/tag/1POfnEFWE" class="post-tag i-tag
-                            i-tag-other_3">
+                            i-tag-success">
             #jsonp
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-other_2">
             #js基础
         </a>
                         
@@ -314,12 +462,12 @@ function jsonp({ url, params, callback }) {
                     <time class="post-time">2019-07-20</time>
                     
                         <a href="https://blog.ss1742.com/tag/ijEjqIkoA" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-other_2">
             #this
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-banana">
+                            i-tag-other_4">
             #js基础
         </a>
                         
@@ -391,7 +539,7 @@ call
                     <time class="post-time">2019-07-19</time>
                     
                         <a href="https://blog.ss1742.com/tag/5muLpDBeO" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-other_1">
             #git
         </a>
                         
@@ -442,7 +590,7 @@ git rebase
                     <time class="post-time">2019-07-19</time>
                     
                         <a href="https://blog.ss1742.com/tag/5muLpDBeO" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-banana">
             #git
         </a>
                         
@@ -468,194 +616,6 @@ chore: 构建过程或辅助工具的变动
                 </div>
             </article>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-2">
-                        《深入浅出 React 和 Redux》[2]
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-18</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
-                            i-tag-other_4">
-            #读书
-        </a>
-                        
-                        <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
-                            i-tag-other_1">
-            #react
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            第2章 React 组件
-易于维护的设计要素
-
-高内聚 把逻辑紧密相关的内容放在一个组件内
-低耦合 每个组件尽量独立，依赖关系尽量弱化
-
-组件的数据
-对外用 props，对内用 state
-propTypes 检查
-Person.propTypes = {
-    name: PropTypes.string.isRequired,
-    age: PropTypes.number
-}
-
-// 添加默认
-Person.defaultProps = {
-    name: &#39;&#39;
-}
-
-因为检查会消耗 CPU 资源，所以可以在开发的时候加上来避免一些错误，在发布的时候可以通过 babel-react-optimize 来去掉
-生命周期
-本书中 react 版本 v15.4 太老，v16.+ 部分生命周期方法废除，这一块后面总结
-constructor
-
-初始化 state
-绑定成员函数的 this 环境
-
-tips
-
-this.foo = ::this.foo &amp;lt;==&amp;gt; this.foo = this.foo.bind(this)
-
-...
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-2">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-1">
-                        《深入浅出 React 和 Redux》[1]
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-18</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
-                            i-tag-">
-            #读书
-        </a>
-                        
-                        <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
-                            i-tag-">
-            #react
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            第1章
-简介
-
-react 不支持比 IE8 更低版本浏览器
-通过组件（独立可重用的代码）开发应用。基于组件的应用开发是广泛使用的软件开发模式，用 分而治之 的方法，把一个大的应用分解成若干小的组件，每个组件只关注于某个小范围的特定功能
-
-JSX
-
-JSX，是 JavaScript的语法扩展，让我们在 JavaScript 中可以编写像 HTML 一样的代码
-
-进步还是倒退问题
-
-JSX 中的 onClick 和 HTML 中的 onclick 对比
-
-
-
-HTML 中的 onclick
-
-处理函数是在全局环境下执行的，这污染全局环境，很容易产生意料不到的效果
-给很多 DOM 添加 onclick 事件，可能会影响网页的性能，需要处理的事件函数越多，性能就越低
-使用 onclick 的 DOM，如果要动态删掉，需要把对应的时间处理器注销，否则可能造成内存写漏并且不容易追踪到 bug
-
-
-
-JSX
-
-JSX 组件的 onClick，并没有直接使用 onclick 的 html，而是使用事件委托处理点击事件，最后都只在 DOM 树上添加了一个事件处理函数，挂在最顶层的 DOM 节点上
-react 中组件的生命周期，在 unmount 的时候自然能够清理所有相关的事件处理函数，内存泄露的问题得以解决
-
-
-
-eject
-
-npm run eject
-
-&amp;quot;弹射&amp;quot;（暴露并修改）webpack、package.json 等配置
-react 的工作方式
-react 的理念
-UI = render(data)
-Virtual DOM
-DOM 是结构化文本的抽象表达形式，特定于 Web 环境中
-Virtual DOM 是对 DOM 树的抽象，只是存在于 JavaScript 空间的树形结构
-Tips
-设计原则：做同一件事的代码应该有高耦合性。
-纯函数：没有任何副作用，输出完全依赖输入的函数。
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-1">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/react-diff">
-                        react diff 原理浅析
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-17</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-other_1">
-            #原理
-        </a>
-                        
-                        <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
-                            i-tag-info">
-            #react
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            React 通过制定大胆的 diff 策略，将 O(n3) 复杂度的问题转换成 O(n) 复杂度的问题；
-React 是如何将 O(n3) 复杂度的问题转换成 O(n) 的？
-
-只进行同级比较
-不同类的 React 组件会被当做完全不同的 DOM 结构而被完全替换
-key prop：开发人员可以通过给 Virtual DOM 一个唯一的 key 属性暗示 React 这是同一个 DOM 结构，反之若 key 值不同则会被当做完全不同的 DOM 结构。
-
-React 通过分层求异的策略，对 tree diff 进行算法优化；
-React 通过相同类生成相似树形结构，不同类生成不同树形结构的策略，对 component diff 进行算法优化。
-React 通过设置唯一 key 的策略，对 element diff 进行算法优化；
-建议，在开发组件时，保持稳定的 DOM 结构会有助于性能的提升；
-建议，在开发过程中，尽量减少类似将最后一个节点移动到列表首部的操作，当节点数量过大或更新操作过于频繁时，在一定程度上会影响 React 的渲染性能。
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/react-diff">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
                 <!-- 翻页 -->
                 
     <div class="pagination-container">
@@ -676,7 +636,7 @@ React 通过设置唯一 key 的策略，对 element diff 进行算法优化；
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564589716533)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564644400986)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

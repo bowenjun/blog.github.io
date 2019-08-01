@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564589716533">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564644400986">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564589716533" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564644400986" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,145 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/da-shu-xiang-jia">
+                        大数相加
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-08-01</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
+                            i-tag-other_1">
+            #算法
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            function add(a, b) {
+		let la = a.length;
+		let lb = b.length;
+		if (la &amp;gt; lb) {
+			b = b.padStart(la, &#39;0&#39;);
+		} else {
+			a = a.padStart(lb, &#39;0&#39;);
+		}
+		let tempA = a.split(&#39;&#39;).reverse();
+		let tempB = b.split(&#39;&#39;).reverse();
+		let res = [];
+		for (let i = 0, len = tempA.length; i &amp;lt; len; i++) {
+			res.push(parseInt(tempA[i]) + parseInt(tempB[i]));
+		}
+		for (let i = 0, len = res.length; i &amp;lt; len; i++) {
+			if (res[i] &amp;gt;= 10) {
+				res[i] = parseInt(res[i]) - 10;
+				res[i+1] = parseInt(res[i+1]) + 1;
+			}
+		}
+
+		return res.reverse().join(&#39;&#39;);
+	}
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/da-shu-xiang-jia">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/an-quan">
+                        安全
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-08-01</time>
+                    
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            sql 注入
+表单提交的数据里带有 sql 命令
+xss
+Cross-site scripting 脚本攻击
+防御
+// &amp;lt; &amp;gt; 转义
+str = str.replace(/&amp;lt;/g,&#39;&amp;amp;lt;&#39;);
+str = str.replace(/&amp;lt;/g,&#39;&amp;amp;gt;&#39;);
+// 引号 转义
+str = str.replace(/&amp;quot;/g,&#39;&amp;amp;quto;&#39;);
+str = str.replace(/&#39;/g,&#39;&amp;amp;#39;&#39;);
+str = str.replace(/ /g,&#39;&amp;amp;#32;&#39;);
+
+CSRF
+Cross-site request forgery 跨站请求伪造
+防御
+
+
+验证码
+
+
+伪随机值
+
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/an-quan">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/tong-ji-ye-mian-shi-yong-dao-de-suo-you-biao-qian">
+                        统计页面使用到的所有标签
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-08-01</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
+                            i-tag-banana">
+            #js基础
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            function findAll() {
+	const all = document.querySelectorAll(&#39;*&#39;);
+	return all.reduce((a, b) =&amp;gt; {
+		let key = b.nodeName.toLowerCase();
+		if (!a[key]) {
+			a[key] = 0;
+		}
+		a[key]++;
+		return a;
+	}, {});
+}
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/tong-ji-ye-mian-shi-yong-dao-de-suo-you-biao-qian">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/du-shu-you-gan-level-001">
                         读书有感——level-0.0.1
                     </a>
@@ -107,7 +246,7 @@
                     <time class="post-time">2019-08-01</time>
                     
                         <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-success">
             #读书
         </a>
                         
@@ -138,7 +277,7 @@
                     <time class="post-time">2019-08-01</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-banana">
+                            i-tag-error">
             #算法
         </a>
                         
@@ -202,7 +341,7 @@ var isValid = function(s) {
                     <time class="post-time">2019-07-31</time>
                     
                         <a href="https://blog.ss1742.com/tag/Vd9DRT-cY" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-other_4">
             #代码技巧
         </a>
                         
@@ -377,7 +516,7 @@ hash 替换为 chunkhash
                     <time class="post-time">2019-07-29</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-other_4">
             #算法
         </a>
                         
@@ -440,7 +579,7 @@ function maxProfit(prices) {
                     <time class="post-time">2019-07-29</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-other_2">
             #算法
         </a>
                         
@@ -495,7 +634,7 @@ function maxProfit(prices) {
                     <time class="post-time">2019-07-29</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-error">
             #算法
         </a>
                         
@@ -552,158 +691,6 @@ function reverseList2(head) {
                 </div>
             </article>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/he-bing-qu-jian">
-                        合并区间
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-29</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-info">
-            #算法
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            给出一个区间的集合，请合并所有重叠的区间。
-示例 1:
-输入: [[1,3],[2,6],[8,10],[15,18]]
-输出: [[1,6],[8,10],[15,18]]
-解释: 区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6].
-
-示例 2:
-输入: [[1,4],[4,5]]
-输出: [[1,5]]
-解释: 区间 [1,4] 和 [4,5] 可被视为重叠区间。
-
-function merge(intervals) {
-	if (intervals.length &amp;lt; 2) return intervals;
-	intervals = intervals.sort((a, b) =&amp;gt; a[0] - b[0]);
-	return intervals.reduce((a, b) =&amp;gt; {
-		let temp = a[a.length - 1];
-		if (temp[1] &amp;lt; b[0]) {
-			return [...a, b];
-		} else {
-			temp[1] = Math.max(temp[1], b[1]);
-		}
-		return a;
-	}, [intervals[0]]);
-}
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/he-bing-qu-jian">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/shu-zu-zhong-de-di-k-ge-zui-da-yuan-su">
-                        数组中的第K个最大元素
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-29</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-other_1">
-            #算法
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            在未排序的数组中找到第 k 个最大的元素。
-示例 :
-输入: [3,2,1,5,6,4] 和 k = 2
-输出: 5
-
-function findKthLargest(nums, k) {
-	let temp = qSort(nums);
-	return k &amp;lt;= temp.length ? temp[k - 1] : null;
-}
-function qSort(nums) {
-	if (nums.length &amp;lt; 2) return nums;
-	let left = [], right = [], temp = nums[0];
-	for (let i = 0, len = nums.length; i &amp;lt; len; i++) {
-		if (nums[i] &amp;lt; temp) {
-			right.push(nums[i]);
-		} else {
-			left.push(nums[i]);
-		}
-	}
-	return [...qSort(left), temp, ...qSort(right)];
-}
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/shu-zu-zhong-de-di-k-ge-zui-da-yuan-su">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/jian-hua-lu-jing">
-                        简化路径
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-29</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-primary">
-            #算法
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            以 Unix 风格给出一个文件的绝对路径，你需要简化它。或者换句话说，将其转换为规范路径。
-在 Unix 风格的文件系统中，一个点（.）表示当前目录本身；此外，两个点 （..） 表示将目录切换到上一级（指向父目录）；两者都可以是复杂相对路径的组成部分。更多信息请参阅：Linux / Unix中的绝对路径 vs 相对路径
-请注意，返回的规范路径必须始终以斜杠 / 开头，并且两个目录名之间必须只有一个斜杠 /。最后一个目录名（如果存在）不能以 / 结尾。此外，规范路径必须是表示绝对路径的最短字符串。
-示例
-输入：&amp;quot;/a/./b/../../c/&amp;quot;
-输出：&amp;quot;/c&amp;quot;
-解释：注意，最后一个目录名后面没有斜杠。
-
-function simplifyPath(path) {
-	let res = [];
-	let paths = path.split(&#39;/&#39;);
-	for (let i = 0, len = paths.length; i &amp;lt; len; i++) {
-		if (paths[i] === &#39;..&#39;) {
-			res.pop();
-		} else if (paths[i] &amp;amp;&amp;amp; paths[i] !== &#39;.&#39;) {
-			res.push(paths[i]);
-		}
-	}
-	return res.length &amp;gt; 0 ? (&#39;/&#39; + res.join(&#39;/&#39;)) : &#39;/&#39;;
-}
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/jian-hua-lu-jing">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
                 <!-- 翻页 -->
                 
     <div class="pagination-container">
@@ -722,7 +709,7 @@ function simplifyPath(path) {
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564589716533)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564644400986)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

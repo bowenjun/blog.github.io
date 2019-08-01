@@ -7,7 +7,7 @@
 <title>
     js基础 | 1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564589716533">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564644400986">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564589716533" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564644400986" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -104,6 +104,46 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/tong-ji-ye-mian-shi-yong-dao-de-suo-you-biao-qian">
+                        统计页面使用到的所有标签
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-08-01</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
+                            i-tag-primary">
+            #js基础
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            function findAll() {
+	const all = document.querySelectorAll(&#39;*&#39;);
+	return all.reduce((a, b) =&amp;gt; {
+		let key = b.nodeName.toLowerCase();
+		if (!a[key]) {
+			a[key] = 0;
+		}
+		a[key]++;
+		return a;
+	}, {});
+}
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/tong-ji-ye-mian-shi-yong-dao-de-suo-you-biao-qian">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben">
                         异步加载 js 脚本
                     </a>
@@ -112,7 +152,7 @@
                     <time class="post-time">2019-07-24</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-">
             #js基础
         </a>
                         
@@ -152,7 +192,7 @@ async 一旦下载完，渲染引擎就会中断渲染，执行这个脚本，�
                     <time class="post-time">2019-07-23</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-other_4">
             #js基础
         </a>
                         
@@ -230,7 +270,7 @@ function copy(obj, hash = new WeakMap()) {
                     <time class="post-time">2019-07-22</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-">
             #js基础
         </a>
                         
@@ -266,12 +306,12 @@ event.preventDefault()
                     <time class="post-time">2019-07-20</time>
                     
                         <a href="https://blog.ss1742.com/tag/1POfnEFWE" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-other_2">
             #jsonp
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-banana">
+                            i-tag-">
             #js基础
         </a>
                         
@@ -325,12 +365,12 @@ function jsonp({ url, params, callback }) {
                     <time class="post-time">2019-07-20</time>
                     
                         <a href="https://blog.ss1742.com/tag/ijEjqIkoA" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-primary">
             #this
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_3">
+                            i-tag-success">
             #js基础
         </a>
                         
@@ -402,12 +442,12 @@ call
                     <time class="post-time">2019-07-16</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-success">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-other_3">
             #js基础
         </a>
                         
@@ -457,12 +497,12 @@ call
                     <time class="post-time">2019-07-16</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-other_3">
+                            i-tag-primary">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-other_1">
             #js基础
         </a>
                         
@@ -498,12 +538,12 @@ call
                     <time class="post-time">2019-07-16</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-other_2">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-error">
             #js基础
         </a>
                         
@@ -545,12 +585,12 @@ call
                     <time class="post-time">2019-07-15</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-other_3">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-other_2">
             #js基础
         </a>
                         
@@ -614,53 +654,6 @@ mp.then(res =&amp;gt; console.log(&#39;success&#39;, res));
                 </div>
             </article>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/new-de-shi-xian-yuan-li">
-                        new 实现原理
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-15</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-other_3">
-            #原理
-        </a>
-                        
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            原理
-
-创建一个空对象，构造函数中的 this 指向这个空对象
-这个新对象被执行 [[原型]] 连接
-执行构造函数方法，属性和方法被添加到 this 引用的对象中
-如果构造函数中没有返回其它对象，那么返回 this，即创建的这个的新对象，否则，返回构造函数中返回的对象
-
-function _new(fn, ...arg) {
-    let obj = Object.create(fn.prototype);
-    let ret = fn.apply(obj, arg);
-    return ret instanceof Object ? ret : obj;
-}
-
-Object.create() 方法创建一个新对象，使用现有的对象来提供新创建的对象的 __proto__
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/new-de-shi-xian-yuan-li">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
                 <!-- 翻页 -->
                 
     <div class="pagination-container">
@@ -679,7 +672,7 @@ Object.create() 方法创建一个新对象，使用现有的对象来提供新�
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564589716533)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564644400986)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

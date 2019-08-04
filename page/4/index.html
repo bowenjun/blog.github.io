@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564766230928">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564930980225">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564766230928" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564930980225" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,57 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/git-rebase-he-git-merge-de-qu-bie">
+                        git rebase 和 git merge 的区别
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-19</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/5muLpDBeO" class="post-tag i-tag
+                            i-tag-other_4">
+            #git
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            
+git rebase 和 git merge 一样都是用于从一个分支获取并且合并到当前分支
+
+git merge
+
+将分支切换到 master 上去：git checkout master
+将分支 feature 合并到当前分支（即 master 分支）上：git merge feature
+
+特点
+
+只处理一次冲突
+引入了一次合并的历史记录，合并后的所有 commit 会按照提交时间从旧到新排列
+所有的过程信息更多，可能会提高之后查找问题的难度
+
+git rebase
+
+改变当前分支从 master 上拉出分支的位置
+没有多余的合并历史的记录，且合并后的 commit 顺序不一定按照 commit 的提交时间排列
+可能会多次解决同一个地方的冲突（有 squash 来解决）
+更清爽一些，master 分支上每个 commit 点都是相对独立完整的功能单元
+
+总结
+当需要保留详细的合并信息的时候建议使用 git merge，特别是需要将分支合并进入 master 分支时；当发现自己修改某个功能时，频繁进行了 git commit 提交时，发现其实过多的提交信息没有必要时，可以尝试 git rebase。
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/git-rebase-he-git-merge-de-qu-bie">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/git-ti-jiao-types">
                         git 提交 types
                     </a>
@@ -143,12 +194,12 @@ chore: 构建过程或辅助工具的变动
                     <time class="post-time">2019-07-18</time>
                     
                         <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-other_2">
             #读书
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-primary">
             #react
         </a>
                         
@@ -208,12 +259,12 @@ this.foo = ::this.foo &amp;lt;==&amp;gt; this.foo = this.foo.bind(this)
                     <time class="post-time">2019-07-18</time>
                     
                         <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-other_3">
             #读书
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-primary">
             #react
         </a>
                         
@@ -286,12 +337,12 @@ Tips
                     <time class="post-time">2019-07-17</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-banana">
+                            i-tag-other_4">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-other_2">
             #react
         </a>
                         
@@ -331,7 +382,7 @@ React 通过设置唯一 key 的策略，对 element diff 进行算法优化；
                     <time class="post-time">2019-07-16</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-other_2">
             #原理
         </a>
                         
@@ -386,12 +437,12 @@ React 通过设置唯一 key 的策略，对 element diff 进行算法优化；
                     <time class="post-time">2019-07-16</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-primary">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-warning">
             #js基础
         </a>
                         
@@ -427,7 +478,7 @@ React 通过设置唯一 key 的策略，对 element diff 进行算法优化；
                     <time class="post-time">2019-07-16</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-error">
             #原理
         </a>
                         
@@ -474,12 +525,12 @@ React 通过设置唯一 key 的策略，对 element diff 进行算法优化；
                     <time class="post-time">2019-07-15</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-other_4">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-error">
             #js基础
         </a>
                         
@@ -553,12 +604,12 @@ mp.then(res =&amp;gt; console.log(&#39;success&#39;, res));
                     <time class="post-time">2019-07-15</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-other_1">
+                            i-tag-other_2">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_3">
+                            i-tag-">
             #js基础
         </a>
                         
@@ -590,73 +641,6 @@ Object.create() 方法创建一个新对象，使用现有的对象来提供新�
                 </div>
             </article>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/ru-he-rang-a-1-and-a-2-and-a-3-de-zhi-wei-true">
-                        如何让 (a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3) 的值为true
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-14</time>
-                    
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            Object 转换为原始类型
-
-
-如果部署了 [Symbol.toPrimitive] 接口，那么调用此接口，若返回的不是基本数据类型，抛出错误。
-
-
-如果没有部署 [Symbol.toPrimitive] 接口，那么根据要转换的类型，先调用 valueOf / toString
-
-非Date类型对象，hint 是 default 时，调用顺序为：valueOf &amp;gt;&amp;gt;&amp;gt; toString，即 valueOf 返回的不是基本数据类型，才会继续调用 valueOf，如果 toString 返回的还不是基本数据类型，那么抛出错误。
-如果 hint 是 string(Date对象的 hint 默认是 string) ，调用顺序为：toString &amp;gt;&amp;gt;&amp;gt; valueOf，即 toString 返回的不是基本数据类型，才会继续调用 valueOf，如果 valueOf 返回的还不是基本数据类型，那么抛出错误。
-如果 hint 是 number，调用顺序为： valueOf &amp;gt;&amp;gt;&amp;gt; toString
-
-
-
-题解
-
-隐式转换
-
-// 部署 [Symbol.toPrimitive] / valueOf / toString 均可
-let a = {
-    [Symbol.toPrimitive]: (function(hint) {
-        let i = 1;
-        return function() {
-            return i++;
-        }
-    })()
-}		
-
-
-数据劫持
-
-let a = new Proxy({}, {
-    i: 1,
-    get: function() {
-        return () =&amp;gt; this.i++;
-    }
-})
-
-
-数组的 toString 接口默认调用数组的 join 方法，重写 join 方法
-
-let a = [1, 2, 3];
-a.join = a.shift;
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/ru-he-rang-a-1-and-a-2-and-a-3-de-zhi-wei-true">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
                 <!-- 翻页 -->
                 
     <div class="pagination-container">
@@ -677,7 +661,7 @@ a.join = a.shift;
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564766230928)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564930980225)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564766230928">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564930980225">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564766230928" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564930980225" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,61 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/mai-mai-gu-piao-de-zui-jia-shi-ji">
+                        买卖股票的最佳时机
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-29</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
+                            i-tag-info">
+            #算法
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
+如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。
+注意你不能在买入股票前卖出股票。
+示例 1:
+输入: [7,1,5,3,6,4]
+输出: 5
+解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
+     注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。
+
+示例 2:
+输入: [7,6,4,3,1]
+输出: 0
+解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
+
+function maxProfit(prices) {
+	let min = Number.MAX_SAFE_INTEGET;
+	let profit = 0;
+	for (let i = 0, len = prices.length; i &amp;lt; len; i++) {
+		if (prices[i] &amp;lt; min) {
+			min = prices[i];
+		} else if (prices[i] - min &amp;gt; profit) {
+			profit = prices[i] - min;
+		}
+	}
+	return profit;
+}
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/mai-mai-gu-piao-de-zui-jia-shi-ji">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/fan-zhuan-lian-biao">
                         反转链表
                     </a>
@@ -107,7 +162,7 @@
                     <time class="post-time">2019-07-29</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-error">
             #算法
         </a>
                         
@@ -326,7 +381,7 @@ function simplifyPath(path) {
                     <time class="post-time">2019-07-29</time>
                     
                         <a href="https://blog.ss1742.com/tag/kHKSvnCCb" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-success">
             #感想
         </a>
                         
@@ -384,7 +439,7 @@ function reverseWords(s) {
                     <time class="post-time">2019-07-26</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-other_3">
+                            i-tag-other_4">
             #算法
         </a>
                         
@@ -425,7 +480,7 @@ function longestCommonPrefix(s) {
                     <time class="post-time">2019-07-26</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-other_4">
             #算法
         </a>
                         
@@ -470,7 +525,7 @@ function lengthOfLongestSubstring(s) {
                     <time class="post-time">2019-07-26</time>
                     
                         <a href="https://blog.ss1742.com/tag/9sclIJ6sZ" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-primary">
             #css
         </a>
                         
@@ -516,42 +571,6 @@ BFC 的应用
                 </div>
             </article>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/qian-duan-guan-li">
-                        前端管理
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-24</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/RANXdSP4s" class="post-tag i-tag
-                            i-tag-other_2">
-            #管理
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            管理上你强调什么就会得到什么
-
-因成员存在对业务的熟悉度，常处于救火队员状态在不同业务中流转，对提测质量是无益的，此处需要团队和业务的对接保持相对的固定
-成员的能力和态度对产出质量有直接影响，此处对应的可采取提测 bug 数、reopen 数作为绩效参考指标之一，不同团队内部定期的进行 codereview 并进一步共识最佳实践，产出业务对应的自测 checklist，这部分有能力的可以结合自动化测试进行去人肉回归
-认知模型的植入，提升成员对自测的重视并规范到日常行为
-正面标杆的树立，质量存在明显问题的成员一对一研究和辅导
-（非常规方式）必要的人员优化
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/qian-duan-guan-li">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
                 <!-- 翻页 -->
                 
     <div class="pagination-container">
@@ -572,7 +591,7 @@ BFC 的应用
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564766230928)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564930980225)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

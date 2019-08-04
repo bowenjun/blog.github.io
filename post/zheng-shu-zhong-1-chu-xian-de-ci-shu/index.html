@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    统计页面使用到的所有标签 | 1742·小博文
+    整数中1出现的次数 | 1742·小博文
 </title>
 <link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564930980225">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -106,29 +106,51 @@
                 <div id="content" class="main-container-left">
                     <article class="post i-card">
                         <h2 class="post-title">
-                            统计页面使用到的所有标签
+                            整数中1出现的次数
                         </h2>
                         <div class="post-info">
-                            <time class="post-time">2019-08-01</time>
+                            <time class="post-time">2019-08-04</time>
                             
-                                <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-success">
-                            #js基础
+                                <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
+                            i-tag-error">
+                            #算法
                         </a>
                                 
                         </div>
                         
                                 <div class="post-content">
-                                    <pre><code class="language-js">function findAll() {
-	const all = document.querySelectorAll('*');
-	return all.reduce((a, b) =&gt; {
-		let key = b.nodeName.toLowerCase();
-		if (!a[key]) {
-			a[key] = 0;
-		}
-		a[key]++;
-		return a;
-	}, {});
+                                    <p>求出1 ~ 13的整数中1出现的次数,并算出100 ~ 1300的整数中1出现的次数？为此他特别数了一下1~13中包含1的数字有1、10、11、12、13因此共出现6次,但是对于后面问题他就没辙了。ACMer希望你们帮帮他,并把问题更加普遍化,可以很快的求出任意非负整数区间中1出现的次数。</p>
+<p>题解<br>
+当计算右数第 i 位包含的 X 的个数时：</p>
+<ul>
+<li>取第 i 位左边（高位）的数字，乘以 10i−1，得到基础值 a。</li>
+<li>取第 i 位数字，计算修正值：<br>
+- 如果大于 X，则结果为 a+10i−1。<br>
+- 如果小于 X，则结果为 a。<br>
+- 如果等 X，则取第 i 位右边（低位）数字，设为 b，最后结果为 a+b+1。</li>
+</ul>
+<pre><code class="language-js">function NumberOf1Between1AndN_Solution2(n) {
+    let count = 0;
+    for (let i = 1; i &lt;= n; i *= 10) {
+        let a = n / i, b = n % i;
+        //之所以补8，是因为当百位为0，则a/10==(a+8)/10，
+        //当百位&gt;=2，补8会产生进位位，效果等同于(a/10+1)
+        count += (a + 8) / 10 * i + ((a % 10 == 1) ? b + 1 : 0);
+    }
+    return count;
+}
+</code></pre>
+<p>暴力思路</p>
+<pre><code class="language-js">function NumberOf1Between1AndN_Solution(n) {
+    return [
+			...Array
+			.from({ length: n })
+			.keys()
+		]
+		.map(item =&gt; item + 1)
+    .join('')
+    .replace(/[^1]/g, '')
+    .length;
 }
 </code></pre>
 
@@ -138,9 +160,9 @@
                     
                         <div class="next-post">
                             <div class="next">下一篇</div>
-                            <a href="https://blog.ss1742.com/post/du-shu-you-gan-level-001">
+                            <a href="https://blog.ss1742.com/post/kuai-pai">
                                 <h3 class="post-title">
-                                    读书有感——level-0.0.1
+                                    快排
                                 </h3>
                             </a>
                         </div>

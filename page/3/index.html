@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1564930980225">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565019592180">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1564930980225" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565019592180" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,62 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/bfc">
+                        bfc
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-26</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/9sclIJ6sZ" class="post-tag i-tag
+                            i-tag-other_3">
+            #css
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            Box 是 CSS 布局的对象和基本单位，页面是由若干个 Box 组成的。
+元素的类型 和 display 属性，决定了这个 Box 的类型。不同类型的 Box 会参与不同的 Formatting Context。
+Formatting Context
+Formatting Context 是页面的一块渲染区域，并且有一套渲染规则，决定了其子元素将如何定位，以及和其它元素的关系和相互作用。
+Formatting Context 有 BFC (Block formatting context)，IFC (Inline formatting context)，FFC (Flex formatting context) 和 GFC (Grid formatting context)。FFC 和 GFC 为 CC3 中新增。
+BFC 布局规则
+
+BFC 内，盒子依次垂直排列。
+BFC 内，两个盒子的垂直距离由 margin 属性决定。属于同一个 BFC 的两个相邻 Box 的 margin 会发生重叠【符合合并原则的 margin 合并后是使用大的 margin】
+BFC 内，每个盒子的左外边缘接触内部盒子的左边缘（对于从右到左的格式，- 右边缘接触）。即使在存在浮动的情况下也是如此。除非创建新的 BFC。
+BFC 的区域不会与 float box 重叠。
+BFC 就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
+计算 BFC 的高度时，浮动元素也参与计算。
+
+如何创建 BFC
+
+根元素
+浮动元素（float 属性不为 none）
+position 为 absolute 或 fixed
+overflow 不为 visible 的块元素
+display 为 inline-block, table-cell, table-caption
+
+BFC 的应用
+
+防止 margin  重叠 (同一个 BFC 内的两个两个相邻 Box 的 margin 会发生重叠，触发生成两个 BFC，即不会重叠)
+清除内部浮动 (创建一个新的 BFC，因为根据 BFC 的规则，计算 BFC 的高度时，浮动元素也参与计算)
+自适应多栏布局 (BFC 的区域不会与 float box 重叠。因此，可以触发生成一个新的 BFC)
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/bfc">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/qian-duan-guan-li">
                         前端管理
                     </a>
@@ -107,7 +163,7 @@
                     <time class="post-time">2019-07-24</time>
                     
                         <a href="https://blog.ss1742.com/tag/RANXdSP4s" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-">
             #管理
         </a>
                         
@@ -143,7 +199,7 @@
                     <time class="post-time">2019-07-24</time>
                     
                         <a href="https://blog.ss1742.com/tag/922aBovKI" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-other_3">
             #css基础
         </a>
                         
@@ -186,7 +242,7 @@ Opera
                     <time class="post-time">2019-07-24</time>
                     
                         <a href="https://blog.ss1742.com/tag/kHKSvnCCb" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-error">
             #感想
         </a>
                         
@@ -231,7 +287,7 @@ Opera
                     <time class="post-time">2019-07-24</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-info">
             #js基础
         </a>
                         
@@ -271,7 +327,7 @@ async 一旦下载完，渲染引擎就会中断渲染，执行这个脚本，�
                     <time class="post-time">2019-07-23</time>
                     
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-warning">
             #http
         </a>
                         
@@ -334,7 +390,7 @@ text/xml
                     <time class="post-time">2019-07-23</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-other_1">
             #js基础
         </a>
                         
@@ -412,7 +468,7 @@ function copy(obj, hash = new WeakMap()) {
                     <time class="post-time">2019-07-22</time>
                     
                         <a href="https://blog.ss1742.com/tag/922aBovKI" class="post-tag i-tag
-                            i-tag-other_3">
+                            i-tag-banana">
             #css基础
         </a>
                         
@@ -446,7 +502,7 @@ a:active
                     <time class="post-time">2019-07-22</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-error">
             #js基础
         </a>
                         
@@ -482,12 +538,12 @@ event.preventDefault()
                     <time class="post-time">2019-07-20</time>
                     
                         <a href="https://blog.ss1742.com/tag/1POfnEFWE" class="post-tag i-tag
-                            i-tag-other_3">
+                            i-tag-other_4">
             #jsonp
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-warning">
             #js基础
         </a>
                         
@@ -531,83 +587,6 @@ function jsonp({ url, params, callback }) {
                 </div>
             </article>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/this-zhi-xiang">
-                        this 指向
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-20</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/ijEjqIkoA" class="post-tag i-tag
-                            i-tag-warning">
-            #this
-        </a>
-                        
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_2">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            
-
-this，谁调用指谁
-
-
-构造函数的优先级(访问权限) &amp;gt; 原型链
-
-
-new 的时候，this 就会指向 new 出来的对象
-
-
-箭头函数
-
-
-
-箭头函数相当于 bind，会改变this` 的指向
-箭头函数的 this 是他父级的 this
-箭头函数把 this 固定到他父级的同级作用
-
-能改变 this 指向的关键词
-
-
-bind
-
-
-apply
-
-
-call
-
-
-一般函数 this 指向在执行的时候绑定
-
-
-箭头函数中的 this 是在定义函数的时候绑定
-
-
-严格模式
-
-
-
-非严格模式下默认指向 window
-严格模式下传 null 指向 null，不传或者传 undefined 都指向 undefined，即在严格模式下，没有写执行主体，this 指向是 undefined
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/this-zhi-xiang">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
                 <!-- 翻页 -->
                 
     <div class="pagination-container">
@@ -628,7 +607,7 @@ call
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1564930980225)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565019592180)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

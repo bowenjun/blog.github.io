@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565019592180">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565114109127">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565019592180" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565114109127" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,77 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/bindapplycall">
+                        bind/apply/call
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-08-07</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
+                            i-tag-banana">
+            #js基础
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            bind
+Function.prototype.bind2 = function(context) {
+    let _this = this;
+    let argsParent = Array.prototype.slice.call(arguments, 1);
+    return function() {
+        var args = argsParent.concat(Array.prototype.slice.call(arguments)); // 转化成数组
+        _this.apply(context, args);
+    };
+}
+
+apply
+Function.prototype.apply2 = function(context, arr) {
+    let context = context || window; // 因为传进来的context有可能是null
+    context.fn = this;
+    let args = [];
+    let params = arr || [];
+    for (var i = 0; i &amp;lt; params.length; i++) {
+        args.push(&amp;quot;params[&amp;quot; + i + &amp;quot;]&amp;quot;); // 不这么做的话 字符串的引号会被自动去掉 变成了变量 导致报错
+    }
+    args = args.join(&amp;quot;,&amp;quot;);
+
+    let result = eval(&amp;quot;context.fn(&amp;quot; + args + &amp;quot;)&amp;quot;); // 相当于执行了context.fn(arguments[1], arguments[2]);
+
+    delete context.fn;
+    return result; // 因为有可能this函数会有返回值return
+}
+
+call
+Function.prototype.call2 = function(context) {
+    let context = context || window; // 因为传进来的context有可能是null
+    context.fn = this;
+    let args = [];
+    for (var i = 1; i &amp;lt; arguments.length; i++) {
+        args.push(&amp;quot;arguments[&amp;quot; + i + &amp;quot;]&amp;quot;); // 不这么做的话 字符串的引号会被自动去掉 变成了变量 导致报错
+    }
+    args = args.join(&amp;quot;,&amp;quot;);
+
+    let result = eval(&amp;quot;context.fn(&amp;quot; + args + &amp;quot;)&amp;quot;); // 相当于执行了context.fn(arguments[1], arguments[2]);
+
+    delete context.fn;
+    return result; // 因为有可能this函数会有返回值return
+}
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/bindapplycall">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/zhuang-tai-ma-499">
                         状态码 499
                     </a>
@@ -107,7 +178,7 @@
                     <time class="post-time">2019-08-05</time>
                     
                         <a href="https://blog.ss1742.com/tag/5CynFjhOR" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-banana">
             #状态码
         </a>
                         
@@ -117,11 +188,11 @@
                             <div class="post-content">
                                 
                                         <div class="post-content-content">
-                                            499对应的是 “client has closed connection”，客户端请求等待链接已经关闭，这很有可能是因为服务器端处理的时间过长，客户端等得“不耐烦”了。还有一种原因是两次提交post过快就会出现499。
+                                            499 对应的是 client has closed connection，客户端请求等待链接已经关闭，这很有可能是因为服务器端处理的时间过长，客户端等得“不耐烦”了。还有一种原因是两次提交 post 过快就会出现 499。
 解决方法：
 
-前端将timeout最大等待时间设置大一些
-nginx上配置proxy_ignore_client_abort on;
+前端将 timeout 最大等待时间设置大一些
+nginx 上配置 proxy_ignore_client_abort on
 
 
                                         </div>
@@ -141,7 +212,7 @@ nginx上配置proxy_ignore_client_abort on;
                     <time class="post-time">2019-08-04</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-other_2">
             #算法
         </a>
                         
@@ -203,7 +274,7 @@ function NumberOf1Between1AndN_Solution(n) {
                     <time class="post-time">2019-08-03</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-">
             #算法
         </a>
                         
@@ -271,7 +342,7 @@ function quickSort2(num, left, right) {
                     <time class="post-time">2019-08-01</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-success">
+                            i-tag-info">
             #算法
         </a>
                         
@@ -370,7 +441,7 @@ Cross-site request forgery 跨站请求伪造
                     <time class="post-time">2019-08-01</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-other_3">
             #js基础
         </a>
                         
@@ -410,7 +481,7 @@ Cross-site request forgery 跨站请求伪造
                     <time class="post-time">2019-08-01</time>
                     
                         <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-info">
             #读书
         </a>
                         
@@ -441,7 +512,7 @@ Cross-site request forgery 跨站请求伪造
                     <time class="post-time">2019-08-01</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-other_3">
             #算法
         </a>
                         
@@ -505,7 +576,7 @@ var isValid = function(s) {
                     <time class="post-time">2019-07-31</time>
                     
                         <a href="https://blog.ss1742.com/tag/Vd9DRT-cY" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-banana">
             #代码技巧
         </a>
                         
@@ -528,148 +599,6 @@ axios.put(&#39;/upload/server&#39;, data, config);
                 </div>
             </article>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/qian-duan-xing-neng-you-hua">
-                        前端性能优化
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-30</time>
-                    
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            前端性能优化：减少请求数量、减小资源大小、优化网络连接、优化资源加载、减少重绘回流、使用更好性能的api和构建优化。
-参考链接: 前端性能优化的七大手段
-减少请求数量
-合并
-如果不合并影响
-
-文件之间插入的上行请求，增加了 n - 1 个网络延迟
-受丢包问题影响更严重
-经过代理服务器时可能会被断开
-
-合并带来的问题
-
-首屏渲染
-缓存失效
-
-建议
-
-公共库合并
-不同页面单独合并
-
-图片处理
-
-雪碧图
-减少了请求数量，但如果图片过大一次加载过慢。现在因字体图片和 svg 图片流行渐渐使用少了
-2. base64
-base64 格式嵌入到 html 中，减少了请求数量，但是编码用8位字符表示信息中的6个位，编码后大小比原始值扩大了 33%
-3. 使用字体图标来替代图片
-
-减少重定向
-如果使用重定向，要使用 301 永久重定向
-使用缓存
-Cache-Control 和 Expires
-不使用 @import
-避免使用空 src 和 href
-减小资源大小
-压缩
-
-html 压缩
-css 压缩
-js 压缩与混淆
-图片压缩（tinypng）
-
-gzip
-优化网络连接
-cdn(Content Delivery Network)
-dns 预解析
-&amp;lt;link rel=&amp;quot;dns-prefecth&amp;quot; href=&amp;quot;https://xxx.com&amp;quot; /&amp;gt;
-
-并行连接
-域名发散，使用多个域名增加并发数
-持久连接
-keep-alive
-管道化连接
-http2协议，单条连接多路复用
-优化资源下载
-资源加载位置
-css 头部，js 尾部，布局 js 放在 head 中
-资源加载时机
-
-异步 script 标签
-defer: html 加载完后执行
-async: 下载完成立即执行
-2. 模块按需加载
-webpack 1. import() 2.require.ensure
-3. 懒加载
-
-减少重绘回流
-样式
-
-避免使用层级较深的选择器
-避免使用 css 表达式
-避免使用 table 布局
-能用 css 尽量不要用 js
-
-渲染层
-
-将需要多次重绘的元素独立，如设置 absolute，可以减少重绘范围
-动画使用硬件渲染
-
-dom 优化
-
-缓存 dom
-减少 dom 深度和数量
-批量操作 dom
-
-
-事件代理
-
-
-
-
-防抖节流
-
-
-及时清理环境
-
-使用更好的api
-用对 css 选择器
-使用 requestAnimationFrame 替代计时器
-使用 IntersectionObserver 实现图片可视区域懒加载
-使用 webworker
-构建优化
-webpack
-打包公共代码
-动态导入 按需加载
-剔除无用代码
-tree shaking
-js - uglifyjs
-css - purify css
-长缓存优化
-
-
-hash 替换为 chunkhash
-
-
-使用 name 而不是 id
-
-
-公用代码内联
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/qian-duan-xing-neng-you-hua">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
                 <!-- 翻页 -->
                 
     <div class="pagination-container">
@@ -688,7 +617,7 @@ hash 替换为 chunkhash
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565019592180)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565114109127)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

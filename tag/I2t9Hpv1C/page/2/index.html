@@ -7,7 +7,7 @@
 <title>
     js基础 | 1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565019592180">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565114109127">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565019592180" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565114109127" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -104,6 +104,85 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/promise-shi-xian-yuan-li">
+                        Promise 实现原理
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-15</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
+                            i-tag-warning">
+            #原理
+        </a>
+                        
+                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
+                            i-tag-success">
+            #js基础
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            function myPromise(exe) {
+    let self = this;
+    self.status = &#39;pending&#39;;
+    self.value = null;
+    self.reason = null;
+    self.onResolveCbk = [];
+    self.onRejectCbk = [];
+    function resolve(value) {
+        if (self.status === &#39;pending&#39;) {
+            self.value = value;
+            self.status = &#39;resolved&#39;;
+            self.onResolveCbk.map(fn =&amp;gt; fn());
+        }
+    }
+    function reject(reason) {
+        if (self.status === &#39;pending&#39;) {
+            self.reason = reason;
+            self.status = &#39;rejected&#39;;
+            self.onResolveCbk.map(fn =&amp;gt; fn());
+        }
+    }
+    exe(resolve, reject);
+}
+
+myPromise.prototype.then = function(onFulfilled, onRejected) {
+    let self = this;
+    if (self.status === &#39;pending&#39;) {
+        self.onResolveCbk.push(() =&amp;gt; onFulfilled(self.value));
+        self.onRejectCbk.push(() =&amp;gt; onRejected(self.reason));
+    }
+    if (self.status === &#39;resolved&#39;) {
+        onFulfilled(self.value);
+    }
+    if (self.status === &#39;rejected&#39;) {
+        onRejected(self.reason);
+    }
+}
+
+let mp = new myPromise((resolve, reject) =&amp;gt; {
+    setTimeout(() =&amp;gt; {
+        resolve(2);
+    }, 200);
+});
+
+mp.then(res =&amp;gt; console.log(&#39;success&#39;, res));
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/promise-shi-xian-yuan-li">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/new-de-shi-xian-yuan-li">
                         new 实现原理
                     </a>
@@ -112,12 +191,12 @@
                     <time class="post-time">2019-07-15</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-error">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_3">
+                            i-tag-banana">
             #js基础
         </a>
                         
@@ -159,7 +238,7 @@ Object.create() 方法创建一个新对象，使用现有的对象来提供新�
                     <time class="post-time">2019-07-10</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-warning">
             #js基础
         </a>
                         
@@ -204,7 +283,7 @@ console.log((5).add(3).reduce(2)); // 6
                     <time class="post-time">2019-07-10</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-other_3">
             #js基础
         </a>
                         
@@ -246,7 +325,7 @@ console.log(add(2, 3)(4)(5)()(1)); // 15
                     <time class="post-time">2019-07-10</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-info">
             #js基础
         </a>
                         
@@ -309,7 +388,7 @@ parseInt(&#39;3&#39;, 2) // NaN, 3 不是二进制
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565019592180)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565114109127)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

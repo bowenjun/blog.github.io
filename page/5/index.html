@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565114109127">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565194006541">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565114109127" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565194006541" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,53 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/promiserace-shi-xian-yuan-li">
+                        Promise.race 实现原理
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-16</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
+                            i-tag-other_1">
+            #原理
+        </a>
+                        
+                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
+                            i-tag-">
+            #js基础
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            Promise.prototype.race = function(promises) {
+    return new Promise((resolve, reject) =&amp;gt; {
+        if (!isArray(promises)) {
+            return reject(new TypeError(&#39;Arguments not Array&#39;));
+        }
+        for (let p of promises) {
+            Promise.resolve(p).then(
+                res =&amp;gt; resolve(res), 
+                rej =&amp;gt; reject(rej)
+            )
+        }
+    })
+}
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/promiserace-shi-xian-yuan-li">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/promise-shi-xian-yuan-li">
                         Promise 实现原理
                     </a>
@@ -107,12 +154,12 @@
                     <time class="post-time">2019-07-15</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-other_1">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_3">
+                            i-tag-other_2">
             #js基础
         </a>
                         
@@ -186,12 +233,12 @@ mp.then(res =&amp;gt; console.log(&#39;success&#39;, res));
                     <time class="post-time">2019-07-15</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-other_1">
+                            i-tag-success">
             #原理
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-banana">
+                            i-tag-other_3">
             #js基础
         </a>
                         
@@ -300,12 +347,12 @@ a.join = a.shift;
                     <time class="post-time">2019-07-13</time>
                     
                         <a href="https://blog.ss1742.com/tag/5CynFjhOR" class="post-tag i-tag
-                            i-tag-success">
+                            i-tag-other_1">
             #状态码
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-success">
             #http
         </a>
                         
@@ -334,12 +381,12 @@ a.join = a.shift;
                     <time class="post-time">2019-07-13</time>
                     
                         <a href="https://blog.ss1742.com/tag/5CynFjhOR" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-">
             #状态码
         </a>
                         
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-other_1">
+                            i-tag-">
             #http
         </a>
                         
@@ -371,7 +418,7 @@ a.join = a.shift;
                     <time class="post-time">2019-07-12</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-primary">
             #算法
         </a>
                         
@@ -409,7 +456,7 @@ a.join = a.shift;
                     <time class="post-time">2019-07-12</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-other_4">
             #算法
         </a>
                         
@@ -439,7 +486,7 @@ a.join = a.shift;
                     <time class="post-time">2019-07-11</time>
                     
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-other_2">
             #http
         </a>
                         
@@ -476,7 +523,7 @@ HTTP/2的多路复用就是为了解决上述的两个性能问题。
                     <time class="post-time">2019-07-11</time>
                     
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-other_1">
             #http
         </a>
                         
@@ -507,41 +554,6 @@ HTTP/2的多路复用就是为了解决上述的两个性能问题。
                 </div>
             </article>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/https-wo-shou-guo-cheng">
-                        HTTPS 握手过程
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-11</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-primary">
-            #http
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            
-第一步，客户端给出协议版本号、一个客户端生成的随机数（Client random），以及客户端支持的加密方法。
-第二步，服务端确认双方使用的加密方法，并给出数字证书、以及一个服务器生成的随机数（Server random）。
-第三步，客户端确认数字证书有效，然后生成一个新的随机数（Premaster secret），并使用数字证书中的公钥，加密这个随机数，发给服务端。
-第四步，服务端使用自己的私钥，获取客户端发来的随机数（即Premaster secret）。
-第五步，客户端和服务端根据约定的加密方法，使用前面的三个随机数，生成&amp;quot;对话密钥&amp;quot;（session key），用来加密接下来的整个对话过程。
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/https-wo-shou-guo-cheng">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
                 <!-- 翻页 -->
                 
     <div class="pagination-container">
@@ -562,7 +574,7 @@ HTTP/2的多路复用就是为了解决上述的两个性能问题。
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565114109127)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565194006541)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

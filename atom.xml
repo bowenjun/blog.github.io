@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>1742·小博文</title>
-    <updated>2019-08-06T17:55:19.632Z</updated>
+    <updated>2019-08-07T16:06:49.918Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -10,6 +10,16 @@
     <logo>https://blog.ss1742.com/images/avatar.png</logo>
     <icon>https://blog.ss1742.com/favicon.ico</icon>
     <rights>All rights reserved 2019, 1742·小博文</rights>
+    <entry>
+        <title type="html"><![CDATA[animation]]></title>
+        <id>https://blog.ss1742.com/post/animation</id>
+        <link href="https://blog.ss1742.com/post/animation">
+        </link>
+        <updated>2019-08-07T16:04:36.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="animation-play-state">animation-play-state</h3>
+<p><code>paused</code> 暂停</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[bind/apply/call]]></title>
         <id>https://blog.ss1742.com/post/bindapplycall</id>
@@ -301,19 +311,6 @@ var getObj = function() {
 var isValid = function(s) {
     return Number(s) &lt; 256 &amp;&amp; Number(s).toString() === s;
 }
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[axios上传进度]]></title>
-        <id>https://blog.ss1742.com/post/axios-shang-chuan-jin-du</id>
-        <link href="https://blog.ss1742.com/post/axios-shang-chuan-jin-du">
-        </link>
-        <updated>2019-07-30T16:11:28.000Z</updated>
-        <content type="html"><![CDATA[<pre><code class="language-js">const config = {
-    onUploadProgress: progressEvent =&gt; console.log(progressEvent.loaded / progressEvent.total)
-}
-axios.put('/upload/server', data, config);
 </code></pre>
 ]]></content>
     </entry>

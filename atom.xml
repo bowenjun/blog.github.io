@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>1742·小博文</title>
-    <updated>2019-08-07T16:06:49.918Z</updated>
+    <updated>2019-08-08T15:38:45.958Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -10,6 +10,29 @@
     <logo>https://blog.ss1742.com/images/avatar.png</logo>
     <icon>https://blog.ss1742.com/favicon.ico</icon>
     <rights>All rights reserved 2019, 1742·小博文</rights>
+    <entry>
+        <title type="html"><![CDATA[Hermes Engine 初探]]></title>
+        <id>https://blog.ss1742.com/post/hermes-engine-chu-tan</id>
+        <link href="https://blog.ss1742.com/post/hermes-engine-chu-tan">
+        </link>
+        <updated>2019-08-08T15:29:38.000Z</updated>
+        <content type="html"><![CDATA[<p>Hermes引擎是Facebook研发，在React-Native Android端用于替换JavaScript Core的JavaScript引擎。Hermes引擎的优势是适合移动端的轻量级JavaScript引擎，使用aot编译，可以减少Android端内存使用，减小安装包大小，提升执行效率。</p>
+<h3 id="hermes的特色">Hermes的特色</h3>
+<ul>
+<li>预编译字节码（引擎加载二进制代码效率高于运行JS脚本）</li>
+<li>无JIT编译器（减小了引擎大小，优化内存占用，但直接运行JS脚本的性能差于V8和JSC）</li>
+<li>针对移动端的垃圾回收策略</li>
+</ul>
+<h3 id="主流javascript引擎">主流JavaScript引擎</h3>
+<p>V8（Google）、JavaScriptCore（Apple）、SpiderMonkey（Firefox）</p>
+<h3 id="rn中的javascript引擎">RN中的JavaScript引擎</h3>
+<h4 id="weex">Weex</h4>
+<p>Android：V8，iOS：JavaScriptCore</p>
+<h4 id="rn">RN</h4>
+<p>Android：JavaScriptCore（Hermes、V8），iOS：JavaScriptCore（Apple要求）</p>
+<p>注：Hermes Engine在React-native 0.60.2 版本后支持</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[animation]]></title>
         <id>https://blog.ss1742.com/post/animation</id>
@@ -268,50 +291,6 @@ str = str.replace(/ /g,'&amp;#32;');
         <content type="html"><![CDATA[<p>利用晚上11点以后的时间，正在看《曾国藩的正面与侧面》—— 张宏杰，开始坚持记账(来自曾国藩老师)</p>
 <p>利用地铁，2天已读《邓小平传》—— 理查德伊文思 前七章</p>
 <p>实践来了，什么书都读。其实是才开始阅读，并不是说马上就变成了和两位伟人一样有同样的思想报复和才干，写出来的句子也就只有这可怜巴巴的两句。但是我觉得坚持完8月，可能有意想不到的收获。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[复原IP地址]]></title>
-        <id>https://blog.ss1742.com/post/fu-yuan-ip-di-zhi</id>
-        <link href="https://blog.ss1742.com/post/fu-yuan-ip-di-zhi">
-        </link>
-        <updated>2019-07-31T16:00:24.000Z</updated>
-        <content type="html"><![CDATA[<p>给定一个只包含数字的字符串，复原它并返回所有可能的 IP 地址格式。</p>
-<p>示例:</p>
-<pre><code>输入: &quot;25525511135&quot;
-输出: [&quot;255.255.11.135&quot;, &quot;255.255.111.35&quot;]
-</code></pre>
-<pre><code class="language-js">var restoreIpAddresses = function(s) {
-    let fun = getObj();
-    fun.findOut(s, []);
-    return fun.res;
-};
-
-var getObj = function() {
-    let res = [];
-    function findOut(str, arr) {
-        if (!str.length &amp;&amp; arr.length === 4) return res.push(arr.join('.'));
-        if (arr.length === 4) return;
-        let temp = '', tempArr = str.split('');
-        for (let i = 0; i &lt; 3; i++) {
-            temp = tempArr.pop() + temp;
-            if (isValid(temp)) {
-                let a = [...arr];
-                a.unshift(temp);
-                findOut(tempArr.join(''), a);
-            }
-        }
-    }
-    return {
-        findOut,
-        res
-    }
-}
-
-var isValid = function(s) {
-    return Number(s) &lt; 256 &amp;&amp; Number(s).toString() === s;
-}
-</code></pre>
 ]]></content>
     </entry>
 </feed>

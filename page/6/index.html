@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565278401829">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565368518554">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565278401829" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565368518554" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,43 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/http2-de-duo-lu-fu-yong">
+                        http2的多路复用
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-11</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
+                            i-tag-other_3">
+            #http
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            在 HTTP/1 中，每次请求都会建立一次HTTP连接，也就是我们常说的3次握手4次挥手，这个过程在一次请求过程中占用了相当长的时间，即使开启了 Keep-Alive ，解决了多次连接的问题，但是依然有两个效率上的问题：
+
+第一个：串行的文件传输。当请求a文件时，b文件只能等待，等待a连接到服务器、服务器处理文件、服务器返回文件，这三个步骤。我们假设这三步用时都是1秒，那么a文件用时为3秒，b文件传输完成用时为6秒，依此类推。（注：此项计算有一个前提条件，就是浏览器和服务器是单通道传输）
+第二个：连接数过多。我们假设Apache设置了最大并发数为300，因为浏览器限制，浏览器发起的最大请求数为6，也就是服务器能承载的最高并发为50，当第51个人访问时，就需要等待前面某个请求处理完成。
+
+HTTP/2的多路复用就是为了解决上述的两个性能问题。
+在 HTTP/2 中，有两个非常重要的概念，分别是帧（frame）和流（stream）。
+帧代表着最小的数据单位，每个帧会标识出该帧属于哪个流，流也就是多个帧组成的数据流。
+多路复用，就是在一个 TCP 连接中可以存在多条流。换句话说，也就是可以发送多个请求，对端可以通过帧中的标识知道属于哪个请求。通过这个技术，可以避免 HTTP 旧版本中的队头阻塞问题，极大的提高传输性能。
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/http2-de-duo-lu-fu-yong">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/https-zhong-jian-ren-gong-ji">
                         HTTPS 中间人攻击
                     </a>
@@ -107,7 +144,7 @@
                     <time class="post-time">2019-07-11</time>
                     
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-success">
+                            i-tag-error">
             #http
         </a>
                         
@@ -148,7 +185,7 @@
                     <time class="post-time">2019-07-11</time>
                     
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-">
             #http
         </a>
                         
@@ -183,7 +220,7 @@
                     <time class="post-time">2019-07-11</time>
                     
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-banana">
+                            i-tag-warning">
             #http
         </a>
                         
@@ -220,7 +257,7 @@
                     <time class="post-time">2019-07-11</time>
                     
                         <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-success">
+                            i-tag-">
             #http
         </a>
                         
@@ -257,7 +294,7 @@
                     <time class="post-time">2019-07-10</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-primary">
             #js基础
         </a>
                         
@@ -302,7 +339,7 @@ console.log((5).add(3).reduce(2)); // 6
                     <time class="post-time">2019-07-10</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-banana">
             #js基础
         </a>
                         
@@ -344,7 +381,7 @@ console.log(add(2, 3)(4)(5)()(1)); // 15
                     <time class="post-time">2019-07-10</time>
                     
                         <a href="https://blog.ss1742.com/tag/922aBovKI" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-other_1">
             #css基础
         </a>
                         
@@ -405,7 +442,7 @@ grid 教程
                     <time class="post-time">2019-07-10</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_1">
+                            i-tag-other_3">
             #js基础
         </a>
                         
@@ -468,7 +505,7 @@ parseInt(&#39;3&#39;, 2) // NaN, 3 不是二进制
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565278401829)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565368518554)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

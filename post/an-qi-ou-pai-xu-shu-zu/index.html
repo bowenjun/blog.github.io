@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    Promise 实现原理 | 1742·小博文
+    按奇偶排序数组 | 1742·小博文
 </title>
 <link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565368518554">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -106,69 +106,38 @@
                 <div id="content" class="main-container-left">
                     <article class="post i-card">
                         <h2 class="post-title">
-                            Promise 实现原理
+                            按奇偶排序数组
                         </h2>
                         <div class="post-info">
-                            <time class="post-time">2019-07-15</time>
+                            <time class="post-time">2019-08-10</time>
                             
-                                <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-banana">
-                            #原理
-                        </a>
-                                
-                                <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-banana">
-                            #js基础
+                                <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
+                            i-tag-primary">
+                            #算法
                         </a>
                                 
                         </div>
                         
                                 <div class="post-content">
-                                    <pre><code class="language-js">function myPromise(exe) {
-    let self = this;
-    self.status = 'pending';
-    self.value = null;
-    self.reason = null;
-    self.onResolveCbk = [];
-    self.onRejectCbk = [];
-    function resolve(value) {
-        if (self.status === 'pending') {
-            self.value = value;
-            self.status = 'resolved';
-            self.onResolveCbk.map(fn =&gt; fn());
+                                    <p>给定一个非负整数数组 A，返回一个数组，在该数组中， A 的所有偶数元素之后跟着所有奇数元素。</p>
+<p>你可以返回满足此条件的任何数组作为答案。</p>
+<p>示例：</p>
+<pre><code>输入：[3,1,2,4]
+输出：[2,4,3,1]
+输出 [4,2,3,1]，[2,4,1,3] 和 [4,2,1,3] 也会被接受。
+</code></pre>
+<pre><code class="language-js">var sortArrayByParity = function(A) {
+    for (let i = 0, j = A.length; i &lt; j;) {
+        if (A[i] % 2 === 0) {
+            i++;
+        } else if (A[--j] % 2 === 0) {
+            A[i] ^= A[j];
+            A[j] ^= A[i];
+            A[i++] ^= A[j];
         }
     }
-    function reject(reason) {
-        if (self.status === 'pending') {
-            self.reason = reason;
-            self.status = 'rejected';
-            self.onResolveCbk.map(fn =&gt; fn());
-        }
-    }
-    exe(resolve, reject);
-}
-
-myPromise.prototype.then = function(onFulfilled, onRejected) {
-    let self = this;
-    if (self.status === 'pending') {
-        self.onResolveCbk.push(() =&gt; onFulfilled(self.value));
-        self.onRejectCbk.push(() =&gt; onRejected(self.reason));
-    }
-    if (self.status === 'resolved') {
-        onFulfilled(self.value);
-    }
-    if (self.status === 'rejected') {
-        onRejected(self.reason);
-    }
-}
-
-let mp = new myPromise((resolve, reject) =&gt; {
-    setTimeout(() =&gt; {
-        resolve(2);
-    }, 200);
-});
-
-mp.then(res =&gt; console.log('success', res));
+    return A;
+};
 </code></pre>
 
                                 </div>
@@ -177,9 +146,9 @@ mp.then(res =&gt; console.log('success', res));
                     
                         <div class="next-post">
                             <div class="next">下一篇</div>
-                            <a href="https://blog.ss1742.com/post/new-de-shi-xian-yuan-li">
+                            <a href="https://blog.ss1742.com/post/hermes-engine-chu-tan">
                                 <h3 class="post-title">
-                                    new 实现原理
+                                    Hermes Engine 初探
                                 </h3>
                             </a>
                         </div>

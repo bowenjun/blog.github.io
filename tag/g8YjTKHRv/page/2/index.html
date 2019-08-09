@@ -7,7 +7,7 @@
 <title>
     算法 | 1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565278401829">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565368518554">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565278401829" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565368518554" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -104,6 +104,55 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/jian-hua-lu-jing">
+                        简化路径
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-29</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
+                            i-tag-other_4">
+            #算法
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            以 Unix 风格给出一个文件的绝对路径，你需要简化它。或者换句话说，将其转换为规范路径。
+在 Unix 风格的文件系统中，一个点（.）表示当前目录本身；此外，两个点 （..） 表示将目录切换到上一级（指向父目录）；两者都可以是复杂相对路径的组成部分。更多信息请参阅：Linux / Unix中的绝对路径 vs 相对路径
+请注意，返回的规范路径必须始终以斜杠 / 开头，并且两个目录名之间必须只有一个斜杠 /。最后一个目录名（如果存在）不能以 / 结尾。此外，规范路径必须是表示绝对路径的最短字符串。
+示例
+输入：&amp;quot;/a/./b/../../c/&amp;quot;
+输出：&amp;quot;/c&amp;quot;
+解释：注意，最后一个目录名后面没有斜杠。
+
+function simplifyPath(path) {
+	let res = [];
+	let paths = path.split(&#39;/&#39;);
+	for (let i = 0, len = paths.length; i &amp;lt; len; i++) {
+		if (paths[i] === &#39;..&#39;) {
+			res.pop();
+		} else if (paths[i] &amp;amp;&amp;amp; paths[i] !== &#39;.&#39;) {
+			res.push(paths[i]);
+		}
+	}
+	return res.length &amp;gt; 0 ? (&#39;/&#39; + res.join(&#39;/&#39;)) : &#39;/&#39;;
+}
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/jian-hua-lu-jing">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/zui-chang-gong-gong-qian-zhui">
                         最长公共前缀
                     </a>
@@ -112,7 +161,7 @@
                     <time class="post-time">2019-07-26</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-">
             #算法
         </a>
                         
@@ -153,7 +202,7 @@ function longestCommonPrefix(s) {
                     <time class="post-time">2019-07-26</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-primary">
             #算法
         </a>
                         
@@ -236,7 +285,7 @@ function lengthOfLongestSubstring(s) {
                     <time class="post-time">2019-07-12</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-error">
             #算法
         </a>
                         
@@ -274,7 +323,7 @@ function lengthOfLongestSubstring(s) {
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565278401829)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565368518554)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

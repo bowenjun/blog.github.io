@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565278401829">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565368518554">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565278401829" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565368518554" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,54 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/an-qi-ou-pai-xu-shu-zu">
+                        按奇偶排序数组
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-08-10</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
+                            i-tag-success">
+            #算法
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            给定一个非负整数数组 A，返回一个数组，在该数组中， A 的所有偶数元素之后跟着所有奇数元素。
+你可以返回满足此条件的任何数组作为答案。
+示例：
+输入：[3,1,2,4]
+输出：[2,4,3,1]
+输出 [4,2,3,1]，[2,4,1,3] 和 [4,2,1,3] 也会被接受。
+
+var sortArrayByParity = function(A) {
+    for (let i = 0, j = A.length; i &amp;lt; j;) {
+        if (A[i] % 2 === 0) {
+            i++;
+        } else if (A[--j] % 2 === 0) {
+            A[i] ^= A[j];
+            A[j] ^= A[i];
+            A[i++] ^= A[j];
+        }
+    }
+    return A;
+};
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/an-qi-ou-pai-xu-shu-zu">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/hermes-engine-chu-tan">
                         Hermes Engine 初探
                     </a>
@@ -107,7 +155,7 @@
                     <time class="post-time">2019-08-08</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-banana">
+                            i-tag-other_4">
             #原理
         </a>
                         
@@ -150,7 +198,7 @@ Android：JavaScriptCore（Hermes、V8），iOS：JavaScriptCore（Apple要求�
                     <time class="post-time">2019-08-08</time>
                     
                         <a href="https://blog.ss1742.com/tag/9sclIJ6sZ" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-banana">
             #css
         </a>
                         
@@ -180,7 +228,7 @@ paused 暂停
                     <time class="post-time">2019-08-07</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-primary">
             #js基础
         </a>
                         
@@ -251,7 +299,7 @@ Function.prototype.call2 = function(context) {
                     <time class="post-time">2019-08-05</time>
                     
                         <a href="https://blog.ss1742.com/tag/5CynFjhOR" class="post-tag i-tag
-                            i-tag-success">
+                            i-tag-other_1">
             #状态码
         </a>
                         
@@ -285,7 +333,7 @@ nginx 上配置 proxy_ignore_client_abort on
                     <time class="post-time">2019-08-04</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-primary">
             #算法
         </a>
                         
@@ -347,7 +395,7 @@ function NumberOf1Between1AndN_Solution(n) {
                     <time class="post-time">2019-08-03</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-other_4">
             #算法
         </a>
                         
@@ -415,7 +463,7 @@ function quickSort2(num, left, right) {
                     <time class="post-time">2019-08-01</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-banana">
             #算法
         </a>
                         
@@ -514,7 +562,7 @@ Cross-site request forgery 跨站请求伪造
                     <time class="post-time">2019-08-01</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-other_3">
             #js基础
         </a>
                         
@@ -544,37 +592,6 @@ Cross-site request forgery 跨站请求伪造
                 </div>
             </article>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/du-shu-you-gan-level-001">
-                        读书有感——level-0.0.1
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-08-01</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
-                            i-tag-other_1">
-            #读书
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            利用晚上11点以后的时间，正在看《曾国藩的正面与侧面》—— 张宏杰，开始坚持记账(来自曾国藩老师)
-利用地铁，2天已读《邓小平传》—— 理查德伊文思 前七章
-实践来了，什么书都读。其实是才开始阅读，并不是说马上就变成了和两位伟人一样有同样的思想报复和才干，写出来的句子也就只有这可怜巴巴的两句。但是我觉得坚持完8月，可能有意想不到的收获。
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/du-shu-you-gan-level-001">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
                 <!-- 翻页 -->
                 
     <div class="pagination-container">
@@ -593,7 +610,7 @@ Cross-site request forgery 跨站请求伪造
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565278401829)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565368518554)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>1742·小博文</title>
-    <updated>2019-08-09T16:35:20.818Z</updated>
+    <updated>2019-08-10T15:55:28.595Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -10,6 +10,50 @@
     <logo>https://blog.ss1742.com/images/avatar.png</logo>
     <icon>https://blog.ss1742.com/favicon.ico</icon>
     <rights>All rights reserved 2019, 1742·小博文</rights>
+    <entry>
+        <title type="html"><![CDATA[最接近的三数之和]]></title>
+        <id>https://blog.ss1742.com/post/zui-jie-jin-de-san-shu-zhi-he</id>
+        <link href="https://blog.ss1742.com/post/zui-jie-jin-de-san-shu-zhi-he">
+        </link>
+        <updated>2019-08-10T15:53:46.000Z</updated>
+        <content type="html"><![CDATA[<p>给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。</p>
+<pre><code>例如，给定数组 nums = [-1，2，1，-4], 和 target = 1.
+与 target 最接近的三个数的和为 2. (-1 + 2 + 1 = 2).
+</code></pre>
+<pre><code class="language-js">var threeSumClosest = function(nums, target) {
+    const len = nums.length;
+    if (len &lt; 3) {
+        return null;
+    }
+    nums.sort((a, b) =&gt; a - b);
+    let res = target - (nums[0] + nums[1] + nums[2]);
+    for (let i = 0; i &lt; len - 2; i++) {
+        // 左指针为 i+1，右指针为 nums.length - 1
+        let left = i + 1,
+            right = len - 1;
+
+        while (left &lt; right) {
+            const sum = nums[i] + nums[left] + nums[right];
+            if (sum === target) {
+                return sum;
+            } else if (sum &lt; target) {
+                // sum &lt; target 时，left++
+                while (nums[left] === nums[++left]);
+            } else {
+                // sum &gt; target时，right--
+                while (nums[right] === nums[--right]);
+            }
+            // 存储与 target 最近的值
+            if (Math.abs(sum - target) &lt; Math.abs(res)) {
+                res = target - sum;
+            }
+        }
+    }
+    return target - res;
+};
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[按奇偶排序数组]]></title>
         <id>https://blog.ss1742.com/post/an-qi-ou-pai-xu-shu-zu</id>
@@ -288,26 +332,6 @@ str = str.replace(/ /g,'&amp;#32;');
 <p>伪随机值</p>
 </li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[统计页面使用到的所有标签]]></title>
-        <id>https://blog.ss1742.com/post/tong-ji-ye-mian-shi-yong-dao-de-suo-you-biao-qian</id>
-        <link href="https://blog.ss1742.com/post/tong-ji-ye-mian-shi-yong-dao-de-suo-you-biao-qian">
-        </link>
-        <updated>2019-08-01T02:05:46.000Z</updated>
-        <content type="html"><![CDATA[<pre><code class="language-js">function findAll() {
-	const all = document.querySelectorAll('*');
-	return all.reduce((a, b) =&gt; {
-		let key = b.nodeName.toLowerCase();
-		if (!a[key]) {
-			a[key] = 0;
-		}
-		a[key]++;
-		return a;
-	}, {});
-}
-</code></pre>
 ]]></content>
     </entry>
 </feed>

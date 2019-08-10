@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565368518554">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565452495358">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565368518554" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565452495358" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,55 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/jian-hua-lu-jing">
+                        简化路径
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-29</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
+                            i-tag-error">
+            #算法
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            以 Unix 风格给出一个文件的绝对路径，你需要简化它。或者换句话说，将其转换为规范路径。
+在 Unix 风格的文件系统中，一个点（.）表示当前目录本身；此外，两个点 （..） 表示将目录切换到上一级（指向父目录）；两者都可以是复杂相对路径的组成部分。更多信息请参阅：Linux / Unix中的绝对路径 vs 相对路径
+请注意，返回的规范路径必须始终以斜杠 / 开头，并且两个目录名之间必须只有一个斜杠 /。最后一个目录名（如果存在）不能以 / 结尾。此外，规范路径必须是表示绝对路径的最短字符串。
+示例
+输入：&amp;quot;/a/./b/../../c/&amp;quot;
+输出：&amp;quot;/c&amp;quot;
+解释：注意，最后一个目录名后面没有斜杠。
+
+function simplifyPath(path) {
+	let res = [];
+	let paths = path.split(&#39;/&#39;);
+	for (let i = 0, len = paths.length; i &amp;lt; len; i++) {
+		if (paths[i] === &#39;..&#39;) {
+			res.pop();
+		} else if (paths[i] &amp;amp;&amp;amp; paths[i] !== &#39;.&#39;) {
+			res.push(paths[i]);
+		}
+	}
+	return res.length &amp;gt; 0 ? (&#39;/&#39; + res.join(&#39;/&#39;)) : &#39;/&#39;;
+}
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/jian-hua-lu-jing">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/kan-shu">
                         愈发觉得看书真的很重要
                     </a>
@@ -107,7 +156,7 @@
                     <time class="post-time">2019-07-29</time>
                     
                         <a href="https://blog.ss1742.com/tag/kHKSvnCCb" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-other_3">
             #感想
         </a>
                         
@@ -206,7 +255,7 @@ function longestCommonPrefix(s) {
                     <time class="post-time">2019-07-26</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-warning">
             #算法
         </a>
                         
@@ -251,7 +300,7 @@ function lengthOfLongestSubstring(s) {
                     <time class="post-time">2019-07-26</time>
                     
                         <a href="https://blog.ss1742.com/tag/9sclIJ6sZ" class="post-tag i-tag
-                            i-tag-success">
+                            i-tag-info">
             #css
         </a>
                         
@@ -307,7 +356,7 @@ BFC 的应用
                     <time class="post-time">2019-07-24</time>
                     
                         <a href="https://blog.ss1742.com/tag/RANXdSP4s" class="post-tag i-tag
-                            i-tag-success">
+                            i-tag-other_3">
             #管理
         </a>
                         
@@ -343,7 +392,7 @@ BFC 的应用
                     <time class="post-time">2019-07-24</time>
                     
                         <a href="https://blog.ss1742.com/tag/922aBovKI" class="post-tag i-tag
-                            i-tag-success">
+                            i-tag-info">
             #css基础
         </a>
                         
@@ -386,7 +435,7 @@ Opera
                     <time class="post-time">2019-07-24</time>
                     
                         <a href="https://blog.ss1742.com/tag/kHKSvnCCb" class="post-tag i-tag
-                            i-tag-other_1">
+                            i-tag-other_3">
             #感想
         </a>
                         
@@ -461,69 +510,6 @@ async 一旦下载完，渲染引擎就会中断渲染，执行这个脚本，�
                 </div>
             </article>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/http-content-type">
-                        http content-type
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-23</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/pKH4MDKew" class="post-tag i-tag
-                            i-tag-primary">
-            #http
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            content-type 是 http 实体首部字段，用来说明请求或返回的消息主体是用何种方式编码，在 request header 和 response header 中都存在
-类型
-application/x-www-form-urlencoded
-浏览器原生 form 表单
-提交数据按照 key1=val1&amp;amp;key2=val2的方式进行编码，key 和 value 都进行了 url 转码
-POST [http://www.example.com](http://www.example.com) HTTP/1.1 
-Content-Type: application/x-[www-form-urlencoded](http://www-form-urlencoded);charset=utf-8 
-
-title=test&amp;amp;sub%5B%5D=1&amp;amp;sub%5B%5D=2&amp;amp;sub%5B%5D=3 
-
-multipart/form-data
-常见的 post 数据提交方式，上传文件必须设置 enctype=&amp;quot;multipart/form-data&amp;quot;
-POST /foo HTTP/1.1
-Content-Length: 68137
-Content-Type: multipart/form-data; boundary=---------------------------974767299852498929531610575
-
----------------------------974767299852498929531610575
-Content-Disposition: form-data; name=&amp;quot;description&amp;quot;
-
-some text
----------------------------974767299852498929531610575
-Content-Disposition: form-data; name=&amp;quot;myFile&amp;quot;; filename=&amp;quot;foo.txt&amp;quot;
-Content-Type: text/plain
-
-(content of the uploaded file foo.txt)
----------------------------974767299852498929531610575--
-
-
-首先生成 boundary 分割不同字段，避免与正文重复
-消息主体按照字段分成多个部分，每个部分以 --boundary 开始，消息主体再以 --boundary-- 结束
-
-application/json
-消息主体是序列化的 JSON 字符串
-text/xml
-使用 HTTP 作为传输协议，XML 作为编码方式
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/http-content-type">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
                 <!-- 翻页 -->
                 
     <div class="pagination-container">
@@ -544,7 +530,7 @@ text/xml
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565368518554)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565452495358)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

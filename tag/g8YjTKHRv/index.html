@@ -7,7 +7,7 @@
 <title>
     算法 | 1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565368518554">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565452495358">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565368518554" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565452495358" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -104,6 +104,70 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/zui-jie-jin-de-san-shu-zhi-he">
+                        最接近的三数之和
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-08-10</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
+                            i-tag-warning">
+            #算法
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。
+例如，给定数组 nums = [-1，2，1，-4], 和 target = 1.
+与 target 最接近的三个数的和为 2. (-1 + 2 + 1 = 2).
+
+var threeSumClosest = function(nums, target) {
+    const len = nums.length;
+    if (len &amp;lt; 3) {
+        return null;
+    }
+    nums.sort((a, b) =&amp;gt; a - b);
+    let res = target - (nums[0] + nums[1] + nums[2]);
+    for (let i = 0; i &amp;lt; len - 2; i++) {
+        // 左指针为 i+1，右指针为 nums.length - 1
+        let left = i + 1,
+            right = len - 1;
+
+        while (left &amp;lt; right) {
+            const sum = nums[i] + nums[left] + nums[right];
+            if (sum === target) {
+                return sum;
+            } else if (sum &amp;lt; target) {
+                // sum &amp;lt; target 时，left++
+                while (nums[left] === nums[++left]);
+            } else {
+                // sum &amp;gt; target时，right--
+                while (nums[right] === nums[--right]);
+            }
+            // 存储与 target 最近的值
+            if (Math.abs(sum - target) &amp;lt; Math.abs(res)) {
+                res = target - sum;
+            }
+        }
+    }
+    return target - res;
+};
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/zui-jie-jin-de-san-shu-zhi-he">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/an-qi-ou-pai-xu-shu-zu">
                         按奇偶排序数组
                     </a>
@@ -112,7 +176,7 @@
                     <time class="post-time">2019-08-10</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-other_1">
             #算法
         </a>
                         
@@ -160,7 +224,7 @@ var sortArrayByParity = function(A) {
                     <time class="post-time">2019-08-04</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-warning">
             #算法
         </a>
                         
@@ -222,7 +286,7 @@ function NumberOf1Between1AndN_Solution(n) {
                     <time class="post-time">2019-08-03</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-other_3">
             #算法
         </a>
                         
@@ -290,7 +354,7 @@ function quickSort2(num, left, right) {
                     <time class="post-time">2019-08-01</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-banana">
             #算法
         </a>
                         
@@ -342,7 +406,7 @@ function quickSort2(num, left, right) {
                     <time class="post-time">2019-08-01</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-other_3">
             #算法
         </a>
                         
@@ -406,7 +470,7 @@ var isValid = function(s) {
                     <time class="post-time">2019-07-29</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-other_1">
+                            i-tag-other_4">
             #算法
         </a>
                         
@@ -469,7 +533,7 @@ function maxProfit(prices) {
                     <time class="post-time">2019-07-29</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-warning">
             #算法
         </a>
                         
@@ -524,7 +588,7 @@ function maxProfit(prices) {
                     <time class="post-time">2019-07-29</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-other_1">
+                            i-tag-warning">
             #算法
         </a>
                         
@@ -591,7 +655,7 @@ function reverseList2(head) {
                     <time class="post-time">2019-07-29</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-warning">
             #算法
         </a>
                         
@@ -634,56 +698,6 @@ function merge(intervals) {
                 </div>
             </article>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/shu-zu-zhong-de-di-k-ge-zui-da-yuan-su">
-                        数组中的第K个最大元素
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-29</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-warning">
-            #算法
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            在未排序的数组中找到第 k 个最大的元素。
-示例 :
-输入: [3,2,1,5,6,4] 和 k = 2
-输出: 5
-
-function findKthLargest(nums, k) {
-	let temp = qSort(nums);
-	return k &amp;lt;= temp.length ? temp[k - 1] : null;
-}
-function qSort(nums) {
-	if (nums.length &amp;lt; 2) return nums;
-	let left = [], right = [], temp = nums[0];
-	for (let i = 0, len = nums.length; i &amp;lt; len; i++) {
-		if (nums[i] &amp;lt; temp) {
-			right.push(nums[i]);
-		} else {
-			left.push(nums[i]);
-		}
-	}
-	return [...qSort(left), temp, ...qSort(right)];
-}
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/shu-zu-zhong-de-di-k-ge-zui-da-yuan-su">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
                 <!-- 翻页 -->
                 
     <div class="pagination-container">
@@ -702,7 +716,7 @@ function qSort(nums) {
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565368518554)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565452495358)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

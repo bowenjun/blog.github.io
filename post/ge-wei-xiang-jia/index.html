@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    快排 | 1742·小博文
+    各位相加 | 1742·小博文
 </title>
 <link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565541755254">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -106,58 +106,45 @@
                 <div id="content" class="main-container-left">
                     <article class="post i-card">
                         <h2 class="post-title">
-                            快排
+                            各位相加
                         </h2>
                         <div class="post-info">
-                            <time class="post-time">2019-08-03</time>
+                            <time class="post-time">2019-08-12</time>
                             
                                 <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-other_3">
                             #算法
                         </a>
                                 
                         </div>
                         
                                 <div class="post-content">
-                                    <pre><code class="language-js">// 递归
-function quickSort1(arr) {
-	if (arr.length &lt; 2) return arr;
-	let num = arr[0], left = [], right = [];
-	for (let i = 1, len = arr.length; i &lt; len; i++) {
-		if (num &lt; arr[i]) {
-			right.push(arr[i]);
-		} else {
-			left.push(arr[i]);
-		}
-	}
-	return [...quickSort1(left), num, ...quickSort1(right)];
-}
-
-// 非递归
-function quickSort2(num, left, right) {
-    var list = [[left, right]]; // 将[left,right]存入数组中，类似于递归入栈
-    while (list.length &gt; 0) { // 若list不为空，循环弹出list最后一个数组进行快排
-        var now = list.pop(); // 弹出list末尾。(也可用list.shift()取出list第一个数组，但在数据量较大时，这种方式效率较低)
-        if (now[0] &gt;= now[1]) { // 若左右指针相遇，待排序数组长度小宇1，则无需进行快排(注意不能写成now[0]==now[1]，这里now[0]是有可能大于now[1]的
-            continue;
-        }
-        var i = now[0], j = now[1], flag = now[0]; // 以下与递归方法相同，请参考上面的递归详解
-        while (i &lt; j) {
-            while (num[j] &gt;= num[flag] &amp;&amp; j &gt; flag) j--;
-            if (i &gt;= j) {
-                break;
-            }
-            while (num[i] &lt;= num[flag] &amp;&amp; i &lt; j) i++;
-            let temp = num[flag];
-            num[flag] = num[j];
-            num[j] = num[i];
-            num[i] = temp;
-            flag = i;
-        }
-        list.push([now[0], flag - 1]); // 将flag左边数组作为待排序数组，只需将左右指针放入list即可。
-        list.push([flag + 1, now[1]]); // 将flag右边数组作为待排序数组，只需将左右指针放入list即可。
-	}
-}
+                                    <p>给定一个非负整数 num，反复将各个位上的数字相加，直到结果为一位数。</p>
+<p>示例:</p>
+<pre><code>输入: 38
+输出: 2 
+解释: 各位相加的过程为：3 + 8 = 11, 1 + 1 = 2。 由于 2 是一位数，所以返回 2。
+</code></pre>
+<h3 id="题解">题解</h3>
+<p>时间复杂度为O(1)的解法：</p>
+<ul>
+<li>除个位外，每一位上的值都是通过(9+1)进位的过程得到的，想一下拨算盘进位</li>
+<li>把整数n看成n样物品，原本是以10个1份打包的，现在从这些10个1份打包好的里面，拿出1个，让它们以9个为1份打包。</li>
+<li>这样就出现了两部分的东西：<br>
+- 原本10个现在9个1份的，打包好的物品，这些，我们不用管<br>
+- 零散的物品，它们还可以分成：<br>
+- 从原来打包的里面拿出来的物品，它们的总和 =》 原来打包好的份数 =》 10进制进位的次数 =》 10进制下，除个位外其他位上的值的总和<br>
+- 以10个为1份打包时，打不进去的零散物品 =》 10进制个位上的值</li>
+<li>如上零散物品的总数，就是第一次处理num后得到的累加值</li>
+<li>如果这个累加值&gt;9，那么如题就还需要将各个位上的值再相加，直到结果为个位数为止。也就意味着还需要来一遍如上的过程。</li>
+<li>那么按照如上的思路，似乎可以通过n % 9得到最后的值</li>
+<li>但是有1个关键的问题，如果num是9的倍数，那么就不适用上述逻辑。原本我是想得到n被打包成10个1份的份数+打不进10个1份的散落个数的和。通过与9取模，去获得那个不能整除的1，作为计算份数的方式，但是如果可以被9整除，我就无法得到那个1，也得不到个位上的数。</li>
+<li>所以需要做一下特殊处理，(num - 1) % 9 + 1</li>
+<li>可以这么做的原因：原本可以被完美分成9个为一份的n样物品，我故意去掉一个，那么就又可以回到上述逻辑中去得到我要的n被打包成10个一份的份数+打不进10个一份的散落个数的和。而这个减去的1就相当于从，在10个1份打包的时候散落的个数中借走的，本来就不影响原来10个1份打包的份数，先拿走再放回来，都只影响散落的个数，所以没有关系。</li>
+</ul>
+<pre><code class="language-js">var addDigits = function(num) {
+    return (num - 1) % 9 + 1;
+};
 </code></pre>
 
                                 </div>
@@ -166,9 +153,9 @@ function quickSort2(num, left, right) {
                     
                         <div class="next-post">
                             <div class="next">下一篇</div>
-                            <a href="https://blog.ss1742.com/post/da-shu-xiang-jia">
+                            <a href="https://blog.ss1742.com/post/zui-jie-jin-de-san-shu-zhi-he">
                                 <h3 class="post-title">
-                                    大数相加
+                                    最接近的三数之和
                                 </h3>
                             </a>
                         </div>
@@ -181,35 +168,50 @@ function quickSort2(num, left, right) {
                 <!-- right -->
                 <div id="sidebar" class="main-container-right">
                     
-                                <!-- id-card -->
-                                
-    <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565541755254)">
-        </div>
-        <h1 class="id_card-title">
-            1742·小博文
-        </h1>
-        <h2 class="id_card-description">
-            这是我的真博客
-        </h2>
-        <!--  -->
-        <div class="id_card-sns">
-            <!-- github -->
-            
-                <a href="https://github.com/bowenjun" target="_blank" rel="noopener noreferrer"><i
-                class="fa fa-github"></i></a>
-                
-                    <!-- twitter -->
-                    
-                            <!-- weibo -->
-                            
-                                    <!-- facebook -->
-                                    
+                        <!-- toc -->
+                        
+    <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+        <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E9%A2%98%E8%A7%A3">题解</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
         </div>
+        <script>
+            function locateCatelogList() {
+                /*获取文章目录集合,可通过:header过滤器*/
+                var alis = $('.post-content :header');
+                /*获取侧边栏目录列表集合**/
+                var sidebar_alis = $('.markdownIt-TOC a');
+                /*获取滚动条到顶部的距离*/
+                var scroll_height = $(window).scrollTop();
+                for (var i = 0; i < alis.length; i++) {
+                    /*获取锚点集合中的元素分别到顶点的距离*/
+                    var a_height = $(alis[i]).offset().top;
+                    if (a_height < scroll_height) {
+                        /*高亮显示*/
+                        sidebar_alis.removeClass('on');
+                        $(sidebar_alis[i]).addClass('on');
+                    }
+                }
+            }
+            $(function() {
+                /*绑定滚动事件 */
+                $(window).bind('scroll', locateCatelogList);
+            });
+        </script>
     </div>
     
-                                    
+                            
 
                 </div>
 

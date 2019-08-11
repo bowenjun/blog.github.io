@@ -7,7 +7,7 @@
 <title>
     算法 | 1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565452495358">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565541755254">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565452495358" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565541755254" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -104,6 +104,61 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/ge-wei-xiang-jia">
+                        各位相加
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-08-12</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
+                            i-tag-other_2">
+            #算法
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            给定一个非负整数 num，反复将各个位上的数字相加，直到结果为一位数。
+示例:
+输入: 38
+输出: 2 
+解释: 各位相加的过程为：3 + 8 = 11, 1 + 1 = 2。 由于 2 是一位数，所以返回 2。
+
+题解
+时间复杂度为O(1)的解法：
+
+除个位外，每一位上的值都是通过(9+1)进位的过程得到的，想一下拨算盘进位
+把整数n看成n样物品，原本是以10个1份打包的，现在从这些10个1份打包好的里面，拿出1个，让它们以9个为1份打包。
+这样就出现了两部分的东西：
+- 原本10个现在9个1份的，打包好的物品，这些，我们不用管
+- 零散的物品，它们还可以分成：
+- 从原来打包的里面拿出来的物品，它们的总和 =》 原来打包好的份数 =》 10进制进位的次数 =》 10进制下，除个位外其他位上的值的总和
+- 以10个为1份打包时，打不进去的零散物品 =》 10进制个位上的值
+如上零散物品的总数，就是第一次处理num后得到的累加值
+如果这个累加值&amp;gt;9，那么如题就还需要将各个位上的值再相加，直到结果为个位数为止。也就意味着还需要来一遍如上的过程。
+那么按照如上的思路，似乎可以通过n % 9得到最后的值
+但是有1个关键的问题，如果num是9的倍数，那么就不适用上述逻辑。原本我是想得到n被打包成10个1份的份数+打不进10个1份的散落个数的和。通过与9取模，去获得那个不能整除的1，作为计算份数的方式，但是如果可以被9整除，我就无法得到那个1，也得不到个位上的数。
+所以需要做一下特殊处理，(num - 1) % 9 + 1
+可以这么做的原因：原本可以被完美分成9个为一份的n样物品，我故意去掉一个，那么就又可以回到上述逻辑中去得到我要的n被打包成10个一份的份数+打不进10个一份的散落个数的和。而这个减去的1就相当于从，在10个1份打包的时候散落的个数中借走的，本来就不影响原来10个1份打包的份数，先拿走再放回来，都只影响散落的个数，所以没有关系。
+
+var addDigits = function(num) {
+    return (num - 1) % 9 + 1;
+};
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/ge-wei-xiang-jia">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/zui-jie-jin-de-san-shu-zhi-he">
                         最接近的三数之和
                     </a>
@@ -112,7 +167,7 @@
                     <time class="post-time">2019-08-10</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-other_3">
             #算法
         </a>
                         
@@ -176,7 +231,7 @@ var threeSumClosest = function(nums, target) {
                     <time class="post-time">2019-08-10</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-other_1">
+                            i-tag-warning">
             #算法
         </a>
                         
@@ -224,7 +279,7 @@ var sortArrayByParity = function(A) {
                     <time class="post-time">2019-08-04</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-banana">
             #算法
         </a>
                         
@@ -286,7 +341,7 @@ function NumberOf1Between1AndN_Solution(n) {
                     <time class="post-time">2019-08-03</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-other_3">
+                            i-tag-warning">
             #算法
         </a>
                         
@@ -354,7 +409,7 @@ function quickSort2(num, left, right) {
                     <time class="post-time">2019-08-01</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-banana">
+                            i-tag-other_1">
             #算法
         </a>
                         
@@ -588,7 +643,7 @@ function maxProfit(prices) {
                     <time class="post-time">2019-07-29</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-success">
             #算法
         </a>
                         
@@ -645,59 +700,6 @@ function reverseList2(head) {
                 </div>
             </article>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/he-bing-qu-jian">
-                        合并区间
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-29</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-warning">
-            #算法
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            给出一个区间的集合，请合并所有重叠的区间。
-示例 1:
-输入: [[1,3],[2,6],[8,10],[15,18]]
-输出: [[1,6],[8,10],[15,18]]
-解释: 区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6].
-
-示例 2:
-输入: [[1,4],[4,5]]
-输出: [[1,5]]
-解释: 区间 [1,4] 和 [4,5] 可被视为重叠区间。
-
-function merge(intervals) {
-	if (intervals.length &amp;lt; 2) return intervals;
-	intervals = intervals.sort((a, b) =&amp;gt; a[0] - b[0]);
-	return intervals.reduce((a, b) =&amp;gt; {
-		let temp = a[a.length - 1];
-		if (temp[1] &amp;lt; b[0]) {
-			return [...a, b];
-		} else {
-			temp[1] = Math.max(temp[1], b[1]);
-		}
-		return a;
-	}, [intervals[0]]);
-}
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/he-bing-qu-jian">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
                 <!-- 翻页 -->
                 
     <div class="pagination-container">
@@ -716,7 +718,7 @@ function merge(intervals) {
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565452495358)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565541755254)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>1742·小博文</title>
-    <updated>2019-08-10T15:55:28.595Z</updated>
+    <updated>2019-08-11T16:42:37.636Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -10,6 +10,41 @@
     <logo>https://blog.ss1742.com/images/avatar.png</logo>
     <icon>https://blog.ss1742.com/favicon.ico</icon>
     <rights>All rights reserved 2019, 1742·小博文</rights>
+    <entry>
+        <title type="html"><![CDATA[各位相加]]></title>
+        <id>https://blog.ss1742.com/post/ge-wei-xiang-jia</id>
+        <link href="https://blog.ss1742.com/post/ge-wei-xiang-jia">
+        </link>
+        <updated>2019-08-11T16:18:08.000Z</updated>
+        <content type="html"><![CDATA[<p>给定一个非负整数 num，反复将各个位上的数字相加，直到结果为一位数。</p>
+<p>示例:</p>
+<pre><code>输入: 38
+输出: 2 
+解释: 各位相加的过程为：3 + 8 = 11, 1 + 1 = 2。 由于 2 是一位数，所以返回 2。
+</code></pre>
+<h3 id="题解">题解</h3>
+<p>时间复杂度为O(1)的解法：</p>
+<ul>
+<li>除个位外，每一位上的值都是通过(9+1)进位的过程得到的，想一下拨算盘进位</li>
+<li>把整数n看成n样物品，原本是以10个1份打包的，现在从这些10个1份打包好的里面，拿出1个，让它们以9个为1份打包。</li>
+<li>这样就出现了两部分的东西：<br>
+- 原本10个现在9个1份的，打包好的物品，这些，我们不用管<br>
+- 零散的物品，它们还可以分成：<br>
+- 从原来打包的里面拿出来的物品，它们的总和 =》 原来打包好的份数 =》 10进制进位的次数 =》 10进制下，除个位外其他位上的值的总和<br>
+- 以10个为1份打包时，打不进去的零散物品 =》 10进制个位上的值</li>
+<li>如上零散物品的总数，就是第一次处理num后得到的累加值</li>
+<li>如果这个累加值&gt;9，那么如题就还需要将各个位上的值再相加，直到结果为个位数为止。也就意味着还需要来一遍如上的过程。</li>
+<li>那么按照如上的思路，似乎可以通过n % 9得到最后的值</li>
+<li>但是有1个关键的问题，如果num是9的倍数，那么就不适用上述逻辑。原本我是想得到n被打包成10个1份的份数+打不进10个1份的散落个数的和。通过与9取模，去获得那个不能整除的1，作为计算份数的方式，但是如果可以被9整除，我就无法得到那个1，也得不到个位上的数。</li>
+<li>所以需要做一下特殊处理，(num - 1) % 9 + 1</li>
+<li>可以这么做的原因：原本可以被完美分成9个为一份的n样物品，我故意去掉一个，那么就又可以回到上述逻辑中去得到我要的n被打包成10个一份的份数+打不进10个一份的散落个数的和。而这个减去的1就相当于从，在10个1份打包的时候散落的个数中借走的，本来就不影响原来10个1份打包的份数，先拿走再放回来，都只影响散落的个数，所以没有关系。</li>
+</ul>
+<pre><code class="language-js">var addDigits = function(num) {
+    return (num - 1) % 9 + 1;
+};
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[最接近的三数之和]]></title>
         <id>https://blog.ss1742.com/post/zui-jie-jin-de-san-shu-zhi-he</id>
@@ -300,38 +335,6 @@ function quickSort2(num, left, right) {
 		return res.reverse().join('');
 	}
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[安全]]></title>
-        <id>https://blog.ss1742.com/post/an-quan</id>
-        <link href="https://blog.ss1742.com/post/an-quan">
-        </link>
-        <updated>2019-08-01T02:09:25.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="sql-注入">sql 注入</h3>
-<p>表单提交的数据里带有 sql 命令</p>
-<h3 id="xss">xss</h3>
-<p>Cross-site scripting 脚本攻击</p>
-<p>防御</p>
-<pre><code class="language-js">// &lt; &gt; 转义
-str = str.replace(/&lt;/g,'&amp;lt;');
-str = str.replace(/&lt;/g,'&amp;gt;');
-// 引号 转义
-str = str.replace(/&quot;/g,'&amp;quto;');
-str = str.replace(/'/g,'&amp;#39;');
-str = str.replace(/ /g,'&amp;#32;');
-</code></pre>
-<h3 id="csrf">CSRF</h3>
-<p>Cross-site request forgery 跨站请求伪造</p>
-<p>防御</p>
-<ul>
-<li>
-<p>验证码</p>
-</li>
-<li>
-<p>伪随机值</p>
-</li>
-</ul>
 ]]></content>
     </entry>
 </feed>

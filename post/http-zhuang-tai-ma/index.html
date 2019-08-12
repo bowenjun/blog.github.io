@@ -1,22 +1,125 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.ss1742.com</id>
-    <title>1742·小博文</title>
-    <updated>2019-08-12T16:05:40.546Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://blog.ss1742.com"/>
-    <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
-    <subtitle>这是我的真博客</subtitle>
-    <logo>https://blog.ss1742.com/images/avatar.png</logo>
-    <icon>https://blog.ss1742.com/favicon.ico</icon>
-    <rights>All rights reserved 2019, 1742·小博文</rights>
-    <entry>
-        <title type="html"><![CDATA[http状态码]]></title>
-        <id>https://blog.ss1742.com/post/http-zhuang-tai-ma</id>
-        <link href="https://blog.ss1742.com/post/http-zhuang-tai-ma">
-        </link>
-        <updated>2019-08-12T16:01:12.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="1xx通知">1XX：通知</h3>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    http状态码 | 1742·小博文
+</title>
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565625895116">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://blog.ss1742.com/styles/main.css">
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://blog.ss1742.com/media/js/jquery.sticky-sidebar.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+        
+            
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+                
+
+                    
+                            
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="https://blog.ss1742.com">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565625895116" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    1742·小博文
+                </h1>
+            </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    归档
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    标签
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/post/about" class="menu">
+                                    关于
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
+
+        });
+    });
+</script>
+
+            <div id="main-content" class="post-detail main-container">
+                <!-- left -->
+                <div id="content" class="main-container-left">
+                    <article class="post i-card">
+                        <h2 class="post-title">
+                            http状态码
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time">2019-08-13</time>
+                            
+                                <a href="https://blog.ss1742.com/tag/5CynFjhOR" class="post-tag i-tag
+                            i-tag-banana">
+                            #状态码
+                        </a>
+                                
+                        </div>
+                        
+                                <div class="post-content">
+                                    <h3 id="1xx通知">1XX：通知</h3>
 <p>1XX系列响应代码仅在与HTTP服务器沟通时使用。</p>
 <h4 id="100continue">100(&quot;Continue&quot;)</h4>
 <p>重要程度：中等，但（写操作时）很少用。<br>
@@ -203,301 +306,179 @@ HTTP标准并没有对URI长度作出官方限制，但大部分现有的web服�
 <p>重要程度： 非常低。<br>
 当服务器不支持客户端试图使用的HTTP版本时发送此响应代码。</p>
 <p>实体主体：一个描述服务器支持哪些协议的文档。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[各位相加]]></title>
-        <id>https://blog.ss1742.com/post/ge-wei-xiang-jia</id>
-        <link href="https://blog.ss1742.com/post/ge-wei-xiang-jia">
-        </link>
-        <updated>2019-08-11T16:18:08.000Z</updated>
-        <content type="html"><![CDATA[<p>给定一个非负整数 num，反复将各个位上的数字相加，直到结果为一位数。</p>
-<p>示例:</p>
-<pre><code>输入: 38
-输出: 2 
-解释: 各位相加的过程为：3 + 8 = 11, 1 + 1 = 2。 由于 2 是一位数，所以返回 2。
-</code></pre>
-<h3 id="题解">题解</h3>
-<p>时间复杂度为O(1)的解法：</p>
-<ul>
-<li>除个位外，每一位上的值都是通过(9+1)进位的过程得到的，想一下拨算盘进位</li>
-<li>把整数n看成n样物品，原本是以10个1份打包的，现在从这些10个1份打包好的里面，拿出1个，让它们以9个为1份打包。</li>
-<li>这样就出现了两部分的东西：<br>
-- 原本10个现在9个1份的，打包好的物品，这些，我们不用管<br>
-- 零散的物品，它们还可以分成：<br>
-- 从原来打包的里面拿出来的物品，它们的总和 =》 原来打包好的份数 =》 10进制进位的次数 =》 10进制下，除个位外其他位上的值的总和<br>
-- 以10个为1份打包时，打不进去的零散物品 =》 10进制个位上的值</li>
-<li>如上零散物品的总数，就是第一次处理num后得到的累加值</li>
-<li>如果这个累加值&gt;9，那么如题就还需要将各个位上的值再相加，直到结果为个位数为止。也就意味着还需要来一遍如上的过程。</li>
-<li>那么按照如上的思路，似乎可以通过n % 9得到最后的值</li>
-<li>但是有1个关键的问题，如果num是9的倍数，那么就不适用上述逻辑。原本我是想得到n被打包成10个1份的份数+打不进10个1份的散落个数的和。通过与9取模，去获得那个不能整除的1，作为计算份数的方式，但是如果可以被9整除，我就无法得到那个1，也得不到个位上的数。</li>
-<li>所以需要做一下特殊处理，(num - 1) % 9 + 1</li>
-<li>可以这么做的原因：原本可以被完美分成9个为一份的n样物品，我故意去掉一个，那么就又可以回到上述逻辑中去得到我要的n被打包成10个一份的份数+打不进10个一份的散落个数的和。而这个减去的1就相当于从，在10个1份打包的时候散落的个数中借走的，本来就不影响原来10个1份打包的份数，先拿走再放回来，都只影响散落的个数，所以没有关系。</li>
-</ul>
-<pre><code class="language-js">var addDigits = function(num) {
-    return (num - 1) % 9 + 1;
-};
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[最接近的三数之和]]></title>
-        <id>https://blog.ss1742.com/post/zui-jie-jin-de-san-shu-zhi-he</id>
-        <link href="https://blog.ss1742.com/post/zui-jie-jin-de-san-shu-zhi-he">
-        </link>
-        <updated>2019-08-10T15:53:46.000Z</updated>
-        <content type="html"><![CDATA[<p>给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。</p>
-<pre><code>例如，给定数组 nums = [-1，2，1，-4], 和 target = 1.
-与 target 最接近的三个数的和为 2. (-1 + 2 + 1 = 2).
-</code></pre>
-<pre><code class="language-js">var threeSumClosest = function(nums, target) {
-    const len = nums.length;
-    if (len &lt; 3) {
-        return null;
-    }
-    nums.sort((a, b) =&gt; a - b);
-    let res = target - (nums[0] + nums[1] + nums[2]);
-    for (let i = 0; i &lt; len - 2; i++) {
-        // 左指针为 i+1，右指针为 nums.length - 1
-        let left = i + 1,
-            right = len - 1;
 
-        while (left &lt; right) {
-            const sum = nums[i] + nums[left] + nums[right];
-            if (sum === target) {
-                return sum;
-            } else if (sum &lt; target) {
-                // sum &lt; target 时，left++
-                while (nums[left] === nums[++left]);
-            } else {
-                // sum &gt; target时，right--
-                while (nums[right] === nums[--right]);
+                                </div>
+                    </article>
+                    <!--  -->
+                    
+                        <div class="next-post">
+                            <div class="next">下一篇</div>
+                            <a href="https://blog.ss1742.com/post/ge-wei-xiang-jia">
+                                <h3 class="post-title">
+                                    各位相加
+                                </h3>
+                            </a>
+                        </div>
+                        
+                            <div id="disqus_thread"></div>
+                            <div id="gitalk-container"></div>
+                </div>
+                <!-- middle -->
+                <div class="main-container-middle"></div>
+                <!-- right -->
+                <div id="sidebar" class="main-container-right">
+                    
+                        <!-- toc -->
+                        
+    <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+        <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#1xx%E9%80%9A%E7%9F%A5">1XX：通知</a>
+<ul>
+<li><a href="#100continue">100(&quot;Continue&quot;)</a></li>
+<li><a href="#101switching-protocols">101(&quot;Switching Protocols&quot;)</a></li>
+</ul>
+</li>
+<li><a href="#2xx-%E6%88%90%E5%8A%9F">2XX: 成功</a>
+<ul>
+<li><a href="#200ok">200(&quot;OK&quot;)</a></li>
+<li><a href="#201created">201(&quot;Created&quot;)</a></li>
+<li><a href="#202accepted">202(&quot;Accepted&quot;)</a></li>
+<li><a href="#203non-authoritative-information">203(&quot;Non-Authoritative Information&quot;)</a></li>
+<li><a href="#204no-content">204(&quot;No Content&quot;)</a></li>
+<li><a href="#205reset-content">205(&quot;Reset Content&quot;)</a></li>
+<li><a href="#206partial-content">206(&quot;Partial Content&quot;)</a></li>
+</ul>
+</li>
+<li><a href="#3xx-%E9%87%8D%E5%AE%9A%E5%90%91">3XX 重定向</a>
+<ul>
+<li><a href="#300multiple-choices">300(&quot;Multiple Choices&quot;)</a></li>
+<li><a href="#301moved-permanently">301(&quot;Moved Permanently&quot;)</a></li>
+<li><a href="#302found">302(&quot;Found&quot;)</a></li>
+<li><a href="#303see-other">303(&quot;See Other&quot;)</a></li>
+<li><a href="#304not-modified">304(&quot;Not Modified&quot;)</a></li>
+<li><a href="#305use-proxy">305(&quot;Use Proxy&quot;)</a></li>
+<li><a href="#306-%E6%9C%AA%E4%BD%BF%E7%94%A8">306 未使用</a></li>
+<li><a href="#307temporary-redirect">307(&quot;Temporary Redirect&quot;)</a></li>
+</ul>
+</li>
+<li><a href="#4xx%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%94%99%E8%AF%AF">4XX：客户端错误</a>
+<ul>
+<li><a href="#400bad-request">400(&quot;Bad Request&quot;)</a></li>
+<li><a href="#401unauthorized">401(&quot;Unauthorized&quot;)</a></li>
+<li><a href="#402payment-required">402(&quot;Payment Required&quot;)</a></li>
+<li><a href="#403forbidden">403(&quot;Forbidden&quot;)</a></li>
+<li><a href="#404not-found">404(&quot;Not Found&quot;)</a></li>
+<li><a href="#405method-not-allowd">405(&quot;Method Not Allowd&quot;)</a></li>
+<li><a href="#406not-acceptable">406(&quot;Not Acceptable&quot;)</a></li>
+<li><a href="#407proxy-authentication-required">407(&quot;Proxy Authentication Required&quot;)</a></li>
+<li><a href="#408reqeust-timeout">408(&quot;Reqeust Timeout&quot;)</a></li>
+<li><a href="#409conflict">409(&quot;Conflict&quot;)</a></li>
+<li><a href="#410gone">410(&quot;Gone&quot;)</a></li>
+<li><a href="#411length-required">411(&quot;Length Required&quot;)</a></li>
+<li><a href="#412precondition-failed">412(&quot;Precondition Failed&quot;)</a></li>
+<li><a href="#413request-entity-too-large">413(&quot;Request Entity Too Large&quot;)</a></li>
+<li><a href="#414request-uri-too-long">414(&quot;Request-URI Too Long&quot;)</a></li>
+<li><a href="#415unsupported-media-type">415(&quot;Unsupported Media Type&quot;)</a></li>
+<li><a href="#416requestd-range-not-satisfiable">416(&quot;Requestd Range Not Satisfiable&quot;)</a></li>
+<li><a href="#417expectation-failed">417(&quot;Expectation Failed&quot;)</a></li>
+</ul>
+</li>
+<li><a href="#5xx-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%94%99%E8%AF%AF">5XX 服务端错误</a>
+<ul>
+<li><a href="#500internal-server-error">500(&quot;Internal Server Error&quot;)</a></li>
+<li><a href="#501not-implemented">501(&quot;Not Implemented&quot;)</a></li>
+<li><a href="#502bad-gateway">502(&quot;Bad Gateway&quot;)</a></li>
+<li><a href="#503service-unavailable">503(&quot;Service Unavailable&quot;)</a></li>
+<li><a href="#504gateway-timeout">504(&quot;Gateway Timeout&quot;)</a></li>
+<li><a href="#505http-version-not-supported">505(&quot;HTTP Version Not Supported&quot;)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <script>
+            function locateCatelogList() {
+                /*获取文章目录集合,可通过:header过滤器*/
+                var alis = $('.post-content :header');
+                /*获取侧边栏目录列表集合**/
+                var sidebar_alis = $('.markdownIt-TOC a');
+                /*获取滚动条到顶部的距离*/
+                var scroll_height = $(window).scrollTop();
+                for (var i = 0; i < alis.length; i++) {
+                    /*获取锚点集合中的元素分别到顶点的距离*/
+                    var a_height = $(alis[i]).offset().top;
+                    if (a_height < scroll_height) {
+                        /*高亮显示*/
+                        sidebar_alis.removeClass('on');
+                        $(sidebar_alis[i]).addClass('on');
+                    }
+                }
             }
-            // 存储与 target 最近的值
-            if (Math.abs(sum - target) &lt; Math.abs(res)) {
-                res = target - sum;
-            }
-        }
-    }
-    return target - res;
-};
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[按奇偶排序数组]]></title>
-        <id>https://blog.ss1742.com/post/an-qi-ou-pai-xu-shu-zu</id>
-        <link href="https://blog.ss1742.com/post/an-qi-ou-pai-xu-shu-zu">
-        </link>
-        <updated>2019-08-09T16:33:20.000Z</updated>
-        <content type="html"><![CDATA[<p>给定一个非负整数数组 A，返回一个数组，在该数组中， A 的所有偶数元素之后跟着所有奇数元素。</p>
-<p>你可以返回满足此条件的任何数组作为答案。</p>
-<p>示例：</p>
-<pre><code>输入：[3,1,2,4]
-输出：[2,4,3,1]
-输出 [4,2,3,1]，[2,4,1,3] 和 [4,2,1,3] 也会被接受。
-</code></pre>
-<pre><code class="language-js">var sortArrayByParity = function(A) {
-    for (let i = 0, j = A.length; i &lt; j;) {
-        if (A[i] % 2 === 0) {
-            i++;
-        } else if (A[--j] % 2 === 0) {
-            A[i] ^= A[j];
-            A[j] ^= A[i];
-            A[i++] ^= A[j];
-        }
-    }
-    return A;
-};
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hermes Engine 初探]]></title>
-        <id>https://blog.ss1742.com/post/hermes-engine-chu-tan</id>
-        <link href="https://blog.ss1742.com/post/hermes-engine-chu-tan">
-        </link>
-        <updated>2019-08-08T15:29:38.000Z</updated>
-        <content type="html"><![CDATA[<p>Hermes引擎是Facebook研发，在React-Native Android端用于替换JavaScript Core的JavaScript引擎。Hermes引擎的优势是适合移动端的轻量级JavaScript引擎，使用aot编译，可以减少Android端内存使用，减小安装包大小，提升执行效率。</p>
-<h3 id="hermes的特色">Hermes的特色</h3>
-<ul>
-<li>预编译字节码（引擎加载二进制代码效率高于运行JS脚本）</li>
-<li>无JIT编译器（减小了引擎大小，优化内存占用，但直接运行JS脚本的性能差于V8和JSC）</li>
-<li>针对移动端的垃圾回收策略</li>
-</ul>
-<h3 id="主流javascript引擎">主流JavaScript引擎</h3>
-<p>V8（Google）、JavaScriptCore（Apple）、SpiderMonkey（Firefox）</p>
-<h3 id="rn中的javascript引擎">RN中的JavaScript引擎</h3>
-<h4 id="weex">Weex</h4>
-<p>Android：V8，iOS：JavaScriptCore</p>
-<h4 id="rn">RN</h4>
-<p>Android：JavaScriptCore（Hermes、V8），iOS：JavaScriptCore（Apple要求）</p>
-<p>注：Hermes Engine在React-native 0.60.2 版本后支持</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[animation]]></title>
-        <id>https://blog.ss1742.com/post/animation</id>
-        <link href="https://blog.ss1742.com/post/animation">
-        </link>
-        <updated>2019-08-07T16:04:36.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="animation-play-state">animation-play-state</h3>
-<p><code>paused</code> 暂停</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[bind/apply/call]]></title>
-        <id>https://blog.ss1742.com/post/bindapplycall</id>
-        <link href="https://blog.ss1742.com/post/bindapplycall">
-        </link>
-        <updated>2019-08-06T17:51:48.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="bind">bind</h3>
-<pre><code class="language-js">Function.prototype.bind2 = function(context) {
-    let _this = this;
-    let argsParent = Array.prototype.slice.call(arguments, 1);
-    return function() {
-        var args = argsParent.concat(Array.prototype.slice.call(arguments)); // 转化成数组
-        _this.apply(context, args);
-    };
-}
-</code></pre>
-<h3 id="apply">apply</h3>
-<pre><code class="language-js">Function.prototype.apply2 = function(context, arr) {
-    let context = context || window; // 因为传进来的context有可能是null
-    context.fn = this;
-    let args = [];
-    let params = arr || [];
-    for (var i = 0; i &lt; params.length; i++) {
-        args.push(&quot;params[&quot; + i + &quot;]&quot;); // 不这么做的话 字符串的引号会被自动去掉 变成了变量 导致报错
-    }
-    args = args.join(&quot;,&quot;);
+            $(function() {
+                /*绑定滚动事件 */
+                $(window).bind('scroll', locateCatelogList);
+            });
+        </script>
+    </div>
+    
+                            
 
-    let result = eval(&quot;context.fn(&quot; + args + &quot;)&quot;); // 相当于执行了context.fn(arguments[1], arguments[2]);
+                </div>
 
-    delete context.fn;
-    return result; // 因为有可能this函数会有返回值return
-}
-</code></pre>
-<h3 id="call">call</h3>
-<pre><code class="language-js">Function.prototype.call2 = function(context) {
-    let context = context || window; // 因为传进来的context有可能是null
-    context.fn = this;
-    let args = [];
-    for (var i = 1; i &lt; arguments.length; i++) {
-        args.push(&quot;arguments[&quot; + i + &quot;]&quot;); // 不这么做的话 字符串的引号会被自动去掉 变成了变量 导致报错
+
+
+
+            </div>
+
+
+            <div class="site-footer">
+  1742 | 
+  <a class="rss" href="https://blog.ss1742.com/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+
+    </div>
+    <script>
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
+    </script>
+    
+        
+            <script>
+    window.onload = function() {
+        var gitalk = new Gitalk({
+            clientID: 'c726c72729117e1a7598',
+            clientSecret: '427ee52e912b5a2a3753a568238fd6e802d1f492',
+            repo: 'bowenjun.github.io',
+            owner: 'bowenjun',
+            admin: ['bowenjun'],
+            id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
+            distractionFreeMode: false // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
     }
-    args = args.join(&quot;,&quot;);
+</script>
+                
 
-    let result = eval(&quot;context.fn(&quot; + args + &quot;)&quot;); // 相当于执行了context.fn(arguments[1], arguments[2]);
+                    
+                                
+</body>
 
-    delete context.fn;
-    return result; // 因为有可能this函数会有返回值return
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[状态码 499]]></title>
-        <id>https://blog.ss1742.com/post/zhuang-tai-ma-499</id>
-        <link href="https://blog.ss1742.com/post/zhuang-tai-ma-499">
-        </link>
-        <updated>2019-08-05T15:38:54.000Z</updated>
-        <content type="html"><![CDATA[<p><code>499</code> 对应的是 <code>client has closed connection</code>，客户端请求等待链接已经关闭，这很有可能是因为服务器端处理的时间过长，客户端等得“不耐烦”了。还有一种原因是两次提交 <code>post</code> 过快就会出现 <code>499</code>。</p>
-<p>解决方法：</p>
-<ul>
-<li>前端将 <code>timeout</code> 最大等待时间设置大一些</li>
-<li><code>nginx</code> 上配置 <code>proxy_ignore_client_abort on</code></li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[整数中1出现的次数]]></title>
-        <id>https://blog.ss1742.com/post/zheng-shu-zhong-1-chu-xian-de-ci-shu</id>
-        <link href="https://blog.ss1742.com/post/zheng-shu-zhong-1-chu-xian-de-ci-shu">
-        </link>
-        <updated>2019-08-04T14:58:08.000Z</updated>
-        <content type="html"><![CDATA[<p>求出1 ~ 13的整数中1出现的次数,并算出100 ~ 1300的整数中1出现的次数？为此他特别数了一下1~13中包含1的数字有1、10、11、12、13因此共出现6次,但是对于后面问题他就没辙了。ACMer希望你们帮帮他,并把问题更加普遍化,可以很快的求出任意非负整数区间中1出现的次数。</p>
-<p>题解<br>
-当计算右数第 i 位包含的 X 的个数时：</p>
-<ul>
-<li>取第 i 位左边（高位）的数字，乘以 10i−1，得到基础值 a。</li>
-<li>取第 i 位数字，计算修正值：<br>
-- 如果大于 X，则结果为 a+10i−1。<br>
-- 如果小于 X，则结果为 a。<br>
-- 如果等 X，则取第 i 位右边（低位）数字，设为 b，最后结果为 a+b+1。</li>
-</ul>
-<pre><code class="language-js">function NumberOf1Between1AndN_Solution2(n) {
-    let count = 0;
-    for (let i = 1; i &lt;= n; i *= 10) {
-        let a = n / i, b = n % i;
-        //之所以补8，是因为当百位为0，则a/10==(a+8)/10，
-        //当百位&gt;=2，补8会产生进位位，效果等同于(a/10+1)
-        count += (a + 8) / 10 * i + ((a % 10 == 1) ? b + 1 : 0);
-    }
-    return count;
-}
-</code></pre>
-<p>暴力思路</p>
-<pre><code class="language-js">function NumberOf1Between1AndN_Solution(n) {
-    return [
-			...Array
-			.from({ length: n })
-			.keys()
-		]
-		.map(item =&gt; item + 1)
-    .join('')
-    .replace(/[^1]/g, '')
-    .length;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[快排]]></title>
-        <id>https://blog.ss1742.com/post/kuai-pai</id>
-        <link href="https://blog.ss1742.com/post/kuai-pai">
-        </link>
-        <updated>2019-08-02T16:13:51.000Z</updated>
-        <content type="html"><![CDATA[<pre><code class="language-js">// 递归
-function quickSort1(arr) {
-	if (arr.length &lt; 2) return arr;
-	let num = arr[0], left = [], right = [];
-	for (let i = 1, len = arr.length; i &lt; len; i++) {
-		if (num &lt; arr[i]) {
-			right.push(arr[i]);
-		} else {
-			left.push(arr[i]);
-		}
-	}
-	return [...quickSort1(left), num, ...quickSort1(right)];
-}
-
-// 非递归
-function quickSort2(num, left, right) {
-    var list = [[left, right]]; // 将[left,right]存入数组中，类似于递归入栈
-    while (list.length &gt; 0) { // 若list不为空，循环弹出list最后一个数组进行快排
-        var now = list.pop(); // 弹出list末尾。(也可用list.shift()取出list第一个数组，但在数据量较大时，这种方式效率较低)
-        if (now[0] &gt;= now[1]) { // 若左右指针相遇，待排序数组长度小宇1，则无需进行快排(注意不能写成now[0]==now[1]，这里now[0]是有可能大于now[1]的
-            continue;
-        }
-        var i = now[0], j = now[1], flag = now[0]; // 以下与递归方法相同，请参考上面的递归详解
-        while (i &lt; j) {
-            while (num[j] &gt;= num[flag] &amp;&amp; j &gt; flag) j--;
-            if (i &gt;= j) {
-                break;
-            }
-            while (num[i] &lt;= num[flag] &amp;&amp; i &lt; j) i++;
-            let temp = num[flag];
-            num[flag] = num[j];
-            num[j] = num[i];
-            num[i] = temp;
-            flag = i;
-        }
-        list.push([now[0], flag - 1]); // 将flag左边数组作为待排序数组，只需将左右指针放入list即可。
-        list.push([flag + 1, now[1]]); // 将flag右边数组作为待排序数组，只需将左右指针放入list即可。
-	}
-}
-</code></pre>
-]]></content>
-    </entry>
-</feed>
+</html>

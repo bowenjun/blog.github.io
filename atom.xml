@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>1742·小博文</title>
-    <updated>2019-08-12T16:05:40.546Z</updated>
+    <updated>2019-09-05T08:19:14.088Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -10,6 +10,198 @@
     <logo>https://blog.ss1742.com/images/avatar.png</logo>
     <icon>https://blog.ss1742.com/favicon.ico</icon>
     <rights>All rights reserved 2019, 1742·小博文</rights>
+    <entry>
+        <title type="html"><![CDATA[lodash 冲一波(语法篇1-Array)]]></title>
+        <id>https://blog.ss1742.com/post/lodash-chong-yi-bo-yu-fa-pian-1-array</id>
+        <link href="https://blog.ss1742.com/post/lodash-chong-yi-bo-yu-fa-pian-1-array">
+        </link>
+        <updated>2019-09-04T03:34:49.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="lodash-冲一波语法篇1-array">lodash 冲一波(语法篇1-Array)</h1>
+<h2 id="_chunkarray-size1">_.chunk(array, [size=1])</h2>
+<p>创建一个元素数组，这些元素按大小的长度分成组。如果数组不能被平均分割，最后的块将是剩余的元素</p>
+<pre><code class="language-js">_.chunk(['a', 'b', 'c', 'd'], 2);
+// =&gt; [['a', 'b'], ['c', 'd']]
+ 
+_.chunk(['a', 'b', 'c', 'd'], 3);
+// =&gt; [['a', 'b', 'c'], ['d']]
+</code></pre>
+<h2 id="_compactarray">_.compact(array)</h2>
+<p>创建一个删除所有 <code>falsey</code> 值的数组。值 <code>false</code>、<code>null</code>、<code>0</code>、<code>&quot;&quot;</code>、<code>undefined</code> 和 <code>NaN</code>是 <code>falsey</code></p>
+<pre><code class="language-js">_.compact([0, 1, false, 2, '', NaN, null, 3]);
+// =&gt; 新数组 [1, 2, 3]
+</code></pre>
+<h2 id="_concatarray-values">_.concat(array, [values])</h2>
+<p>创建一个新数组，该数组与任何其他数组或值连接在一起</p>
+<pre><code class="language-js">_.concat([1], 2, [3], [[4]]);
+// =&gt; [1, 2, 3, [4]]
+</code></pre>
+<h2 id="_differencearray-values">_.difference(array, [values])</h2>
+<p>创建不包含在其他给定数组中的数组值的数组，结果值的顺序和引用由第一个数组决定</p>
+<pre><code class="language-js">_.difference([1, 2, 3], [2, 4], [3, 5]);
+// =&gt; [1]
+</code></pre>
+<h2 id="_droparray-n1">_.drop(array, [n=1])</h2>
+<p>创建一个数组切片，从开始删除n个元素</p>
+<pre><code class="language-js">_.drop([1, 2, 3]);
+// =&gt; [2, 3]
+ 
+_.drop([1, 2, 3], 2);
+// =&gt; [3]
+ 
+_.drop([1, 2, 3], 5);
+// =&gt; []
+ 
+_.drop([1, 2, 3], 0);
+// =&gt; [1, 2, 3]
+</code></pre>
+<h2 id="_fillarray-value-start0-endarraylength">_.fill(array, value, [start=0], [end=array.length])</h2>
+<p>用值从 <code>start</code> 到 <code>end</code> (但不包括 <code>end</code> )填充数组元素</p>
+<pre><code class="language-js">_.fill(Array(3), 2);
+// =&gt; [2, 2, 2]
+ 
+_.fill([4, 6, 8, 10], '*', 1, 3);
+// =&gt; [4, '*', '*', 10]
+</code></pre>
+<h2 id="_flattendeptharray-depth1">_.flattenDepth(array, [depth=1])</h2>
+<p>递归地平化数组直到深度</p>
+<pre><code class="language-js">let array = [1, [2, [3, [4]], 5]];
+ 
+_.flattenDepth(array, 1);
+// =&gt; [1, 2, [3, [4]], 5]
+ 
+_.flattenDepth(array, 2);
+// =&gt; [1, 2, 3, [4], 5]
+</code></pre>
+<h2 id="_frompairspairs">_.fromPairs(pairs)</h2>
+<p>此方法返回由键值对组成的对象</p>
+<pre><code class="language-js">_.fromPairs([['a', 1], ['b', 2]]);
+// =&gt; { 'a': 1, 'b': 2 }
+</code></pre>
+<h2 id="_indexofarray-value-fromindex0">_.indexOf(array, value, [fromIndex=0])</h2>
+<p>获取数组中第一次出现值的索引，如果fromIndex是负数，则它用作数组末尾的偏移量</p>
+<pre><code class="language-js">_.indexOf([1, 2, 1, 2], 2);
+// =&gt; 1
+ 
+// Search from the `fromIndex`.
+_.indexOf([1, 2, 1, 2], 2, 2);
+// =&gt; 3
+</code></pre>
+<h2 id="_initialarray">_.initial(array)</h2>
+<p>获取数组中除最后一个元素外的所有元素</p>
+<pre><code class="language-js">_.initial([1, 2, 3]);
+// =&gt; [1, 2]
+</code></pre>
+<h2 id="_intersectionarrays">_.intersection([arrays])</h2>
+<p>获取数组中的公有元素</p>
+<pre><code class="language-js">_.intersection([2, 1], [2, 3]);
+// =&gt; [2]
+</code></pre>
+<h2 id="_joinarray-separator">_.join(array, [separator=','])</h2>
+<p>将数组中的所有元素转换为由分隔符分隔的字符串</p>
+<pre><code class="language-js">_.join(['a', 'b', 'c'], '~');
+// =&gt; 'a~b~c'
+</code></pre>
+<h2 id="_lastarray">_.last(array)</h2>
+<p>获取数组的最后一个元素</p>
+<pre><code class="language-js">_.last([1, 2, 3]);
+// =&gt; 3
+</code></pre>
+<h2 id="_ntharray-n0">_.nth(array, [n=0])</h2>
+<p>获取数组下标n处的元素。如果n是负数，则返回末尾的第n个元素</p>
+<pre><code class="language-js">var array = ['a', 'b', 'c', 'd'];
+ 
+_.nth(array, 1);
+// =&gt; 'b'
+ 
+_.nth(array, -2);
+// =&gt; 'c';
+</code></pre>
+<h2 id="_pullarray-values">_.pull(array, [values])</h2>
+<p>从数组中删除所有给定值</p>
+<pre><code class="language-js">var array = ['a', 'b', 'c', 'a', 'b', 'c'];
+ 
+_.pull(array, 'a', 'c');
+// =&gt; ['b', 'b']
+</code></pre>
+<h2 id="removearray-predicateidentity"><em>.remove(array, [predicate=</em>.identity])</h2>
+<p>从数组中删除方法返回 <code>true</code> 的元素，返回值为删除的元素列表</p>
+<pre><code class="language-js">let array = [1, 2, 3, 4];
+let evens = _.remove(array, function(n) {
+  return n % 2 == 0;
+});
+ 
+console.log(array);
+// =&gt; [1, 3]
+ 
+console.log(evens);
+// =&gt; [2, 4]
+</code></pre>
+<h2 id="_reversearray">_.reverse(array)</h2>
+<p>反转数组</p>
+<pre><code class="language-js">let array = [1, 2, 3];
+ 
+_.reverse(array);
+// =&gt; [3, 2, 1]
+ 
+console.log(array);
+// =&gt; [3, 2, 1]
+</code></pre>
+<h2 id="_slicearray-start0-endarraylength">_.slice(array, [start=0], [end=array.length])</h2>
+<p>slice</p>
+<h2 id="_tailarray">_.tail(array)</h2>
+<p>获取数组中除第一个元素外的所有元素</p>
+<pre><code class="language-js">_.tail([1, 2, 3]);
+// =&gt; [2, 3]
+</code></pre>
+<h2 id="_takearray-n1">_.take(array, [n=1])</h2>
+<p>获取数组从第一个元素开始的 <code>n</code> 个元素</p>
+<pre><code class="language-js">_.take([1, 2, 3]);
+// =&gt; [1]
+ 
+_.take([1, 2, 3], 2);
+// =&gt; [1, 2]
+ 
+_.take([1, 2, 3], 5);
+// =&gt; [1, 2, 3]
+ 
+_.take([1, 2, 3], 0);
+// =&gt; []
+</code></pre>
+<h2 id="_unionarrays">_.union([arrays])</h2>
+<p>数组合并去重</p>
+<pre><code class="language-js">_.union([2], [1, 2]);
+// =&gt; [2, 1]
+</code></pre>
+<h2 id="_uniqarray">_.uniq(array)</h2>
+<p>数组去重</p>
+<pre><code class="language-js">_.uniq([2, 1, 2]);
+// =&gt; [2, 1]
+</code></pre>
+<h2 id="_ziparrays">_.zip([arrays])</h2>
+<p>创建一个分组元素数组，其中第一个数组包含给定数组的第一个元素，第二个数组包含给定数组的第二个元素，依此类推</p>
+<pre><code class="language-js">_.zip(['a', 'b'], [1, 2], [true, false]);
+// =&gt; [['a', 1, true], ['b', 2, false]]
+</code></pre>
+<h2 id="_unziparray">_.unzip(array)</h2>
+<p>接受一个分组元素数组，并创建一个数组，将元素重新分组到它们的预 <code>zip</code> 配置中</p>
+<pre><code class="language-js">let zipped = _.zip(['a', 'b'], [1, 2], [true, false]);
+// =&gt; [['a', 1, true], ['b', 2, false]]
+ 
+_.unzip(zipped);
+// =&gt; [['a', 'b'], [1, 2], [true, false]]
+</code></pre>
+<h2 id="_withoutarray-values">_.without(array, [values])</h2>
+<p>排除所有给定值</p>
+<pre><code class="language-js">_.without([2, 1, 2, 3], 1, 2);
+// =&gt; [3]
+</code></pre>
+<h2 id="_xorarrays">_.xor([arrays])</h2>
+<p>创建一个惟一值数组，该值是给定数组的对称差异</p>
+<pre><code class="language-js">_.xor([2, 1], [2, 3]);
+// =&gt; [1, 3]
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[http状态码]]></title>
         <id>https://blog.ss1742.com/post/http-zhuang-tai-ma</id>
@@ -448,54 +640,6 @@ HTTP标准并没有对URI长度作出官方限制，但大部分现有的web服�
     .join('')
     .replace(/[^1]/g, '')
     .length;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[快排]]></title>
-        <id>https://blog.ss1742.com/post/kuai-pai</id>
-        <link href="https://blog.ss1742.com/post/kuai-pai">
-        </link>
-        <updated>2019-08-02T16:13:51.000Z</updated>
-        <content type="html"><![CDATA[<pre><code class="language-js">// 递归
-function quickSort1(arr) {
-	if (arr.length &lt; 2) return arr;
-	let num = arr[0], left = [], right = [];
-	for (let i = 1, len = arr.length; i &lt; len; i++) {
-		if (num &lt; arr[i]) {
-			right.push(arr[i]);
-		} else {
-			left.push(arr[i]);
-		}
-	}
-	return [...quickSort1(left), num, ...quickSort1(right)];
-}
-
-// 非递归
-function quickSort2(num, left, right) {
-    var list = [[left, right]]; // 将[left,right]存入数组中，类似于递归入栈
-    while (list.length &gt; 0) { // 若list不为空，循环弹出list最后一个数组进行快排
-        var now = list.pop(); // 弹出list末尾。(也可用list.shift()取出list第一个数组，但在数据量较大时，这种方式效率较低)
-        if (now[0] &gt;= now[1]) { // 若左右指针相遇，待排序数组长度小宇1，则无需进行快排(注意不能写成now[0]==now[1]，这里now[0]是有可能大于now[1]的
-            continue;
-        }
-        var i = now[0], j = now[1], flag = now[0]; // 以下与递归方法相同，请参考上面的递归详解
-        while (i &lt; j) {
-            while (num[j] &gt;= num[flag] &amp;&amp; j &gt; flag) j--;
-            if (i &gt;= j) {
-                break;
-            }
-            while (num[i] &lt;= num[flag] &amp;&amp; i &lt; j) i++;
-            let temp = num[flag];
-            num[flag] = num[j];
-            num[j] = num[i];
-            num[i] = temp;
-            flag = i;
-        }
-        list.push([now[0], flag - 1]); // 将flag左边数组作为待排序数组，只需将左右指针放入list即可。
-        list.push([flag + 1, now[1]]); // 将flag右边数组作为待排序数组，只需将左右指针放入list即可。
-	}
 }
 </code></pre>
 ]]></content>

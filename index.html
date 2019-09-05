@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565625895116">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1567671551386">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565625895116" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1567671551386" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,218 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/lodash-chong-yi-bo-yu-fa-pian-1-array">
+                        lodash 冲一波(语法篇1-Array)
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-09-04</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/aMOZvg2fo" class="post-tag i-tag
+                            i-tag-">
+            #loadsh
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            lodash 冲一波(语法篇1-Array)
+_.chunk(array, [size=1])
+创建一个元素数组，这些元素按大小的长度分成组。如果数组不能被平均分割，最后的块将是剩余的元素
+_.chunk([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;], 2);
+// =&amp;gt; [[&#39;a&#39;, &#39;b&#39;], [&#39;c&#39;, &#39;d&#39;]]
+ 
+_.chunk([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;], 3);
+// =&amp;gt; [[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], [&#39;d&#39;]]
+
+_.compact(array)
+创建一个删除所有 falsey 值的数组。值 false、null、0、&amp;quot;&amp;quot;、undefined 和 NaN是 falsey
+_.compact([0, 1, false, 2, &#39;&#39;, NaN, null, 3]);
+// =&amp;gt; 新数组 [1, 2, 3]
+
+_.concat(array, [values])
+创建一个新数组，该数组与任何其他数组或值连接在一起
+_.concat([1], 2, [3], [[4]]);
+// =&amp;gt; [1, 2, 3, [4]]
+
+_.difference(array, [values])
+创建不包含在其他给定数组中的数组值的数组，结果值的顺序和引用由第一个数组决定
+_.difference([1, 2, 3], [2, 4], [3, 5]);
+// =&amp;gt; [1]
+
+_.drop(array, [n=1])
+创建一个数组切片，从开始删除n个元素
+_.drop([1, 2, 3]);
+// =&amp;gt; [2, 3]
+ 
+_.drop([1, 2, 3], 2);
+// =&amp;gt; [3]
+ 
+_.drop([1, 2, 3], 5);
+// =&amp;gt; []
+ 
+_.drop([1, 2, 3], 0);
+// =&amp;gt; [1, 2, 3]
+
+_.fill(array, value, [start=0], [end=array.length])
+用值从 start 到 end (但不包括 end )填充数组元素
+_.fill(Array(3), 2);
+// =&amp;gt; [2, 2, 2]
+ 
+_.fill([4, 6, 8, 10], &#39;*&#39;, 1, 3);
+// =&amp;gt; [4, &#39;*&#39;, &#39;*&#39;, 10]
+
+_.flattenDepth(array, [depth=1])
+递归地平化数组直到深度
+let array = [1, [2, [3, [4]], 5]];
+ 
+_.flattenDepth(array, 1);
+// =&amp;gt; [1, 2, [3, [4]], 5]
+ 
+_.flattenDepth(array, 2);
+// =&amp;gt; [1, 2, 3, [4], 5]
+
+_.fromPairs(pairs)
+此方法返回由键值对组成的对象
+_.fromPairs([[&#39;a&#39;, 1], [&#39;b&#39;, 2]]);
+// =&amp;gt; { &#39;a&#39;: 1, &#39;b&#39;: 2 }
+
+_.indexOf(array, value, [fromIndex=0])
+获取数组中第一次出现值的索引，如果fromIndex是负数，则它用作数组末尾的偏移量
+_.indexOf([1, 2, 1, 2], 2);
+// =&amp;gt; 1
+ 
+// Search from the `fromIndex`.
+_.indexOf([1, 2, 1, 2], 2, 2);
+// =&amp;gt; 3
+
+_.initial(array)
+获取数组中除最后一个元素外的所有元素
+_.initial([1, 2, 3]);
+// =&amp;gt; [1, 2]
+
+_.intersection([arrays])
+获取数组中的公有元素
+_.intersection([2, 1], [2, 3]);
+// =&amp;gt; [2]
+
+_.join(array, [separator=&#39;,&#39;])
+将数组中的所有元素转换为由分隔符分隔的字符串
+_.join([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], &#39;~&#39;);
+// =&amp;gt; &#39;a~b~c&#39;
+
+_.last(array)
+获取数组的最后一个元素
+_.last([1, 2, 3]);
+// =&amp;gt; 3
+
+_.nth(array, [n=0])
+获取数组下标n处的元素。如果n是负数，则返回末尾的第n个元素
+var array = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;];
+ 
+_.nth(array, 1);
+// =&amp;gt; &#39;b&#39;
+ 
+_.nth(array, -2);
+// =&amp;gt; &#39;c&#39;;
+
+_.pull(array, [values])
+从数组中删除所有给定值
+var array = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
+ 
+_.pull(array, &#39;a&#39;, &#39;c&#39;);
+// =&amp;gt; [&#39;b&#39;, &#39;b&#39;]
+
+.remove(array, [predicate=.identity])
+从数组中删除方法返回 true 的元素，返回值为删除的元素列表
+let array = [1, 2, 3, 4];
+let evens = _.remove(array, function(n) {
+  return n % 2 == 0;
+});
+ 
+console.log(array);
+// =&amp;gt; [1, 3]
+ 
+console.log(evens);
+// =&amp;gt; [2, 4]
+
+_.reverse(array)
+反转数组
+let array = [1, 2, 3];
+ 
+_.reverse(array);
+// =&amp;gt; [3, 2, 1]
+ 
+console.log(array);
+// =&amp;gt; [3, 2, 1]
+
+_.slice(array, [start=0], [end=array.length])
+slice
+_.tail(array)
+获取数组中除第一个元素外的所有元素
+_.tail([1, 2, 3]);
+// =&amp;gt; [2, 3]
+
+_.take(array, [n=1])
+获取数组从第一个元素开始的 n 个元素
+_.take([1, 2, 3]);
+// =&amp;gt; [1]
+ 
+_.take([1, 2, 3], 2);
+// =&amp;gt; [1, 2]
+ 
+_.take([1, 2, 3], 5);
+// =&amp;gt; [1, 2, 3]
+ 
+_.take([1, 2, 3], 0);
+// =&amp;gt; []
+
+_.union([arrays])
+数组合并去重
+_.union([2], [1, 2]);
+// =&amp;gt; [2, 1]
+
+_.uniq(array)
+数组去重
+_.uniq([2, 1, 2]);
+// =&amp;gt; [2, 1]
+
+_.zip([arrays])
+创建一个分组元素数组，其中第一个数组包含给定数组的第一个元素，第二个数组包含给定数组的第二个元素，依此类推
+_.zip([&#39;a&#39;, &#39;b&#39;], [1, 2], [true, false]);
+// =&amp;gt; [[&#39;a&#39;, 1, true], [&#39;b&#39;, 2, false]]
+
+_.unzip(array)
+接受一个分组元素数组，并创建一个数组，将元素重新分组到它们的预 zip 配置中
+let zipped = _.zip([&#39;a&#39;, &#39;b&#39;], [1, 2], [true, false]);
+// =&amp;gt; [[&#39;a&#39;, 1, true], [&#39;b&#39;, 2, false]]
+ 
+_.unzip(zipped);
+// =&amp;gt; [[&#39;a&#39;, &#39;b&#39;], [1, 2], [true, false]]
+
+_.without(array, [values])
+排除所有给定值
+_.without([2, 1, 2, 3], 1, 2);
+// =&amp;gt; [3]
+
+_.xor([arrays])
+创建一个惟一值数组，该值是给定数组的对称差异
+_.xor([2, 1], [2, 3]);
+// =&amp;gt; [1, 3]
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/lodash-chong-yi-bo-yu-fa-pian-1-array">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/http-zhuang-tai-ma">
                         http状态码
                     </a>
@@ -107,7 +319,7 @@
                     <time class="post-time">2019-08-13</time>
                     
                         <a href="https://blog.ss1742.com/tag/5CynFjhOR" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-info">
             #状态码
         </a>
                         
@@ -322,7 +534,7 @@ HTTP标准并没有对URI长度作出官方限制，但大部分现有的web服�
                     <time class="post-time">2019-08-12</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-primary">
             #算法
         </a>
                         
@@ -377,7 +589,7 @@ var addDigits = function(num) {
                     <time class="post-time">2019-08-10</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-banana">
+                            i-tag-success">
             #算法
         </a>
                         
@@ -441,7 +653,7 @@ var threeSumClosest = function(nums, target) {
                     <time class="post-time">2019-08-10</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-warning">
             #算法
         </a>
                         
@@ -489,7 +701,7 @@ var sortArrayByParity = function(A) {
                     <time class="post-time">2019-08-08</time>
                     
                         <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-banana">
+                            i-tag-other_3">
             #原理
         </a>
                         
@@ -532,7 +744,7 @@ Android：JavaScriptCore（Hermes、V8），iOS：JavaScriptCore（Apple要求�
                     <time class="post-time">2019-08-08</time>
                     
                         <a href="https://blog.ss1742.com/tag/9sclIJ6sZ" class="post-tag i-tag
-                            i-tag-success">
+                            i-tag-banana">
             #css
         </a>
                         
@@ -562,7 +774,7 @@ paused 暂停
                     <time class="post-time">2019-08-07</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-other_2">
             #js基础
         </a>
                         
@@ -633,7 +845,7 @@ Function.prototype.call2 = function(context) {
                     <time class="post-time">2019-08-05</time>
                     
                         <a href="https://blog.ss1742.com/tag/5CynFjhOR" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-warning">
             #状态码
         </a>
                         
@@ -667,7 +879,7 @@ nginx 上配置 proxy_ignore_client_abort on
                     <time class="post-time">2019-08-04</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-banana">
+                            i-tag-info">
             #算法
         </a>
                         
@@ -719,74 +931,6 @@ function NumberOf1Between1AndN_Solution(n) {
                 </div>
             </article>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/kuai-pai">
-                        快排
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-08-03</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-error">
-            #算法
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            // 递归
-function quickSort1(arr) {
-	if (arr.length &amp;lt; 2) return arr;
-	let num = arr[0], left = [], right = [];
-	for (let i = 1, len = arr.length; i &amp;lt; len; i++) {
-		if (num &amp;lt; arr[i]) {
-			right.push(arr[i]);
-		} else {
-			left.push(arr[i]);
-		}
-	}
-	return [...quickSort1(left), num, ...quickSort1(right)];
-}
-
-// 非递归
-function quickSort2(num, left, right) {
-    var list = [[left, right]]; // 将[left,right]存入数组中，类似于递归入栈
-    while (list.length &amp;gt; 0) { // 若list不为空，循环弹出list最后一个数组进行快排
-        var now = list.pop(); // 弹出list末尾。(也可用list.shift()取出list第一个数组，但在数据量较大时，这种方式效率较低)
-        if (now[0] &amp;gt;= now[1]) { // 若左右指针相遇，待排序数组长度小宇1，则无需进行快排(注意不能写成now[0]==now[1]，这里now[0]是有可能大于now[1]的
-            continue;
-        }
-        var i = now[0], j = now[1], flag = now[0]; // 以下与递归方法相同，请参考上面的递归详解
-        while (i &amp;lt; j) {
-            while (num[j] &amp;gt;= num[flag] &amp;amp;&amp;amp; j &amp;gt; flag) j--;
-            if (i &amp;gt;= j) {
-                break;
-            }
-            while (num[i] &amp;lt;= num[flag] &amp;amp;&amp;amp; i &amp;lt; j) i++;
-            let temp = num[flag];
-            num[flag] = num[j];
-            num[j] = num[i];
-            num[i] = temp;
-            flag = i;
-        }
-        list.push([now[0], flag - 1]); // 将flag左边数组作为待排序数组，只需将左右指针放入list即可。
-        list.push([flag + 1, now[1]]); // 将flag右边数组作为待排序数组，只需将左右指针放入list即可。
-	}
-}
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/kuai-pai">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
                 <!-- 翻页 -->
                 
     <div class="pagination-container">
@@ -805,7 +949,7 @@ function quickSort2(num, left, right) {
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565625895116)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1567671551386)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

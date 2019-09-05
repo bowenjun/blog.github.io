@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565625895116">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1567671551386">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565625895116" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1567671551386" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,73 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/fan-zhuan-lian-biao">
+                        反转链表
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-29</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
+                            i-tag-other_1">
+            #算法
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            反转一个单链表。
+示例:
+输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL
+输出: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+// 常规
+function reverseList1(head) {
+	if (head === null || head.next === null) return head;
+	let p = head.next;
+	head.next = null;
+	let temp = null;
+	while (p !== null) {
+		temp = p.next;
+		p.next = head;
+		head = p;
+		p = temp;
+	}
+	return head;
+}
+// 递归
+function reverseList2(head) {
+	if (head === null || head.next === null) return head;
+	let new_head = reverseList2(head.next);
+	head.next.next = head;
+	head.next = null;
+	return new_head;
+}
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/fan-zhuan-lian-biao">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/he-bing-qu-jian">
                         合并区间
                     </a>
@@ -107,7 +174,7 @@
                     <time class="post-time">2019-07-29</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-success">
+                            i-tag-warning">
             #算法
         </a>
                         
@@ -160,7 +227,7 @@ function merge(intervals) {
                     <time class="post-time">2019-07-29</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-banana">
             #算法
         </a>
                         
@@ -210,7 +277,7 @@ function qSort(nums) {
                     <time class="post-time">2019-07-29</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-success">
             #算法
         </a>
                         
@@ -259,7 +326,7 @@ function simplifyPath(path) {
                     <time class="post-time">2019-07-29</time>
                     
                         <a href="https://blog.ss1742.com/tag/kHKSvnCCb" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-primary">
             #感想
         </a>
                         
@@ -317,7 +384,7 @@ function reverseWords(s) {
                     <time class="post-time">2019-07-26</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-info">
             #算法
         </a>
                         
@@ -358,7 +425,7 @@ function longestCommonPrefix(s) {
                     <time class="post-time">2019-07-26</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-warning">
             #算法
         </a>
                         
@@ -403,7 +470,7 @@ function lengthOfLongestSubstring(s) {
                     <time class="post-time">2019-07-26</time>
                     
                         <a href="https://blog.ss1742.com/tag/9sclIJ6sZ" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-other_1">
             #css
         </a>
                         
@@ -459,7 +526,7 @@ BFC 的应用
                     <time class="post-time">2019-07-24</time>
                     
                         <a href="https://blog.ss1742.com/tag/RANXdSP4s" class="post-tag i-tag
-                            i-tag-primary">
+                            i-tag-success">
             #管理
         </a>
                         
@@ -485,49 +552,6 @@ BFC 的应用
                 </div>
             </article>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/liu-lan-qi-nei-he">
-                        浏览器内核
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-24</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/922aBovKI" class="post-tag i-tag
-                            i-tag-info">
-            #css基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            IE
-内核 trident
-识别码 -ms-
-Chrome
-内核 blink
-识别码 -webkit
-Safari
-内核 webkit
-识别码 -webkit
-Firefox
-内核 gecko
-识别码 -moz-
-Opera
-内核 Presto -&amp;gt; blink
-识别码 -o-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/liu-lan-qi-nei-he">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
                 <!-- 翻页 -->
                 
     <div class="pagination-container">
@@ -548,7 +572,7 @@ Opera
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565625895116)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1567671551386)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

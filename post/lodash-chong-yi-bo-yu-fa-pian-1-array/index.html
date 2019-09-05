@@ -1,0 +1,442 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    lodash 冲一波(语法篇1-Array) | 1742·小博文
+</title>
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1567671551386">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://blog.ss1742.com/styles/main.css">
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://blog.ss1742.com/media/js/jquery.sticky-sidebar.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+        
+            
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+                
+
+                    
+                            
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="https://blog.ss1742.com">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1567671551386" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    1742·小博文
+                </h1>
+            </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    归档
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    标签
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/post/about" class="menu">
+                                    关于
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
+
+        });
+    });
+</script>
+
+            <div id="main-content" class="post-detail main-container">
+                <!-- left -->
+                <div id="content" class="main-container-left">
+                    <article class="post i-card">
+                        <h2 class="post-title">
+                            lodash 冲一波(语法篇1-Array)
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time">2019-09-04</time>
+                            
+                                <a href="https://blog.ss1742.com/tag/aMOZvg2fo" class="post-tag i-tag
+                            i-tag-primary">
+                            #loadsh
+                        </a>
+                                
+                        </div>
+                        
+                                <div class="post-content">
+                                    <h1 id="lodash-冲一波语法篇1-array">lodash 冲一波(语法篇1-Array)</h1>
+<h2 id="_chunkarray-size1">_.chunk(array, [size=1])</h2>
+<p>创建一个元素数组，这些元素按大小的长度分成组。如果数组不能被平均分割，最后的块将是剩余的元素</p>
+<pre><code class="language-js">_.chunk(['a', 'b', 'c', 'd'], 2);
+// =&gt; [['a', 'b'], ['c', 'd']]
+ 
+_.chunk(['a', 'b', 'c', 'd'], 3);
+// =&gt; [['a', 'b', 'c'], ['d']]
+</code></pre>
+<h2 id="_compactarray">_.compact(array)</h2>
+<p>创建一个删除所有 <code>falsey</code> 值的数组。值 <code>false</code>、<code>null</code>、<code>0</code>、<code>&quot;&quot;</code>、<code>undefined</code> 和 <code>NaN</code>是 <code>falsey</code></p>
+<pre><code class="language-js">_.compact([0, 1, false, 2, '', NaN, null, 3]);
+// =&gt; 新数组 [1, 2, 3]
+</code></pre>
+<h2 id="_concatarray-values">_.concat(array, [values])</h2>
+<p>创建一个新数组，该数组与任何其他数组或值连接在一起</p>
+<pre><code class="language-js">_.concat([1], 2, [3], [[4]]);
+// =&gt; [1, 2, 3, [4]]
+</code></pre>
+<h2 id="_differencearray-values">_.difference(array, [values])</h2>
+<p>创建不包含在其他给定数组中的数组值的数组，结果值的顺序和引用由第一个数组决定</p>
+<pre><code class="language-js">_.difference([1, 2, 3], [2, 4], [3, 5]);
+// =&gt; [1]
+</code></pre>
+<h2 id="_droparray-n1">_.drop(array, [n=1])</h2>
+<p>创建一个数组切片，从开始删除n个元素</p>
+<pre><code class="language-js">_.drop([1, 2, 3]);
+// =&gt; [2, 3]
+ 
+_.drop([1, 2, 3], 2);
+// =&gt; [3]
+ 
+_.drop([1, 2, 3], 5);
+// =&gt; []
+ 
+_.drop([1, 2, 3], 0);
+// =&gt; [1, 2, 3]
+</code></pre>
+<h2 id="_fillarray-value-start0-endarraylength">_.fill(array, value, [start=0], [end=array.length])</h2>
+<p>用值从 <code>start</code> 到 <code>end</code> (但不包括 <code>end</code> )填充数组元素</p>
+<pre><code class="language-js">_.fill(Array(3), 2);
+// =&gt; [2, 2, 2]
+ 
+_.fill([4, 6, 8, 10], '*', 1, 3);
+// =&gt; [4, '*', '*', 10]
+</code></pre>
+<h2 id="_flattendeptharray-depth1">_.flattenDepth(array, [depth=1])</h2>
+<p>递归地平化数组直到深度</p>
+<pre><code class="language-js">let array = [1, [2, [3, [4]], 5]];
+ 
+_.flattenDepth(array, 1);
+// =&gt; [1, 2, [3, [4]], 5]
+ 
+_.flattenDepth(array, 2);
+// =&gt; [1, 2, 3, [4], 5]
+</code></pre>
+<h2 id="_frompairspairs">_.fromPairs(pairs)</h2>
+<p>此方法返回由键值对组成的对象</p>
+<pre><code class="language-js">_.fromPairs([['a', 1], ['b', 2]]);
+// =&gt; { 'a': 1, 'b': 2 }
+</code></pre>
+<h2 id="_indexofarray-value-fromindex0">_.indexOf(array, value, [fromIndex=0])</h2>
+<p>获取数组中第一次出现值的索引，如果fromIndex是负数，则它用作数组末尾的偏移量</p>
+<pre><code class="language-js">_.indexOf([1, 2, 1, 2], 2);
+// =&gt; 1
+ 
+// Search from the `fromIndex`.
+_.indexOf([1, 2, 1, 2], 2, 2);
+// =&gt; 3
+</code></pre>
+<h2 id="_initialarray">_.initial(array)</h2>
+<p>获取数组中除最后一个元素外的所有元素</p>
+<pre><code class="language-js">_.initial([1, 2, 3]);
+// =&gt; [1, 2]
+</code></pre>
+<h2 id="_intersectionarrays">_.intersection([arrays])</h2>
+<p>获取数组中的公有元素</p>
+<pre><code class="language-js">_.intersection([2, 1], [2, 3]);
+// =&gt; [2]
+</code></pre>
+<h2 id="_joinarray-separator">_.join(array, [separator=','])</h2>
+<p>将数组中的所有元素转换为由分隔符分隔的字符串</p>
+<pre><code class="language-js">_.join(['a', 'b', 'c'], '~');
+// =&gt; 'a~b~c'
+</code></pre>
+<h2 id="_lastarray">_.last(array)</h2>
+<p>获取数组的最后一个元素</p>
+<pre><code class="language-js">_.last([1, 2, 3]);
+// =&gt; 3
+</code></pre>
+<h2 id="_ntharray-n0">_.nth(array, [n=0])</h2>
+<p>获取数组下标n处的元素。如果n是负数，则返回末尾的第n个元素</p>
+<pre><code class="language-js">var array = ['a', 'b', 'c', 'd'];
+ 
+_.nth(array, 1);
+// =&gt; 'b'
+ 
+_.nth(array, -2);
+// =&gt; 'c';
+</code></pre>
+<h2 id="_pullarray-values">_.pull(array, [values])</h2>
+<p>从数组中删除所有给定值</p>
+<pre><code class="language-js">var array = ['a', 'b', 'c', 'a', 'b', 'c'];
+ 
+_.pull(array, 'a', 'c');
+// =&gt; ['b', 'b']
+</code></pre>
+<h2 id="removearray-predicateidentity"><em>.remove(array, [predicate=</em>.identity])</h2>
+<p>从数组中删除方法返回 <code>true</code> 的元素，返回值为删除的元素列表</p>
+<pre><code class="language-js">let array = [1, 2, 3, 4];
+let evens = _.remove(array, function(n) {
+  return n % 2 == 0;
+});
+ 
+console.log(array);
+// =&gt; [1, 3]
+ 
+console.log(evens);
+// =&gt; [2, 4]
+</code></pre>
+<h2 id="_reversearray">_.reverse(array)</h2>
+<p>反转数组</p>
+<pre><code class="language-js">let array = [1, 2, 3];
+ 
+_.reverse(array);
+// =&gt; [3, 2, 1]
+ 
+console.log(array);
+// =&gt; [3, 2, 1]
+</code></pre>
+<h2 id="_slicearray-start0-endarraylength">_.slice(array, [start=0], [end=array.length])</h2>
+<p>slice</p>
+<h2 id="_tailarray">_.tail(array)</h2>
+<p>获取数组中除第一个元素外的所有元素</p>
+<pre><code class="language-js">_.tail([1, 2, 3]);
+// =&gt; [2, 3]
+</code></pre>
+<h2 id="_takearray-n1">_.take(array, [n=1])</h2>
+<p>获取数组从第一个元素开始的 <code>n</code> 个元素</p>
+<pre><code class="language-js">_.take([1, 2, 3]);
+// =&gt; [1]
+ 
+_.take([1, 2, 3], 2);
+// =&gt; [1, 2]
+ 
+_.take([1, 2, 3], 5);
+// =&gt; [1, 2, 3]
+ 
+_.take([1, 2, 3], 0);
+// =&gt; []
+</code></pre>
+<h2 id="_unionarrays">_.union([arrays])</h2>
+<p>数组合并去重</p>
+<pre><code class="language-js">_.union([2], [1, 2]);
+// =&gt; [2, 1]
+</code></pre>
+<h2 id="_uniqarray">_.uniq(array)</h2>
+<p>数组去重</p>
+<pre><code class="language-js">_.uniq([2, 1, 2]);
+// =&gt; [2, 1]
+</code></pre>
+<h2 id="_ziparrays">_.zip([arrays])</h2>
+<p>创建一个分组元素数组，其中第一个数组包含给定数组的第一个元素，第二个数组包含给定数组的第二个元素，依此类推</p>
+<pre><code class="language-js">_.zip(['a', 'b'], [1, 2], [true, false]);
+// =&gt; [['a', 1, true], ['b', 2, false]]
+</code></pre>
+<h2 id="_unziparray">_.unzip(array)</h2>
+<p>接受一个分组元素数组，并创建一个数组，将元素重新分组到它们的预 <code>zip</code> 配置中</p>
+<pre><code class="language-js">let zipped = _.zip(['a', 'b'], [1, 2], [true, false]);
+// =&gt; [['a', 1, true], ['b', 2, false]]
+ 
+_.unzip(zipped);
+// =&gt; [['a', 'b'], [1, 2], [true, false]]
+</code></pre>
+<h2 id="_withoutarray-values">_.without(array, [values])</h2>
+<p>排除所有给定值</p>
+<pre><code class="language-js">_.without([2, 1, 2, 3], 1, 2);
+// =&gt; [3]
+</code></pre>
+<h2 id="_xorarrays">_.xor([arrays])</h2>
+<p>创建一个惟一值数组，该值是给定数组的对称差异</p>
+<pre><code class="language-js">_.xor([2, 1], [2, 3]);
+// =&gt; [1, 3]
+</code></pre>
+
+                                </div>
+                    </article>
+                    <!--  -->
+                    
+                        <div class="next-post">
+                            <div class="next">下一篇</div>
+                            <a href="https://blog.ss1742.com/post/http-zhuang-tai-ma">
+                                <h3 class="post-title">
+                                    http状态码
+                                </h3>
+                            </a>
+                        </div>
+                        
+                            <div id="disqus_thread"></div>
+                            <div id="gitalk-container"></div>
+                </div>
+                <!-- middle -->
+                <div class="main-container-middle"></div>
+                <!-- right -->
+                <div id="sidebar" class="main-container-right">
+                    
+                        <!-- toc -->
+                        
+    <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+        <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li><a href="#lodash-%E5%86%B2%E4%B8%80%E6%B3%A2%E8%AF%AD%E6%B3%95%E7%AF%871-array">lodash 冲一波(语法篇1-Array)</a>
+<ul>
+<li><a href="#_chunkarray-size1">_.chunk(array, [size=1])</a></li>
+<li><a href="#_compactarray">_.compact(array)</a></li>
+<li><a href="#_concatarray-values">_.concat(array, [values])</a></li>
+<li><a href="#_differencearray-values">_.difference(array, [values])</a></li>
+<li><a href="#_droparray-n1">_.drop(array, [n=1])</a></li>
+<li><a href="#_fillarray-value-start0-endarraylength">_.fill(array, value, [start=0], [end=array.length])</a></li>
+<li><a href="#_flattendeptharray-depth1">_.flattenDepth(array, [depth=1])</a></li>
+<li><a href="#_frompairspairs">_.fromPairs(pairs)</a></li>
+<li><a href="#_indexofarray-value-fromindex0">_.indexOf(array, value, [fromIndex=0])</a></li>
+<li><a href="#_initialarray">_.initial(array)</a></li>
+<li><a href="#_intersectionarrays">_.intersection([arrays])</a></li>
+<li><a href="#_joinarray-separator">_.join(array, [separator=','])</a></li>
+<li><a href="#_lastarray">_.last(array)</a></li>
+<li><a href="#_ntharray-n0">_.nth(array, [n=0])</a></li>
+<li><a href="#_pullarray-values">_.pull(array, [values])</a></li>
+<li><a href="#removearray-predicateidentity"><em>.remove(array, [predicate=</em>.identity])</a></li>
+<li><a href="#_reversearray">_.reverse(array)</a></li>
+<li><a href="#_slicearray-start0-endarraylength">_.slice(array, [start=0], [end=array.length])</a></li>
+<li><a href="#_tailarray">_.tail(array)</a></li>
+<li><a href="#_takearray-n1">_.take(array, [n=1])</a></li>
+<li><a href="#_unionarrays">_.union([arrays])</a></li>
+<li><a href="#_uniqarray">_.uniq(array)</a></li>
+<li><a href="#_ziparrays">_.zip([arrays])</a></li>
+<li><a href="#_unziparray">_.unzip(array)</a></li>
+<li><a href="#_withoutarray-values">_.without(array, [values])</a></li>
+<li><a href="#_xorarrays">_.xor([arrays])</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <script>
+            function locateCatelogList() {
+                /*获取文章目录集合,可通过:header过滤器*/
+                var alis = $('.post-content :header');
+                /*获取侧边栏目录列表集合**/
+                var sidebar_alis = $('.markdownIt-TOC a');
+                /*获取滚动条到顶部的距离*/
+                var scroll_height = $(window).scrollTop();
+                for (var i = 0; i < alis.length; i++) {
+                    /*获取锚点集合中的元素分别到顶点的距离*/
+                    var a_height = $(alis[i]).offset().top;
+                    if (a_height < scroll_height) {
+                        /*高亮显示*/
+                        sidebar_alis.removeClass('on');
+                        $(sidebar_alis[i]).addClass('on');
+                    }
+                }
+            }
+            $(function() {
+                /*绑定滚动事件 */
+                $(window).bind('scroll', locateCatelogList);
+            });
+        </script>
+    </div>
+    
+                            
+
+                </div>
+
+
+
+
+            </div>
+
+
+            <div class="site-footer">
+  1742 | 
+  <a class="rss" href="https://blog.ss1742.com/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+
+    </div>
+    <script>
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
+    </script>
+    
+        
+            <script>
+    window.onload = function() {
+        var gitalk = new Gitalk({
+            clientID: 'c726c72729117e1a7598',
+            clientSecret: '427ee52e912b5a2a3753a568238fd6e802d1f492',
+            repo: 'bowenjun.github.io',
+            owner: 'bowenjun',
+            admin: ['bowenjun'],
+            id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
+            distractionFreeMode: false // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    }
+</script>
+                
+
+                    
+                                
+</body>
+
+</html>

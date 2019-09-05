@@ -7,7 +7,7 @@
 <title>
     1742·小博文
 </title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1565625895116">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1567671551386">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1565625895116" alt="">
+                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1567671551386" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,74 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://blog.ss1742.com/post/kuai-pai">
+                        快排
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-08-03</time>
+                    
+                        <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
+                            i-tag-banana">
+            #算法
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            // 递归
+function quickSort1(arr) {
+	if (arr.length &amp;lt; 2) return arr;
+	let num = arr[0], left = [], right = [];
+	for (let i = 1, len = arr.length; i &amp;lt; len; i++) {
+		if (num &amp;lt; arr[i]) {
+			right.push(arr[i]);
+		} else {
+			left.push(arr[i]);
+		}
+	}
+	return [...quickSort1(left), num, ...quickSort1(right)];
+}
+
+// 非递归
+function quickSort2(num, left, right) {
+    var list = [[left, right]]; // 将[left,right]存入数组中，类似于递归入栈
+    while (list.length &amp;gt; 0) { // 若list不为空，循环弹出list最后一个数组进行快排
+        var now = list.pop(); // 弹出list末尾。(也可用list.shift()取出list第一个数组，但在数据量较大时，这种方式效率较低)
+        if (now[0] &amp;gt;= now[1]) { // 若左右指针相遇，待排序数组长度小宇1，则无需进行快排(注意不能写成now[0]==now[1]，这里now[0]是有可能大于now[1]的
+            continue;
+        }
+        var i = now[0], j = now[1], flag = now[0]; // 以下与递归方法相同，请参考上面的递归详解
+        while (i &amp;lt; j) {
+            while (num[j] &amp;gt;= num[flag] &amp;amp;&amp;amp; j &amp;gt; flag) j--;
+            if (i &amp;gt;= j) {
+                break;
+            }
+            while (num[i] &amp;lt;= num[flag] &amp;amp;&amp;amp; i &amp;lt; j) i++;
+            let temp = num[flag];
+            num[flag] = num[j];
+            num[j] = num[i];
+            num[i] = temp;
+            flag = i;
+        }
+        list.push([now[0], flag - 1]); // 将flag左边数组作为待排序数组，只需将左右指针放入list即可。
+        list.push([flag + 1, now[1]]); // 将flag右边数组作为待排序数组，只需将左右指针放入list即可。
+	}
+}
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/kuai-pai">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://blog.ss1742.com/post/da-shu-xiang-jia">
                         大数相加
                     </a>
@@ -107,7 +175,7 @@
                     <time class="post-time">2019-08-01</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-other_3">
             #算法
         </a>
                         
@@ -206,7 +274,7 @@ Cross-site request forgery 跨站请求伪造
                     <time class="post-time">2019-08-01</time>
                     
                         <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_4">
+                            i-tag-other_2">
             #js基础
         </a>
                         
@@ -246,7 +314,7 @@ Cross-site request forgery 跨站请求伪造
                     <time class="post-time">2019-08-01</time>
                     
                         <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="post-tag i-tag
-                            i-tag-info">
+                            i-tag-">
             #读书
         </a>
                         
@@ -277,7 +345,7 @@ Cross-site request forgery 跨站请求伪造
                     <time class="post-time">2019-08-01</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-other_3">
             #算法
         </a>
                         
@@ -341,7 +409,7 @@ var isValid = function(s) {
                     <time class="post-time">2019-07-31</time>
                     
                         <a href="https://blog.ss1742.com/tag/Vd9DRT-cY" class="post-tag i-tag
-                            i-tag-">
+                            i-tag-warning">
             #代码技巧
         </a>
                         
@@ -516,7 +584,7 @@ hash 替换为 chunkhash
                     <time class="post-time">2019-07-29</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-banana">
+                            i-tag-">
             #算法
         </a>
                         
@@ -579,7 +647,7 @@ function maxProfit(prices) {
                     <time class="post-time">2019-07-29</time>
                     
                         <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-error">
             #算法
         </a>
                         
@@ -624,73 +692,6 @@ function maxProfit(prices) {
                 </div>
             </article>
             
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/fan-zhuan-lian-biao">
-                        反转链表
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-29</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/g8YjTKHRv" class="post-tag i-tag
-                            i-tag-primary">
-            #算法
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            反转一个单链表。
-示例:
-输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL
-输出: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL
-
-/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */
-/**
- * @param {ListNode} head
- * @return {ListNode}
- */
-// 常规
-function reverseList1(head) {
-	if (head === null || head.next === null) return head;
-	let p = head.next;
-	head.next = null;
-	let temp = null;
-	while (p !== null) {
-		temp = p.next;
-		p.next = head;
-		head = p;
-		p = temp;
-	}
-	return head;
-}
-// 递归
-function reverseList2(head) {
-	if (head === null || head.next === null) return head;
-	let new_head = reverseList2(head.next);
-	head.next.next = head;
-	head.next = null;
-	return new_head;
-}
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/fan-zhuan-lian-biao">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
                 <!-- 翻页 -->
                 
     <div class="pagination-container">
@@ -711,7 +712,7 @@ function reverseList2(head) {
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1565625895116)">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1567671551386)">
         </div>
         <h1 class="id_card-title">
             1742·小博文

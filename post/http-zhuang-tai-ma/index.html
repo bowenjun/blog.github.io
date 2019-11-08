@@ -1,125 +1,105 @@
+<!DOCTYPE html>
 <html>
+  <head>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta name="referrer" content="never">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="kveln">
+  <title>http状态码 | I&#39;m 小博文</title>
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="https://blog.ss1742.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!--  <link href="https://blog.ss1742.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link rel="alternate" type="application/rss+xml" title="http状态码 | I&#39;m 小博文 » Feed" href="https://blog.ss1742.com/atom.xml">
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+  <link href="https://blog.ss1742.com/styles/main.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+  <!-- <script src="https://blog.ss1742.com/media/scripts/jquery.min.js"></script> -->
+  <script>hljs.initHighlightingOnLoad();</script>
+  
 
-<head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>
-    http状态码 | 1742·小博文
-</title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1573203446058">
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://blog.ss1742.com/styles/main.css">
-<!-- js -->
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://blog.ss1742.com/media/js/jquery.sticky-sidebar.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
-
-
-        
-            
-                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-                
-
-                    
-                            
-</head>
-
-<body>
-    <div class="main">
-        <div class="header">
-    <div class="nav">
-        <div class="logo">
-            <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1573203446058" alt="">
-            </a>
-            <div class="site-title">
-                <h1>
-                    1742·小博文
-                </h1>
-            </div>
-        </div>
-        <span class="menu-btn fa fa-align-justify"></span>
-        <div class="menu-container">
-            <ul>
-                
-                    
-                            <li>
-                                <a href="/" class="menu">
-                                    首页
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/archives" class="menu">
-                                    归档
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/tags" class="menu">
-                                    标签
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/post/about" class="menu">
-                                    关于
-                                </a>
-                            </li>
-                            
-                                
-            </ul>
-        </div>
+    <meta property="og:description" content="http状态码"/>
+    <meta property="og:url" content="https://blog.ss1742.com/post/http-zhuang-tai-ma"/>
+    <meta property="og:locale" content="zh-CN"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="I&#39;m 小博文"/>
+  </head>
+  <body>
+  	<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://blog.ss1742.com">I&#39;m 小博文</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/">首页</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/archives">归档</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/tags">标签</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/post/about">关于</a>
+              
+          </li>
+          
+        </ul>
+      </div>
     </div>
-</div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://blog.ss1742.com/media/images/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+          	<span class="tags">
+          	 
+            <a href="https://blog.ss1742.com/tag/5CynFjhOR" class="tag">状态码</a>
+            
+        </span>
+            <h1>http状态码</h1>
+            <span class="meta">
+            	Posted on
+              2019-08-13，27 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<script>
-    $(document).ready(function() {
-        $(".menu-btn").click(function() {
-            $(".menu-container").slideToggle();
-        });
-        $(window).resize(function() {
-
-            if (window.matchMedia('(min-width: 960px)').matches) {
-                $(".menu-container").css('display', 'block')
-            } else {
-                $(".menu-container").css('display', 'none')
-            }
-
-        });
-    });
-</script>
-
-            <div id="main-content" class="post-detail main-container">
-                <!-- left -->
-                <div id="content" class="main-container-left">
-                    <article class="post i-card">
-                        <h2 class="post-title">
-                            http状态码
-                        </h2>
-                        <div class="post-info">
-                            <time class="post-time">2019-08-13</time>
-                            
-                                <a href="https://blog.ss1742.com/tag/5CynFjhOR" class="post-tag i-tag
-                            i-tag-other_4">
-                            #状态码
-                        </a>
-                                
-                        </div>
-                        
-                                <div class="post-content">
-                                    <h3 id="1xx通知">1XX：通知</h3>
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h3 id="1xx通知">1XX：通知</h3>
 <p>1XX系列响应代码仅在与HTTP服务器沟通时使用。</p>
 <h4 id="100continue">100(&quot;Continue&quot;)</h4>
 <p>重要程度：中等，但（写操作时）很少用。<br>
@@ -307,178 +287,110 @@ HTTP标准并没有对URI长度作出官方限制，但大部分现有的web服�
 当服务器不支持客户端试图使用的HTTP版本时发送此响应代码。</p>
 <p>实体主体：一个描述服务器支持哪些协议的文档。</p>
 
-                                </div>
-                    </article>
-                    <!--  -->
-                    
-                        <div class="next-post">
-                            <div class="next">下一篇</div>
-                            <a href="https://blog.ss1742.com/post/ge-wei-xiang-jia">
-                                <h3 class="post-title">
-                                    各位相加
-                                </h3>
-                            </a>
-                        </div>
-                        
-                            <div id="disqus_thread"></div>
-                            <div id="gitalk-container"></div>
-                </div>
-                <!-- middle -->
-                <div class="main-container-middle"></div>
-                <!-- right -->
-                <div id="sidebar" class="main-container-right">
-                    
-                        <!-- toc -->
-                        
-    <div class="toc-card i-card ">
-        <div class="toc-title i-card-title">目录</div>
-        <div class="toc-content">
-            <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#1xx%E9%80%9A%E7%9F%A5">1XX：通知</a>
-<ul>
-<li><a href="#100continue">100(&quot;Continue&quot;)</a></li>
-<li><a href="#101switching-protocols">101(&quot;Switching Protocols&quot;)</a></li>
-</ul>
-</li>
-<li><a href="#2xx-%E6%88%90%E5%8A%9F">2XX: 成功</a>
-<ul>
-<li><a href="#200ok">200(&quot;OK&quot;)</a></li>
-<li><a href="#201created">201(&quot;Created&quot;)</a></li>
-<li><a href="#202accepted">202(&quot;Accepted&quot;)</a></li>
-<li><a href="#203non-authoritative-information">203(&quot;Non-Authoritative Information&quot;)</a></li>
-<li><a href="#204no-content">204(&quot;No Content&quot;)</a></li>
-<li><a href="#205reset-content">205(&quot;Reset Content&quot;)</a></li>
-<li><a href="#206partial-content">206(&quot;Partial Content&quot;)</a></li>
-</ul>
-</li>
-<li><a href="#3xx-%E9%87%8D%E5%AE%9A%E5%90%91">3XX 重定向</a>
-<ul>
-<li><a href="#300multiple-choices">300(&quot;Multiple Choices&quot;)</a></li>
-<li><a href="#301moved-permanently">301(&quot;Moved Permanently&quot;)</a></li>
-<li><a href="#302found">302(&quot;Found&quot;)</a></li>
-<li><a href="#303see-other">303(&quot;See Other&quot;)</a></li>
-<li><a href="#304not-modified">304(&quot;Not Modified&quot;)</a></li>
-<li><a href="#305use-proxy">305(&quot;Use Proxy&quot;)</a></li>
-<li><a href="#306-%E6%9C%AA%E4%BD%BF%E7%94%A8">306 未使用</a></li>
-<li><a href="#307temporary-redirect">307(&quot;Temporary Redirect&quot;)</a></li>
-</ul>
-</li>
-<li><a href="#4xx%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%94%99%E8%AF%AF">4XX：客户端错误</a>
-<ul>
-<li><a href="#400bad-request">400(&quot;Bad Request&quot;)</a></li>
-<li><a href="#401unauthorized">401(&quot;Unauthorized&quot;)</a></li>
-<li><a href="#402payment-required">402(&quot;Payment Required&quot;)</a></li>
-<li><a href="#403forbidden">403(&quot;Forbidden&quot;)</a></li>
-<li><a href="#404not-found">404(&quot;Not Found&quot;)</a></li>
-<li><a href="#405method-not-allowd">405(&quot;Method Not Allowd&quot;)</a></li>
-<li><a href="#406not-acceptable">406(&quot;Not Acceptable&quot;)</a></li>
-<li><a href="#407proxy-authentication-required">407(&quot;Proxy Authentication Required&quot;)</a></li>
-<li><a href="#408reqeust-timeout">408(&quot;Reqeust Timeout&quot;)</a></li>
-<li><a href="#409conflict">409(&quot;Conflict&quot;)</a></li>
-<li><a href="#410gone">410(&quot;Gone&quot;)</a></li>
-<li><a href="#411length-required">411(&quot;Length Required&quot;)</a></li>
-<li><a href="#412precondition-failed">412(&quot;Precondition Failed&quot;)</a></li>
-<li><a href="#413request-entity-too-large">413(&quot;Request Entity Too Large&quot;)</a></li>
-<li><a href="#414request-uri-too-long">414(&quot;Request-URI Too Long&quot;)</a></li>
-<li><a href="#415unsupported-media-type">415(&quot;Unsupported Media Type&quot;)</a></li>
-<li><a href="#416requestd-range-not-satisfiable">416(&quot;Requestd Range Not Satisfiable&quot;)</a></li>
-<li><a href="#417expectation-failed">417(&quot;Expectation Failed&quot;)</a></li>
-</ul>
-</li>
-<li><a href="#5xx-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%94%99%E8%AF%AF">5XX 服务端错误</a>
-<ul>
-<li><a href="#500internal-server-error">500(&quot;Internal Server Error&quot;)</a></li>
-<li><a href="#501not-implemented">501(&quot;Not Implemented&quot;)</a></li>
-<li><a href="#502bad-gateway">502(&quot;Bad Gateway&quot;)</a></li>
-<li><a href="#503service-unavailable">503(&quot;Service Unavailable&quot;)</a></li>
-<li><a href="#504gateway-timeout">504(&quot;Gateway Timeout&quot;)</a></li>
-<li><a href="#505http-version-not-supported">505(&quot;HTTP Version Not Supported&quot;)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-        </div>
-        <script>
-            function locateCatelogList() {
-                /*获取文章目录集合,可通过:header过滤器*/
-                var alis = $('.post-content :header');
-                /*获取侧边栏目录列表集合**/
-                var sidebar_alis = $('.markdownIt-TOC a');
-                /*获取滚动条到顶部的距离*/
-                var scroll_height = $(window).scrollTop();
-                for (var i = 0; i < alis.length; i++) {
-                    /*获取锚点集合中的元素分别到顶点的距离*/
-                    var a_height = $(alis[i]).offset().top;
-                    if (a_height < scroll_height) {
-                        /*高亮显示*/
-                        sidebar_alis.removeClass('on');
-                        $(sidebar_alis[i]).addClass('on');
-                    }
-                }
-            }
-            $(function() {
-                /*绑定滚动事件 */
-                $(window).bind('scroll', locateCatelogList);
-            });
-        </script>
-    </div>
-    
-                            
-
-                </div>
-
-
-
-
-            </div>
-
-
-            <div class="site-footer">
-  1742 | 
-  <a class="rss" href="https://blog.ss1742.com/atom.xml" target="_blank">RSS</a>
-</div>
-
-<script>
-  hljs.initHighlightingOnLoad()
-</script>
-
-
-    </div>
-    <script>
-        $('#sidebar').stickySidebar({
-            topSpacing: 80,
-            // bottomSpacing: 60
-        });
-    </script>
-    
+          
+          <p class="next-post">下一篇：
+            <a href="https://blog.ss1742.com/post/ge-wei-xiang-jia">
+              <span class="post-title">
+                各位相加&rarr;
+              </span>
+            </a>
+          </p>
         
-            <script>
-    window.onload = function() {
-        var gitalk = new Gitalk({
-            clientID: 'c726c72729117e1a7598',
-            clientSecret: '427ee52e912b5a2a3753a568238fd6e802d1f492',
-            repo: 'bowenjun.github.io',
-            owner: 'bowenjun',
-            admin: ['bowenjun'],
-            id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
-            distractionFreeMode: false // Facebook-like distraction free mode
-        })
-
-        gitalk.render('gitalk-container')
-    }
+        <div class="comment">
+          
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container"></div>
+<script>
+  var gitalk = new Gitalk({
+    clientID: 'c726c72729117e1a7598',
+    clientSecret: '427ee52e912b5a2a3753a568238fd6e802d1f492',
+    repo: 'bowenjun.github.io',
+    owner: 'bowenjun',
+    admin: ['bowenjun'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+  gitalk.render('gitalk-container')
 </script>
-                
 
-                    
-                                
-</body>
-
+          
+          
+        
+        </div>
+      </div>
+    </div>
+  </article>
+ <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item">
+              <a href="https://blog.ss1742.com/atom.xml" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy;<span>I&#39;m 小博文</span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+        </div>
+      </div>
+    </div>
+   </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://blog.ss1742.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+  <!-- <script src="https://blog.ss1742.com/media/scripts/clean-blog.min.js"></script> -->
+  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  <style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function(_this) {
+    return function() {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function() {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function() {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+          800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+  </body>
 </html>
+

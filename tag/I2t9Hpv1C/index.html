@@ -1,719 +1,355 @@
+<!DOCTYPE html>
 <html>
+  <head>
+       <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta name="referrer" content="never">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="kveln">
+  <title>I&#39;m 小博文</title>
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="https://blog.ss1742.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!--  <link href="https://blog.ss1742.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link rel="alternate" type="application/rss+xml" title="I&#39;m 小博文 » Feed" href="https://blog.ss1742.com/atom.xml">
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+  <link href="https://blog.ss1742.com/styles/main.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+  <!-- <script src="https://blog.ss1742.com/media/scripts/jquery.min.js"></script> -->
+  <script>hljs.initHighlightingOnLoad();</script>
+  
 
-<head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>
-    js基础 | 1742·小博文
-</title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1573203446058">
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://blog.ss1742.com/styles/main.css">
-<!-- js -->
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://blog.ss1742.com/media/js/jquery.sticky-sidebar.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
-
-
-</head>
-
-<body>
-    <div class="main">
-        <div class="header">
-    <div class="nav">
-        <div class="logo">
-            <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1573203446058" alt="">
+  </head>
+  <body>
+  	<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://blog.ss1742.com">I&#39;m 小博文</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/">首页</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/archives">归档</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/tags">标签</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/post/about">关于</a>
+              
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://blog.ss1742.com/media/images/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1 class="tag-tl">#js基础</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+       
+        <div class="post-preview">
+          <a href="https://blog.ss1742.com/post/bindapplycall">
+            <h2 class="post-title">
+              bind/apply/call
+            </h2>
             </a>
-            <div class="site-title">
-                <h1>
-                    1742·小博文
-                </h1>
-            </div>
+            <h3 class="post-subtitle">
+              
+            </h3>
+          <p class="post-meta">
+             <span class="time">2019-08-07</span>
+             <span>,</span>
+             <span class="post-stats">2 min read</span>
+            </p>
         </div>
-        <span class="menu-btn fa fa-align-justify"></span>
-        <div class="menu-container">
-            <ul>
-                
-                    
-                            <li>
-                                <a href="/" class="menu">
-                                    首页
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/archives" class="menu">
-                                    归档
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/tags" class="menu">
-                                    标签
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/post/about" class="menu">
-                                    关于
-                                </a>
-                            </li>
-                            
-                                
-            </ul>
+        <hr>
+        <div class="clearfix">
         </div>
-    </div>
-</div>
-
-<script>
-    $(document).ready(function() {
-        $(".menu-btn").click(function() {
-            $(".menu-container").slideToggle();
-        });
-        $(window).resize(function() {
-
-            if (window.matchMedia('(min-width: 960px)').matches) {
-                $(".menu-container").css('display', 'block')
-            } else {
-                $(".menu-container").css('display', 'none')
-            }
-
-        });
-    });
-</script>
-
-            <div id="main-content" class="post-container main-container">
-                <div id="content" class="main-container-left">
-                    
-    <div class="i-card">
-        <b>标签：#
-        js基础</b>
-    </div>
-    
         
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/bindapplycall">
-                        bind/apply/call
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-08-07</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-success">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            bind
-Function.prototype.bind2 = function(context) {
-    let _this = this;
-    let argsParent = Array.prototype.slice.call(arguments, 1);
+        <div class="post-preview">
+          <a href="https://blog.ss1742.com/post/tong-ji-ye-mian-shi-yong-dao-de-suo-you-biao-qian">
+            <h2 class="post-title">
+              统计页面使用到的所有标签
+            </h2>
+            </a>
+            <h3 class="post-subtitle">
+              
+            </h3>
+          <p class="post-meta">
+             <span class="time">2019-08-01</span>
+             <span>,</span>
+             <span class="post-stats">1 min read</span>
+            </p>
+        </div>
+        <hr>
+        <div class="clearfix">
+        </div>
+        
+        <div class="post-preview">
+          <a href="https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben">
+            <h2 class="post-title">
+              异步加载 js 脚本
+            </h2>
+            </a>
+            <h3 class="post-subtitle">
+              
+            </h3>
+          <p class="post-meta">
+             <span class="time">2019-07-24</span>
+             <span>,</span>
+             <span class="post-stats">1 min read</span>
+            </p>
+        </div>
+        <hr>
+        <div class="clearfix">
+        </div>
+        
+        <div class="post-preview">
+          <a href="https://blog.ss1742.com/post/shen-qian-kao-bei">
+            <h2 class="post-title">
+              深浅拷贝
+            </h2>
+            </a>
+            <h3 class="post-subtitle">
+              
+            </h3>
+          <p class="post-meta">
+             <span class="time">2019-07-23</span>
+             <span>,</span>
+             <span class="post-stats">2 min read</span>
+            </p>
+        </div>
+        <hr>
+        <div class="clearfix">
+        </div>
+        
+        <div class="post-preview">
+          <a href="https://blog.ss1742.com/post/jin-zhi-liu-lan-qi-shi-jian">
+            <h2 class="post-title">
+              禁止浏览器事件
+            </h2>
+            </a>
+            <h3 class="post-subtitle">
+              
+            </h3>
+          <p class="post-meta">
+             <span class="time">2019-07-22</span>
+             <span>,</span>
+             <span class="post-stats">1 min read</span>
+            </p>
+        </div>
+        <hr>
+        <div class="clearfix">
+        </div>
+        
+        <div class="post-preview">
+          <a href="https://blog.ss1742.com/post/jsonp-yuan-li">
+            <h2 class="post-title">
+              jsonp 原理
+            </h2>
+            </a>
+            <h3 class="post-subtitle">
+              
+            </h3>
+          <p class="post-meta">
+             <span class="time">2019-07-20</span>
+             <span>,</span>
+             <span class="post-stats">1 min read</span>
+            </p>
+        </div>
+        <hr>
+        <div class="clearfix">
+        </div>
+        
+        <div class="post-preview">
+          <a href="https://blog.ss1742.com/post/this-zhi-xiang">
+            <h2 class="post-title">
+              this 指向
+            </h2>
+            </a>
+            <h3 class="post-subtitle">
+              
+            </h3>
+          <p class="post-meta">
+             <span class="time">2019-07-20</span>
+             <span>,</span>
+             <span class="post-stats">1 min read</span>
+            </p>
+        </div>
+        <hr>
+        <div class="clearfix">
+        </div>
+        
+        <div class="post-preview">
+          <a href="https://blog.ss1742.com/post/promiseall-shi-xian-yuan-li">
+            <h2 class="post-title">
+              Promise.all 实现原理
+            </h2>
+            </a>
+            <h3 class="post-subtitle">
+              
+            </h3>
+          <p class="post-meta">
+             <span class="time">2019-07-16</span>
+             <span>,</span>
+             <span class="post-stats">1 min read</span>
+            </p>
+        </div>
+        <hr>
+        <div class="clearfix">
+        </div>
+        
+        <div class="post-preview">
+          <a href="https://blog.ss1742.com/post/promisefinally-shi-xian-yuan-li">
+            <h2 class="post-title">
+              Promise.finally 实现原理
+            </h2>
+            </a>
+            <h3 class="post-subtitle">
+              
+            </h3>
+          <p class="post-meta">
+             <span class="time">2019-07-16</span>
+             <span>,</span>
+             <span class="post-stats">1 min read</span>
+            </p>
+        </div>
+        <hr>
+        <div class="clearfix">
+        </div>
+        
+        <div class="post-preview">
+          <a href="https://blog.ss1742.com/post/promiserace-shi-xian-yuan-li">
+            <h2 class="post-title">
+              Promise.race 实现原理
+            </h2>
+            </a>
+            <h3 class="post-subtitle">
+              
+            </h3>
+          <p class="post-meta">
+             <span class="time">2019-07-16</span>
+             <span>,</span>
+             <span class="post-stats">1 min read</span>
+            </p>
+        </div>
+        <hr>
+        <div class="clearfix">
+        </div>
+        
+        
+        
+        <a class="btn btn-primary float-right" href="https://blog.ss1742.com/tag/I2t9Hpv1C//page/2/">下一页 &rarr;</a>
+        
+      </div>
+    </div>
+  </div>
+
+  
+ <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item">
+              <a href="https://blog.ss1742.com/atom.xml" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy;<span>I&#39;m 小博文</span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+        </div>
+      </div>
+    </div>
+   </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://blog.ss1742.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+  <!-- <script src="https://blog.ss1742.com/media/scripts/clean-blog.min.js"></script> -->
+  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  <style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function(_this) {
     return function() {
-        var args = argsParent.concat(Array.prototype.slice.call(arguments)); // 转化成数组
-        _this.apply(context, args);
-    };
-}
-
-apply
-Function.prototype.apply2 = function(context, arr) {
-    let context = context || window; // 因为传进来的context有可能是null
-    context.fn = this;
-    let args = [];
-    let params = arr || [];
-    for (var i = 0; i &amp;lt; params.length; i++) {
-        args.push(&amp;quot;params[&amp;quot; + i + &amp;quot;]&amp;quot;); // 不这么做的话 字符串的引号会被自动去掉 变成了变量 导致报错
-    }
-    args = args.join(&amp;quot;,&amp;quot;);
-
-    let result = eval(&amp;quot;context.fn(&amp;quot; + args + &amp;quot;)&amp;quot;); // 相当于执行了context.fn(arguments[1], arguments[2]);
-
-    delete context.fn;
-    return result; // 因为有可能this函数会有返回值return
-}
-
-call
-Function.prototype.call2 = function(context) {
-    let context = context || window; // 因为传进来的context有可能是null
-    context.fn = this;
-    let args = [];
-    for (var i = 1; i &amp;lt; arguments.length; i++) {
-        args.push(&amp;quot;arguments[&amp;quot; + i + &amp;quot;]&amp;quot;); // 不这么做的话 字符串的引号会被自动去掉 变成了变量 导致报错
-    }
-    args = args.join(&amp;quot;,&amp;quot;);
-
-    let result = eval(&amp;quot;context.fn(&amp;quot; + args + &amp;quot;)&amp;quot;); // 相当于执行了context.fn(arguments[1], arguments[2]);
-
-    delete context.fn;
-    return result; // 因为有可能this函数会有返回值return
-}
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/bindapplycall">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/tong-ji-ye-mian-shi-yong-dao-de-suo-you-biao-qian">
-                        统计页面使用到的所有标签
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-08-01</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-info">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            function findAll() {
-	const all = document.querySelectorAll(&#39;*&#39;);
-	return all.reduce((a, b) =&amp;gt; {
-		let key = b.nodeName.toLowerCase();
-		if (!a[key]) {
-			a[key] = 0;
-		}
-		a[key]++;
-		return a;
-	}, {});
-}
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/tong-ji-ye-mian-shi-yong-dao-de-suo-you-biao-qian">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben">
-                        异步加载 js 脚本
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-24</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-warning">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            script 中加入 async(html5) 或者 defer(html4) 属性，脚本会异步加载。
-区别
-defer
-
-defer 要等到页面在内存中正常渲染结束，在 window.onload 之前执行
-如果有多个 defer，会按照在页面的出现顺序加载
-
-async
-
-async 一旦下载完，渲染引擎就会中断渲染，执行这个脚本，再继续渲染
-多个 async 不能保证顺序
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/shen-qian-kao-bei">
-                        深浅拷贝
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-23</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_2">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            深拷贝和浅拷贝是针对复杂数据类型来说的，浅拷贝只拷贝一层，而深拷贝是层层拷贝
-浅拷贝
-浅拷贝是会将对象的每个属性进行依次复制，但是当对象的属性值是引用类型时，实质复制的是其引用，当引用指向的值改变时也会跟着变化
-深拷贝
-深拷贝复制变量值，对于非基本类型的变量，则递归至基本类型变量后，再复制。 深拷贝后的对象与原来的对象是完全隔离的，互不影响，对一个对象的修改并不会影响另一个对象
-实现
-
-JSON.parse(JSON.stringify(obj))
-
-
-对象的属性值是函数时，无法拷贝。
-原型链上的属性无法拷贝
-不能正确的处理 Date 类型的数据
-不能处理 RegExp
-会忽略 symbol
-会忽略 undefined
-
-
-代码实现
-
-
-如果是基本数据类型，直接返回
-如果是 RegExp 或者 Date 类型，返回对应类型
-如果是复杂数据类型，递归
-考虑循环引用的问题
-
-function copy(obj, hash = new WeakMap()) {
-		if (obj instanceof RegExp) return new RegExp(obj);
-		if (obj instanceof Date) return new Date(obj);
-		if (obj === null || typeof obj !== &#39;object&#39;) return obj;
-
-		// 循环引用
-		if (hash.has(obj)) {
-			return hash.get(obj);
-		}
-
-		// 获取到 {} || []
-		let t = new obj.constructor();
-		hash.set(obj, t);
-		
-		// 遍历递归
-		for (let key in obj) {
-			if (obj.hasOwnProperty(key)) {
-				t[key] = copy(obj[key], hash);
-			}
-		}
-		
-		return t;
-	}
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/shen-qian-kao-bei">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/jin-zhi-liu-lan-qi-shi-jian">
-                        禁止浏览器事件
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-22</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_2">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            禁用事件冒泡
-
-event.stopPropagation()
-
-禁止默认事件
-
-event.preventDefault()
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/jin-zhi-liu-lan-qi-shi-jian">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/jsonp-yuan-li">
-                        jsonp 原理
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-20</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/1POfnEFWE" class="post-tag i-tag
-                            i-tag-other_4">
-            #jsonp
-        </a>
-                        
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-success">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            尽管浏览器有同源策略，但是 &amp;lt;script&amp;gt; 标签的 src 属性不会被同源策略所约束，可以获取任意服务器上的脚本并执行。jsonp 通过插入 script 标签的方式来实现跨域，参数只能通过 url 传入，仅能支持 get 请求。
-原理
-
-创建 callback 方法
-插入 script 标签
-后台接受到请求，解析前端传过去的 callback 方法，返回该方法的调用，并且数据作为参数传入该方法
-前端执行服务器返回的方法调用
-
-实现
-function jsonp({ url, params, callback }) {
-	return new Promise((resolve, reject) =&amp;gt; {
-		let script = document.createElement(&#39;script&#39;);
-		window[callback] = function(data) {
-			resolve(data);
-			document.body.removeChild(script);
-		}
-		params = { ...params, callback };
-		let arrs = [];
-		for (let key in params) {
-			arrs.push(`${key}=${params[key]}`);
-		}
-		script.src = `${url}?${arrs.join(&#39;&amp;amp;&#39;)}`;
-		document.body.appendChild(script);
-	})
-}
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/jsonp-yuan-li">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/this-zhi-xiang">
-                        this 指向
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-20</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/ijEjqIkoA" class="post-tag i-tag
-                            i-tag-">
-            #this
-        </a>
-                        
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-warning">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            
-
-this，谁调用指谁
-
-
-构造函数的优先级(访问权限) &amp;gt; 原型链
-
-
-new 的时候，this 就会指向 new 出来的对象
-
-
-箭头函数
-
-
-
-箭头函数相当于 bind，会改变this` 的指向
-箭头函数的 this 是他父级的 this
-箭头函数把 this 固定到他父级的同级作用
-
-能改变 this 指向的关键词
-
-
-bind
-
-
-apply
-
-
-call
-
-
-一般函数 this 指向在执行的时候绑定
-
-
-箭头函数中的 this 是在定义函数的时候绑定
-
-
-严格模式
-
-
-
-非严格模式下默认指向 window
-严格模式下传 null 指向 null，不传或者传 undefined 都指向 undefined，即在严格模式下，没有写执行主体，this 指向是 undefined
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/this-zhi-xiang">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/promiseall-shi-xian-yuan-li">
-                        Promise.all 实现原理
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-16</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-other_3">
-            #原理
-        </a>
-                        
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-other_2">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            Promise.prototype.all = function(promises) {
-    return new Promise((resolve, reject) =&amp;gt; {
-        if (!isArray(promises)) {
-            return reject(new TypeError(&#39;Arguments not Array&#39;));
-        }
-        let resolves = 0;
-        let len = promises.length;
-        let result = [];
-        for (let p of promises) {
-            Promise.resolve(p).then(res =&amp;gt; {
-                resolves++;
-                result.push(res);
-                if (resolves === len) {
-                    resolve(result);
-                }
-            }, rej =&amp;gt; {
-                return rekect(rej);
-            })
-        }
-    })
-}
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/promiseall-shi-xian-yuan-li">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/promisefinally-shi-xian-yuan-li">
-                        Promise.finally 实现原理
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-16</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-info">
-            #原理
-        </a>
-                        
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-banana">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            Promise.prototype.finally = function(callback) {
-    let P = this.constructor;
-    return this.then(
-        value  =&amp;gt; P.resolve(callback()).then(() =&amp;gt; value),
-        reason =&amp;gt; P.resolve(callback()).then(() =&amp;gt; { throw reason })
-    );
-};
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/promisefinally-shi-xian-yuan-li">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://blog.ss1742.com/post/promiserace-shi-xian-yuan-li">
-                        Promise.race 实现原理
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-07-16</time>
-                    
-                        <a href="https://blog.ss1742.com/tag/Glthk27Wp" class="post-tag i-tag
-                            i-tag-success">
-            #原理
-        </a>
-                        
-                        <a href="https://blog.ss1742.com/tag/I2t9Hpv1C" class="post-tag i-tag
-                            i-tag-banana">
-            #js基础
-        </a>
-                        
-                </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            Promise.prototype.race = function(promises) {
-    return new Promise((resolve, reject) =&amp;gt; {
-        if (!isArray(promises)) {
-            return reject(new TypeError(&#39;Arguments not Array&#39;));
-        }
-        for (let p of promises) {
-            Promise.resolve(p).then(
-                res =&amp;gt; resolve(res), 
-                rej =&amp;gt; reject(rej)
-            )
-        }
-    })
-}
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://blog.ss1742.com/post/promiserace-shi-xian-yuan-li">Read More ~</a>
-                            </div>
-                </div>
-            </article>
-            
-                <!-- 翻页 -->
-                
-    <div class="pagination-container">
-        
-                
-                    <a href="https://blog.ss1742.com/tag/I2t9Hpv1C//page/2/" class="page-btn btn">下一页</a>
-                    
-    </div>
-    
-                </div>
-                <!--  -->
-                <div class="main-container-middle"></div>
-                <!--  -->
-                <div id="sidebar" class="main-container-right">
-
-                    <!-- 个人信息 -->
-                    
-    <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ss1742.com/images/avatar.png?v=1573203446058)">
-        </div>
-        <h1 class="id_card-title">
-            1742·小博文
-        </h1>
-        <h2 class="id_card-description">
-            这是我的真博客
-        </h2>
-        <!--  -->
-        <div class="id_card-sns">
-            <!-- github -->
-            
-                <a href="https://github.com/bowenjun" target="_blank" rel="noopener noreferrer"><i
-                class="fa fa-github"></i></a>
-                
-                    <!-- twitter -->
-                    
-                            <!-- weibo -->
-                            
-                                    <!-- facebook -->
-                                    
-
-        </div>
-    </div>
-    
-
-                        <!-- 公告栏 -->
-                        
-
-                </div>
-            </div>
-
-
-
-            <div class="site-footer">
-  1742 | 
-  <a class="rss" href="https://blog.ss1742.com/atom.xml" target="_blank">RSS</a>
-</div>
-
-<script>
-  hljs.initHighlightingOnLoad()
-</script>
-
-    </div>
-    <script>
-        $('#sidebar').stickySidebar({
-            topSpacing: 80,
-            // bottomSpacing: 60
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function() {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
         });
-    </script>
-</body>
-
+        return bt.click(function() {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+          800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+  </body>
 </html>

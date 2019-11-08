@@ -1,585 +1,620 @@
+<!DOCTYPE html>
 <html>
+  <head>
+       <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta name="referrer" content="never">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="kveln">
+  <title>I&#39;m 小博文</title>
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="https://blog.ss1742.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!--  <link href="https://blog.ss1742.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link rel="alternate" type="application/rss+xml" title="I&#39;m 小博文 » Feed" href="https://blog.ss1742.com/atom.xml">
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+  <link href="https://blog.ss1742.com/styles/main.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+  <!-- <script src="https://blog.ss1742.com/media/scripts/jquery.min.js"></script> -->
+  <script>hljs.initHighlightingOnLoad();</script>
+  
 
-<head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>
-    1742·小博文
-</title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1573203446058">
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://blog.ss1742.com/styles/main.css">
-<!-- js -->
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://blog.ss1742.com/media/js/jquery.sticky-sidebar.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
-
-
-</head>
-
-<body>
-    <div class="main">
-        <div class="header">
-    <div class="nav">
-        <div class="logo">
-            <a href="https://blog.ss1742.com">
-                <img class="avatar" src="https://blog.ss1742.com/images/avatar.png?v=1573203446058" alt="">
-            </a>
-            <div class="site-title">
-                <h1>
-                    1742·小博文
-                </h1>
-            </div>
-        </div>
-        <span class="menu-btn fa fa-align-justify"></span>
-        <div class="menu-container">
-            <ul>
-                
-                    
-                            <li>
-                                <a href="/" class="menu">
-                                    首页
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/archives" class="menu">
-                                    归档
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/tags" class="menu">
-                                    标签
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/post/about" class="menu">
-                                    关于
-                                </a>
-                            </li>
-                            
-                                
-            </ul>
-        </div>
-    </div>
-</div>
-
-<script>
-    $(document).ready(function() {
-        $(".menu-btn").click(function() {
-            $(".menu-container").slideToggle();
-        });
-        $(window).resize(function() {
-
-            if (window.matchMedia('(min-width: 960px)').matches) {
-                $(".menu-container").css('display', 'block')
-            } else {
-                $(".menu-container").css('display', 'none')
-            }
-
-        });
-    });
-</script>
-
-            
-
-    <div class="archives-container main-container">
-        <ul class="timeline">
-            
-                <li>
-                    <h3 class="year">
-                        2019
-                    </h3>
-                    <ul class="year-wrapper">
-                        
-                            
-                                <li>
-                                    <span class="date">2019-09-04</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/lodash-chong-yi-bo-yu-fa-pian-1-array">
-                                        <span>lodash 冲一波(语法篇1-Array)</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-08-13</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/http-zhuang-tai-ma">
-                                        <span>http状态码</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-08-12</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/ge-wei-xiang-jia">
-                                        <span>各位相加</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-08-10</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/zui-jie-jin-de-san-shu-zhi-he">
-                                        <span>最接近的三数之和</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-08-10</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/an-qi-ou-pai-xu-shu-zu">
-                                        <span>按奇偶排序数组</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-08-08</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/hermes-engine-chu-tan">
-                                        <span>Hermes Engine 初探</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-08-08</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/animation">
-                                        <span>animation</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-08-07</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/bindapplycall">
-                                        <span>bind/apply/call</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-08-05</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/zhuang-tai-ma-499">
-                                        <span>状态码 499</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-08-04</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/zheng-shu-zhong-1-chu-xian-de-ci-shu">
-                                        <span>整数中1出现的次数</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-08-03</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/kuai-pai">
-                                        <span>快排</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-08-01</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/da-shu-xiang-jia">
-                                        <span>大数相加</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-08-01</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/an-quan">
-                                        <span>安全</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-08-01</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/tong-ji-ye-mian-shi-yong-dao-de-suo-you-biao-qian">
-                                        <span>统计页面使用到的所有标签</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-08-01</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/du-shu-you-gan-level-001">
-                                        <span>读书有感——level-0.0.1</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-08-01</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/fu-yuan-ip-di-zhi">
-                                        <span>复原IP地址</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-31</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/axios-shang-chuan-jin-du">
-                                        <span>axios上传进度</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-30</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/qian-duan-xing-neng-you-hua">
-                                        <span>前端性能优化</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-29</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/mai-mai-gu-piao-de-zui-jia-shi-ji-ii">
-                                        <span>买卖股票的最佳时机 II</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-29</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/mai-mai-gu-piao-de-zui-jia-shi-ji">
-                                        <span>买卖股票的最佳时机</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-29</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/fan-zhuan-lian-biao">
-                                        <span>反转链表</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-29</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/he-bing-qu-jian">
-                                        <span>合并区间</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-29</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/shu-zu-zhong-de-di-k-ge-zui-da-yuan-su">
-                                        <span>数组中的第K个最大元素</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-29</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/jian-hua-lu-jing">
-                                        <span>简化路径</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-29</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/kan-shu">
-                                        <span>愈发觉得看书真的很重要</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-27</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/fan-zhuan-zi-fu-chuan-li-de-dan-ci">
-                                        <span>翻转字符串里的单词</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-26</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/zui-chang-gong-gong-qian-zhui">
-                                        <span>最长公共前缀</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-26</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/wu-chong-fu-zi-fu-de-zui-chang-zi-chuan">
-                                        <span>无重复字符的最长子串</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-26</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/bfc">
-                                        <span>bfc</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-24</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/qian-duan-guan-li">
-                                        <span>前端管理</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-24</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/liu-lan-qi-nei-he">
-                                        <span>浏览器内核</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-24</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/723-you-gan">
-                                        <span>7.23有感</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-24</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben">
-                                        <span>异步加载 js 脚本</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-23</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/http-content-type">
-                                        <span>http content-type</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-23</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/shen-qian-kao-bei">
-                                        <span>深浅拷贝</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-22</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/a-biao-qian-zhong-active-hover-link-visited-she-zhi-shun-xu">
-                                        <span>a标签中 active hover link visited 设置顺序</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-22</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/jin-zhi-liu-lan-qi-shi-jian">
-                                        <span>禁止浏览器事件</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-20</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/jsonp-yuan-li">
-                                        <span>jsonp 原理</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-20</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/this-zhi-xiang">
-                                        <span>this 指向</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-19</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/git-rebase-he-git-merge-de-qu-bie">
-                                        <span>git rebase 和 git merge 的区别</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-19</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/git-ti-jiao-types">
-                                        <span>git 提交 types</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-18</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-2">
-                                        <span>《深入浅出 React 和 Redux》[2]</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-18</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-1">
-                                        <span>《深入浅出 React 和 Redux》[1]</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-17</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/react-diff">
-                                        <span>react diff 原理浅析</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-16</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/promiseall-shi-xian-yuan-li">
-                                        <span>Promise.all 实现原理</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-16</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/promisefinally-shi-xian-yuan-li">
-                                        <span>Promise.finally 实现原理</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-16</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/promiserace-shi-xian-yuan-li">
-                                        <span>Promise.race 实现原理</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-15</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/promise-shi-xian-yuan-li">
-                                        <span>Promise 实现原理</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-15</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/new-de-shi-xian-yuan-li">
-                                        <span>new 实现原理</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-07-14</span>
-                                    <a class="title" href="https://blog.ss1742.com/post/ru-he-rang-a-1-and-a-2-and-a-3-de-zhi-wei-true">
-                                        <span>如何让 (a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3) 的值为true</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                    </ul>
-
-                </li>
-                
+  </head>
+  <body>
+  	<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://blog.ss1742.com">I&#39;m 小博文</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/">首页</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/archives">归档</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/tags">标签</a>
+              
+          </li>
+          
+          <li class="nav-item">
+              
+              <a class="nav-link" href="/post/about">关于</a>
+              
+          </li>
+          
         </ul>
+      </div>
     </div>
-
-                
-    <div class="pagination-container">
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://blog.ss1742.com/media/images/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1 class="tag-tl">Archives</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
         
-                
-                    <a href="https://blog.ss1742.com/archives/page/2/" class="page-btn btn">下一页</a>
-                    
-    </div>
+      
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-archives">
+    <h2 class="year">2019</h2>
     
-
-                    <div class="site-footer">
-  1742 | 
-  <a class="rss" href="https://blog.ss1742.com/atom.xml" target="_blank">RSS</a>
-</div>
-
-<script>
-  hljs.initHighlightingOnLoad()
-</script>
-
+                
+        <a href="https://blog.ss1742.com/post/lodash-chong-yi-bo-yu-fa-pian-1-array" class="post">
+          <h2 class="post-title Archives">
+            lodash 冲一波(语法篇1-Array)
+          </h2>
+          <div class="time post-meta">2019-09-04</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/http-zhuang-tai-ma" class="post">
+          <h2 class="post-title Archives">
+            http状态码
+          </h2>
+          <div class="time post-meta">2019-08-13</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/ge-wei-xiang-jia" class="post">
+          <h2 class="post-title Archives">
+            各位相加
+          </h2>
+          <div class="time post-meta">2019-08-12</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/zui-jie-jin-de-san-shu-zhi-he" class="post">
+          <h2 class="post-title Archives">
+            最接近的三数之和
+          </h2>
+          <div class="time post-meta">2019-08-10</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/an-qi-ou-pai-xu-shu-zu" class="post">
+          <h2 class="post-title Archives">
+            按奇偶排序数组
+          </h2>
+          <div class="time post-meta">2019-08-10</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/hermes-engine-chu-tan" class="post">
+          <h2 class="post-title Archives">
+            Hermes Engine 初探
+          </h2>
+          <div class="time post-meta">2019-08-08</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/animation" class="post">
+          <h2 class="post-title Archives">
+            animation
+          </h2>
+          <div class="time post-meta">2019-08-08</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/bindapplycall" class="post">
+          <h2 class="post-title Archives">
+            bind/apply/call
+          </h2>
+          <div class="time post-meta">2019-08-07</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/zhuang-tai-ma-499" class="post">
+          <h2 class="post-title Archives">
+            状态码 499
+          </h2>
+          <div class="time post-meta">2019-08-05</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/zheng-shu-zhong-1-chu-xian-de-ci-shu" class="post">
+          <h2 class="post-title Archives">
+            整数中1出现的次数
+          </h2>
+          <div class="time post-meta">2019-08-04</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/kuai-pai" class="post">
+          <h2 class="post-title Archives">
+            快排
+          </h2>
+          <div class="time post-meta">2019-08-03</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/da-shu-xiang-jia" class="post">
+          <h2 class="post-title Archives">
+            大数相加
+          </h2>
+          <div class="time post-meta">2019-08-01</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/an-quan" class="post">
+          <h2 class="post-title Archives">
+            安全
+          </h2>
+          <div class="time post-meta">2019-08-01</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/tong-ji-ye-mian-shi-yong-dao-de-suo-you-biao-qian" class="post">
+          <h2 class="post-title Archives">
+            统计页面使用到的所有标签
+          </h2>
+          <div class="time post-meta">2019-08-01</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/du-shu-you-gan-level-001" class="post">
+          <h2 class="post-title Archives">
+            读书有感——level-0.0.1
+          </h2>
+          <div class="time post-meta">2019-08-01</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/fu-yuan-ip-di-zhi" class="post">
+          <h2 class="post-title Archives">
+            复原IP地址
+          </h2>
+          <div class="time post-meta">2019-08-01</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/axios-shang-chuan-jin-du" class="post">
+          <h2 class="post-title Archives">
+            axios上传进度
+          </h2>
+          <div class="time post-meta">2019-07-31</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/qian-duan-xing-neng-you-hua" class="post">
+          <h2 class="post-title Archives">
+            前端性能优化
+          </h2>
+          <div class="time post-meta">2019-07-30</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/mai-mai-gu-piao-de-zui-jia-shi-ji-ii" class="post">
+          <h2 class="post-title Archives">
+            买卖股票的最佳时机 II
+          </h2>
+          <div class="time post-meta">2019-07-29</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/mai-mai-gu-piao-de-zui-jia-shi-ji" class="post">
+          <h2 class="post-title Archives">
+            买卖股票的最佳时机
+          </h2>
+          <div class="time post-meta">2019-07-29</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/fan-zhuan-lian-biao" class="post">
+          <h2 class="post-title Archives">
+            反转链表
+          </h2>
+          <div class="time post-meta">2019-07-29</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/he-bing-qu-jian" class="post">
+          <h2 class="post-title Archives">
+            合并区间
+          </h2>
+          <div class="time post-meta">2019-07-29</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/shu-zu-zhong-de-di-k-ge-zui-da-yuan-su" class="post">
+          <h2 class="post-title Archives">
+            数组中的第K个最大元素
+          </h2>
+          <div class="time post-meta">2019-07-29</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/jian-hua-lu-jing" class="post">
+          <h2 class="post-title Archives">
+            简化路径
+          </h2>
+          <div class="time post-meta">2019-07-29</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/kan-shu" class="post">
+          <h2 class="post-title Archives">
+            愈发觉得看书真的很重要
+          </h2>
+          <div class="time post-meta">2019-07-29</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/fan-zhuan-zi-fu-chuan-li-de-dan-ci" class="post">
+          <h2 class="post-title Archives">
+            翻转字符串里的单词
+          </h2>
+          <div class="time post-meta">2019-07-27</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/zui-chang-gong-gong-qian-zhui" class="post">
+          <h2 class="post-title Archives">
+            最长公共前缀
+          </h2>
+          <div class="time post-meta">2019-07-26</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/wu-chong-fu-zi-fu-de-zui-chang-zi-chuan" class="post">
+          <h2 class="post-title Archives">
+            无重复字符的最长子串
+          </h2>
+          <div class="time post-meta">2019-07-26</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/bfc" class="post">
+          <h2 class="post-title Archives">
+            bfc
+          </h2>
+          <div class="time post-meta">2019-07-26</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/qian-duan-guan-li" class="post">
+          <h2 class="post-title Archives">
+            前端管理
+          </h2>
+          <div class="time post-meta">2019-07-24</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/liu-lan-qi-nei-he" class="post">
+          <h2 class="post-title Archives">
+            浏览器内核
+          </h2>
+          <div class="time post-meta">2019-07-24</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/723-you-gan" class="post">
+          <h2 class="post-title Archives">
+            7.23有感
+          </h2>
+          <div class="time post-meta">2019-07-24</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/yi-bu-jia-zai-js-jiao-ben" class="post">
+          <h2 class="post-title Archives">
+            异步加载 js 脚本
+          </h2>
+          <div class="time post-meta">2019-07-24</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/http-content-type" class="post">
+          <h2 class="post-title Archives">
+            http content-type
+          </h2>
+          <div class="time post-meta">2019-07-23</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/shen-qian-kao-bei" class="post">
+          <h2 class="post-title Archives">
+            深浅拷贝
+          </h2>
+          <div class="time post-meta">2019-07-23</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/a-biao-qian-zhong-active-hover-link-visited-she-zhi-shun-xu" class="post">
+          <h2 class="post-title Archives">
+            a标签中 active hover link visited 设置顺序
+          </h2>
+          <div class="time post-meta">2019-07-22</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/jin-zhi-liu-lan-qi-shi-jian" class="post">
+          <h2 class="post-title Archives">
+            禁止浏览器事件
+          </h2>
+          <div class="time post-meta">2019-07-22</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/jsonp-yuan-li" class="post">
+          <h2 class="post-title Archives">
+            jsonp 原理
+          </h2>
+          <div class="time post-meta">2019-07-20</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/this-zhi-xiang" class="post">
+          <h2 class="post-title Archives">
+            this 指向
+          </h2>
+          <div class="time post-meta">2019-07-20</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/git-rebase-he-git-merge-de-qu-bie" class="post">
+          <h2 class="post-title Archives">
+            git rebase 和 git merge 的区别
+          </h2>
+          <div class="time post-meta">2019-07-19</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/git-ti-jiao-types" class="post">
+          <h2 class="post-title Archives">
+            git 提交 types
+          </h2>
+          <div class="time post-meta">2019-07-19</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-2" class="post">
+          <h2 class="post-title Archives">
+            《深入浅出 React 和 Redux》[2]
+          </h2>
+          <div class="time post-meta">2019-07-18</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-1" class="post">
+          <h2 class="post-title Archives">
+            《深入浅出 React 和 Redux》[1]
+          </h2>
+          <div class="time post-meta">2019-07-18</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/react-diff" class="post">
+          <h2 class="post-title Archives">
+            react diff 原理浅析
+          </h2>
+          <div class="time post-meta">2019-07-17</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/promiseall-shi-xian-yuan-li" class="post">
+          <h2 class="post-title Archives">
+            Promise.all 实现原理
+          </h2>
+          <div class="time post-meta">2019-07-16</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/promisefinally-shi-xian-yuan-li" class="post">
+          <h2 class="post-title Archives">
+            Promise.finally 实现原理
+          </h2>
+          <div class="time post-meta">2019-07-16</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/promiserace-shi-xian-yuan-li" class="post">
+          <h2 class="post-title Archives">
+            Promise.race 实现原理
+          </h2>
+          <div class="time post-meta">2019-07-16</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/promise-shi-xian-yuan-li" class="post">
+          <h2 class="post-title Archives">
+            Promise 实现原理
+          </h2>
+          <div class="time post-meta">2019-07-15</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/new-de-shi-xian-yuan-li" class="post">
+          <h2 class="post-title Archives">
+            new 实现原理
+          </h2>
+          <div class="time post-meta">2019-07-15</div>
+        </a>
+  
+                    
+                
+        <a href="https://blog.ss1742.com/post/ru-he-rang-a-1-and-a-2-and-a-3-de-zhi-wei-true" class="post">
+          <h2 class="post-title Archives">
+            如何让 (a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3) 的值为true
+          </h2>
+          <div class="time post-meta">2019-07-14</div>
+        </a>
+  
+                    
+        </div>
+        </div>
+        
+      </div>
     </div>
-</body>
+  </article>
 
+
+ <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <li class="list-inline-item">
+              <a href="https://blog.ss1742.com/atom.xml" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy;<span>I&#39;m 小博文</span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+        </div>
+      </div>
+    </div>
+   </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://blog.ss1742.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+  <!-- <script src="https://blog.ss1742.com/media/scripts/clean-blog.min.js"></script> -->
+  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  <style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function(_this) {
+    return function() {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function() {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function() {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+          800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+  </body>
 </html>

@@ -9,14 +9,14 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="author" content="kveln">
-  <title>愈发觉得看书真的很重要 | I&#39;m 小博文</title>
+  <title>antdesign Modal 位置获取 | I&#39;m 小博文</title>
   <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <!-- <link href="https://blog.ss1742.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
   <!--  <link href="https://blog.ss1742.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
   <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <link rel="alternate" type="application/rss+xml" title="愈发觉得看书真的很重要 | I&#39;m 小博文 » Feed" href="https://blog.ss1742.com/atom.xml">
+  <link rel="alternate" type="application/rss+xml" title="antdesign Modal 位置获取 | I&#39;m 小博文 » Feed" href="https://blog.ss1742.com/atom.xml">
   <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
   <link href="https://blog.ss1742.com/styles/main.css" rel="stylesheet">
   <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
@@ -25,8 +25,8 @@
   <script>hljs.initHighlightingOnLoad();</script>
   
 
-    <meta property="og:description" content="愈发觉得看书真的很重要"/>
-    <meta property="og:url" content="https://blog.ss1742.com/post/kan-shu"/>
+    <meta property="og:description" content="antdesign Modal 位置获取"/>
+    <meta property="og:url" content="https://blog.ss1742.com/post/antdesign-modal-wei-zhi-huo-qu"/>
     <meta property="og:locale" content="zh-CN"/>
     <meta property="og:type" content="website"/>
     <meta property="og:site_name" content="I&#39;m 小博文"/>
@@ -80,13 +80,15 @@
           <div class="post-heading">
           	<span class="tags">
           	 
-            <a href="https://blog.ss1742.com/tag/kHKSvnCCb" class="tag">感想</a>
+            <a href="https://blog.ss1742.com/tag/KS8SRc863" class="tag">antdesign</a>
+            
+            <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="tag">react</a>
             
         </span>
-            <h1>愈发觉得看书真的很重要</h1>
+            <h1>antdesign Modal 位置获取</h1>
             <span class="meta">
             	Posted on
-              2019-07-29，1 min read
+              2019-07-17，1 min read
             </span>
           </div>
         </div>
@@ -99,14 +101,27 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <p>看书，不只是限制于技术类，同时需要对社会学、经济学的书籍多看一点。</p>
-<p>不追求马上获得什么，一点点来。</p>
+          <pre><code class="language-jsx">  componentDidMount() {
+    this.setDropdownWidth();
+  }
+
+  componentDidUpdate() {
+    this.setDropdownWidth();
+  }
+
+  setDropdownWidth = () =&gt; {
+    const width = ReactDOM.findDOMNode(this).offsetWidth;
+    if (width !== this.state.dropdownWidth) {
+      this.setState({ dropdownWidth: width });
+    }
+  }
+</code></pre>
 
           
           <p class="next-post">下一篇：
-            <a href="https://blog.ss1742.com/post/fan-zhuan-zi-fu-chuan-li-de-dan-ci">
+            <a href="https://blog.ss1742.com/post/react-diff">
               <span class="post-title">
-                翻转字符串里的单词&rarr;
+                react diff 原理浅析&rarr;
               </span>
             </a>
           </p>

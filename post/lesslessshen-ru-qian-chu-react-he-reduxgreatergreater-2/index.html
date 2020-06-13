@@ -1,107 +1,181 @@
-<!DOCTYPE html>
-<html>
-  <head>
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta content="yes" name="apple-mobile-web-app-capable" />
-  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
-  <meta name="referrer" content="never">
-  <meta name="keywords" content="">
-  <meta name="description" content="">
-  <meta name="author" content="kveln">
-  <title>《深入浅出 React 和 Redux》[2] | I&#39;m 小博文</title>
-  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <!-- <link href="https://blog.ss1742.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
-  <!--  <link href="https://blog.ss1742.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
-  <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <link rel="alternate" type="application/rss+xml" title="《深入浅出 React 和 Redux》[2] | I&#39;m 小博文 » Feed" href="https://blog.ss1742.com/atom.xml">
-  <link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
-  <link href="https://blog.ss1742.com/styles/main.css" rel="stylesheet">
-  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
-  <!-- <script src="https://blog.ss1742.com/media/scripts/jquery.min.js"></script> -->
-  <script>hljs.initHighlightingOnLoad();</script>
+<!doctype html>
+<html amp lang="">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="第2章 React 组件
+易于维护的设计要素
+
+高内聚 把逻辑紧密相关的内容放在一个组件内
+低耦合 每个组件尽量独立，依赖关系尽量弱化
+
+组件的数据
+对外用 props，对内用 state
+propTypes 检查
+Person.propT..." />
+<link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+<link rel="preconnect dns-prefetch" href="https://cdn.jsdelivr.net/" crossorigin>
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<title>《深入浅出 React 和 Redux》[2] | I&#39;m 小博文</title>
+
+
   
 
-    <meta property="og:description" content="《深入浅出 React 和 Redux》[2]"/>
-    <meta property="og:url" content="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-2"/>
-    <meta property="og:locale" content="zh-CN"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:site_name" content="I&#39;m 小博文"/>
-  </head>
-  <body>
-  	<!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand" href="https://blog.ss1742.com">I&#39;m 小博文</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          
-          <li class="nav-item">
-              
-              <a class="nav-link" href="/">首页</a>
-              
-          </li>
-          
-          <li class="nav-item">
-              
-              <a class="nav-link" href="/archives">归档</a>
-              
-          </li>
-          
-          <li class="nav-item">
-              
-              <a class="nav-link" href="/tags">标签</a>
-              
-          </li>
-          
-          <li class="nav-item">
-              
-              <a class="nav-link" href="/post/about">关于</a>
-              
-          </li>
-          
-        </ul>
-      </div>
+    
+
+
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+<noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<link rel="canonical" href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-2/" />
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1592059646451">
+
+<meta name="author" content="">
+
+<meta itemprop="name" content="《深入浅出 React 和 Redux》[2] | I&#39;m 小博文">
+<meta itemprop="description" content="第2章 React 组件
+易于维护的设计要素
+
+高内聚 把逻辑紧密相关的内容放在一个组件内
+低耦合 每个组件尽量独立，依赖关系尽量弱化
+
+组件的数据
+对外用 props，对内用 state
+propTypes 检查
+Person.propT...">
+<meta itemprop="image" content="">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="《深入浅出 React 和 Redux》[2] | I&#39;m 小博文">
+<meta name="twitter:description" content="第2章 React 组件
+易于维护的设计要素
+
+高内聚 把逻辑紧密相关的内容放在一个组件内
+低耦合 每个组件尽量独立，依赖关系尽量弱化
+
+组件的数据
+对外用 props，对内用 state
+propTypes 检查
+Person.propT...">
+<meta name="twitter:image" content="" />
+<meta name="twitter:image:alt" content="《深入浅出 React 和 Redux》[2] | I&#39;m 小博文" />
+
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-2/">
+<meta property="og:title" content="《深入浅出 React 和 Redux》[2] | I&#39;m 小博文">
+<meta property="og:description" content="第2章 React 组件
+易于维护的设计要素
+
+高内聚 把逻辑紧密相关的内容放在一个组件内
+低耦合 每个组件尽量独立，依赖关系尽量弱化
+
+组件的数据
+对外用 props，对内用 state
+propTypes 检查
+Person.propT...">
+<meta property="og:image" content="">
+<meta property="og:image:alt" content="《深入浅出 React 和 Redux》[2] | I&#39;m 小博文" />
+<meta property="og:site_name" content="I&#39;m 小博文">
+<meta property="og:locale" content="zh_CN">
+<meta property="tag" content="《深入浅出 React 和 Redux》[2] | I&#39;m 小博文" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="alternate" type="application/atom+xml" title="《深入浅出 React 和 Redux》[2] | I&#39;m 小博文 - Atom Feed" href="https://blog.ss1742.com/atom.xml">
+
+  
+  
+  
+    
+  
+  
+
+
+  
+
+
+
+  
+
+
+</head>
+
+<body>
+  <input type="checkbox" id="header-menu-button">
+  <header id="commonTop">
+  <div class="top-container">
+    <div class="title-menus-area">
+      <a class="blog-title" href="https://blog.ss1742.com">I&#39;m 小博文</a>
+      <label for="header-menu-button" class="top-menus">
+        <nav class="menu-menu-1-container">
+          <ul id="menu-menu-1" class="menu">
+            
+            
+            <li>
+              <a href="/" aria-current="page">首页</a></li>
+            
+            
+            
+            <li>
+              <a href="/archives" aria-current="page">归档</a></li>
+            
+            
+            
+            <li>
+              <a href="/tags" aria-current="page">标签</a></li>
+            
+            
+            
+            <li>
+              <a href="/post/about" aria-current="page">关于</a></li>
+            
+            
+          </ul>
+        </nav>
+      </label>
     </div>
-  </nav>
-  <!-- Page Header -->
-  <header class="masthead" style="background-image: url('https://blog.ss1742.com/media/images/home-bg.jpg')">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="post-heading">
-          	<span class="tags">
-          	 
-            <a href="https://blog.ss1742.com/tag/VFKAqfNWe" class="tag">读书</a>
+    
+  </div>
+</header>
+  <main>
+    <div class="main-container">
+
+      <div class="article-info">
+        
+          <div class="flex-box meta-category">
+            <a class="post-cate" href="https://blog.ss1742.com/tag/VFKAqfNWe/">读书</a></div>
+          
+        <h2 class="article-title">
+          <a href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-2/">《深入浅出 React 和 Redux》[2]</a>
+        </h2>
+        <div class="flex-box">
+          <div class="flex-box post-meta-box">
+            <a class="post-meta" href="https://blog.ss1742.com"><span
+                class="iconfont icon-mr-postmeta"></span></a>
+            <span class="post-meta"><span class="iconfont icon-mr-postmeta"></span>2019 年 07	月 18日</span>
             
-            <a href="https://blog.ss1742.com/tag/5RkcZhpNN" class="tag">react</a>
-            
-        </span>
-            <h1>《深入浅出 React 和 Redux》[2]</h1>
-            <span class="meta">
-            	Posted on
-              2019-07-18，1 min read
-            </span>
+
+
           </div>
         </div>
       </div>
-    </div>
-  </header>
-
-  <!-- Post Content -->
-  <article>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <h2 id="第2章-react-组件">第2章 React 组件</h2>
+      <div class="content">
+        <h2 id="第2章-react-组件">第2章 React 组件</h2>
 <h3 id="易于维护的设计要素">易于维护的设计要素</h3>
 <blockquote>
 <p>高内聚 把逻辑紧密相关的内容放在一个组件内<br>
@@ -134,110 +208,103 @@ Person.defaultProps = {
 </blockquote>
 <p>...</p>
 
-          
-          <p class="next-post">下一篇：
-            <a href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-1">
-              <span class="post-title">
-                《深入浅出 React 和 Redux》[1]&rarr;
-              </span>
-            </a>
-          </p>
+      </div>
+
+      
+      <nav class="post-nav">
         
-        <div class="comment">
+        <div class="nav-previous">
+          <a class="post-nav-link-active" title="git 提交 types" href="https://blog.ss1742.com/post/git-ti-jiao-types/">上一篇文章</a>
+        </div>
+        
+        
+        <div class="nav-next">
+          <a class="post-nav-link-active" title="《深入浅出 React 和 Redux》[1]" href="https://blog.ss1742.com/post/lesslessshen-ru-qian-chu-react-he-reduxgreatergreater-1/">下一篇文章</a>
           
+
+        </div>
+      </nav>
+      
+
+      
+      
+
+      <div class="post-tags">
+        
+        <a href="https://blog.ss1742.com/tag/VFKAqfNWe/" rel="tag">读书</a>        
+        
+        <a href="https://blog.ss1742.com/tag/5RkcZhpNN/" rel="tag">react</a>        
+               
+      </div>
+
+
+        
+        
+
           
-            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<div id="gitalk-container"></div>
-<script>
-  var gitalk = new Gitalk({
-    clientID: 'c726c72729117e1a7598',
-    clientSecret: '427ee52e912b5a2a3753a568238fd6e802d1f492',
-    repo: 'bowenjun.github.io',
-    owner: 'bowenjun',
-    admin: ['bowenjun'],
-    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  })
-  gitalk.render('gitalk-container')
-</script>
+
+            
+
+              
 
           
           
-        
+
+    </div>
+
+    <div class="sidebar">
+  <aside id="profile-2" class="widget widget_profile">
+    <div class="profile-box">
+      <div class="profile-avatar">
+        <amp-img src="https://blog.ss1742.com/images/avatar.png?v=1592059646451" alt="avatar"
+          layout="fill"></amp-img>
+      </div>
+      <div class="profile-content">
+        <div class="amp-wp-681d4ff">
+          1742
         </div>
+
       </div>
     </div>
-  </article>
- <!-- Footer -->
+  </aside>
+  
+    
+  
+     
+
+
+  <aside id="linkcat-2" class="widget widget_links">
+  <h4 class="widget-title">友链</h4>
+  <ul class="xoxo blogroll">
+    
+  </ul>
+</aside>
+
+
+</div>
+    <div class="scrolltop-wrap">
+  <span tabindex="0" role="button" class="go-top" on="tap:commonTop.scrollTo(duration=500, position=top)">
+    <span class="iconfont"></span>
+  </span>
+</div>
+  </main>
   <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <ul class="list-inline text-center">
-            
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-              <li class="list-inline-item">
-              <a href="https://blog.ss1742.com/atom.xml" target="_blank">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-              </li>
-          </ul>
-          <p class="copyright text-muted">Copyright &copy;<span>I&#39;m 小博文</span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
-        </div>
-      </div>
+  <div class="footer-container">
+    <div class="footer-menus">
     </div>
-   </footer>
-  <!-- Bootstrap core JavaScript -->
-  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-  <!-- <script src="https://blog.ss1742.com/media/scripts/bootstrap.bundle.min.js"></script> -->
-  <!-- Bootstrap core JavaScript -->
-  <script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
-  <!-- <script src="https://blog.ss1742.com/media/scripts/clean-blog.min.js"></script> -->
-  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
-  <style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style>
-<a id="back_to_top" href="#" class="back_to_top">
-  <span>▲</span></a>
-<script>$(document).ready((function(_this) {
-    return function() {
-      var bt;
-      bt = $('#back_to_top');
-      if ($(document).width() > 480) {
-        $(window).scroll(function() {
-          var st;
-          st = $(window).scrollTop();
-          if (st > 30) {
-            return bt.css('display', 'block')
-          } else {
-            return bt.css('display', 'none')
-          }
-        });
-        return bt.click(function() {
-          $('body,html').animate({
-            scrollTop: 0
-          },
-          800);
-          return false
-        })
-      }
-    }
-  })(this));</script>
-  </body>
-</html>
+    <div class="footer-copyright">
+      成功
+      
+      
 
+    </div>
+  </div>
+</footer>
+
+
+  
+
+
+</body>
+
+</html>

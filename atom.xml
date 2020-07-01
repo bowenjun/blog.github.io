@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>博客屋</title>
-    <updated>2020-06-13T15:19:31.333Z</updated>
+    <updated>2020-07-01T02:45:55.947Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -28,6 +28,34 @@
 <h2 id="合理使用链式调用">合理使用链式调用</h2>
 <h2 id="分解大型类">分解大型类</h2>
 <h2 id="用-return-退出多重循环">用 return 退出多重循环</h2>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【设计模式三】接口和面向接口编程]]></title>
+        <id>https://blog.ss1742.com/post/she-ji-mo-shi-jie-kou-he-mian-xiang-jie-kou-bian-cheng/</id>
+        <link href="https://blog.ss1742.com/post/she-ji-mo-shi-jie-kou-he-mian-xiang-jie-kou-bian-cheng/">
+        </link>
+        <updated>2020-02-17T11:02:10.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="回到-java-的抽象类">回到 Java 的抽象类</h2>
+<h2 id="interface">interface</h2>
+<h2 id="javascript-语言是否需要抽象类和-insterface">JavaScript 语言是否需要抽象类和 insterface</h2>
+<h2 id="用鸭子类型进行接口检查">用鸭子类型进行接口检查</h2>
+<h2 id="用-typescript-编写基于-interface-的命令模式">用 Typescript 编写基于 interface 的命令模式</h2>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【设计模式三】开放——封闭原则]]></title>
+        <id>https://blog.ss1742.com/post/she-ji-mo-shi-kai-fang-feng-bi-yuan-ze/</id>
+        <link href="https://blog.ss1742.com/post/she-ji-mo-shi-kai-fang-feng-bi-yuan-ze/">
+        </link>
+        <updated>2020-02-17T11:01:04.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="扩展-windowonload-函数">扩展 window.onload 函数</h2>
+<h2 id="开放和封闭">开放和封闭</h2>
+<h2 id="用对象的多态性消除条件分支">用对象的多态性消除条件分支</h2>
+<h2 id="找出变化的地方">找出变化的地方</h2>
+<h2 id="设计模式中的开放封闭原则">设计模式中的开放——封闭原则</h2>
+<h2 id="开放封闭原则的相对性">开放——封闭原则的相对性</h2>
+<h2 id="接受第一次愚弄">接受第一次愚弄</h2>
 ]]></content>
     </entry>
     <entry>
@@ -125,35 +153,6 @@
 <h2 id="享元模式的适用性">享元模式的适用性</h2>
 <h2 id="再谈内部状态和外部状态">再谈内部状态和外部状态</h2>
 <h2 id="对象池">对象池</h2>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【设计模式二】模板方法模式]]></title>
-        <id>https://blog.ss1742.com/post/she-ji-mo-shi-mo-ban-fang-fa-mo-shi/</id>
-        <link href="https://blog.ss1742.com/post/she-ji-mo-shi-mo-ban-fang-fa-mo-shi/">
-        </link>
-        <updated>2020-02-17T09:01:18.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="模板方法模式的定义和组成">模板方法模式的定义和组成</h2>
-<h2 id="抽象类">抽象类</h2>
-<h2 id="模板方法模式的使用场景">模板方法模式的使用场景</h2>
-<h2 id="钩子方法">钩子方法</h2>
-<h2 id="好莱坞原则">好莱坞原则</h2>
-<h2 id="真的需要继承吗">真的需要继承吗？</h2>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【设计模式二】组合模式]]></title>
-        <id>https://blog.ss1742.com/post/she-ji-mo-shi-zu-he-mo-shi/</id>
-        <link href="https://blog.ss1742.com/post/she-ji-mo-shi-zu-he-mo-shi/">
-        </link>
-        <updated>2020-02-17T08:59:50.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="回顾宏命令">回顾宏命令</h2>
-<h2 id="组合模式的用途">组合模式的用途</h2>
-<h2 id="请求在树中传递的过程">请求在树中传递的过程</h2>
-<h2 id="更强大的宏命令">更强大的宏命令</h2>
-<h2 id="抽象类在组合模式中的作用">抽象类在组合模式中的作用</h2>
-<h2 id="透明性带来的安全问题">透明性带来的安全问题</h2>
-<h2 id="引用父对象">引用父对象</h2>
 ]]></content>
     </entry>
 </feed>

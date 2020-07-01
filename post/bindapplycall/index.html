@@ -7,7 +7,8 @@
 <meta name="description" content="bind
 Function.prototype.bind2 = function(context) {
     let _this = this;
-    let argsParent = Array.prototype.slice.cal..." />
+    let fbound = function () {
+        _this.a..." />
 <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
 <script async src="https://cdn.ampproject.org/v0.js"></script>
 <title>bind/apply/call | 博客屋</title>
@@ -2500,7 +2501,7 @@ footer {
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
 <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 <link rel="canonical" href="https://blog.ss1742.com/post/bindapplycall/" />
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1592061559562">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1593567449917">
 
 <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
 <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
@@ -2583,44 +2584,36 @@ footer {
         <h3 id="bind">bind</h3>
 <pre><code class="language-js">Function.prototype.bind2 = function(context) {
     let _this = this;
-    let argsParent = Array.prototype.slice.call(arguments, 1);
-    return function() {
-        var args = argsParent.concat(Array.prototype.slice.call(arguments)); // 转化成数组
-        _this.apply(context, args);
-    };
+    let fbound = function () {
+        _this.apply(this instanceof _this ? this : thisArg, args.concat(Array.prototype.slice.call(arguments)))
+    }
+    fbound.prototype = Object.create(_this.prototype);
+
+    return fbound;
 }
 </code></pre>
 <h3 id="apply">apply</h3>
-<pre><code class="language-js">Function.prototype.apply2 = function(context, arr) {
-    let context = context || window; // 因为传进来的context有可能是null
-    context.fn = this;
-    let args = [];
-    let params = arr || [];
-    for (var i = 0; i &lt; params.length; i++) {
-        args.push(&quot;params[&quot; + i + &quot;]&quot;); // 不这么做的话 字符串的引号会被自动去掉 变成了变量 导致报错
-    }
-    args = args.join(&quot;,&quot;);
+<pre><code class="language-js">Function.prototype.apply2 = function(context, arg) {
+    let fn = Symbol('fn');
+    let context = context || window;
+    context[fn] = this;
 
-    let result = eval(&quot;context.fn(&quot; + args + &quot;)&quot;); // 相当于执行了context.fn(arguments[1], arguments[2]);
+    let result = context[fn](...arg);
 
-    delete context.fn;
-    return result; // 因为有可能this函数会有返回值return
+    delete context[fn];
+    return result;
 }
 </code></pre>
 <h3 id="call">call</h3>
-<pre><code class="language-js">Function.prototype.call2 = function(context) {
-    let context = context || window; // 因为传进来的context有可能是null
-    context.fn = this;
-    let args = [];
-    for (var i = 1; i &lt; arguments.length; i++) {
-        args.push(&quot;arguments[&quot; + i + &quot;]&quot;); // 不这么做的话 字符串的引号会被自动去掉 变成了变量 导致报错
-    }
-    args = args.join(&quot;,&quot;);
+<pre><code class="language-js">Function.prototype.call2 = function(context, ...arg) {
+    let fn = Symbol('fn');
+    let context = context || window;
+    context[fn] = this;
 
-    let result = eval(&quot;context.fn(&quot; + args + &quot;)&quot;); // 相当于执行了context.fn(arguments[1], arguments[2]);
+    let result = context[fn](...arg);
 
-    delete context.fn;
-    return result; // 因为有可能this函数会有返回值return
+    delete context['fn'];
+    return result;
 }
 </code></pre>
 
@@ -2708,7 +2701,7 @@ footer {
   <aside id="profile-2" class="widget widget_profile">
     <div class="profile-box">
       <div class="profile-avatar">
-        <amp-img src="https://blog.ss1742.com/images/avatar.png?v=1592061559562" alt="avatar"
+        <amp-img src="https://blog.ss1742.com/images/avatar.png?v=1593567449917" alt="avatar"
           layout="fill"></amp-img>
       </div>
       <div class="profile-content">
@@ -2734,15 +2727,19 @@ footer {
           
             
           <li>
-           <a href="https://blog.ss1742.com/post/she-ji-mo-shi-zui-shao-zhi-shi-yuan-ze/" aria-current="page">【设计模式三】最少只是原则</a>
+           <a href="https://blog.ss1742.com/post/she-ji-mo-shi-jie-kou-he-mian-xiang-jie-kou-bian-cheng/" aria-current="page">【设计模式三】接口和面向接口编程</a>
           </li>
           
           
             
           <li>
-           <a href="https://blog.ss1742.com/post/she-ji-mo-shi-dan-yi-zhi-ze-yuan-ze/" aria-current="page">【设计模式三】单一职责原则</a>
+           <a href="https://blog.ss1742.com/post/she-ji-mo-shi-kai-fang-feng-bi-yuan-ze/" aria-current="page">【设计模式三】开放——封闭原则</a>
           </li>
           
+          
+            
+          
+            
           
             
           
@@ -2892,6 +2889,10 @@ footer {
       <aside id="categories-2" class="widget widget_categories">
         <h4 class="widget-title">标签</h4>
         <ul>
+            
+              <li class="cat-item"><a href="https://blog.ss1742.com/tag/she-ji-mo-shi/">
+              设计模式
+            </a>
             
               <li class="cat-item"><a href="https://blog.ss1742.com/tag/aMOZvg2fo/">
               loadsh

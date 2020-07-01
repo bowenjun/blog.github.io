@@ -4,17 +4,15 @@
 <head>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="description" content="初试享元模式
-内部状态和外部状态
-享元模式的通用结构
-文件上传的例子
-享元模式的适用性
-再谈内部状态和外部状态
-对象池
+<meta name="description" content="回到 Java 的抽象类
+interface
+JavaScript 语言是否需要抽象类和 insterface
+用鸭子类型进行接口检查
+用 Typescript 编写基于 interface 的命令模式
 ..." />
 <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
 <script async src="https://cdn.ampproject.org/v0.js"></script>
-<title>【设计模式二】享元模式 | 博客屋</title>
+<title>【设计模式三】接口和面向接口编程 | 博客屋</title>
 <style amp-custom>
 body {
     width: 100vw;
@@ -2503,7 +2501,7 @@ footer {
 </style>
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
 <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-<link rel="canonical" href="https://blog.ss1742.com/post/she-ji-mo-shi-xiang-yuan-mo-shi/" />
+<link rel="canonical" href="https://blog.ss1742.com/post/she-ji-mo-shi-jie-kou-he-mian-xiang-jie-kou-bian-cheng/" />
 <link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1593567449917">
 
 <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
@@ -2516,7 +2514,7 @@ footer {
 
 <script async custom-element="amp-gist" src="https://cdn.ampproject.org/v0/amp-gist-0.1.js"></script>
 
-<link rel="alternate" type="application/atom+xml" title="【设计模式二】享元模式 | 博客屋 - Atom Feed" href="https://blog.ss1742.com/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="【设计模式三】接口和面向接口编程 | 博客屋 - Atom Feed" href="https://blog.ss1742.com/atom.xml">
 
   
   <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
@@ -2566,8 +2564,11 @@ footer {
 
       <div class="article-info">
         
+          <div class="flex-box meta-category">
+            <a class="post-cate" href="https://blog.ss1742.com/tag/she-ji-mo-shi/">设计模式</a></div>
+          
         <h2 class="article-title">
-          <a href="https://blog.ss1742.com/post/she-ji-mo-shi-xiang-yuan-mo-shi/">【设计模式二】享元模式</a>
+          <a href="https://blog.ss1742.com/post/she-ji-mo-shi-jie-kou-he-mian-xiang-jie-kou-bian-cheng/">【设计模式三】接口和面向接口编程</a>
         </h2>
         <div class="flex-box">
           <div class="flex-box post-meta-box">
@@ -2581,13 +2582,11 @@ footer {
         </div>
       </div>
       <div class="content">
-        <h2 id="初试享元模式">初试享元模式</h2>
-<h2 id="内部状态和外部状态">内部状态和外部状态</h2>
-<h2 id="享元模式的通用结构">享元模式的通用结构</h2>
-<h2 id="文件上传的例子">文件上传的例子</h2>
-<h2 id="享元模式的适用性">享元模式的适用性</h2>
-<h2 id="再谈内部状态和外部状态">再谈内部状态和外部状态</h2>
-<h2 id="对象池">对象池</h2>
+        <h2 id="回到-java-的抽象类">回到 Java 的抽象类</h2>
+<h2 id="interface">interface</h2>
+<h2 id="javascript-语言是否需要抽象类和-insterface">JavaScript 语言是否需要抽象类和 insterface</h2>
+<h2 id="用鸭子类型进行接口检查">用鸭子类型进行接口检查</h2>
+<h2 id="用-typescript-编写基于-interface-的命令模式">用 Typescript 编写基于 interface 的命令模式</h2>
 
       </div>
 
@@ -2595,12 +2594,12 @@ footer {
       <nav class="post-nav">
         
         <div class="nav-previous">
-          <a class="post-nav-link-active" title="【设计模式二】职责链模式" href="https://blog.ss1742.com/post/she-ji-mo-shi-zhi-ze-lian-mo-shi/">上一篇文章</a>
+          <a class="post-nav-link-active" title="【设计模式三】代码重构" href="https://blog.ss1742.com/post/she-ji-mo-shi-dai-ma-chong-gou/">上一篇文章</a>
         </div>
         
         
         <div class="nav-next">
-          <a class="post-nav-link-active" title="【设计模式二】模板方法模式" href="https://blog.ss1742.com/post/she-ji-mo-shi-mo-ban-fang-fa-mo-shi/">下一篇文章</a>
+          <a class="post-nav-link-active" title="【设计模式三】开放——封闭原则" href="https://blog.ss1742.com/post/she-ji-mo-shi-kai-fang-feng-bi-yuan-ze/">下一篇文章</a>
           
 
         </div>
@@ -2639,6 +2638,8 @@ footer {
       
 
       <div class="post-tags">
+        
+        <a href="https://blog.ss1742.com/tag/she-ji-mo-shi/" rel="tag">设计模式</a>        
                
       </div>
 
@@ -2649,7 +2650,7 @@ footer {
   <div id="respond" class="comment-respond">
     <amp-iframe width=600 height=200 layout="responsive"
       sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms" resizable
-      src="?title=【设计模式二】享元模式&url=https://blog.ss1742.com/post/she-ji-mo-shi-xiang-yuan-mo-shi/&identifier=https://blog.ss1742.com/post/she-ji-mo-shi-xiang-yuan-mo-shi/">
+      src="?title=【设计模式三】接口和面向接口编程&url=https://blog.ss1742.com/post/she-ji-mo-shi-jie-kou-he-mian-xiang-jie-kou-bian-cheng/&identifier=https://blog.ss1742.com/post/she-ji-mo-shi-jie-kou-he-mian-xiang-jie-kou-bian-cheng/">
       <div
       overflow
       tabindex=0

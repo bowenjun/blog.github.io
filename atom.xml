@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>博客屋</title>
-    <updated>2020-07-03T10:12:40.897Z</updated>
+    <updated>2020-07-07T14:27:51.739Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -10,6 +10,50 @@
     <logo>https://blog.ss1742.com/images/avatar.png</logo>
     <icon>https://blog.ss1742.com/favicon.ico</icon>
     <rights>All rights reserved 2020, 博客屋</rights>
+    <entry>
+        <title type="html"><![CDATA[【网络、优化与浏览器】浏览器缓存]]></title>
+        <id>https://blog.ss1742.com/post/wang-luo-you-hua-yu-liu-lan-qi-liu-lan-qi-huan-cun/</id>
+        <link href="https://blog.ss1742.com/post/wang-luo-you-hua-yu-liu-lan-qi-liu-lan-qi-huan-cun/">
+        </link>
+        <updated>2020-07-07T14:16:12.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="广义的缓存">广义的缓存</h2>
+<ul>
+<li>http cache</li>
+<li>service worker cache</li>
+<li>memory cache</li>
+<li>push cache</li>
+</ul>
+<h2 id="http-cache">http cache</h2>
+<blockquote>
+<p><code>Expires</code> 和 <code>Cache-Control</code> 两个 <code>header</code> 来控制抢缓存</p>
+</blockquote>
+<pre><code> expires: Wed, 11 Mar 2019 16:12:18 GMT 
+ cache-control: max-age=31536000 // 1.1 精准 优先级高
+</code></pre>
+<p>如果强缓存失效了，需要执行协商缓存</p>
+<pre><code>If-Modified-Since: Fri, 27 Oct 2017 06:35:57 GMT
+
+ETag: W/&quot;2aaa-129892f459&quot;
+If-None-Match: W/&quot;2aaa-129892f459&quot;
+</code></pre>
+<h2 id="memory-cache">memory cache</h2>
+<p>内存缓存，短命。比如常用数据存 <code>js</code> 里，浏览器也有自己的策略，<code>base64</code> 图片，体积小的静态资源</p>
+<h2 id="service-worker-cache">service worker cache</h2>
+<p><code>service worker</code> 是一种独立于主线程之外的 <code>js</code> 线程。它脱离于浏览器窗体，算是幕后工作，可以实现离线缓存，网络代理等</p>
+<pre><code>window.navigator.serviceWorker
+    .register('/kaikeba.js')
+    .then(
+        function () {
+            console.log('注册成功')
+        }
+    ).catch(err =&gt; {
+        console.error(&quot;注册失败&quot;) 
+    });
+</code></pre>
+<h2 id="push-cache">push cache</h2>
+<p><code>http2</code> 的缓存</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【设计模式三】代码重构]]></title>
         <id>https://blog.ss1742.com/post/she-ji-mo-shi-dai-ma-chong-gou/</id>
@@ -137,21 +181,6 @@
 <h2 id="职责链模式的优缺点">职责链模式的优缺点</h2>
 <h2 id="用-aop-实现的职责链">用 AOP 实现的职责链</h2>
 <h2 id="用职责链模式获取文件上传对象">用职责链模式获取文件上传对象</h2>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【设计模式二】享元模式]]></title>
-        <id>https://blog.ss1742.com/post/she-ji-mo-shi-xiang-yuan-mo-shi/</id>
-        <link href="https://blog.ss1742.com/post/she-ji-mo-shi-xiang-yuan-mo-shi/">
-        </link>
-        <updated>2020-02-17T09:02:54.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="初试享元模式">初试享元模式</h2>
-<h2 id="内部状态和外部状态">内部状态和外部状态</h2>
-<h2 id="享元模式的通用结构">享元模式的通用结构</h2>
-<h2 id="文件上传的例子">文件上传的例子</h2>
-<h2 id="享元模式的适用性">享元模式的适用性</h2>
-<h2 id="再谈内部状态和外部状态">再谈内部状态和外部状态</h2>
-<h2 id="对象池">对象池</h2>
 ]]></content>
     </entry>
 </feed>

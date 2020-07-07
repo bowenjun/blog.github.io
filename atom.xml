@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>博客屋</title>
-    <updated>2020-07-07T14:27:51.739Z</updated>
+    <updated>2020-07-07T14:29:54.363Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -42,11 +42,9 @@ If-None-Match: W/&quot;2aaa-129892f459&quot;
 <p><code>service worker</code> 是一种独立于主线程之外的 <code>js</code> 线程。它脱离于浏览器窗体，算是幕后工作，可以实现离线缓存，网络代理等</p>
 <pre><code>window.navigator.serviceWorker
     .register('/kaikeba.js')
-    .then(
-        function () {
-            console.log('注册成功')
-        }
-    ).catch(err =&gt; {
+    .then(() =&gt; {
+        console.log('注册成功')
+    }).catch(err =&gt; {
         console.error(&quot;注册失败&quot;) 
     });
 </code></pre>

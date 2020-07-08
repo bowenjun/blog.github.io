@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ss1742.com</id>
     <title>博客屋</title>
-    <updated>2020-07-07T14:29:54.363Z</updated>
+    <updated>2020-07-08T00:56:23.475Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ss1742.com"/>
     <link rel="self" href="https://blog.ss1742.com/atom.xml"/>
@@ -10,6 +10,16 @@
     <logo>https://blog.ss1742.com/images/avatar.png</logo>
     <icon>https://blog.ss1742.com/favicon.ico</icon>
     <rights>All rights reserved 2020, 博客屋</rights>
+    <entry>
+        <title type="html"><![CDATA[【js】统计页面用到过多少标签]]></title>
+        <id>https://blog.ss1742.com/post/js-tong-ji-ye-mian-yong-dao-guo-duo-shao-biao-qian/</id>
+        <link href="https://blog.ss1742.com/post/js-tong-ji-ye-mian-yong-dao-guo-duo-shao-biao-qian/">
+        </link>
+        <updated>2020-07-07T14:38:53.000Z</updated>
+        <content type="html"><![CDATA[<pre><code class="language-js">new Set([...document.getElementsByTagName('*')].map(e =&gt; e.tagName)).size
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【网络、优化与浏览器】浏览器缓存]]></title>
         <id>https://blog.ss1742.com/post/wang-luo-you-hua-yu-liu-lan-qi-liu-lan-qi-huan-cun/</id>
@@ -163,22 +173,6 @@ If-None-Match: W/&quot;2aaa-129892f459&quot;
         </link>
         <updated>2020-02-17T09:23:24.000Z</updated>
         <content type="html"><![CDATA[<h2 id="现实中的中介者">现实中的中介者</h2>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【设计模式二】职责链模式]]></title>
-        <id>https://blog.ss1742.com/post/she-ji-mo-shi-zhi-ze-lian-mo-shi/</id>
-        <link href="https://blog.ss1742.com/post/she-ji-mo-shi-zhi-ze-lian-mo-shi/">
-        </link>
-        <updated>2020-02-17T09:21:46.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="现实中的职责链模式">现实中的职责链模式</h2>
-<h2 id="实际开发中的职责链模式">实际开发中的职责链模式</h2>
-<h2 id="用职责链模式重构代码">用职责链模式重构代码</h2>
-<h2 id="灵活可拆分的职责链节点">灵活可拆分的职责链节点</h2>
-<h2 id="异步的职责链">异步的职责链</h2>
-<h2 id="职责链模式的优缺点">职责链模式的优缺点</h2>
-<h2 id="用-aop-实现的职责链">用 AOP 实现的职责链</h2>
-<h2 id="用职责链模式获取文件上传对象">用职责链模式获取文件上传对象</h2>
 ]]></content>
     </entry>
 </feed>

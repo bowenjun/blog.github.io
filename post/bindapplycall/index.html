@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>bind/apply/call | 博客屋</title>
-<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1595227757678">
+<link rel="shortcut icon" href="https://blog.ss1742.com/favicon.ico?v=1596705060825">
 <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.ss1742.com/styles/main.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -85,18 +85,17 @@
                 </div>
                 <div class="post-content">
                     <h3 id="bind">bind</h3>
-<pre><code class="language-js">Function.prototype.bind2 = function(context) {
-    let _this = this;
-    let fbound = function () {
-        _this.apply(this instanceof _this ? this : thisArg, args.concat(Array.prototype.slice.call(arguments)))
-    }
-    fbound.prototype = Object.create(_this.prototype);
-
-    return fbound;
+<pre><code class="language-js">Function.prototype.myBind = function(context, ...arg) {
+	let _this = this;
+	let myFunc = function() {
+		_this.call(context, ...arg);
+	}
+	myFunc.prototype = Object.create(_this.prototype);
+	return myFunc;
 }
 </code></pre>
 <h3 id="apply">apply</h3>
-<pre><code class="language-js">Function.prototype.apply2 = function(context, arg) {
+<pre><code class="language-js">Function.prototype.myApply = function(context, arg) {
     let fn = Symbol('fn');
     context = context || window;
     context[fn] = this;
@@ -108,7 +107,7 @@
 }
 </code></pre>
 <h3 id="call">call</h3>
-<pre><code class="language-js">Function.prototype.call2 = function(context, ...arg) {
+<pre><code class="language-js">Function.prototype.myCall = function(context, ...arg) {
     let fn = Symbol('fn');
     context = context || window;
     context[fn] = this;
